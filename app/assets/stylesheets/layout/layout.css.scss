@@ -8,7 +8,6 @@
   background: white;
 }
 
-
 header {
   position: fixed;
   z-index: 500;
@@ -46,7 +45,6 @@ header {
 
   }
 
-
   .logoname{
 
     font-family: "Kozuka Mincho Pro", sans-serif;
@@ -55,7 +53,6 @@ header {
     border-right: 1px solid #ccc;
     color: #fff;
   }
-
 
   input[type="text"] {
     width: 400px;
@@ -105,7 +102,6 @@ header {
 .bottom_nav_content {
 
   margin: 0 auto;
-
   display: block;
   width: $main_body_width;
   height: 40px;
@@ -114,12 +110,6 @@ header {
 
   font-size: 0px;
   background: $gray_color;
-
-
-
-  a {
-    color:  #212121;
-  }
 
 }
 
@@ -132,16 +122,10 @@ header {
   position: relative;
   height: 40px;
   padding: 0 15px 0 10px;
-}
 
-
-
-
-
-.maim_menu_link a:hover{
-
-  color: $orange_color;
-  text-decoration: none;
+  .main_menu_link{
+    color: $black_color;
+  }
 
 }
 
@@ -153,7 +137,6 @@ header {
   overflow: visible;
  -webkit-transition: all 5s ease .15s;
 
-
 }
 
 .main_cat_grouping {
@@ -164,8 +147,10 @@ header {
     color: white;
 
     a {
-      color: white;
-      &:hover { color: #fff; }
+      color: $gray_color;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     h3{
@@ -180,7 +165,6 @@ header {
 }
 
 
-
 /* SUB MENU CONTAINER */
 
 .sub_menu_container  {
@@ -192,7 +176,7 @@ header {
 
 
   width: 550px;
-  margin-top: -13px;
+  margin-top: -11px;
   margin-left: 10px;
   padding: 15px;
 
@@ -203,7 +187,6 @@ header {
   opacity: .95;
   visibility: hidden;
   overflow: hidden;
-
 
   &:before {
       content: '';
@@ -223,9 +206,12 @@ header {
 
   float: left;
   margin: 0 40px 0px 0px;
+
 }
 
 .sub_menu_end {
-    width: 250px;
+
+    width: 225px;
+
 }
 
