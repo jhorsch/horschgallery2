@@ -1,0 +1,231 @@
+
+@import "base/base";
+
+.body_container {
+
+  margin: 0 auto;
+  width: $main_body_width;
+  background: white;
+}
+
+
+header {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+}
+
+
+// TOP NAVIGATION
+
+.top_nav{
+  width: 100%;
+  background: $black_color;
+}
+
+.top_nav_content {
+
+  display: block;
+  width: $main_body_width;
+  height: 50px;
+  padding: 10px 10px;
+  background: $black_color;
+  color:  white;
+  font-size: 16px;
+  margin: 0 auto;
+
+
+  li {
+    display: inline-block;
+    // float: left;
+    vertical-align: bottom;
+    text-transform: capitalize;
+
+  }
+
+
+  .logoname{
+
+    font-family: "Kozuka Mincho Pro", sans-serif;
+    font-size: 20px;
+    padding-right: 15px;
+    border-right: 1px solid #ccc;
+    color: #fff;
+  }
+
+
+  input[type="text"] {
+    width: 400px;
+    height: 30px;
+    border-radius: 15px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 14px;
+    margin-left: 15px;
+  }
+
+  .fa-search{
+    color: $black_color;
+    margin-left: -30px;
+  }
+
+  .account {
+    margin-left: 130px;
+    font-family: "Arial";
+    text-transform: uppercase;
+
+  }
+
+  .photographers{
+    margin-left: 40px;
+    font-family: "Arial";
+    text-transform: uppercase;
+
+ }
+
+  .fa-shopping-cart{
+    color: $orange_color;
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+
+}
+
+// BOTTOM NAVIGATION
+
+.bottom_nav {
+  width: 100%;
+  background: $gray_color;
+}
+
+.bottom_nav_content {
+
+  margin: 0 auto;
+
+  display: block;
+  width: $main_body_width;
+  height: 40px;
+  padding-top: 5px;
+  vertical-align: center;
+
+  font-size: 0px;
+  background: $gray_color;
+
+
+
+  a {
+    color:  #212121;
+  }
+
+}
+
+
+// MAIN MENU
+
+.main_menu{
+
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  padding: 0 15px 0 10px;
+}
+
+
+
+
+
+.maim_menu_link a:hover{
+
+  color: $orange_color;
+  text-decoration: none;
+
+}
+
+
+.main_menu:hover > .sub_menu_container {
+
+  opacity: .95;
+  visibility: visible;
+  overflow: visible;
+ -webkit-transition: all 5s ease .15s;
+
+
+}
+
+.main_cat_grouping {
+
+    margin: 0px 0px 10px 0;
+
+    font-size: 16px;
+    color: white;
+
+    a {
+      color: white;
+      &:hover { color: #fff; }
+    }
+
+    h3{
+      margin: 0px 0 5px 0;
+      color: $orange_color;
+    }
+
+    li{
+      padding-left: 10px;
+      margin-bottom: 3px;
+    }
+}
+
+
+
+/* SUB MENU CONTAINER */
+
+.sub_menu_container  {
+
+  position: absolute;
+  z-index: 800;
+  top: 44px;
+  left: 0;
+
+
+  width: 550px;
+  margin-top: -13px;
+  margin-left: 10px;
+  padding: 15px;
+
+
+  background: #222;
+  border-radius: 3px;
+
+  opacity: .95;
+  visibility: hidden;
+  overflow: hidden;
+
+
+  &:before {
+      content: '';
+      position: absolute;
+      top: -16px;
+      left: 15px;
+      border-color: transparent transparent #222 transparent;
+      border-style: solid;
+      border-width: 8px;
+      width: 0;
+      height: 0;
+  }
+
+}
+
+.nav_column{
+
+  float: left;
+  margin: 0 40px 0px 0px;
+}
+
+.sub_menu_end {
+    width: 250px;
+}
+

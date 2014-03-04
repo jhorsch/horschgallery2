@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Horschgallery2</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/global.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="body_container">
+
+<header class='header1'>
+
+<div class="top_nav">
+<nav class="top_nav_content">
+
+<ul class='restofheader'>
+<a href="#"><li class="logoname">HorschGallery</li></a>
+<li><input type="text" class="search_field" placeholder = "Search over 1000+ photographs" class="fa fa-search" ></li><i class="fa fa-search"></i>
+<li class = "photographers">The Photographers</li>
+<li class = "account"><i class="fa fa-shopping-cart"></i>Shopping Cart</li>
+</ul>
+
+</nav>
+</div>
+
+<div class="bottom_nav">
+<nav class="bottom_nav_content">
+
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Best Sellers</a></h2>
+
+<div class="sub_menu_container">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Top Chicago Gifts</h3>
+<ul>
+<li><a href="#">Top 10 of 2013</a></li>
+<li><a href="#">Chicago Skyline</a></li>
+<li><a href="#">Chicago Sports</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Most Recent Photography</h3>
+<ul>
+<li><a href="#">February 2014</a></li>
+<li><a href="#">December 2013</a></li>
+<li><a href="#">November 2013</a></li>
+<li><a href="#">September 2013</a></li>
+</ul>
+</div>
+</div>
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Christmas Favorites</h3>
+<ul>
+<li><a href="#">Vintage Chicago Skyline</a></li>
+<li><a href="#">Vintage Chicago Sports</a></li>
+<li><a href="#">Chicago Cityscape</a></li>
+<li><a href="#">Black & White Horizontal</a></li>
+</ul>
+</div>
+
+</div>
+</li>
+
+
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Chicago Cityscape</a></h2>
+
+<div class="sub_menu_container">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Chicago Black & White</h3>
+<ul>
+<li><a href="#">Black & White Horizontal</a></li>
+<li><a href="#">Black & White Vertical</a></li>
+<li><a href="#">Modern Day Chicago</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Chicago Vintage</h3>
+<ul>
+<li><a href="#">Vintage Chicago Skyline</a></li>
+<li><a href="#">Vintage Chicago Sports</a></li>
+<li><a href="#">Old Chicago Landmark Photos</a></li>
+<li><a href="#">Old Chicago Street Cars</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Chicago Panoramas</h3>
+<ul>
+<li><a href="#">Black & White CHicago</a></li>
+<li><a href="#">Chicago Daytime & Aerial</a></li>
+<li><a href="#">Sunset & Dusk</a></li>
+</ul>
+</div>
+
+
+
+</div>
+
+<div class="nav_column">
+
+
+<div class="main_cat_grouping">
+<h3>Chicago Cityscape</h3>
+<ul>
+<li><a href="#">Chicago Cityscape</a></li>
+<li><a href="#">Chicago Aerials</a></li>
+</ul>
+</div>
+
+
+<div class="main_cat_grouping">
+<h3>Famous Chicago Landmarks</h3>
+<ul>
+<li><a href="#">Buckingham Fountain</a></li>
+<li><a href="#">Chicago Board of Trade</a></li>
+<li><a href="#">Chicago River</a></li>
+<li><a href="#">Chicago Theatre</a></li>
+<li><a href="#">Chicago Sculptures</a></li>
+<li><a href="#">Chicago Water Tower</a></li>
+<li><a href="#">Millennium Park</a></li>
+<li><a href="#">Navy Pier</a></li>
+<li><a href="#">State Street</a></li>
+<li><a href="#">Trump Tower Chicago</a></li>
+<li><a href="#">Tall Ships Chicago 2010</a></li>
+<li><a href="#">Wrigley Building</a></li>
+<li><a href="#">Other Famous Landmarks</a></li>
+</ul>
+</div>
+
+</div>
+
+
+</li>
+
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Chicago Sports</a></h2>
+
+<div class="sub_menu_container">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Chicago Blackhawks</h3>
+<ul>
+<li><a href="#">Blackhawks Banner Raising</a></li>
+<li><a href="#">2013 Stanly Cup Champions</a></li>
+<li><a href="#">2010 Blackhawks Champions</a></li>
+<li><a href="#">2009 Winter Classic</a></li>
+<li><a href="#">Old Chicago Stadium</a></li>
+<li><a href="#">Chicago Blackhawks Team Players</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Chicago Bears</h3>
+<ul>
+<li><a href="#">Old Soldier Field</a></li>
+<li><a href="#">Soldier Field Panoramas</a></li>
+<li><a href="#">Soldier Field Aerials</a></li>
+<li><a href="#">Chicago Bears Fans Gifts</a></li>
+<li><a href="#">Chicago Bears Team Players</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Chicago Bulls</h3>
+<ul>
+<li><a href="#">Michael Jordan</a></li>
+<li><a href="#">Bulls Championships</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Chicago Cubs</h3>
+<ul>
+<li><a href="#">Black & White Wrigley Field</a></li>
+<li><a href="#">Wrigley Field Panoramas</a></li>
+<li><a href="#">Wrigley Field</a></li>
+<li><a href="#">Wrigley Field Aerials</a></li>
+<li><a href="#">Chicago Cubs Team</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>Chicago White Sox</h3>
+<ul>
+<li><a href="#">2005 White Sox Championship </a></li>
+<li><a href="#">Cellular Field Panoramas</a></li>
+<li><a href="#">US Cellular Field</a></li>
+<li><a href="#">Old Comiskey Park</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+</li>
+
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Top US Cities</a></h2>
+<div class="sub_menu_container">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>San Francisco, CA</h3>
+<ul>
+<li><a href="#">San Francisco Bridges</a></li>
+<li><a href="#">San Francisco Skyline</a></li>
+<li><a href="#">San Fancisco Landmarks</a></li>
+<li><a href="#">San Francisco Panoramas</a></li>
+<li><a href="#">Black & White San Francisco</a></li>
+
+</ul>
+</div>
+</div>
+
+<div class="nav_column">
+<div class="main_cat_grouping">
+<h3>Boston, MA</h3>
+<ul>
+<li><a href="#">Fenway Park</a></li>
+<li><a href="#">Boston Skyline</a></li>
+<li><a href="#">Boston Aerial Images</a></li>
+<li><a href="#">Boston Public Garden</a></li>
+<li><a href="#">Black & White Boston Photos</a></li>
+<li><a href="#">Boston Landmarks & Attractions</a></li>
+
+
+</ul>
+</div>
+</div>
+
+</li>
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Other Sports</a></h2>
+
+<div class="sub_menu_container sub_menu_end">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>MLB Baseball</h3>
+<ul>
+<li><a href="#">Yankee Stadium</a></li>
+<li><a href="#">Fenway Park</a></li>
+<li><a href="#">Shae Stadium</a></li>
+<li><a href="#">Camden Yards</a></li>
+</ul>
+</div>
+
+<div class="main_cat_grouping">
+<h3>NFL Football</h3>
+<ul>
+<li><a href="#">Lambeua Field</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>College Football</h3>
+<ul>
+<li><a href="#">Notre Dame Stadium</a></li>
+<li><a href="#">Other Big 10</a></li>
+</ul>
+</div>
+</div>
+
+</li>
+
+
+<li class="main_menu"><h2><a class='main_menu_link' href="#">Nature</a></h2>
+
+
+<div class="sub_menu_container menu-end">
+
+<div class="nav_column">
+
+<div class="main_cat_grouping">
+<h3>Nature Photography</h3>
+<ul>
+<li><a href="#">Underwater Life</a></li>
+<li><a href="#">Rocky Landscapes</a></li>
+<li><a href="#">Oceanic Photography</a></li>
+<li><a href="#">Black & White Nature</a></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+
+
+</li>
+
+
+</nav>
+</div>
+
+
+</header>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+/*COLORS*/
+
+$black_color: #1c1c1c;
+$gray_color: #e3e3e3;
+$main_body_width: 1100px;
+$orange_color: orange;
+
+
+// ELEMENTS
+
+body {
+   font-size: 16px;
+  background: #efefeb;
+  font-family: "Garamond";
+  line-height: 1.5;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    // color: #666;
+  }
+  &:hover {
+   text-decoration: underline;
+
+    // color: #fff;
+    // background-color: #000;
+  }
+}
+
+
+%group:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+
+/*HEADERS AND */
+h1,h2,h3,h4,h5,h6 {
+
+  font-family: "Garamond";
+}
+
+
+h1 {
+
+  font-size: 34px;
+  margin-top: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+
+}
+
+h2 {
+
+  margin-top: 0px;
+  font-size: 18px;
+  font-family: "Garamond";
+}
+
+h3 {
+  margin-top: 20px;
+  font-family: "Arial";
+}
+
+
+// PARAGRAPHS
+
+
+p, blockquote, span {
+    font-family: "Garamond";
+    margin: 40px 0;
+    padding: 0 60px;
+
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.9em;
+}
+
+li {
+  font-family: "Garamond";
+}
+
+
+
+
+
+/*ERRORS*/
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
