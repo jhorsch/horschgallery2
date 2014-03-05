@@ -1,61 +1,17 @@
 <div class="photo-container-horiz">
 
-<div class="ind_imge">
-<a href="">
-  <%= image_tag "photo/3059.jpg" %>
-<h4 class='home_cat_title'>Chicago Cityscape</h4>
-</a>
-</a>
-</div>
 
-<div class="ind_imge">
-<a href="">
-  <%= image_tag "photo/4094.jpg" %>
-<h4 class='home_cat_title'>Chicago Aerials</h4>
-</a>
-</div>
 
+<% @photoset.each do |photo| %>
 <div class="ind_imge">
 <a href="">
-<%= image_tag "photo/1424.jpg" %>
-<h4 class='home_cat_title'>Chicago Cityscape</h4>
+  <a href=<%= category_url(photo.category) %>><%= image_tag "photo/#{photo.id_num.downcase}.jpg" %></a>
+<h4 class='home_cat_title'><%= photo.sub_category %></h4>
+</a>
 </a>
 </div>
+<% end %>
 
-<div class="ind_imge">
-<a href="">
-<%= image_tag "photo/260.jpg" %>
-<h4 class='home_cat_title'>Chicago Black & White</h4>
-</a>
-</div>
-
-<div class="ind_imge">
-<a href="">
-<%= image_tag "photo/A11.jpg" %>
-<h4 class='home_cat_title'>Chicago Blackhawks</h4>
-</a>
-</div>
-
-<div class="ind_imge">
-<a href="">
-<%= image_tag "photo/2900.jpg" %>
-<h4 class='home_cat_title'>Chicago Bears</h4>
-</a>
-</div>
-
-<div class="ind_imge">
-<a href="">
-<%= image_tag "photo/1683.jpg" %>
-<h4 class='home_cat_title'>Chicago Cubs</h4>
-</a>
-</div>
-
-<div class="ind_imge">
-<a href="">
-<%= image_tag "photo/1532.jpg" %>
-<h4 class='home_cat_title'>Chicago White Sox</h4>
-</a>
-</div>
 
 
 </div>

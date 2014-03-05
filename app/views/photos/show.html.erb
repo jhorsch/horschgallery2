@@ -1,9 +1,66 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @photo.title %>
-</p>
+<p class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= root_url %>">Chicago</a> > <a href="<%= root_url %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= root_url %>"><%= @photo.sub_category.titleize  %></a></p>
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+
+<div class="product_wrapper">
+
+
+<div class='product_container'>
+<div class='product'>
+
+<%= link_to( image_tag("photo/#{@photo.id_num}.jpg"), root_url) %>
+<p class='artist'>Photographed by Bob Horsch</p>
+<p class='social_buttons' ><%= image_tag 'SocialButtons.jpg' %></p>
+
+</div>
+</div>
+</div>
+
+
+<div class="product_info_wrapper">
+
+<div class='product_info'>
+
+<h1 class='photo_title_detail'><%= @photo.title %></h1>
+
+<%= label_tag 'choose-photo_size', 'Choose Your Size:'  %>
+<%= select_tag 'choose-size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %>
+
+<%= label_tag 'choose_mat', 'Mat Color:' %>
+<%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %>
+
+<%= label_tag 'choose_frame', 'Frame Style:' %>
+<%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %>
+
+<%= label_tag 'price', 'Price:' %>
+<%= label_tag 'price','$89',  class:'price' %>
+
+<%= label_tag 'qty', 'Quantity:' %>
+<%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %>
+
+
+<%= submit_tag 'Add To Cart', class:'addcart' %>
+
+
+</div>
+
+<p class = "product_text"><%= @photo.desc %></p>
+
+</div>
+
+
+<div class='extra_product_wrapper'>
+<h4>Customers Also Viewed</h4>
+<div class="ribbon container_backdrop">
+<% @photos.each do |photo| %>
+<%= link_to( image_tag("photo/#{photo.id_num}.jpg"), photo_url(photo.id) ) %>
+<% end %>
+</div>
+</div>
+
+
+
+
+
+

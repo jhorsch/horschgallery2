@@ -1,0 +1,20 @@
+
+
+  <h1>Listing categories</h1>
+
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= category.title %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Category', new_category_path %>
+
+</main>

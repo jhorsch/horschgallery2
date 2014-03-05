@@ -4,10 +4,16 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    # @phototest = Photo.where(id_num: 'bw21').first
+    myarray = ['3059','4094','1424','260','a11','2900','1683','1532']
+    @photoset = Photo.where(id_num: [myarray])
+
   end
 
 
   def show
+    @photos = Photo.where(main_category: @photo.main_category).shuffle.take(8)
+
   end
 
   def new
@@ -16,7 +22,6 @@ class PhotosController < ApplicationController
 
   def edit
   end
-
 
   def create
     @photo = Photo.new(photo_params)

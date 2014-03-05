@@ -5,10 +5,9 @@
 <div class="main_cat_grouping">
 <h3>Nature Photography</h3>
 <ul>
-<li><a href="#">Underwater Life</a></li>
-<li><a href="#">Rocky Landscapes</a></li>
-<li><a href="#">Oceanic Photography</a></li>
-<li><a href="#">Black & White Nature</a></li>
+<%  find_categories('Nature Photography').each do  |category| %>
+  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
 </ul>
 </div>
 

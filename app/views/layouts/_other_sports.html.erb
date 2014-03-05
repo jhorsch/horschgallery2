@@ -1,33 +1,35 @@
 <div class="sub_menu_container sub_menu_end">
 
-  <div class="nav_column">
-    <div class="main_cat_grouping">
-      <h3>MLB Baseball</h3>
-      <ul>
-        <li><a href="#">Yankee Stadium</a></li>
-        <li><a href="#">Fenway Park</a></li>
-        <li><a href="#">Shae Stadium</a></li>
-        <li><a href="#">Camden Yards</a></li>
-      </ul>
-    </div>
+<div class="nav_column">
+<div class="main_cat_grouping">
+<h3>MLB Baseball</h3>
+<ul>
+<%  find_categories('MLB').each do  |category| %>
+<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
+</ul>
+</div>
 
-    <div class="main_cat_grouping">
-      <h3>NFL Football</h3>
-      <ul>
-        <li><a href="#">Lambeua Field</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="main_cat_grouping">
+<h3>NFL Football</h3>
+<ul>
+<%  find_categories('NFL').each do  |category| %>
+<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
+</ul>
+</div>
+</div>
 
 
-  <div class="nav_column">
-    <div class="main_cat_grouping">
-      <h3>College Football</h3>
-      <ul>
-        <li><a href="#">Notre Dame Stadium</a></li>
-        <li><a href="#">Other Big 10</a></li>
-      </ul>
-    </div>
-  </div>
+<div class="nav_column">
+<div class="main_cat_grouping">
+<h3>College Football</h3>
+<ul>
+<%  find_categories('College Football').each do  |category| %>
+<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
+</ul>
+</div>
+</div>
 
 </div>
