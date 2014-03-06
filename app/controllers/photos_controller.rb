@@ -7,8 +7,14 @@ class PhotosController < ApplicationController
     @solo_large_photo = Photo.where(id_num: '2805')
 
     # @phototest = Photo.where(id_num: 'bw21').first
-    myarray = ['3059','4094','1424','260','a11','2900','1683','1532']
+    myarray = ['4094','1424','1532','a11','2900','1683','260','3059']
+
     @photoset = Photo.where(id_num: [myarray])
+
+    myarray6 = ['a10','a5','a11','bw99','bw19', 'bw17']
+
+    @photoset2x3 = Photo.where(id_num: [myarray6])
+
 
   end
 

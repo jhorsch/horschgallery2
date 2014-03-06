@@ -68,14 +68,52 @@
 
 }
 
+.photo-container-horiz{
 
-.photo-container-vert{
-  // background: yellow;
-  margin: 0 auto;
+  margin: 20px auto;
   font-size: 0;
   width: 100%;
   text-align: center;
-  margin: 20px 0;
+
+
+  .ind_imge{
+
+      position: relative;
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      position: relative;
+      width: 22%;
+
+
+      img{
+        width: 100%;
+      }
+
+  }
+
+  h4.home_cat_title{
+
+      font-size: 14px;
+      font-weight: 400;
+      position: absolute;
+      text-align: left;
+      padding: 5px 10px;
+      bottom: 0px;
+      left: 0px;
+
+      background: $black_color;
+      opacity: .95;
+      color: white;
+    }
+
+}
+
+.photo-container-vert{
+  // background: yellow;
+  margin: 20px auto;
+  font-size: 0;
+  width: 100%;
+  text-align: center;
 
 
   img{
@@ -86,49 +124,74 @@
   }
 }
 
-
-.photo-container-horiz{
-  margin: 0 auto;
+.photo-container-horiz1x2{
+  // background: yellow;
+  margin: 20px auto;
   font-size: 0;
   width: 100%;
   text-align: center;
-  margin: 20px 0;
 
+
+  img{
+    display: inline-block;
+    width: 500px;
+    margin: 0 5px 0px 0;
+
+  }
 }
 
-.ind_imge{
 
-    position: relative;
-    display: inline-block;
-    margin: 0 5px 5px 0;
-    position: relative;
+.shop_gifts_cta{
+    font-size: 26px;
+    margin: 0px 90px;
+    font-weight: 600;
+  }
 
-    display: inline-block;
-    width: 22%;
-    margin: 0 5px 5px 0;
-    position: relative;
+.photo-container-horiz2x3{
 
-    img{
-      width: 100%;
+  margin: 20px auto;
+  font-size: 0;
+  width: 100%;
+  text-align: center;
+
+
+  .ind_imge{
+
+      position: relative;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      position: relative;
+      width: 27%;
+
+
+      img{
+        width: 100%;
+      }
+
+       h4.home_cat_title{
+
+      font-size: 14px;
+      font-weight: 400;
+      position: absolute;
+      text-align: left;
+      padding: 5px 10px;
+      bottom: 0px;
+      left: 0px;
+
+      background: $black_color;
+      opacity: .95;
+      color: white;
     }
 
+  }
+
+
+
 }
 
 
-.home_cat_title{
 
-    font-size: 14px;
-    font-weight: 400;
-    position: absolute;
-    text-align: left;
-    padding: 5px 10px;
-    bottom: 0px;
-    left: 0px;
 
-    background: $black_color;
-    opacity: .95;
-    color: white;
-  }
 
 
 
