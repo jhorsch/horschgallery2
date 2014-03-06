@@ -28,19 +28,19 @@
 <h1 class='photo_title_detail'><%= @photo.title %></h1>
 
 <div class="options_wrapper">
-<div><%= label_tag 'choose-photo_size', 'Choose Your Size:'  %>
+<div class='detail_field'><%= label_tag 'choose-photo_size', 'Choose Your Size:'  %>
 <%= select_tag 'choose-size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %></div>
 
-<div><%= label_tag 'choose_mat', 'Mat Color:' %>
+<div class='detail_field'><%= label_tag 'choose_mat', 'Mat Color:' %>
 <%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %></div>
 
-<div><%= label_tag 'choose_frame', 'Frame Style:' %>
+<div class='detail_field'><%= label_tag 'choose_frame', 'Frame Style:' %>
 <%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %></div>
 
-<div><%= label_tag 'price', 'Price:' %>
+<div class='detail_field'><%= label_tag 'price', 'Price:' %>
 <%= label_tag 'price',number_to_currency(89, precision: 0),  class:'price' %></div>
 
-<div><%= label_tag 'qty', 'Quantity:' %>
+<div class='detail_field'><%= label_tag 'qty', 'Quantity:' %>
 <%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></div>
 
 </div>

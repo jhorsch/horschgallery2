@@ -108,7 +108,7 @@ header {
 .bottom_nav {
   width: 100%;
   background: $gray_color;
-  border-bottom: 1px solid $black_color;
+  border-bottom: 2px solid $black_color;
 }
 
 .bottom_nav_content {
@@ -130,12 +130,13 @@ header {
     display: inline-block;
     position: relative;
     height: 40px;
-    padding: 0 15px 0 10px;
+    padding: 0 50px 0 4px;
 
     h2  a{
       // background: green;
       padding: 5px;
       color: $black_color;
+      font-size: 20px;
 
       &:visited{
       color: $black_color;
@@ -146,9 +147,7 @@ header {
 
 
 
-    // .main_menu_link{
-    //   color: $black_color;
-    // }
+
 
   }
 
@@ -160,7 +159,7 @@ header {
 
 .main_menu:hover > .sub_menu_container {
 
-  opacity: .95;
+  opacity: .98;
   visibility: visible;
   overflow: visible;
  -webkit-transition: all 5s ease .15s;
@@ -189,6 +188,9 @@ header {
     li{
       padding-left: 10px;
       margin-bottom: 3px;
+      &:last-child{
+        margin-bottom: 0px;
+      }
     }
 }
 
@@ -212,7 +214,7 @@ header {
   background: #222;
   border-radius: 3px;
 
-  opacity: .95;
+  opacity: .98;
   visibility: hidden;
   overflow: hidden;
 
@@ -250,6 +252,6 @@ header {
 footer{
   text-align: center;
   padding: 20px;
- border-top: 2px solid #ccc;
+ border-top: 5px solid #ccc;
   color: $black_color;
 }

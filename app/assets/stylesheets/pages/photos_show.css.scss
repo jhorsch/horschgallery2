@@ -4,13 +4,15 @@
 
 .breadcrumbs{
   padding: 0px;
-  margin: 20px 10px 30px 27px;
+  margin: 20px 10px 20px 25px;
   padding-top: 30px;
   color: #aaa;
   font-size: 14px;
   a{
     color: $orange_color;
     font-size: 18px;
+    padding: 0 5px;
+
   }
 }
 
@@ -31,7 +33,7 @@
 .product_wrapper{
 
   float: left;
-  width: 540px;
+  width: 600px;
   padding-bottom: 30px;
   // background: green;
 
@@ -54,9 +56,12 @@
       cursor: -moz-zoom-in;
 
     }
+    .artist{
+      font-size: 16px;
+    }
 
     .social_buttons{
-      width: 200px;
+      width: 225px;
       margin-top: 10px;
     }
 
@@ -66,7 +71,7 @@
 .product_info_wrapper{
 
   float: left;
-  width: 500px;
+  width: 480px;
   // background: yellow;
   padding: 0 20px;
 }
@@ -80,7 +85,12 @@
 }
 
 .options_wrapper{
-  margin: 20px 0;
+  margin: 20px 0 20px 0;
+
+  .detail_field{
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
 
 }
 
@@ -89,6 +99,7 @@
     text-align: left;
     padding: 0px;
     margin: 0px;
+    margin-top: -10px;
   }
   label{
 
@@ -143,7 +154,7 @@
   img{
     display: inline-block;
     padding: 10px 12px 0px 12px;
-    width: 12%;
+    width: 16%;
   }
 
 

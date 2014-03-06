@@ -4,13 +4,14 @@
 
     background: $orange_color;
     width: 380px;
-    height: 40px;
+    height: 50px;
     font-size: 22px;
     cursor: pointer;
     color: white;
     border-radius: 5px;
     border: 1px solid darken($orange_color,.9);
     display: inline-block;
+    margin-bottom: 20px;
 
 
       &:hover{
@@ -26,11 +27,11 @@
     width: 50px;
     text-align: center;
     color: $black_color;
-    height: 40px;
+    height: 50px;
     font-size: 22px;
     display: inline-block;
     cursor: pointer;
-    padding-top: 8px;
+    padding-top: 13px;
 
 
     border-radius: 5px;

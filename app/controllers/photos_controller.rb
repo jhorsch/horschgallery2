@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
 
 
   def show
-    @photos = Photo.where(main_category: @photo.main_category).shuffle.take(8)
+    @photos = Photo.where(main_category: @photo.main_category).shuffle.take(6)
 
   end
 
