@@ -108,6 +108,7 @@
   img{
     width: 100%;
     box-shadow: 0px 5px 2px #bbb;
+    opacity: 1;
   }
 
 }
@@ -127,16 +128,10 @@
       margin: 0 5px 5px 0;
       position: relative;
       width: 22%;
-      opacity: .93;
-
-      &:hover{
-        opacity: 1;
-      }
 
 
       img{
         width: 100%;
-
       }
 
   }

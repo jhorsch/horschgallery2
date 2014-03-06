@@ -41,6 +41,13 @@ a {
 }
 
 
+img{
+  opacity: .93;
+  width: 100%;
+  &:hover{
+    opacity: 1;
+  }
+}
 %group:after {
     display: table;
     clear: both;

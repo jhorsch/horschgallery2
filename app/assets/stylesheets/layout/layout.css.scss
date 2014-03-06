@@ -116,8 +116,8 @@ header {
   margin: 0 auto;
   display: block;
   width: $main_body_width;
-  height: 40px;
-  padding-top: 5px;
+  height: 50px;
+  padding-top: 10px;
   vertical-align: center;
 
   font-size: 0px;
@@ -206,7 +206,7 @@ header {
 
 
   width: 650px;
-  margin-top: -9px;
+  margin-top: -4px;
   margin-left: 10px;
   padding: 15px;
 
@@ -229,6 +229,7 @@ header {
       border-width: 8px;
       width: 0;
       height: 0;
+
   }
 
 }
@@ -253,6 +254,6 @@ header {
 footer{
   text-align: center;
   padding: 20px;
- border-top: 5px solid #ccc;
+ border-top: 1px solid #ccc;
   color: $black_color;
 }
