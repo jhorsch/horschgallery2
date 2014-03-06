@@ -18,7 +18,7 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-
+# gem 'font-awesome-sass'
 gem 'database_cleaner'
 
 gem 'will_paginate', '~> 3.0'
