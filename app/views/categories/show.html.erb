@@ -12,6 +12,7 @@
 <%= will_paginate @photos %>
 </div>
 
+<div class="photoset_wrapper">
 <% @photos.each do |photo| %>
 <div class="product_image_wrapper">
 <div class="product_image_container">
@@ -27,6 +28,8 @@
 
 <div class="bottom_pagination">
   <%= will_paginate @photos %>
+</div>
+
 </div>
 
 
