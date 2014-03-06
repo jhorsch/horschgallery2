@@ -107,7 +107,7 @@ header {
 
 .bottom_nav {
   width: 100%;
-  background: $gray_color;
+  background: white;
   border-bottom: 2px solid $black_color;
 }
 
@@ -121,7 +121,7 @@ header {
   vertical-align: center;
 
   font-size: 0px;
-  background: $gray_color;
+  background: white;
 
   // MAIN MENU
 
@@ -135,11 +135,11 @@ header {
     h2  a{
       // background: green;
       padding: 5px;
-      color: $black_color;
+      color: $orange_color;
       font-size: 20px;
 
       &:visited{
-      color: $black_color;
+      color: $orange_color;
 
       }
     }
