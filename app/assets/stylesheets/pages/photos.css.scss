@@ -6,36 +6,59 @@
 
 // MAIN BODY
 
-.maincontent{
 
-  margin-top: 90px;
+.homepage{
 
-  .p_tagline{
-      margin-top: 20px;
+  padding-bottom: 50px;
+
+  h1{
+    padding-top: 20px;
   }
 
+  p{
+      margin: 30px auto;
+      padding: 20px 20px;
+      line-height: 2em;
+      font-size: 20px;
+      text-align: center;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      width: 90%;
+
+  }
+
+  span{
+    margin-left: 10px;
+    font-size: 16px;
+  }
+}
+
   blockquote{
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 26px;
     font-style: italic;
+    margin: 30px auto;
+    padding: 20px 20px;
+    line-height: 2em;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    width: 90%;
   }
 
   h3.shop_tagline{
-    font-size: 24px;
-    margin: 0px 50px;
-    padding: 20px 0 0px 0;
+    font-size: 26px;
+    margin: 0px 55px;
 
     font-weight: 600;
-    border-top: 1px solid #ccc;
   }
 
-  .jeffrey{
+  .starting_at{
     font-size: 15px;
     font-style: italic;
     font-weight: normal;
     margin-left: -50px;
   }
-}
+
 
 .panorama_container {
 
@@ -55,7 +78,7 @@
 
   img{
     display: inline-block;
-    width: 27%;
+    width: 300px;
     margin: 0 5px 5px 0;
   }
 }
@@ -108,7 +131,7 @@
 
 .full_image{
 
-width: 90%;
+width: 80%;
     margin: 0 auto;
 
   img{

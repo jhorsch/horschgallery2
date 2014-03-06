@@ -8,6 +8,13 @@
   background: white;
 }
 
+.maincontent{
+
+  margin-top: 90px;
+  // padding: 0 20px;
+
+  }
+
 header {
   position: fixed;
   z-index: 500;
@@ -44,6 +51,8 @@ header {
     text-transform: capitalize;
 
   }
+
+
 
   .logoname{
 
@@ -113,23 +122,39 @@ header {
   font-size: 0px;
   background: $gray_color;
 
+  // MAIN MENU
+
+  li.main_menu{
+
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    padding: 0 15px 0 10px;
+
+    h2  a{
+      // background: green;
+      padding: 5px;
+      color: $black_color;
+
+      &:visited{
+      color: $black_color;
+
+      }
+    }
+
+
+
+
+    // .main_menu_link{
+    //   color: $black_color;
+    // }
+
+  }
+
+
 }
 
 
-// MAIN MENU
-
-.main_menu{
-
-  display: inline-block;
-  position: relative;
-  height: 40px;
-  padding: 0 15px 0 10px;
-
-  // .main_menu_link{
-  //   color: $black_color;
-  // }
-
-}
 
 
 .main_menu:hover > .sub_menu_container {
@@ -173,11 +198,11 @@ header {
 
   position: absolute;
   z-index: 800;
-  top: 44px;
+  top: 110%;
   left: 0;
 
 
-  width: 700px;
+  width: 650px;
   margin-top: -9px;
   margin-left: 10px;
   padding: 15px;
@@ -217,3 +242,13 @@ header {
 
 }
 
+
+
+
+// FOOTER
+footer{
+  text-align: center;
+  padding: 20px;
+ border-top: 2px solid #ccc;
+  color: $black_color;
+}

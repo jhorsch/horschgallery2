@@ -21,6 +21,9 @@ end
 
 gem 'database_cleaner'
 
+gem 'will_paginate', '~> 3.0'
+
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

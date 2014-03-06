@@ -3,22 +3,30 @@
 <p id="notice"><%= notice %></p>
 
 
-<h1> <%= @category.title %> </h1>
+<div class="category_wrapper">
 
+<h1 class=""> <%= @category.title %> </h1>
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-
-
-<% @category.photos.each do |photo| %>
-<div class="product_wrapperq">
-
-<%= link_to( image_tag("photo/#{photo.id_num}.jpg", class: 'myimage'), photo_url(photo.id)) %>
-<%= photo.title %>
+<div class="top_pagination">
+<%= will_paginate @photos %>
 </div>
 
+<% @photos.each do |photo| %>
+<div class="product_image_wrapper">
+<div class="product_image_container">
+<%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo.id)) %>
+<div class="photo_title"><%= photo.title %></div>
+
+</div>
+</div>
 <% end %>
 
 
+</div>
 
-
+<div class="bottom_pagination">
+  <%= will_paginate @photos %>
+</div>
 
 

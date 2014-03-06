@@ -4,6 +4,8 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @solo_large_photo = Photo.where(id_num: '2805')
+
     # @phototest = Photo.where(id_num: 'bw21').first
     myarray = ['3059','4094','1424','260','a11','2900','1683','1532']
     @photoset = Photo.where(id_num: [myarray])

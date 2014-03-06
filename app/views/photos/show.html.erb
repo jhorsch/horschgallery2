@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+<div></div><p id="notice"><%= notice %></p>
 
-<p class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= root_url %>">Chicago</a> > <a href="<%= root_url %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= root_url %>"><%= @photo.sub_category.titleize  %></a></p>
+<div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= root_url %>">Chicago</a> > <a href="<%= root_url %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= root_url %>"><%= @photo.sub_category.titleize  %></a></div>
 
 
 <div class="product_wrapper">
@@ -9,9 +9,12 @@
 <div class='product_container'>
 <div class='product'>
 
-<%= link_to( image_tag("photo/#{@photo.id_num}.jpg"), root_url) %>
-<p class='artist'>Photographed by Bob Horsch</p>
-<p class='social_buttons' ><%= image_tag 'SocialButtons.jpg' %></p>
+<%= link_to( image_tag("matted/#{@photo.id_num}.jpg"), "matted/#{@photo.id_num}.jpg") %>
+
+<!-- <a href='/image/<%= @photo.id_num %>.jpg' class='image-link'>
+          <img class='feature' src="matted/#{@photo.id_num}.jpg"> </a> -->
+<div class='artist'>Photographed by Bob Horsch</div>
+<%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %>
 
 </div>
 </div>
@@ -24,28 +27,34 @@
 
 <h1 class='photo_title_detail'><%= @photo.title %></h1>
 
-<%= label_tag 'choose-photo_size', 'Choose Your Size:'  %>
-<%= select_tag 'choose-size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %>
+<div class="options_wrapper">
+<div><%= label_tag 'choose-photo_size', 'Choose Your Size:'  %>
+<%= select_tag 'choose-size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %></div>
 
-<%= label_tag 'choose_mat', 'Mat Color:' %>
-<%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %>
+<div><%= label_tag 'choose_mat', 'Mat Color:' %>
+<%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %></div>
 
-<%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %>
+<div><%= label_tag 'choose_frame', 'Frame Style:' %>
+<%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %></div>
 
-<%= label_tag 'price', 'Price:' %>
-<%= label_tag 'price','$89',  class:'price' %>
+<div><%= label_tag 'price', 'Price:' %>
+<%= label_tag 'price',number_to_currency(89, precision: 0),  class:'price' %></div>
 
-<%= label_tag 'qty', 'Quantity:' %>
-<%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %>
+<div><%= label_tag 'qty', 'Quantity:' %>
+<%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></div>
+
+</div>
 
 
-<%= submit_tag 'Add To Cart', class:'addcart' %>
+<div><%= submit_tag 'Add To Cart', class:'addcart' %>
+<i class="fa fa-heart fav_button"></i>
+
+
 
 
 </div>
 
-<p class = "product_text"><%= @photo.desc %></p>
+<p class = "product_text"><%= @photo.desc %></div>
 
 </div>
 
@@ -54,7 +63,7 @@
 <h4>Customers Also Viewed</h4>
 <div class="ribbon container_backdrop">
 <% @photos.each do |photo| %>
-<%= link_to( image_tag("photo/#{photo.id_num}.jpg"), photo_url(photo.id) ) %>
+<%= link_to( image_tag("matted/#{photo.id_num}.jpg"), photo_url(photo.id) ) %>
 <% end %>
 </div>
 </div>
