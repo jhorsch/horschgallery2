@@ -254,6 +254,7 @@ header {
 footer{
   text-align: center;
   padding: 20px;
- border-top: 1px solid #ccc;
-  color: $black_color;
+  border-top: 2px dotted $orange_color;
+  background: white;
+  color: black;
 }

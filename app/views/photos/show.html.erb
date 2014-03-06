@@ -8,7 +8,9 @@
 <div class='product_container'>
 <div class='product'>
 
-<%= link_to( image_tag("matted/#{@photo.id_num}.jpg"), "matted/#{@photo.id_num}.jpg") %>
+<%= link_to( image_tag("matted/#{@photo.id_num}.jpg"), "/assets/matted/#{@photo.id_num}.jpg" ) %>
+
+
 
 <!-- <a href='/image/<%= @photo.id_num %>.jpg' class='image-link'>
           <img class='feature' src="matted/#{@photo.id_num}.jpg"> </a> -->

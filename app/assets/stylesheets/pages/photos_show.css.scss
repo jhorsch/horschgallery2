@@ -9,7 +9,8 @@
   color: #aaa;
   font-size: 14px;
   a{
-    color: $orange_color;
+    color: fade-out($black_color,.4);
+    text-decoration: underline;
     font-size: 18px;
     padding: 0 5px;
 
@@ -102,9 +103,16 @@
     padding: 0;
   }
 
-  select{
-
+   select {
+    height: 24px;
+  .dropdown select {
+      border: 5px !important;.
+     -webkit-appearance: none;
+     -moz-appearance: none;
   }
+  }
+
+
   .price{
     float: none;
     font-weight: bold;
@@ -141,7 +149,7 @@
     margin-left: 50px;
     max-width: 100%;
     white-space: nowrap;
-    border-bottom: 10px solid fade-out($black_color,.4);
+    border-bottom: 10px solid fade-out($black_color,.2);
     padding: 20px 0;
 
   }

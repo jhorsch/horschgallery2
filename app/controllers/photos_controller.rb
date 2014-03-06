@@ -17,6 +17,10 @@ class PhotosController < ApplicationController
     verticals = ['bw30','bw51','bw103','vint19','vint14','vint43']
     @verticals = Photo.where(id_num: [verticals])
 
+    color_to_bw = ['2805','bw21']
+    @color_to_bw = Photo.where(id_num: [color_to_bw])
+
+    @single = Photo.where(id_num: '2910')
   end
 
 
