@@ -32,17 +32,19 @@ pre {
 
 a {
   text-decoration: none;
+
   &:visited {
     // color: #666;
   }
   &:hover {
+
 
   }
 }
 
 
 img{
-  opacity: .93;
+  opacity: .95;
   width: 100%;
   &:hover{
     opacity: 1;
