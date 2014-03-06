@@ -1,8 +1,8 @@
-<div class="photo-container-horiz2x3">
+<div class="photo-container-horiz">
 
 
 
-<% @photoset2x3.each do |photo| %>
+<% @featured.each do |photo| %>
 <div class="ind_imge">
 <a href="">
   <a href=<%= category_url(photo.category) %>><%= image_tag "image/#{photo.id_num.downcase}.jpg" %></a>

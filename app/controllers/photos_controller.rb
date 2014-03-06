@@ -3,18 +3,19 @@ class PhotosController < ApplicationController
 
 
   def index
+
     @photos = Photo.all
-    @solo_large_photo = Photo.where(id_num: '2805')
 
-    # @phototest = Photo.where(id_num: 'bw21').first
-    myarray = ['4094','1424','1532','a11','2900','1683','260','3059']
 
-    @photoset = Photo.where(id_num: [myarray])
+    featured = ['4094','1424','1532','a11','2900','1683','260','3059']
+    @featured = Photo.where(id_num: [featured])
 
-    myarray6 = ['a10','a5','a11','bw99','bw19', 'bw17']
+    top_gifts = ['a10','a5','a11','bw99','bw19', 'bw17']
+    @top_gifts = Photo.where(id_num: [top_gifts])
 
-    @photoset2x3 = Photo.where(id_num: [myarray6])
 
+    verticals = ['bw30','bw51','bw103','vint19','vint14','vint43']
+    @verticals = Photo.where(id_num: [verticals])
 
   end
 

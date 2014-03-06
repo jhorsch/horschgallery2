@@ -115,13 +115,21 @@
   width: 100%;
   text-align: center;
 
+   .ind_imge{
 
-  img{
-    display: inline-block;
-    width: 300px;
-    margin: 0 15px 15px 0;
+      position: relative;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      position: relative;
+      width: 27%;
 
-  }
+
+      img{
+        width: 100%;
+      }
+
+    }
+
 }
 
 .photo-container-horiz1x2{

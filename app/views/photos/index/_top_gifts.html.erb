@@ -1,0 +1,17 @@
+<div class="photo-container-horiz2x3">
+
+
+
+<% @top_gifts.each do |photo| %>
+<div class="ind_imge">
+<a href="">
+  <a href=<%= photo_url(photo.id) %>><%= image_tag "image/#{photo.id_num.downcase}.jpg" %></a>
+<h4 class='home_cat_title'><%= photo.sub_category %></h4>
+</a>
+</a>
+</div>
+<% end %>
+
+
+
+</div>
