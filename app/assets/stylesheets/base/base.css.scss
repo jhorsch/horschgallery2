@@ -1,6 +1,6 @@
 /*COLORS*/
 
-$black_color: #222222;
+$black_color: #333;
 $gray_color: #D7D7D7;
 $white_color: #D0CAC9;
 $red_color:  #8D3226;
@@ -9,6 +9,9 @@ $orange_color: #DA7C05;
 
 $main_body_width: 1100px;
 
+// FONTS
+$serif: 'Garamond';
+$sans_serif: 'Arial';
 
 // $link_color: #3782C4;
 // $background_color: #e8e7ec;
@@ -20,7 +23,7 @@ $main_body_width: 1100px;
 body {
    font-size: 16px;
   background: #eee;
-  font-family: "Garamond";
+  font-family: serif;
   line-height: 1.5;
 }
 
@@ -60,7 +63,7 @@ img{
 /*HEADERS  */
 h1,h2,h3,h4,h5,h6 {
 
-  font-family: "Garamond";
+  font-family: $sans_serif;
 }
 
 
@@ -78,12 +81,12 @@ h2 {
 
   margin-top: 0px;
   font-size: 18px;
-  font-family: "Garamond";
+
 }
 
 h3 {
   margin-top: 20px;
-  font-family: "Arial";
+
 }
 
 
@@ -91,7 +94,7 @@ h3 {
 
 
 p, blockquote, span {
-    font-family: "Garamond";
+    font-family: $serif;
     color: $black_color;
 
     // margin: 40px 0;
@@ -99,7 +102,7 @@ p, blockquote, span {
 }
 
 li {
-  font-family: "Garamond";
+  font-family: $serif;
 }
 
 

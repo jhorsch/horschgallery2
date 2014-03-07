@@ -55,7 +55,7 @@
 
   span.customer_name{
     color: $red_color;
-    font-family: "Arial";
+    font-family: serif;
     font-size: 14px;
     display: block;
     font-style: normal;
@@ -109,6 +109,7 @@
   img{
     width: 100%;
     box-shadow: 0px 5px 2px #bbb;
+    margin-top: -50px;
     opacity: 1;
   }
 

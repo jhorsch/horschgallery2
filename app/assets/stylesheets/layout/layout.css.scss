@@ -16,10 +16,10 @@
 
   .header_space_holder{
 
-    height: 90px;
+    height: 100px;
     display: block;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
   }
 
@@ -91,14 +91,12 @@ header {
   .account {
     margin-left: 110px;
     font-family: "Arial";
-    text-transform: uppercase;
 
   }
 
   .photographers{
     margin-left: 40px;
     font-family: "Arial";
-    text-transform: uppercase;
 
  }
 
@@ -116,7 +114,8 @@ header {
 .bottom_nav {
   width: 100%;
   background: white;
-  border-bottom: 2px solid $black_color;
+  border-bottom: 4px solid #ddd;
+  font-family: 'Arial'
 }
 
 .bottom_nav_content {
@@ -144,6 +143,7 @@ header {
       // background: green;
       padding: 5px;
       color: $orange_color;
+      font-weight: bold;
       font-size: 20px;
 
       &:visited{
@@ -191,6 +191,7 @@ header {
     h3{
       margin: 0px 0 5px 0;
       color: $orange_color;
+      text-transform: uppercase;
     }
 
     li{
@@ -211,7 +212,7 @@ header {
   z-index: 800;
   top: 110%;
   left: 0;
-
+  font-family: 'Arial';
 
   width: 650px;
   margin-top: -4px;
@@ -226,6 +227,10 @@ header {
   opacity: .98;
   visibility: hidden;
   overflow: hidden;
+
+  a{
+    font-family: $serif;
+  }
 
   &:before {
       content: '';
@@ -263,6 +268,12 @@ footer{
   text-align: center;
   padding: 20px;
   border-top: 2px dotted $orange_color;
-  background: white;
-  color: black;
+  background: fade-out($orange_color,.3);
+  color: white;
+
+  .signupnewsletter{
+    a{
+      color: white;
+    }
+  }
 }
