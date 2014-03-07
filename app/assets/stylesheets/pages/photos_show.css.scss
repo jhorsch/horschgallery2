@@ -48,6 +48,7 @@
       cursor: zoom-in;
       cursor: -webkit-zoom-in;
       cursor: -moz-zoom-in;
+      opacity: 1;
 
     }
     .artist{
@@ -123,7 +124,7 @@
     border-top: 1px solid #ccc;
     margin: 20px 0;
     padding-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -156,10 +157,12 @@
 
   }
 
+
   img{
     display: inline-block;
     margin: 0px 15px 0px 0px;
     width: 15%;
+
 
     // box-shadow: 2px 2px 2px #ccc;
   }
