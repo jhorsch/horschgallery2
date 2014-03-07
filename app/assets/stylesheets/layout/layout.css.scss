@@ -64,11 +64,15 @@ header {
 
   .logoname{
 
-    font-family: "Kozuka Mincho Pro", sans-serif;
-    font-size: 20px;
-    padding-right: 15px;
+
     border-right: 1px solid #ccc;
-    color: #fff;
+    a{
+      color: #fff;
+      font-family: "Kozuka Mincho Pro", sans-serif;
+      font-size: 20px;
+      padding-right: 15px;
+
+    }
   }
 
   input[type="text"] {
@@ -89,7 +93,7 @@ header {
   }
 
   .account {
-    margin-left: 110px;
+    margin-left: 180px;
     font-family: "Arial";
 
   }
@@ -137,7 +141,7 @@ header {
     display: inline-block;
     position: relative;
     height: 40px;
-    padding: 0 50px 0 4px;
+    padding: 0 30px 0 4px;
 
     h2  a{
       // background: green;

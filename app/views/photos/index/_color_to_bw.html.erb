@@ -2,7 +2,6 @@
 <% @color_to_bw.each do |photo| %>
 <div class="ind_imge">
   <a href=<%= photo_url(photo) %>><%= image_tag "image/#{photo.id_num.downcase}.jpg" %></a>
-</a>
 </div>
 <% end %>
 

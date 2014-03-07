@@ -12,6 +12,7 @@
     border: 1px solid darken($orange_color,.9);
     display: inline-block;
     margin-bottom: 20px;
+    outline: none;
 
 
       &:hover{
@@ -32,7 +33,7 @@
     display: inline-block;
     cursor: pointer;
     padding-top: 13px;
-
+    outline: none;
 
     border-radius: 5px;
     border: 1px solid darken(#aaa,.9);

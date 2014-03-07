@@ -21,7 +21,7 @@
       line-height: 2em;
       font-size: 20px;
       text-align: center;
-      border-top: 1px solid #ccc;
+      border-top: 2px solid #aaa;
       border-bottom: 1px solid #ccc;
       width: 90%;
 
@@ -101,8 +101,20 @@
     margin-left: 10px;
     font-size: 16px;
   }
-}
 
+  .start_browsing{
+    a{
+    color: #4C7A8A;
+
+    }
+    font-size: 30px;
+    font-weight: 800px;
+  }
+}
+ .fa-arrow-right{
+    margin-left: 5px;
+
+ }
 
 .panorama_container {
 
