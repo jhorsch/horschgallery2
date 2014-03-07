@@ -86,7 +86,7 @@ header {
   }
 
   .fa-search{
-    color: $black_color;
+    color: $orange_color;
     margin-left: -35px;
     padding-bottom: 5px;
     font-size: 20px;
@@ -128,8 +128,7 @@ header {
   display: block;
   width: $main_body_width;
   height: 50px;
-  padding-top: 10px;
-  vertical-align: center;
+  vertical-align: top;
 
   font-size: 0px;
   background: white;
@@ -141,33 +140,32 @@ header {
     display: inline-block;
     position: relative;
     height: 40px;
-    padding: 0 30px 0 4px;
+    }
 
-    h2  a{
+    .main_menu_link{
+
       // background: green;
-      padding: 5px;
-      color: $orange_color;
+      // border: 1px solid black;
+      padding: 12px;
+      color: $black_color;
       font-weight: bold;
       font-size: 20px;
 
       &:visited{
-      color: $orange_color;
+        color: $black_color;
+      }
 
+    }
+
+    .browse{
+
+      color: $orange_color;
+      &:visited{
+        color: $orange_color;
       }
     }
 
-
-
-
-
-
-  }
-
-
 }
-
-
-
 
 .main_menu:hover > .sub_menu_container {
 

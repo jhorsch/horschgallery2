@@ -15,25 +15,33 @@
 
   <p class="p_tagline">Over the last 30 years Bob Horsch has documented the dynamic landscape of Chicago through the lens of a camera.  His photography portfolio contains a diverse selection of beautiful framed Chicago skyline photos from all four colorful seasons blended with eye-catching pictures of the Chicago sports teams and home stadiums.</p>
 
+  <div class="featured_gallery">
+
   <h3 class="shop_tagline">Shop Featured Chicago Photo Galleries</h3>
+  <%= render "/photos/index/featured" %>
 
-    <%= render "/photos/index/featured" %>
+  </div>
 
-  <p class="customer_testomonial">Bob Horsch's photos are a living archive of Chicago life and architecture.  I really enjoy his work!
+  <p class="customer_testomonial">Bob Horsch's photographs are a living archive of Chicago life and architecture.  I really enjoy his art!
   <span class="customer_name">Stephanie - Chicago, IL </span>
 
   <p>Browse the largest collection of quality & affordable framed pictures of Chicago ranging from the early 1900's to the present day.  All of his one-of-a-kind Chicago pictures for sale come in a variety of styles which include vintage, modern, black & white and color.</p>
 
 
-
+<div class="vertical_gallery">
     <%= render "/photos/index/verticals" %>
+</div>
 
      <p>Looking for a unique gift to give to that special person in your life?</p>
+
+<div class="top_gifts_gallery">
 
     <h3 class="shop_gifts_cta">Shop Our Top Gifts of 2014<span class="starting_at">Prices start at $24</span></h3>
 
 
     <%= render "/photos/index/top_gifts" %>
+
+  </div>
 
     <p>Do you prefer black & white photogrphy instead of color?<br> No problem.  We can do the conversion for you.</p>
 
@@ -45,9 +53,9 @@
 
     <%= render "/photos/index/single" %>
 
-<p class="start_browsing"><a href="/categories/7">Start browsing our most popular Chicago photographs</a></p>
+<p class="start_browsing"><a href="/categories/7">Start browsing our most popular Chicago photographs<i class="fa fa-arrow-right"></i></a></p>
 
-<!-- <i class="fa fa-arrow-right"> -->
+
 
  </div>
 
