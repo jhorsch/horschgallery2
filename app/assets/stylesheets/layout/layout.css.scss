@@ -78,11 +78,12 @@ header {
   input[type="text"] {
     width: 400px;
     height: 30px;
-    border-radius: 15px;
+    border-radius: 5px;
     outline: none;
     padding: 0 15px;
-    font-size: 14px;
+    font-size: 16px;
     margin-left: 15px;
+    border: 1px solid $gray_color;
   }
 
   .fa-search{
