@@ -26,6 +26,7 @@
     // border-bottom: 1px solid #ccc;
     @extend .pagination_styling;
 
+
 }
 
   .pagination{
@@ -43,7 +44,7 @@
       // background: yellow;
       margin: 0 5px;
       border: 1px solid #aaa;
-      background: $orange_color;
+      background: white;
 
       a{
         color: $orange_color;
