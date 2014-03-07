@@ -2,10 +2,9 @@
 
 <% @single.each do |photo| %>
 <div class="ind_imge">
-<a href="">
   <a href=<%= photo_url(photo) %>><%= image_tag "#{photo.id_num.downcase}.jpg" %></a>
 </a>
-</a>
+
 </div>
 <% end %>
 

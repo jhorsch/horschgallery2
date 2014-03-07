@@ -31,6 +31,7 @@
   .pagination{
 
     font-size: 0;
+    display: block;
     margin: 10px 0 20px 0;
     // background: yellow;
     // background: yellow;
@@ -42,7 +43,7 @@
       // background: yellow;
       margin: 0 5px;
       border: 1px solid #aaa;
-      // background: $orange_color;
+      background: $orange_color;
 
       a{
         color: $orange_color;
@@ -61,7 +62,7 @@
 .category_wrapper{
 
   width: 90%;
-  margin: 0 auto;
+  margin: 0px auto;
   // background: red;
   // text-align: center;
 
@@ -81,9 +82,9 @@
   h1{
 
     display: block;
-    margin: 40px 0 10px 0;
-    padding-top: 30px;
-    border-top: 1px solid #ccc;
+    margin: 0px 0 10px 0;
+    // padding-top: 30px;
+    // border-top: 1px solid #ccc;
     font-weight: 600;
 
   }
