@@ -266,10 +266,9 @@ header {
 // FOOTER
 footer{
   text-align: center;
-  padding: 20px;
-  border-top: 2px dotted $orange_color;
-  background: fade-out($orange_color,.3);
-  color: white;
+  padding: 10px;
+  border-top: 2px dotted #ccc;
+  color: $black_color;
 
   .signupnewsletter{
     a{
