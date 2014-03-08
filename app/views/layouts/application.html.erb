@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HorschGallery.com</title>
+
+<title><%= yield(:title) %></title>
+<meta name="description" content="<%= yield(:meta_desc) %>"/>
+
 <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
@@ -43,7 +46,7 @@
       <%= render "layouts/gifts" %>
     </li> -->
     <ul>
-    <li class="main_menu"><h2 class='main_menu_link browse' href="#">Browse All Categories<i class="fa fa-arrow-right"></i></h2>
+    <li class="main_menu"><h2 class='main_menu_link browse' href="#">Browse Galleries<i class="fa fa-arrow-right"></i></h2>
 
     <li class="main_menu"><h2><a class='main_menu_link' href="#">Chicago Cityscape</a></h2>
       <%= render "layouts/chi_cityscape" %>

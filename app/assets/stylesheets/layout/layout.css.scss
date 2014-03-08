@@ -83,7 +83,7 @@ header {
     padding: 0 15px;
     font-size: 16px;
     margin-left: 15px;
-    border: 1px solid $gray_color;
+    border: 2px solid #bbb;
   }
 
   .fa-search{
@@ -143,6 +143,7 @@ header {
     display: inline-block;
     position: relative;
     height: 40px;
+
     }
 
     .main_menu_link{

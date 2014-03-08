@@ -1,3 +1,6 @@
+<% meta_title "Photo of #{@photo.title } | #{@photo.sub_category}" %>
+<% meta_desc "xxxxxxx" %>
+
 <div></div><p id="notice"><%= notice %></p>
 
 <div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photo.category) %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= category_url(@photo.category)  %>"><%= @photo.sub_category.titleize  %></a></div>
