@@ -1,5 +1,18 @@
 @import "base/base";
 
+.button_wrapper{
+
+  margin-bottom: 30px;
+  li{
+    display: inline-block;
+    vertical-align: top;
+
+  }
+
+  .addcart{
+    margin-right: 10px;
+  }
+}
 .addcart{
 
     background: $orange_color;
@@ -11,14 +24,12 @@
     border-radius: 5px;
     border: 1px solid darken($orange_color,.9);
     display: inline-block;
-    margin-bottom: 20px;
     outline: none;
 
 
       &:hover{
         background:  #DE890B;
       }
-
 
 }
 
@@ -37,8 +48,6 @@
 
     border-radius: 5px;
     border: 1px solid darken(#aaa,.9);
-
-
 
 }
 

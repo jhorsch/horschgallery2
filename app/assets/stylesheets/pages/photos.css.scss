@@ -13,6 +13,7 @@
 
   h1{
     padding-top: 20px;
+    text-align: center;
   }
 
   p{
@@ -80,11 +81,12 @@
 
   h3.shop_tagline{
     font-size: 26px;
-    margin: 0px 55px;
+    margin: 0px ($main_body_width*.05);
     font-weight: 600;
     text-align: left;
     border-top: 1px solid #ccc;
     padding: 30px 0 10px 0;
+    // background: green;
 
 
   }
@@ -94,6 +96,7 @@
     margin: 10px 130px;
     font-weight: 600;
     text-align: left;
+    // background: green;
 
 
   }
@@ -103,6 +106,7 @@
     font-style: italic;
     font-weight: normal;
     margin-left: 10px;
+    // background: yellow;
     font-size: 16px;
     color: $red_color;
   }
@@ -137,7 +141,7 @@
 
 .gallery_template{
 
-  margin: 20px auto;
+  margin: 40px auto;
   font-size: 0;
   width: 100%;
   text-align: center;

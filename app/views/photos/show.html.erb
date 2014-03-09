@@ -3,79 +3,69 @@
 
 <div></div><p id="notice"><%= notice %></p>
 
+<div class="page_wrapper">
+
 <div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photo.category) %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= category_url(@photo.category)  %>"><%= @photo.sub_category.titleize  %></a></div>
 
+
+
+
+
 <div class="product_wrapper">
-
-
-<div class='product_container'>
 <div class='product'>
-
 <%= link_to image_tag("matted/#{@photo.id_num}.jpg"), "/assets/enlarged/#{@photo.id_num}.jpg" , class: 'image_link' %>
-
-
-
-<!-- <a href='/image/<%= @photo.id_num %>.jpg' class='image-link'>
-          <img class='feature' src="matted/#{@photo.id_num}.jpg"> </a> -->
 <div class='artist'>Photographed by Bob Horsch</div>
 <%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %>
 
+
 </div>
 </div>
-</div>
+
 
 
 <div class="product_info_wrapper">
 
-<div class='product_info'>
+<h1 class='photo_title'><%= @photo.title %></h1>
 
-<h1 class='photo_title_detail'><%= @photo.title %></h1>
-
-<div class="options_wrapper">
-<div class='detail_field'><%= label_tag 'choose_photo_size', 'Choose Your Size:'  %>
+<div class='option_row'><%= label_tag 'choose_photo_size', 'Choose Your Size:'  %>
 <%= select_tag 'choose_photo_size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %></div>
 
-<div class='detail_field'><%= label_tag 'choose_mat', 'Mat Color:' %>
+<div class='option_row'><%= label_tag 'choose_mat', 'Mat Color:' %>
 <%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %></div>
 
-<div class='detail_field'><%= label_tag 'choose_frame', 'Frame Style:' %>
+<div class='option_row'><%= label_tag 'choose_frame', 'Frame Style:' %>
 <%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %></div>
 
-<div class='detail_field'><%= label_tag 'price', 'Price:' %>
-<%= label_tag 'price', number_to_currency(89, precision: 0),  class:'price' %></div>
-
-<div class='detail_field'><%= label_tag 'qty', 'Quantity:' %>
+<div class='option_row'><%= label_tag 'qty', 'Quantity:' %>
 <%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></div>
 
-</div>
+<div class='option_row'><%= label_tag 'price', 'Price:' %>
+<i class="fa fa-usd"></i><label class='price'>79</label><a class='free_return_shipping' href="#"> & Free Return Shipping</a></div>
 
-
-<div><%= submit_tag 'Add To Cart', class:'addcart' %>
-<i class="fa fa-heart fav_button"></i>
-
-
-
-
-</div>
+<ul class="button_wrapper">
+<li><%= submit_tag 'Add To Cart', class:'addcart' %>
+<li><i class="fa fa-heart fav_button"></i></li>
+</ul>
 
 <p class = "product_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 
 </div>
 
+
+
+
+<ul class="recommended_photoset_wrapper">
+<h3>Customers Also Viewed</h3>
+<% @customer_viewed.each do |photo| %>
+    <li>
+      <%= link_to( image_tag("matted/#{photo.id_num}.jpg"), photo_url(photo.id)) %>
+      <h4><%= photo.title %></h4>
+    </li>
+  <% end %>
+</ul>
+
+
 </div>
-
-
-<div class='recommend_product_wrapper'>
-<h4>Customers Also Viewed</h4>
-<div class="recommend_product_container container_backdrop">
-<% @photos.each do |photo| %>
-<%= link_to( image_tag("matted/#{photo.id_num}.jpg", class: 'recommend_product'), photo_url(photo.id) ) %>
-<% end %>
-</div>
-</div>
-
-
-
 
 
 

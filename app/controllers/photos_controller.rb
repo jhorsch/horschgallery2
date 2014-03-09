@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     @photos = Photo.all
 
 
-    featured = ['4094','1424','1532','a11','2900','1683','260','3059']
+    featured = ['4094','bw130','1424','2935','4122','2900','1423','3059','4113']
     @featured = Photo.where(id_num: [featured])
 
     top_gifts = ['a10','a5','a11','bw99','bw19', 'bw17']
@@ -25,7 +25,9 @@ class PhotosController < ApplicationController
 
 
   def show
-    @photos = Photo.where(main_category: @photo.main_category).shuffle.take(6)
+    @customer_viewed = Photo.where(main_category: @photo.main_category).shuffle.take(5)
+
+    @recently_viewed = Photo.all.sample(5)
 
   end
 

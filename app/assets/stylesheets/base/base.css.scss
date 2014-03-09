@@ -6,13 +6,14 @@ $white_color: #D0CAC9;
 $red_color:  #8D3226;
 $orange_color: #DA7C05;
 $green_color: green;
+$blue_color: #0067A6;
+$dark_gray: #969696;
 // $orange_color: #C27D08;
 
 $main_body_width: 1100px;
 
 // FONTS
-$serif: 'Garamondbw130
-', serif;
+$serif: 'Garamond', serif;
 $sans_serif: 'Cabin Condensed', sans-serif;
 
 
@@ -77,8 +78,6 @@ h1,h2,h3,h4,h5,h6, label, select {
 h1 {
 
   font-size: 34px;
-  margin-top: 20px;
-  text-align: center;
   text-transform: uppercase;
   font-weight: 400;
 
@@ -86,13 +85,11 @@ h1 {
 
 h2 {
 
-  margin-top: 0px;
   font-size: 18px;
 
 }
 
 h3 {
-  margin-top: 20px;
 
 }
 
