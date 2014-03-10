@@ -3,9 +3,9 @@
 $(function() {
 
 
-  $('.image_link').magnificPopup({
-    type:'image'
-  });
+  // $('.image_link').magnificPopup({
+  //   type:'image'
+  // });
 
 
     var price = $('.price').text();
