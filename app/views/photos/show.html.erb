@@ -5,7 +5,11 @@
 
 <div class="page_wrapper">
 
-<div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photo.category)  %>">Top Main Gallery</a> > <a href="<%= category_url(@photo.category) %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= category_url(@photo.category)  %>"><%= @photo.sub_category.titleize  %></a></div>
+<div class='breadcrumbs'>
+  <a href="#"><%= @photo.category.super_category %></a> >
+  <a href="#"><%= @photo.category.main_category  %></a> >
+  <a href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
+</div>
 
 
 

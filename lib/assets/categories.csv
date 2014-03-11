@@ -1,64 +1,67 @@
-title,main_category
-2005 White Sox Championship,Chicago White Sox
-2009 Winter Classic,Chicago Blackhawks
-2010 Blackhawks Championship,Chicago Blackhawks
-2013 Blackhawks Stanley Cup Champions,Chicago Blackhawks
-Big Ten College Stadiums,College Football
-Black & White Boston Photos,Boston
-Black & White Chicago - Horizontal,Chicago Black & White
-Black & White Chicago - Vertical,Chicago Black & White
-Black & White Chicago Panoramas,Chicago Panoramas
-Black & White San Francisco,San Francisco
-Black & White Wrigley Field,Chicago Cubs
-Boston Aerial Images,Boston
-Boston Landmarks & Attractions,Boston
-Boston Public Garden,Boston
-Boston Skyline,Boston
-Buckingham Fountain,Chicago Landmarks
-Bulls Championship,Chicago Bulls
-Camden Yards,MLB
-Cellular Field Panoramas,Chicago White Sox
-Chicago Aerial Views,Chicago Cityscape
-Chicago Bears Players,Chicago Bears
-Chicago Blackhawks Players,Chicago Blackhawks
-Chicago Board Of Trade,Chicago Landmarks
-Chicago Cityscape,Chicago Cityscape
-Chicago Cubs Players,Chicago Cubs
-Chicago Daytime & Aerial Panoramas,Chicago Panoramas
-Chicago Gifts,Chicago Gifts
-Chicago Marathon,Other Sports Stadiums
-Chicago Sculptures,Chicago Landmarks
-Chicago Street Cars,Chicago Vintage
-Chicago Theatre,Chicago Landmarks
-Chicago Water Tower,Chicago Landmarks
-Comiskey Park,Chicago White Sox
-Fenway Park,Boston
-Golden Gate Bridge,San Francisco
-Historic Vintage Chicago Landmarks,Chicago Vintage
-Ireland & Irish Pubs,European Cities
-Lambeau Field,NFL
-Michael Jordan,Chicago Bulls
-Millennium Park,Chicago Landmarks
-Modern Day Chicago - Thick Black Frame,Chicago Black & White
-Navy Pier,Chicago Landmarks
-Notre Dame Football,College Football
-Old Chicago Stadium,Chicago Blackhawks
-Other Famous Chicago Landmarks,Chicago Landmarks
-San Francisco Landmarks,San Francisco
-San Francisco Skyline,San Francisco
-Shea Stadium,MLB
-Soldier Field,Chicago Bears
-Soldier Field Aerials,Chicago Bears
-Soldier Field Panoramas,Chicago Bears
-State Street,Chicago Landmarks
-Sunset & Dusk Panoramas,Chicago Panoramas
-Tall Ships Chicago 2010,Chicago Landmarks
-Trump Tower Chicago,Chicago Landmarks
-Us Cellular Field,Chicago White Sox
-Vintage Chicago Skyline,Chicago Vintage
-Vintage Chicago Sports,Chicago Vintage
-Wrigley Building,Chicago Landmarks
-Wrigley Field,Chicago Cubs
-Wrigley Field Aerials,Chicago Cubs
-Wrigley Field Panoramas,Chicago Cubs
-Yankee Stadium,MLB
+title,main_category,super_category,id_num
+2005 White Sox Championship,Chicago White Sox,Chicago Sports,1
+2009 Winter Classic,Chicago Blackhawks,Chicago Sports,2
+2010 Blackhawks Championship,Chicago Blackhawks,Chicago Sports,3
+2013 Blackhawks Stanley Cup Champions,Chicago Blackhawks,Chicago Sports,4
+Best Selling Chicago Skyline,Best Sellers,Most Popular,5
+Best Selling Chicago Sports,Best Sellers,Most Popular,6
+Big Ten College Stadiums,College Football,Other Sports,7
+Black & White Boston Photos,Boston,Top US Cities,8
+Black & White Chicago - Horizontal,Chicago Black & White,Chicago Cityscape,9
+Black & White Chicago - Vertical,Chicago Black & White,Chicago Cityscape,10
+Black & White Chicago Panoramas,Chicago Panoramas,Chicago Cityscape,11
+Black & White San Francisco,San Francisco,Top US Cities,12
+Black & White Wrigley Field,Chicago Cubs,Chicago Sports,13
+Boston Aerial Images,Boston,Top US Cities,14
+Boston Landmarks & Attractions,Boston,Top US Cities,15
+Boston Public Garden,Boston,Top US Cities,16
+Boston Skyline,Boston,Top US Cities,17
+Buckingham Fountain,Chicago Landmarks,Chicago Cityscape,18
+Bulls Championship,Chicago Bulls,Chicago Sports,19
+Camden Yards,MLB,Other Sports,20
+Cellular Field Panoramas,Chicago White Sox,Chicago Sports,21
+Chicago Aerial Views,Chicago Cityscape,Chicago Cityscape,22
+Chicago Bears Players,Chicago Bears,Chicago Sports,23
+Chicago Blackhawks Players,Chicago Blackhawks,Chicago Sports,24
+Chicago Board Of Trade,Chicago Landmarks,Chicago Cityscape,25
+Chicago Cityscape,Chicago Cityscape,Chicago Cityscape,26
+Chicago Cubs Players,Chicago Cubs,Chicago Sports,27
+Chicago Daytime & Aerial Panoramas,Chicago Panoramas,Chicago Cityscape,28
+Chicago Marathon,xxx,xxx,29
+Chicago Sculptures,Chicago Landmarks,Chicago Cityscape,30
+Chicago Street Cars,Chicago Vintage,Chicago Cityscape,31
+Chicago Theatre,Chicago Landmarks,Chicago Cityscape,32
+Chicago Water Tower,Chicago Landmarks,Chicago Cityscape,33
+Comiskey Park,Chicago White Sox,Chicago Sports,34
+Fenway Park,Boston,Top US Cities,35
+Golden Gate Bridge,San Francisco,Top US Cities,36
+Historic Vintage Chicago Landmarks,Chicago Vintage,Chicago Cityscape,37
+Ireland & Irish Pubs,European Cities,Europen Cities,38
+Lambeau Field,NFL,Other Sports,39
+Michael Jordan,Chicago Bulls,Chicago Sports,40
+Millennium Park,Chicago Landmarks,Chicago Cityscape,41
+Modern Day Chicago - Thick Black Frame,Chicago Black & White,Chicago Cityscape,42
+Navy Pier,Chicago Landmarks,Chicago Cityscape,43
+Notre Dame Football,College Football,Other Sports,44
+Old Chicago Stadium,Chicago Blackhawks,Chicago Sports,45
+Other Famous Chicago Landmarks,Chicago Landmarks,Chicago Cityscape,46
+San Francisco Landmarks,San Francisco,Top US Cities,47
+San Francisco Skyline,San Francisco,Top US Cities,48
+Shea Stadium,MLB,Other Sports,49
+Soldier Field,Chicago Bears,Chicago Sports,50
+Soldier Field Aerials,Chicago Bears,Chicago Sports,51
+Soldier Field Panoramas,Chicago Bears,Chicago Sports,52
+State Street,Chicago Landmarks,Chicago Cityscape,53
+Sunset & Dusk Panoramas,Chicago Panoramas,Chicago Cityscape,54
+Tall Ships Chicago 2010,Chicago Landmarks,Chicago Cityscape,55
+Top 10 of 2014,Best Sellers,Most Popular,56
+Top Christmas Gifts,Holiday Shopping,Most Popular,57
+Trump Tower Chicago,Chicago Landmarks,Chicago Cityscape,58
+Us Cellular Field,Chicago White Sox,Chicago Sports,59
+Vintage Chicago Skyline,Chicago Vintage,Chicago Cityscape,60
+Vintage Chicago Sports,Chicago Vintage,Chicago Cityscape,61
+Wrigley Building,Chicago Landmarks,Chicago Cityscape,62
+Wrigley Field,Chicago Cubs,Chicago Sports,63
+Wrigley Field Aerials,Chicago Cubs,Chicago Sports,64
+Wrigley Field Panoramas,Chicago Cubs,Chicago Sports,65
+Yankee Stadium,MLB,Other Sports,66

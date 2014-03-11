@@ -17,7 +17,8 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 CSV.foreach("#{Rails.root}/lib/assets/categories.csv", headers: true) do |row|
      Category.create(
         :title => row[0],
-        :main_category => row[1]
+        :main_category => row[1],
+        :super_category => row[2]
       )
 
 end

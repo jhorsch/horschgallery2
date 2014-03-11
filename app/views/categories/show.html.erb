@@ -13,7 +13,11 @@
 
 
 <div class="top_pagination">
-  <div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photos.first.category) %>">Top Main Gallery</a> > <a href="<%= category_url(@photos.first.category)  %>"><%= @photos.first.main_category.titleize  %></a></div>
+<div class='breadcrumbs'>
+  <a href="#"><%= @category.super_category %></a> >
+  <a href="#"><%= @category.main_category %></a> >
+  <a href="<%= category_url(@category)  %>"><%= @category.title  %></a>
+</div>
 
 <%= will_paginate @photos %>
 </div>
