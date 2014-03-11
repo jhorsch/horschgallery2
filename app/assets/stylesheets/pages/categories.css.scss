@@ -7,16 +7,19 @@
 .pagination_styling{
 
     width: 100%;
-    text-align: right;
 }
 
 .top_pagination{
 
     padding: 20px 0px 0 0;
     margin: 2px 0 0px 0;
+    // background: yellow;
     border-top: 1px solid #ccc;
     @extend .pagination_styling;
-
+    div{
+      display: inline-block;
+      vertical-align: top;
+    }
 }
 
 .bottom_pagination{
@@ -32,10 +35,16 @@
 .pagination{
 
     font-size: 0;
-    display: block;
-    margin: 10px 0 20px 0;
+    width: 50%;
+    text-align: right;
+
+    margin: 0px 0 0px 0;
     // background: yellow;
     // background: yellow;
+
+    div{
+      display: inline-block;
+    }
 
     li{
       font-size: 16px;
@@ -98,7 +107,7 @@
     width: 300px;
     margin: 0 40px 80px 0px;
 
-    &:nth-child(3n){
+    &:nth-of-type(3n){
       margin-right: 0px;
     }
   }

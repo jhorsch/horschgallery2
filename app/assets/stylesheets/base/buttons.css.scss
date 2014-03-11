@@ -3,6 +3,7 @@
 .button_wrapper{
 
   margin-bottom: 30px;
+
   li{
     display: inline-block;
     vertical-align: top;
@@ -16,7 +17,7 @@
 .addcart{
 
     background: $orange_color;
-    width: 380px;
+    width: 400px;
     height: 50px;
     font-size: 22px;
     cursor: pointer;
@@ -36,21 +37,22 @@
 .fav_button {
 
     background: #ccc;
-    width: 50px;
+    width: 100px;
     text-align: center;
     color: $black_color;
-    height: 50px;
-    font-size: 22px;
-    display: inline-block;
+    font-size: 16px;
     cursor: pointer;
-    padding-top: 13px;
+    padding: 3px 0;
     outline: none;
-
+    margin-bottom: 13px;
     border-radius: 5px;
     border: 1px solid darken(#aaa,.9);
 
 }
 
+.fa-heart{
+  font-size: 16px;
+}
 
 .fav_button:hover, .fav_button:active {
   background-color: #E8E8E7;

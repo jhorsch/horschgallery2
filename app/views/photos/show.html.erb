@@ -1,24 +1,26 @@
 <% meta_title "Photo of #{@photo.title } | #{@photo.sub_category}" %>
 <% meta_desc "xxxxxxx" %>
 
-<div></div><p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <div class="page_wrapper">
 
-<div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photo.category) %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= category_url(@photo.category)  %>"><%= @photo.sub_category.titleize  %></a></div>
-
-
+<div class='breadcrumbs'><a href="<%= root_url %>">Home</a> > <a href="<%= category_url(@photo.category)  %>">Top Main Gallery</a> > <a href="<%= category_url(@photo.category) %>"><%= @photo.main_category.titleize  %></a> > <a href="<%= category_url(@photo.category)  %>"><%= @photo.sub_category.titleize  %></a></div>
 
 
 
 <div class="product_wrapper">
 <div class='product'>
 <%= link_to image_tag("matted/#{@photo.id_num}.jpg"), "/assets/image/#{@photo.id_num}.jpg" , class: 'image_link' %>
-<div class='artist'>Photographed by Bob Horsch</div>
-<%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %>
-
+<div class="share_wrapper">
+  <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
+  <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
+</div>
+<div class='artist'>Photographed by Bob Horsch in 2004.</div>
+<div class="watermark">The purchased photo will not contain a watermark</div>
 
 </div>
+
 </div>
 
 
@@ -26,6 +28,9 @@
 <div class="product_info_wrapper">
 
 <h1 class='photo_title'><%= @photo.title %></h1>
+
+<p class = "product_text"><%= @photo.desc %></p>
+
 
 <div class='option_row'><%= label_tag 'choose_photo_size', 'Choose Your Size:'  %>
 <%= select_tag 'choose_photo_size', "<option>8x10 Photo Only</option><option>8x10 Photo w/ 11x14 Mat</option><option>8x10 Photo w/ 11x14 Mat - Framed</option>".html_safe %></div>
@@ -43,11 +48,10 @@
 <i class="fa fa-usd"></i><label class='price'>79</label><a class='free_return_shipping' href="#"> & Free Return Shipping</a></div>
 
 <ul class="button_wrapper">
-<li><%= submit_tag 'Add To Cart', class:'addcart' %>
-<li><i class="fa fa-heart fav_button"></i></li>
+<li><%= submit_tag 'Add To Cart', class:'addcart' %></li>
+
 </ul>
 
-<p class = "product_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
 
 </div>
 

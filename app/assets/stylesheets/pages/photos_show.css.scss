@@ -3,21 +3,29 @@
 @import "base/buttons";
 
 .page_wrapper{
-  padding: 0px 50px;
+  padding: 0px 40px;
 }
 
 
 .breadcrumbs{
 
   color: #aaa;
-  font-size: 14px;
-  margin: -20px 0 20px 0;
+  font-size: 16px;
+  margin: 0px 0 15px 0;
+  width: 49%;
+  text-align: left;
   a{
     color: fade-out($black_color,.2);
     text-decoration: underline;
-    font-size: 18px;
+    font-size: 16px;
     padding: 0 5px;
+    &:first-child{
+      padding-left: 0px;
+    }
 
+    &:hover{
+      color: $orange_color;
+    }
   }
 }
 
@@ -45,9 +53,20 @@
   font-size: 16px;
   }
 
+  .watermark{
+    margin-bottom: 20px;
+  }
+  .share_wrapper{
+
+      div{
+        display: inline-block;
+        vertical-align: bottom;
+      }
+  }
+
   .social_buttons{
-  width: 225px;
-  margin-top: 10px;
+
+    width: 200px;
   }
 
 
@@ -68,8 +87,8 @@
   h1{
     font-size: 28px;
     text-align: left;
-    margin-top: 0px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 
   }
 
@@ -112,9 +131,10 @@
   }
 
   .product_text{
-    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     font-size: 18px;
-    padding: 20px 0;
+    padding: 0px 0 30px 0;
+    margin-bottom: 30px;
   }
 
 }
