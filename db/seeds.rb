@@ -30,7 +30,15 @@ CSV.foreach("#{Rails.root}/lib/assets/image.csv", headers: true) do |row|
         :main_category => row[2],
         :sub_category => row[3] ,
         :category_id => row[4],
-        :desc => row[5]
+        :desc => row[5],
+        :is_active => row[6],
+        :artist_name => row[7],
+        :year_taken => row[8],
+        :format_id => row[9],
+        :show_bw_conversion => row[10]
       )
+
+
+
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311175139) do
+ActiveRecord::Schema.define(version: 20140311190110) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -34,9 +34,11 @@ ActiveRecord::Schema.define(version: 20140311175139) do
     t.string   "main_category"
     t.string   "sub_category"
     t.integer  "category_id"
-    t.string   "slug"
+    t.string   "artist_name"
+    t.string   "year_taken"
+    t.boolean  "is_active"
+    t.string   "format_id"
+    t.boolean  "show_bw_conversion"
   end
-
-  add_index "photos", ["slug"], name: "index_photos_on_slug"
 
 end

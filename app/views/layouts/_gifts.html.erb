@@ -3,37 +3,40 @@
 <div class="nav_column">
 
 <div class="main_cat_grouping">
-<h3>Top Chicago Gifts</h3>
+<h3>Best Sellers</h3>
 <ul>
-<li><a href="#">Vintage Chicago Skyline</a></li>
-<li><a href="#">Vintage Chicago Sports</a></li>
-<li><a href="#">Chicago Cityscape</a></li>
-<li><a href="#">Black & White Horizontal</a></li>
+<%  find_categories('Best Sellers').each do  |category| %>
+  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
 </ul>
 </div>
 
 <div class="main_cat_grouping">
-<h3>Most Recent Photography</h3>
+<h3>What's New</h3>
 <ul>
-<li><a href="#">February 2014</a></li>
-<li><a href="#">December 2013</a></li>
-<li><a href="#">November 2013</a></li>
-
+<%  find_categories('Whats New').each do  |category| %>
+  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
 </ul>
 </div>
+
+
+
 </div>
+
 
 <div class="nav_column">
 
 <div class="main_cat_grouping">
-<h3>Christmas Favorites</h3>
+<h3>Holiday Shopping</h3>
 <ul>
-<li><a href="#">Vintage Chicago Skyline</a></li>
-<li><a href="#">Vintage Chicago Sports</a></li>
-<li><a href="#">Chicago Cityscape</a></li>
-<li><a href="#">Black & White Horizontal</a></li>
+<%  find_categories('Holiday Shopping').each do  |category| %>
+  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<% end %>
 </ul>
 </div>
 
+
 </div>
+
 </div>

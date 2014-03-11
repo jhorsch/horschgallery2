@@ -20,7 +20,7 @@
   <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
   <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
 </div>
-<div class='artist'>Photographed by Bob Horsch in 2004.</div>
+<div class='artist'><%= @photo.id_num %> - Photographed by <%= @photo.artist_name.titleize %> in <%= @photo.year_taken %></div>
 <div class="watermark">The purchased photo will not contain a watermark</div>
 
 </div>
@@ -45,11 +45,12 @@
 <div class='option_row'><%= label_tag 'choose_frame', 'Frame Style:' %>
 <%= select_tag 'choose_frame', "<option>Classic Black - Thin Rounded</option><option>Classic Black - Wide Flat</option>".html_safe %></div>
 
+<div class='option_row'><%= label_tag 'price', 'Price:' %>
+<i class="fa fa-usd"></i><label class='price'>79</label><a class='free_return_shipping' href="#"> & Free Return Shipping</a></div>
+
 <div class='option_row'><%= label_tag 'qty', 'Quantity:' %>
 <%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></div>
 
-<div class='option_row'><%= label_tag 'price', 'Price:' %>
-<i class="fa fa-usd"></i><label class='price'>79</label><a class='free_return_shipping' href="#"> & Free Return Shipping</a></div>
 
 <ul class="button_wrapper">
 <li><%= submit_tag 'Add To Cart', class:'addcart' %></li>
