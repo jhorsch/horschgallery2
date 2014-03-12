@@ -10,11 +10,15 @@ require 'csv'
 
 Category.destroy_all
 Photo.destroy_all
+Size.destroy_all
+Format.destroy_all
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
+DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
+DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
 
-CSV.foreach("#{Rails.root}/lib/assets/categories.csv", headers: true) do |row|
+CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
      Category.create(
         :title => row[0],
         :main_category => row[1],
@@ -23,7 +27,7 @@ CSV.foreach("#{Rails.root}/lib/assets/categories.csv", headers: true) do |row|
 
 end
 
-CSV.foreach("#{Rails.root}/lib/assets/image.csv", headers: true) do |row|
+CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
      Photo.create(
         :id_num => row[0],
         :title => row[1],
@@ -37,8 +41,27 @@ CSV.foreach("#{Rails.root}/lib/assets/image.csv", headers: true) do |row|
         :format_id => row[9],
         :show_bw_conversion => row[10]
       )
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/Size.csv", headers: true) do |row|
+     Size.create(
+        :name => row[0],
+        :product_weight => row[1],
+        :box_weight => row[2],
+        :declared_value => row[3] ,
+        :price => row[4],
+        :product_ads_extension => row[5],
+        :format_id => row[6]
 
 
-
+      )
 
 end
+
+CSV.foreach("#{Rails.root}/lib/assets/Format.csv", headers: true) do |row|
+     Format.create(
+        :name => row[0]
+      )
+
+end
+

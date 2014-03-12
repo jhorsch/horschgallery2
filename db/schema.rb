@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311190110) do
+ActiveRecord::Schema.define(version: 20140312004829) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 20140311190110) do
 
   add_index "categories", ["slug"], name: "index_categories_on_slug"
 
+  create_table "formats", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "photos", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
@@ -37,8 +43,20 @@ ActiveRecord::Schema.define(version: 20140311190110) do
     t.string   "artist_name"
     t.string   "year_taken"
     t.boolean  "is_active"
-    t.string   "format_id"
     t.boolean  "show_bw_conversion"
+    t.integer  "format_id"
+  end
+
+  create_table "sizes", force: true do |t|
+    t.string   "name"
+    t.decimal  "product_weight"
+    t.decimal  "box_weight"
+    t.integer  "declared_value"
+    t.integer  "price"
+    t.integer  "format_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "product_ads_extension"
   end
 
 end
