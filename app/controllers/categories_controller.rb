@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @photos = @category.photos.paginate(:page => params[:page], :per_page => 12)
+    @photos = @category.photos.paginate(:page => params[:page], :per_page => 24)
 
   end
 
