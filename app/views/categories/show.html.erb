@@ -19,7 +19,6 @@
   <a class ='category_page_category_name' href="<%= category_url(@category)  %>"><%= @category.title  %></a>
 </div>
 
-<%= will_paginate @photos %>
 </div>
 
 <ul class="photoset_wrapper">
@@ -28,8 +27,8 @@
 
   <% @photos.each do |photo| %>
     <li>
-      <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo.id)) %>
-      <h4><%= photo.title %></h4>
+      <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo)) %>
+      <h4><%= link_to photo.title, photo_url(photo) %></h4>
     </li>
   <% end %>
 </ul>

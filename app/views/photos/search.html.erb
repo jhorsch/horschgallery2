@@ -10,18 +10,13 @@
 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
 
 
-
-<div class="top_pagination_search">
-<%= will_paginate @photos %>
-</div>
-
 <ul class="photoset_wrapper">
 
   <% @photos.each do |photo| %>
     <li>
-      <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo.id)) %>
-      <h4><%= photo.title %></h4>
-      <h4><%= link_to photo.sub_category, category_url(photo.id) %></h4>
+      <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo)) %>
+      <h4><%= link_to photo.title, photo_url(photo) %></h4>
+      <h5 class='sub_cat_search'><%= link_to photo.sub_category, category_url(photo.category) %></h5>
     </li>
   <% end %>
 </ul>

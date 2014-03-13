@@ -7,7 +7,9 @@ $red_color:  #8D3226;
 $orange_color: #DA7C05;
 $green_color: green;
 $blue_color: #0067A6;
-$dark_gray: #969696;
+// $dark_gray: #969696;
+$dark_gray: #696969;
+$light_gray: #969696;
 // $orange_color: #C27D08;
 
 $main_body_width: 1100px;
@@ -51,8 +53,7 @@ a {
     // color: #666;
   }
   &:hover {
-
-
+    color: $orange_color
   }
 }
 
@@ -100,6 +101,25 @@ h3 {
 
 }
 
+h4 a{
+
+font-size: 16px;
+color: $dark_gray;
+font-family: serif;
+
+}
+
+h5 a{
+
+font-size: 14px;
+color: $light_gray;
+font-family: serif;
+&:hover{
+  text-decoration: underline;
+  color: $light_gray;
+}
+
+}
 
 // PARAGRAPHS
 

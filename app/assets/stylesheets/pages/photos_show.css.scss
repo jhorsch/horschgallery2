@@ -11,8 +11,7 @@
 
   color: #aaa;
   font-size: 16px;
-  margin: 0px 0 15px 0;
-  width: 49%;
+  margin: 10px 0 10px 0;
   text-align: left;
   a{
     color: fade-out($black_color,.2);
@@ -183,13 +182,31 @@
 
   }
 
-  h4{
+  // h4 a{
 
-    font-size: 18px;
-    color: $dark_gray;
+  //   font-size: 16px;
+  //   text-align: left;
+  //   color: $dark_gray;
+  //   font-family: serif;
 
-  }
+  //   &:hover{
+  //     color: $orange_color;
+  //   }
 
+  // }
+
+  // h3 a{
+
+  //   font-size: 14px;
+  //   text-align: left;
+  //   color: $light_gray;
+  //   font-family: serif;
+
+  //   &:hover{
+  //     color: $orange_color;
+  //   }
+
+  // }
 
 }
 
