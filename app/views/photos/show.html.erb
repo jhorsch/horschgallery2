@@ -5,26 +5,26 @@
 
 <div class="page_wrapper">
 
+
+
 <div class='breadcrumbs'>
   <a href="#"><%= @photo.category.super_category %></a> >
   <a href="#"><%= @photo.category.main_category  %></a> >
-  <a href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
+  <a class = 'detail_page_category_name' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
 </div>
 
 
 
 <div class="product_wrapper">
-<div class='product'>
-<%= link_to image_tag("matted/#{@photo.id_num}.jpg"), "/assets/image/#{@photo.id_num}.jpg" , class: 'image_link' %>
-<div class="share_wrapper">
-  <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
-  <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
-</div>
-<div class='artist'><%= @photo.id_num %> - Photographed by <%= @photo.artist_name.titleize %> in <%= @photo.year_taken %></div>
-<div class="watermark">The purchased photo will not contain a watermark</div>
-
-</div>
-
+  <div class='product'>
+  <%= link_to image_tag("matted/#{@photo.id_num}.jpg"), "/assets/image/#{@photo.id_num}.jpg" , class: 'image_link' %>
+  <div class="share_wrapper">
+    <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
+    <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
+  </div>
+  <div class='artist'><%= @photo.id_num %> - Photographed by <%= @photo.artist %> in <%= @photo.year_taken %></div>
+  <div class="watermark">The purchased photo will not contain a watermark</div>
+  </div>
 </div>
 
 
@@ -32,36 +32,10 @@
 <div class="product_info_wrapper">
 
 <h1 class='photo_title'><%= @photo.title %></h1>
-
 <p class = "product_text"><%= @photo.desc %></p>
-
-
-<div class='option_row'><%= label_tag 'choose_photo_size', 'Choose Your Size:'  %>
-
-
-<%= select_tag 'choose_photo_size', options_from_collection_for_select(@photo.format.sizes, 'price', 'name', @photo.format.sizes.maximum('price')) %></div>
-
-<div class='option_row mat_row'><%= label_tag 'choose_mat', 'Mat Color:' %>
-<%= select_tag 'choose_mat', "<option>Fog / Black</option><option>Bright White</option>".html_safe %></div>
-
-<div class='option_row'><%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %></div>
-
-
-<div class='option_row'><%= label_tag 'price', 'Price:' %>
-<i class="fa fa-usd"></i><label class='price'><%= @photo.format.sizes.maximum('price') %></label><a class='free_return_shipping' href="#"> & Free Return Shipping</a></div>
-
-<div class='option_row'><%= label_tag 'qty', 'Quantity:' %>
-<%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></div>
-
-
-<div><%= submit_tag 'Add To Cart', class:'addcart' %></div>
-
-
+<%= render 'add_to_cart_form' %>
 
 </div>
-
-
 
 
 <ul class="recommended_photoset_wrapper">
@@ -75,52 +49,101 @@
 </ul>
 
 
-</div>
+</div> <!-- page wrapper -->
 
 
 <script>
 
-// change price if size changes
-$('#choose_photo_size').change(function() {
+//change price when page loads
+$(function(){
 
-  var option_size_price = Number($('#choose_photo_size').val());
-  var frame_price = Number($('#choose_frame').val());
+  //change price
+  var option_size_price = Number($('#choose_size option:selected').val());
+  var frame_price = Number($('#choose_frame option:selected').val());
   var plate_price = Number('0');
   var total_price =  option_size_price + frame_price + plate_price
   $('.price').text(total_price);
 
- //remove mat row if photo only
-  var option_size_name = $('#choose_photo_size option:selected').text().slice(-4);
-  if (option_size_name == "Only")
-  {
-      $('.mat_row').hide();
-  }
-  else
-  {
-      $('.mat_row').show();
-  }
+
+  // when you change the options size drop down ...
+  $('#choose_size').change(function() {
+
+    //change price
+    var option_size_price = Number($('#choose_size option:selected').val());
+    var frame_price = Number($('#choose_frame option:selected').val());
+    var plate_price = Number('0');
+    var total_price =  option_size_price + frame_price + plate_price
+    $('.price').text(total_price);
+
+     //remove mat row if photo only
+      var option_size_name_only = $('#choose_size option:selected').text().slice(-4);
+      var option_size_name_mat = $('#choose_size option:selected').text().slice(-3);
+      var option_size_name_framed = $('#choose_size option:selected').text().slice(-6);
+
+      if (option_size_name_only == "Only")
+      {
+          $('.row_mat').hide();
+          $('.row_frame').hide();
+      }
+      else if (option_size_name_mat == "Mat")
+      {
+          $('.row_mat').show();
+          $('.row_frame').hide();
+      }
+      else
+      {
+          $('.row_mat').show();
+          $('.row_frame').show();
+      }
+
+
+  });
+
+
+  // when you change the frame options drop down ...
+  $('#choose_frame').change(function() {
+
+    // change price if frame option changes
+    var option_size_price = Number($('#choose_size option:selected').val());
+    var frame_price = Number($('#choose_frame option:selected').val());
+    var plate_price = Number('0');
+    var total_price =  option_size_price + frame_price + plate_price
+    $('.price').text(total_price);
+
+  });
+
+
+  //show enlarged image
+  $('.image_link').magnificPopup({
+    type:'image'
+  });
+
+  //highlight correct categories
+
+
+  // breadcrumb_sub_cat
+
+
+    var pathname = $('.detail_page_category_name').attr('href');
+    // console.log(pathname);
+
+    $('.sub_menu_container').find('a').each(function() {
+
+    if ($(this).attr('href') == pathname)
+    {
+        $(this).css('color','#DA7C05');
+        $(this).css('font-weight','bold');
+
+        // $(this).closest('.main_cat_grouping').find('h3').css('color','#DA7C05');
+
+        $(this).closest('.main_menu').children('h2').children('a').css('color','#DA7C05');
+
+    }
+
+    });
+
 
 });
-
-// change price if frame option changes
-
-$('#choose_frame').change(function() {
-
-  var option_size_price = Number($('#choose_photo_size').val());
-  var frame_price = Number($('#choose_frame').val());
-  var plate_price = Number('0');
-  var total_price =  option_size_price + frame_price + plate_price
-  $('.price').text(total_price);
-
-});
-
-
-//show enlarged image
-$('.image_link').magnificPopup({
-  type:'image'
-});
-
-
 
 </script>
 

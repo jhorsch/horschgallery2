@@ -82,7 +82,10 @@
   padding-top: 0px;
   margin-bottom: 50px;
 
-
+  .fieldset_wrapper{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+  }
 
   h1{
     font-size: 28px;
@@ -92,14 +95,14 @@
 
   }
 
-  .option_row{
+  fieldset{
     margin-bottom: 15px;
     font-weight: bold;
   }
 
 
   label{
-    width: 170px;
+    width: 150px;
     float: left;
     font-size: 18px;
   }
@@ -113,9 +116,11 @@
     }
   }
 
-  .free_return_shipping{
+  .option_helpers{
     font-size: 14px;
-    color: $blue_color;
+    color: fade-out($blue_color,.2);
+    vertical-align: bottom;
+    padding-left: 5px;
   }
 
   .price{

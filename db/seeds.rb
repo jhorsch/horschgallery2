@@ -12,11 +12,15 @@ Category.destroy_all
 Photo.destroy_all
 Size.destroy_all
 Format.destroy_all
+Mat.destroy_all
+CategoryMat.destroy_all
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
 DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
+DatabaseCleaner.clean_with(:truncation, :only => %w[mats])
+DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 
 CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
      Category.create(
@@ -61,6 +65,21 @@ end
 CSV.foreach("#{Rails.root}/lib/assets/Format.csv", headers: true) do |row|
      Format.create(
         :name => row[0]
+      )
+
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/Mat.csv", headers: true) do |row|
+     Mat.create(
+        :name => row[0]
+      )
+
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/CategoryMats.csv", headers: true) do |row|
+     CategoryMat.create(
+        :category_id => row[0],
+        :mat_id => row[1]
       )
 
 end
