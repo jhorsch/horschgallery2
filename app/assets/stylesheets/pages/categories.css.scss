@@ -35,10 +35,8 @@
 .pagination{
 
     font-size: 0;
-    width: 50%;
-    text-align: right;
-
-    margin: 0px 0 0px 0;
+    text-align: center;
+    margin: -20px 0 40px 0;
     // background: yellow;
     // background: yellow;
 
@@ -121,14 +119,31 @@
     box-shadow: 5px 5px 20px gray;
   }
 
-  h4{
+  // h4 a{
 
-    font-size: 18px;
-    text-align: left;
-    color: $dark_gray;
-    font-family: serif;
+  //   font-size: 16px;
+  //   text-align: left;
+  //   color: $dark_gray;
+  //   font-family: serif;
 
-  }
+  //   &:hover{
+  //     color: $orange_color;
+  //   }
+
+  // }
+
+  // h3 a{
+
+  //   font-size: 14px;
+  //   text-align: left;
+  //   color: $light_gray;
+  //   font-family: serif;
+
+  //   &:hover{
+  //     color: $orange_color;
+  //   }
+
+  // }
 
 }
 

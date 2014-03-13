@@ -6,7 +6,7 @@
 <div class="ind_imge">
 
   <a href=<%= category_url(photo.category) %>><%= image_tag "image/#{photo.id_num.downcase}.jpg" %></a>
-<h4 class='home_cat_title'><%= photo.sub_category %></h4>
+<h3 class='home_cat_title'><%= link_to photo.sub_category, category_url(photo.category) %></h3>
 
 </div>
 <% end %>

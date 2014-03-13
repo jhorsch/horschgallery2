@@ -162,7 +162,7 @@
 
   }
 
-  h4.home_cat_title{
+  h3.home_cat_title a{
 
       font-size: 14px;
       font-weight: 400;
@@ -173,6 +173,7 @@
       left: 0px;
       text-transform: lowercase;
 
+      font-family: $sans_serif;
       background: $black_color;
       opacity: .95;
       color: white;
