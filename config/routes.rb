@@ -1,11 +1,12 @@
 Horschgallery2::Application.routes.draw do
 
-  get "static_pages/index"
   root 'photos#index'
   resources :photos
   resources :categories
 
-  get "/photographers" => 'static_pages#index'
+  get "/photographers" => 'static_pages#photographers'
+  get "/mats" => 'static_pages#mat'
+
 
   post '/search' => 'photos#search'
 

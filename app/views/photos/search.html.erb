@@ -1,28 +1,38 @@
 <% meta_title "Search Results For xxx" %>
 <% meta_desc "xxxxxx" %>
 
-<p id="notice"><%= notice %></p>
 
 
 <div class="category_wrapper">
 
-<h1 class="">We found these fantastic photos for you</h1>
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
+<%  if @query.blank? %>
+
+<h2 class 'search_header'>Whoops.&nbsp&nbspYou didn't enter any keywords in the search bar.  Please try again.</h2>
+
+<%  elsif @photos.count == 0 %>
+
+<h2 class 'search_header'>We looked everywhere, but couldn't find any photographs that matched your search.&nbsp&nbspPlease check the spelling or enter a new search term.</h2>
+
+<% else %>
+
+<h2 class 'search_header'>You're in luck!  We searched around the gallery and found these photographs for you.</h2>
+
 
 
 <ul class="photoset_wrapper">
 
-  <% @photos.each do |photo| %>
-    <li>
-      <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo)) %>
-      <h4><%= link_to photo.title, photo_url(photo) %></h4>
-      <h5 class='sub_cat_search'><%= link_to photo.sub_category, category_url(photo.category) %></h5>
-    </li>
-  <% end %>
+<% @photos.each do |photo| %>
+  <li>
+    <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo)) %>
+    <h4><%= link_to photo.title, photo_url(photo) %></h4>
+    <h5 class='sub_cat_search'><%= link_to photo.sub_category, category_url(photo.category) %></h5>
+  </li>
+<% end %>
 </ul>
 
 <%= will_paginate @photos %>
 
+<% end %>
 
 </div>
 

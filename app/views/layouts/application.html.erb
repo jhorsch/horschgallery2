@@ -2,98 +2,39 @@
 <html>
 <head>
 
-<title><%= yield(:title) %></title>
-<meta name="description" content="<%= yield(:meta_desc) %>"/>
+  <%= render "layouts/meta_data" %>
 
-<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link rel="stylesheet" href="/assets/magnific-popup.css">
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script src="/assets/jquery.magnific-popup.js"></script>
 
-<link href='http://fonts.googleapis.com/css?family=Cabin+Condensed|Quattrocento|Playfair+Display+SC' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
 
-<!-- Magnific Popup core CSS file -->
-<link rel="stylesheet" href="/assets/magnific-popup.css">
-  <!-- Magnific Popup core JS file -->
-<script src="/assets/jquery.magnific-popup.js"></script>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed|Quattrocento|Playfair+Display+SC' rel='stylesheet' type='text/css'>
 
-<%= csrf_meta_tags %>
 </head>
-<body class="sitepage">
 
-<div class="body_container" >
+<body>
 
-<header>
+  <div class="body_container" >
 
-<div class="top_nav">
-  <nav class="top_nav_content">
-    <ul class='restofheader'>
+    <header>
 
-      <li class="logoname"><a href="/" >HorschGallery</a></li>
-      <li><%= form_tag( '/search', :method => "post") do %>
-          <%= search_field_tag :search, params[:search], class: "search_field", placeholder: "Search over 1000+ photographs" %>
-            <label for="mySubmit" class="search_button"><i class="fa fa-search"></i></label>
-            <input id="mySubmit" type="submit" value="Search" class="hide_search_button" />
-            <% end %>
-      </li>
-      <li class = "photographers"><a href="/photographers"><i class="fa fa-camera-retro"></i>The Photographers</a></li>
-      <li class = "account"><a href="#"><i class="fa fa-shopping-cart"></i>Shopping Cart</a></li>
+      <%= render "layouts/top_nav" %>
+      <%= render "layouts/bottom_nav" %>
 
-    </ul>
-  </nav>
-</div>
+    </header>
 
-<div class="bottom_nav">
-  <nav class="bottom_nav_content">
-    <ul>
+    <div class="header_space_holder"></div>
 
+    <%= yield %>
 
-   <li class="main_menu"><h2><a class='main_menu_link' href="#">Most Popular</a></h2>
-      <%= render "layouts/gifts" %>
-    </li>
-    <li class="main_menu"><h2><a id='myid' class='main_menu_link' href="#">Chicago Cityscape</a></h2>
-      <%= render "layouts/chi_cityscape" %>
-    </li>
-    <li class="main_menu"><h2><a class='main_menu_link' href="#">Chicago Sports</a></h2>
-      <%= render "layouts/chi_sports" %>
-    </li>
-      <li class="main_menu"><h2><a class='main_menu_link' href="#">Top US Cities</a></h2>
-    <%= render "layouts/us_cities" %>
-    </li>
-    <li class="main_menu"><h2><a class='main_menu_link' href="#">Other Sports</a></h2>
-      <%= render "layouts/other_sports" %>
-    </li>
-    <li class="main_menu"><h2><a class='main_menu_link' href="#">Nature</a></h2>
-      <%= render "layouts/nature" %>
-    </li>
-  </uL>
-  </nav>
-</div>
+    <%= render "layouts/footer" %>
 
-</header>
-
-
-
-  <div class="header_space_holder"></div>
-
-<%= yield %>
-
-
-
-  <footer>
-  <!--   <div class="signupnewsletter"><a href="#">JOIN OUR NEWSLETTER</a></div> -->
-
-    <div>@HorschGallery 2014</div>
-
-
-
-  </footer>
-
-</div>
-
-
-
-
+  </div>
 
 </body>
 </html>

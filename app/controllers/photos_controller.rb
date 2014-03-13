@@ -17,13 +17,20 @@ class PhotosController < ApplicationController
     @color_to_bw = Photo.where(id_num: [color_to_bw])
     @single = Photo.where(id_num: '2910')
 
+    render status: 500
+
   end
 
 
   def show
 
-    @customer_viewed = Photo.where(main_category: @photo.main_category).shuffle.take(5)
-    @recently_viewed = Photo.all.sample(5)
+        @customer_viewed = Photo.where(main_category: @photo.main_category).shuffle.take(5)
+        @recently_viewed = Photo.all.sample(5)
+        if @photo.nil?
+          flash.now[:alert] = "Your photo was not found"
+          @photos = Photo.all
+          render "index"
+        end
 
   end
 
@@ -37,28 +44,21 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
 
-    respond_to do |format|
       if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @photo }
+        redirect_to @photo, notice: 'Photo was successfully created.'
       else
-        format.html { render action: 'new' }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+         render 'new'
       end
-    end
+
   end
 
-
   def update
-    respond_to do |format|
+
       if @photo.update(photo_params)
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to @photo, notice: 'Photo was successfully updated.'
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        render 'edit'
       end
-    end
   end
 
 
@@ -70,20 +70,20 @@ class PhotosController < ApplicationController
     end
   end
 
-   def search
-
-      @query  = params[:search]
-       @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 12)
-
-       # @photos = @category.photos.paginate(:page => params[:page], :per_page => 12)
+ def search
 
 
-   end
+    @query  = params[:search]
+    @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 12)
+      render 'search'
+
+
+ end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
-      @photo = Photo.find(params[:id])
+      @photo = Photo.find_by(id: params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -91,3 +91,15 @@ class PhotosController < ApplicationController
       params.require(:photo).permit(:title)
     end
 end
+
+# def update
+#     respond_to do |format|
+#       if @photo.update(photo_params)
+#         format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+#         format.json { head :no_content }
+#       else
+#         format.html { render action: 'edit' }
+#         format.json { render json: @photo.errors, status: :unprocessable_entity }
+#       end
+#     end
+#   end
