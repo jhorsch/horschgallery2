@@ -7,6 +7,10 @@ Horschgallery2::Application.routes.draw do
 
   get "/photographers" => 'static_pages#index'
 
+  post '/search' => 'photos#search'
+
+  # resources :users, :only => [:index]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
