@@ -15,3 +15,29 @@
 }
 
 
+@mixin static_pages_base {
+
+ .static_page_wrapper{
+    width: 90%;
+    margin: 0 auto;
+    text-align: left;
+
+    h1{
+      color: $orange_color;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    h2{
+      font-size: 24px;
+      margin-top: 50px;
+    }
+
+
+    p{
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 1.2em;
+    }
+  }
+}

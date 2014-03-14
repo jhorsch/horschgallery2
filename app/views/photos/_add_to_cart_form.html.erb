@@ -8,7 +8,7 @@
 <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %><a class='option_helpers' href="#" rel="nofollow">Views Mats</a></fieldset>
 
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option value='0'>Classic Black - Thin Rounded</option><option selected value='10'>Classic Black - Wide Flat</option>".html_safe %><a class='option_helpers' href="#" rel="nofollow">View Frames</a></fieldset>
+<%= select_tag 'choose_frame', "<option value='0'>Classic Black - Thin Rounded</option><option selected value='10'>Classic Black - Wide Flat</option>".html_safe %><a class='option_helpers' href="/frames" rel="nofollow">View Frames</a></fieldset>
 
 <% if @photo.show_bw_conversion %>
 <fieldset class="convert_to_bw_row">

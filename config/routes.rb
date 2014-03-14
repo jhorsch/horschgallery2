@@ -6,7 +6,7 @@ Horschgallery2::Application.routes.draw do
 
   get "/photographers" => 'static_pages#photographers'
   get "/mats" => 'static_pages#photographers'
-  get "/frames" => 'static_pages#photographers'
+  get "/frames" => 'static_pages#frames'
   get "/compare_sizes" => 'static_pages#compare_sizes'
 
 
