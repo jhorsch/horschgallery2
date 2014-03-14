@@ -1,10 +1,11 @@
 @import 'base/base';
 
-.page_wrapper_photographers{
+.static_page_wrapper{
 
+  //global template for static pages
   width: 90%;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 
   h1{
     color: $orange_color;
@@ -24,32 +25,115 @@
     line-height: 1.2em;
   }
 
-  .artist_wrapper{
-    margin-top: 20px;
+  //uniqueness for each page
 
-    margin: 0 auto;
-    width: 100%;
-    // background: yellow;
+  .photographers_wrapper{
 
-    li{
-      text-align: center;
-      display: inline-block;
-      margin-right: 40px;
-    }
-     img{
-      width: 150px;
-      border-radius: 200px;
-      display: inline-block;
-      vertical-align: center;
+    .artist_wrapper{
+      margin-top: 20px;
 
-     }
+      margin: 0 auto;
+      width: 100%;
+      // background: yellow;
 
-    h3{
-      font-size: 20px;
-      vertical-align: center;
+      li{
+        text-align: center;
+        display: inline-block;
+        margin-right: 40px;
+      }
+
+       img{
+        width: 150px;
+        border-radius: 200px;
+        display: inline-block;
+        vertical-align: center;
+
+       }
+
+      h3{
+        font-size: 20px;
+        vertical-align: center;
+      }
+
     }
   }
 
+  $outer_width: 800px;
+  $inner_width: 600px;
+  $x_pos: ($outer_width * .5) - ($inner_width*.5);
+  $y_pos: ($outer_width * .5) - ($inner_width*.5);
+
+  .compare_sizes_wrapper{
+
+    .compare_image_wrapper{
+
+        width: $outer_width;
+        background: #ddd;
+        position: relative;
+        img{
+
+          opacity: 1;
+
+
+          &:hover{
+
+            -webkit-transition: all .5s ease ;
+            opacity: .02;
+            width: 100%;
+          }
+      }
+    }
+
+     .table_wrapper{
+
+        position: absolute;
+        background: white;
+
+        visibility: hidden;
+        overflow: hidden;
+
+
+        top: 160px;
+        left: $x_pos;
+
+
+        table{
+         font-size: 20px;
+         color: $light_gray;
+        border: 3px solid $dark_gray;
+
+
+        }
+
+
+
+        thead{
+          font-weight: bold;
+          color: $orange_color;
+        }
+
+        td{
+          border: 1px solid $dark_gray;
+          padding: 5px 30px;
+          width: $inner_width / 2;
+          text-align: center;
+          vertical-align: center;
+        }
+
+        }
+
+
+    .compare_image_wrapper:hover > .table_wrapper {
+
+        opacity: 1;
+        visibility: visible;
+        overflow: visible;
+       -webkit-transition: all 1s ease .2s;
+
+
+}
+
+}
 
 }
 

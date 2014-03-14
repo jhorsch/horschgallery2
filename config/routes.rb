@@ -5,6 +5,11 @@ Horschgallery2::Application.routes.draw do
   resources :categories
 
   get "/photographers" => 'static_pages#photographers'
+  get "/mats" => 'static_pages#photographers'
+  get "/frames" => 'static_pages#photographers'
+  get "/compare_sizes" => 'static_pages#compare_sizes'
+
+
   get "/mats" => 'static_pages#mat'
 
 

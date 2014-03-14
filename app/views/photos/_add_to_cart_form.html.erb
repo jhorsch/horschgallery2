@@ -2,7 +2,7 @@
 
 
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>
-<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="#" rel="nofollow">Compare</a></fieldset>
+<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare_sizes" rel="nofollow">Compare</a></fieldset>
 
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
 <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %><a class='option_helpers' href="#" rel="nofollow">Views Mats</a></fieldset>
