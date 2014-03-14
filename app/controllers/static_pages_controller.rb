@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def photographers
   end
 
@@ -7,6 +8,9 @@ class StaticPagesController < ApplicationController
   end
 
   def frames
+
+    # @myphoto = pull_image('2805')
+
   end
 
 end

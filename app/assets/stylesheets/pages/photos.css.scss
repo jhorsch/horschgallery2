@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "base/base";
+@import "base/library";
 
 // MAIN BODY
 
@@ -35,33 +36,7 @@
   }
 
 
-  .customer_testomonial{
-
-      margin: 60px auto;
-      // background: yellow;
-      padding: 0px 25px;
-      line-height: 1.3em;
-      font-size: 26px;
-      text-align: center;
-      border: none;
-      border-left: 5px solid $orange_color;
-      color: fade-out($orange_color, .2);
-      font-style: italic;
-      width: 80%;
-      font-size: 40px;
-      text-align: left;
-
-
-  }
-
-  span.customer_name{
-    color: $red_color;
-    font-family: serif;
-    font-size: 14px;
-    display: block;
-    font-style: normal;
-
-  }
+ @include customer_quotes;
 
 
   blockquote{

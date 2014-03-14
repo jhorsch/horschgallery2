@@ -17,13 +17,13 @@ $y_pos: ($outer_width * .5) - ($inner_width*.5);
   position: relative;
 
   img{
-  opacity: .9;
-    &:hover{
-    -webkit-transition: all .01s ease ;
-    opacity: .02;
-    width: 100%;
+    opacity: .9;
+      &:hover{
+        -webkit-transition: all .01s ease ;
+        opacity: .02;
+        width: 100%;
+      }
     }
-  }
   }
 
   .table_wrapper{

@@ -7,6 +7,13 @@ def find_categories(main_category)
 
 end
 
+# def pull_image(id_num)
+
+#   Photo.where(id_num: id_num)
+
+# end
+
+
 
 def meta_title(page_title)
   content_for :title, page_title.to_s
