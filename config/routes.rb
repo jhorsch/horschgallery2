@@ -13,7 +13,7 @@ Horschgallery2::Application.routes.draw do
   get "/mats" => 'static_pages#mat'
 
 
-  post '/search/:query' => 'photos#search'
+  post '/search/:queryid' => 'photos#search', :as => 'mysearch'
 
   # resources :users, :only => [:index]
 

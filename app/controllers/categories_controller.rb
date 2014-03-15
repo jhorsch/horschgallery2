@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
 
 
   def show
-    @photos = @category.photos.paginate(:page => params[:page], :per_page => 24)
+    @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
 
   end
 
