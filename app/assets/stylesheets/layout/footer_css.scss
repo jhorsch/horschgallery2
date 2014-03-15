@@ -37,10 +37,11 @@
     input[type='email']{
       @extend .sign_up_details;
       color: $black_color;
-      text-indent: 10px;
+      text-align: center;
+      border: 2px solid fade-out($orange_color,.2);
+
       &:hover{
-        background: $orange_color;
-        border: 1px solid $orange_color;
+        border: 2px solid $orange_color;
       }
     }
 
@@ -66,12 +67,15 @@
   padding: 40px 0;
 
   .footer_info{
-    width: 200px;
+    width: 150px;
     // background: red;
-    margin: 0 20px 0px 0;
+    margin: 0 40px 0px 0;
     display: inline-block;
     vertical-align: top;
     font-size: 0;
+    &:last-child{
+      margin-right: 0px;
+    }
 
 
     .footer_section_title{
