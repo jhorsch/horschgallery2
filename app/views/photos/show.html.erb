@@ -20,6 +20,7 @@
 </div>
 
 
+<section class='featured_product'>
 
 <div class="product_wrapper">
   <div class='product'>
@@ -44,9 +45,12 @@
 
 </div>
 
+</section>
 
-<ul class="recommended_photoset_wrapper">
+
+<section class="recommended_photoset_wrapper">
 <h3>Customers Also Viewed</h3>
+<ul>
 <% @customer_viewed.each do |photo| %>
     <li>
       <%= link_to( image_tag("matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
@@ -55,7 +59,7 @@
     </li>
   <% end %>
 </ul>
-
+</section>
 
 </main>
 

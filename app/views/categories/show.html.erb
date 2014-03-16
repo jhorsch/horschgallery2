@@ -1,5 +1,13 @@
-<% meta_title "#{@category.title } Photos For Sale - HorschGallery.com" %>
-<% meta_desc "xxxxxx" %>
+
+
+<% content_for :meta_title do %>
+  <%= "#{@category.title } Photos For Sale - HorschGallery.com" %>
+<% end %>
+
+<% content_for :meta_desc do %>
+  Shop the best...
+<% end %>
+
 
 <p id="notice"><%= notice %></p>
 
@@ -22,10 +30,8 @@
 </div>
 
 
-<ul class="photoset_wrapper">
-
-
-
+<section class="photoset_wrapper">
+<ul>
   <% @photos.each do |photo| %>
     <li>
         <%= link_to( image_tag("image/#{photo.id_num}.jpg", class: 'category_image'), photo_url(photo)) %>
@@ -33,6 +39,7 @@
     </li>
   <% end %>
 </ul>
+</section>
 
 <div class="bottom_pagination">
   <%= will_paginate @photos %>
