@@ -4,19 +4,19 @@ $summary_wraper_width: 250px;
 $background_container_color: #eee;
 
 .cart_main{
-
   padding: $main_page_side_padding;
   margin: 0px auto;
   margin-bottom: 100px;
-  background: red;
+  // background: red;
 }
+
+//CHECKOUT PROGRESS
 
 .checkout_progress{
     text-align: center;
     margin-bottom: 20px;
 
     li{
-
       background: $background_container_color;
       border: 1px solid $light_gray;
       color: $light_gray;
@@ -27,7 +27,6 @@ $background_container_color: #eee;
       font-family: $sans_serif;
       width: 150px;
       display: inline-block;
-
     }
 
     .fa-arrow-right{
@@ -40,109 +39,16 @@ $background_container_color: #eee;
 }
 
 
-
 .top_checkout_section{
   // background: yellow;
   margin-bottom: 0px;
   border-bottom: 1px solid #ccc;
 }
 
-.checkout_aside_wrapper{
-   display: inline-block;
-   vertical-align: top;
-   margin-left: 30px;
-}
-
-.price_summary_wrapper{
-  width: $summary_wraper_width;
-  background: $background_container_color;
 
 
-
-  padding: 10px 15px;
-  border-radius: 3px;
-  margin-bottom: 20px;
-
-  .checkout_btn{
-    margin-top: 10px;
-    font-size: 20px;
-    width: 100%;
-    margin-bottom: 0px;
-  }
-
-  h2{
-    font-size: 24px;
-  }
-
-  .summary_label_left{
-    width: 100px;
-    float: left;
-    margin-right: 50px;
-  }
-
-  .summary_label_right{
-    width: 100px;
-    text-align: right;
-  }
-
-  .text_align-right{
-    text-align: right;
-  }
-
-  .packaging{
-    color: $orange_color;
-    font-weight: bold;
-  }
-
-  fieldset{
-    margin-bottom: 10px;
-  }
-  .bold_price_field{
-    font-weight: bold;
-    text-transform: uppercase;
-    border-top: 1px solid $black_color;
-    padding-top: 20px;
-  }
-
-
-
-}
-
-
-.checkout_help_wrapper{
-
-  h6{
-    margin-top: 10px;
-  }
-
-  .free_returns{
-    margin-top: 0px;
-
-  }
-  .weknow{
-    margin-bottom: 10px;
-  }
-
-  .free_returns{
-    font-weight: bold;
-
-  }
-
-    .fa-star, .fa-arrow-circle-right, .fa-question-circle{
-    margin-right: 5px;
-
-  }
-
-
-  p{
-    margin-left: 5px;
-  }
-
-}
-
-
+//ITEM LIST FOR SHOPPING CART
 .order_wrapper{
-
   width:  $main_body_width - $summary_wraper_width - 120px;
   padding-top: 10px;
   border-top: 2px solid $black_color;
@@ -151,20 +57,16 @@ $background_container_color: #eee;
   display: inline-block;
   vertical-align: top;
 
-
-
-
   h1{
     margin-bottom: 10px;
-
   }
+
   .number_items{
     border-bottom: 1px solid #ccc;
     padding: 0px 0 10px 0;
     font-size: 20px;
     margin-bottom: 0px;
     text-transform: uppercase;
-
   }
 
   .buymore{
@@ -184,10 +86,8 @@ $background_container_color: #eee;
 
 
 .order_item_wrapper{
-
     border-bottom: 1px solid #ccc;
     padding: 30px 10px;
-
 
     img{
       width: 175px;
@@ -240,16 +140,106 @@ $background_container_color: #eee;
     }
 }
 
+
+//SIDE BAR FOR PRICE SUMMARY
+.checkout_aside_wrapper{
+   display: inline-block;
+   vertical-align: top;
+   margin-left: 30px;
+}
+
+.price_summary_wrapper{
+  width: $summary_wraper_width;
+  background: $background_container_color;
+  padding: 10px 15px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+
+  .checkout_btn{
+    margin-top: 10px;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+  h2{
+    font-size: 24px;
+  }
+
+  .summary_label_left{
+    width: 100px;
+    float: left;
+    margin-right: 50px;
+  }
+
+  .summary_label_right{
+    width: 100px;
+    text-align: right;
+  }
+
+  .text_align-right{
+    text-align: right;
+  }
+
+  .packaging{
+    color: $orange_color;
+    font-weight: bold;
+  }
+
+  fieldset{
+    margin-bottom: 10px;
+  }
+
+  .bold_price_field{
+    font-weight: bold;
+    text-transform: uppercase;
+    border-top: 1px solid $black_color;
+    padding-top: 20px;
+  }
+
+}
+
+
+.checkout_help_wrapper{
+
+  h6{
+    margin-top: 10px;
+  }
+
+  .free_returns{
+    margin-top: 0px;
+
+  }
+  .weknow{
+    margin-bottom: 10px;
+  }
+
+  .free_returns{
+    font-weight: bold;
+
+  }
+
+  .fa-star, .fa-arrow-circle-right, .fa-question-circle{
+    margin-right: 5px;
+  }
+
+  p{
+    margin-left: 5px;
+  }
+
+}
+
+
+
+// WHY BUY OUR PHOTOGRAPHS SECTION
 .why_buy_wrapper{
     clear: both;
     padding: 30px 0;
 
     h3{
-
       color: $orange_color;
       font-size: 24px;
       margin-bottom: 10px;
-
     }
 
     h4{
@@ -260,7 +250,6 @@ $background_container_color: #eee;
     p{
       margin-left: 10px;
       margin-bottom: 10px;
-
     }
 }
 
