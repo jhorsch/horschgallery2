@@ -39,11 +39,6 @@ $background_container_color: #eee;
 }
 
 
-.top_checkout_section{
-  // background: yellow;
-  margin-bottom: 0px;
-  border-bottom: 1px solid #ccc;
-}
 
 
 
@@ -56,6 +51,7 @@ $background_container_color: #eee;
   // background: green;
   display: inline-block;
   vertical-align: top;
+  // margin-bottom: 100px;
 
   h1{
     margin-bottom: 10px;
@@ -88,6 +84,7 @@ $background_container_color: #eee;
 .order_item_wrapper{
     border-bottom: 1px solid #ccc;
     padding: 30px 10px;
+    font-size: 15px;
 
     img{
       width: 175px;
@@ -105,7 +102,7 @@ $background_container_color: #eee;
     }
 
     .price_details_wrapper{
-      margin-left: 80px;
+      margin-left: 70px;
       // background: yellow;
     }
 
@@ -148,12 +145,19 @@ $background_container_color: #eee;
    margin-left: 30px;
 }
 
+.fix_aside_wrapper{
+  position: fixed;
+  top: 144px;
+  left: 967.5px - 30px;
+}
+
 .price_summary_wrapper{
   width: $summary_wraper_width;
   background: $background_container_color;
   padding: 10px 15px;
   border-radius: 3px;
   margin-bottom: 20px;
+  font-size: 15px;
 
   .checkout_btn{
     margin-top: 10px;
@@ -163,13 +167,16 @@ $background_container_color: #eee;
   }
 
   h2{
-    font-size: 24px;
+    font-size: 20px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $black_color;
   }
 
   .summary_label_left{
     width: 100px;
     float: left;
     margin-right: 50px;
+
   }
 
   .summary_label_right{
@@ -187,14 +194,17 @@ $background_container_color: #eee;
   }
 
   fieldset{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   .bold_price_field{
     font-weight: bold;
     text-transform: uppercase;
+    padding-top: 10px;
+  }
+
+  .grand_total{
     border-top: 1px solid $black_color;
-    padding-top: 20px;
   }
 
 }
