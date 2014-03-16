@@ -17,4 +17,9 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def confirmation
+
+  end
+
+
 end
