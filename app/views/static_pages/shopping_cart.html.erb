@@ -16,30 +16,5 @@ Shopping Cart | HorschGallery.com
 
 </main>
 
-<script type="text/javascript">
-
-
-    var top_break_point = 144;
-    var bottom_break_point = $('.why_buy_wrapper').offset().top + $('.why_buy_wrapper').height();
-    var aside_nav_height = $('.checkout_aside_wrapper').height();
-    var header_height = $('header').height();
-
-    $(window).scroll(function() {
-
-        var scrolling_top  =  $(window).scrollTop();
-        window_height = $(window).height();
-        var scrolling_bottom = scrolling_top + window_height - header_height - 125;
-
-
-       if ((scrolling_top > top_break_point) && (scrolling_bottom < bottom_break_point)) {
-          $('.checkout_aside_wrapper').addClass('fix_aside_wrapper');
-        }
-        else{
-           $('.checkout_aside_wrapper').removeClass('fix_aside_wrapper');
-        }
-
-    });
-
-</script>
 
 
