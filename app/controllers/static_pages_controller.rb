@@ -13,4 +13,8 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def shopping_cart
+
+  end
+
 end

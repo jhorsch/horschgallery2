@@ -1,5 +1,11 @@
-<% meta_title "Photo of #{@photo.title } | #{@photo.sub_category}" %>
-<% meta_desc "xxxxxxx" %>
+<% content_for :meta_title do %>
+  <%= "Photo of #{@photo.title } | #{@photo.sub_category}" %>
+<% end %>
+
+<% content_for :meta_desc do %>
+  Looking for a great photo...
+<% end %>
+
 
 <p id="notice"><%= notice %></p>
 
