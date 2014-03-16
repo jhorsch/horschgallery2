@@ -6,11 +6,11 @@
 @import "base/library";
 
 // MAIN BODY
+.homepage_main{
 
-
-.homepage{
-
-  padding-bottom: 50px;
+  padding: $main_page_side_padding;
+  margin: 0px auto;
+  margin-bottom: 50px;
 
   h1{
     padding-top: 20px;

@@ -17,8 +17,8 @@
 
 @mixin static_pages_base {
 
- .static_page_wrapper{
-    width: 90%;
+ .static_page_main{
+  padding: $main_page_side_padding;
     margin: 0 auto;
     text-align: left;
 

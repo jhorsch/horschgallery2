@@ -2,8 +2,9 @@
 @import "base/base";
 @import "base/buttons";
 
-.page_wrapper{
-  padding: 0px 40px;
+.photo_main{
+  padding: $main_page_side_padding;
+  margin: 0 auto;
 }
 
 
@@ -11,7 +12,7 @@
 
   color: #aaa;
   font-size: 16px;
-  margin: 10px 0 10px 0;
+  margin: 10px 0 20px 0;
   text-align: left;
   a{
     color: fade-out($black_color,.2);
@@ -150,7 +151,7 @@
   clear: both;
   padding-top: 20px;
    border-top: 1px solid #ccc;
-  border-bottom: 10px solid #666;
+   border-top: 1px solid #ccc;
   // background: yellow;
   margin-bottom: 80px;
 
