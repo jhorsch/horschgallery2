@@ -1,0 +1,27 @@
+
+@import "base/base";
+
+.confirmation_main{
+  font-size: 22px;
+  padding: $main_page_side_padding;
+  margin: 0px auto;
+
+  p{
+    margin-bottom: 30px;
+  }
+}
+
+section{
+  font-size: 18px;
+  margin-bottom: 30px;
+  h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-transform: capitalize;
+  }
+  li{
+    margin-bottom: 10px;
+  }
+}
+
+
