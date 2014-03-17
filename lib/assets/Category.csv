@@ -1,67 +1,67 @@
-title,main_category,super_category,id_num
-2005 White Sox Championship,Chicago White Sox,Chicago Sports,1
-2009 Winter Classic,Chicago Blackhawks,Chicago Sports,2
-2010 Blackhawks Championship,Chicago Blackhawks,Chicago Sports,3
-2013 Blackhawks Stanley Cup Champions,Chicago Blackhawks,Chicago Sports,4
-Best Selling Chicago Skyline,Best Sellers,Most Popular,5
-Best Selling Chicago Sports,Best Sellers,Most Popular,6
-Big Ten College Stadiums,College Football,Other Sports,7
-Black & White Boston Photos,Boston,Top US Cities,8
-Black & White Chicago - Horizontal,Chicago Black & White,Chicago Cityscape,9
-Black & White Chicago - Vertical,Chicago Black & White,Chicago Cityscape,10
-Black & White Chicago Panoramas,Chicago Panoramas,Chicago Cityscape,11
-Black & White San Francisco,San Francisco,Top US Cities,12
-Black & White Wrigley Field,Chicago Cubs,Chicago Sports,13
-Boston Aerial Images,Boston,Top US Cities,14
-Boston Landmarks & Attractions,Boston,Top US Cities,15
-Boston Public Garden,Boston,Top US Cities,16
-Boston Skyline,Boston,Top US Cities,17
-Buckingham Fountain,Chicago Landmarks,Chicago Cityscape,18
-Bulls Championship,Chicago Bulls,Chicago Sports,19
-Camden Yards,MLB,Other Sports,20
-Cellular Field Panoramas,Chicago White Sox,Chicago Sports,21
-Chicago Aerial Views,Chicago Cityscape,Chicago Cityscape,22
-Chicago Bears Players,Chicago Bears,Chicago Sports,23
-Chicago Blackhawks Players,Chicago Blackhawks,Chicago Sports,24
-Chicago Board Of Trade,Chicago Landmarks,Chicago Cityscape,25
-Chicago Cityscape,Chicago Cityscape,Chicago Cityscape,26
-Chicago Cubs Players,Chicago Cubs,Chicago Sports,27
-Chicago Daytime & Aerial Panoramas,Chicago Panoramas,Chicago Cityscape,28
-Chicago Marathon,xxx,xxx,29
-Chicago Sculptures,Chicago Landmarks,Chicago Cityscape,30
-Chicago Street Cars,Chicago Vintage,Chicago Cityscape,31
-Chicago Theatre,Chicago Landmarks,Chicago Cityscape,32
-Chicago Water Tower,Chicago Landmarks,Chicago Cityscape,33
-Comiskey Park,Chicago White Sox,Chicago Sports,34
-Fenway Park,Boston,Top US Cities,35
-Golden Gate Bridge,San Francisco,Top US Cities,36
-Historic Vintage Chicago Landmarks,Chicago Vintage,Chicago Cityscape,37
-Ireland & Irish Pubs,European Cities,Europen Cities,38
-Lambeau Field,NFL,Other Sports,39
-Michael Jordan,Chicago Bulls,Chicago Sports,40
-Millennium Park,Chicago Landmarks,Chicago Cityscape,41
-Modern Day Chicago - Thick Black Frame,Chicago Black & White,Chicago Cityscape,42
-Navy Pier,Chicago Landmarks,Chicago Cityscape,43
-Notre Dame Football,College Football,Other Sports,44
-Old Chicago Stadium,Chicago Blackhawks,Chicago Sports,45
-Other Famous Chicago Landmarks,Chicago Landmarks,Chicago Cityscape,46
-San Francisco Landmarks,San Francisco,Top US Cities,47
-San Francisco Skyline,San Francisco,Top US Cities,48
-Shea Stadium,MLB,Other Sports,49
-Soldier Field,Chicago Bears,Chicago Sports,50
-Soldier Field Aerials,Chicago Bears,Chicago Sports,51
-Soldier Field Panoramas,Chicago Bears,Chicago Sports,52
-State Street,Chicago Landmarks,Chicago Cityscape,53
-Sunset & Dusk Panoramas,Chicago Panoramas,Chicago Cityscape,54
-Tall Ships Chicago 2010,Chicago Landmarks,Chicago Cityscape,55
-Top 10 of 2014,Best Sellers,Most Popular,56
-Top Christmas Gifts,Holiday Shopping,Most Popular,57
-Trump Tower Chicago,Chicago Landmarks,Chicago Cityscape,58
-Us Cellular Field,Chicago White Sox,Chicago Sports,59
-Vintage Chicago Skyline,Chicago Vintage,Chicago Cityscape,60
-Vintage Chicago Sports,Chicago Vintage,Chicago Cityscape,61
-Wrigley Building,Chicago Landmarks,Chicago Cityscape,62
-Wrigley Field,Chicago Cubs,Chicago Sports,63
-Wrigley Field Aerials,Chicago Cubs,Chicago Sports,64
-Wrigley Field Panoramas,Chicago Cubs,Chicago Sports,65
-Yankee Stadium,MLB,Other Sports,66
+title,main_category,super_category,is_active,id_num
+2005 White Sox Championship,Chicago White Sox,Chicago Sports,TRUE,1
+2009 Winter Classic,Chicago Blackhawks,Chicago Sports,TRUE,2
+2010 Blackhawks Championship,Chicago Blackhawks,Chicago Sports,TRUE,3
+2013 Blackhawks Stanley Cup Champions,Chicago Blackhawks,Chicago Sports,TRUE,4
+Best Selling Chicago Skyline,Best Sellers,Most Popular,TRUE,5
+Best Selling Chicago Sports,Best Sellers,Most Popular,TRUE,6
+Big Ten College Stadiums,College Football,Other Sports,TRUE,7
+Black & White Boston Photos,Boston,Top US Cities,TRUE,8
+Black & White Chicago - Horizontal,Chicago Black & White,Chicago Cityscape,TRUE,9
+Black & White Chicago - Vertical,Chicago Black & White,Chicago Cityscape,TRUE,10
+Black & White Chicago Panoramas,Chicago Panoramas,Chicago Cityscape,TRUE,11
+Black & White San Francisco,San Francisco,Top US Cities,TRUE,12
+Black & White Wrigley Field,Chicago Cubs,Chicago Sports,TRUE,13
+Boston Aerial Images,Boston,Top US Cities,TRUE,14
+Boston Landmarks & Attractions,Boston,Top US Cities,TRUE,15
+Boston Public Garden,Boston,Top US Cities,TRUE,16
+Boston Skyline,Boston,Top US Cities,TRUE,17
+Buckingham Fountain,Chicago Landmarks,Chicago Cityscape,TRUE,18
+Bulls Championship,Chicago Bulls,Chicago Sports,TRUE,19
+Camden Yards,MLB,Other Sports,FALSE,20
+Cellular Field Panoramas,Chicago White Sox,Chicago Sports,TRUE,21
+Chicago Aerial Views,Chicago Cityscape,Chicago Cityscape,TRUE,22
+Chicago Bears Players,Chicago Bears,Chicago Sports,TRUE,23
+Chicago Blackhawks Players,Chicago Blackhawks,Chicago Sports,TRUE,24
+Chicago Board Of Trade,Chicago Landmarks,Chicago Cityscape,TRUE,25
+Chicago Cityscape,Chicago Cityscape,Chicago Cityscape,TRUE,26
+Chicago Cubs Players,Chicago Cubs,Chicago Sports,FALSE,27
+Chicago Daytime & Aerial Panoramas,Chicago Panoramas,Chicago Cityscape,TRUE,28
+Chicago Marathon,xxx,xxx,FALSE,29
+Chicago Sculptures,Chicago Landmarks,Chicago Cityscape,TRUE,30
+Chicago Street Cars,Chicago Vintage,Chicago Cityscape,TRUE,31
+Chicago Theatre,Chicago Landmarks,Chicago Cityscape,TRUE,32
+Chicago Water Tower,Chicago Landmarks,Chicago Cityscape,TRUE,33
+Comiskey Park,Chicago White Sox,Chicago Sports,TRUE,34
+Fenway Park,Boston,Top US Cities,TRUE,35
+Golden Gate Bridge,San Francisco,Top US Cities,TRUE,36
+Historic Vintage Chicago Landmarks,Chicago Vintage,Chicago Cityscape,TRUE,37
+Ireland & Irish Pubs,European Cities,Europen Cities,FALSE,38
+Lambeau Field,NFL,Other Sports,FALSE,39
+Michael Jordan,Chicago Bulls,Chicago Sports,TRUE,40
+Millennium Park,Chicago Landmarks,Chicago Cityscape,TRUE,41
+Modern Day Chicago - Thick Black Frame,Chicago Black & White,Chicago Cityscape,TRUE,42
+Navy Pier,Chicago Landmarks,Chicago Cityscape,TRUE,43
+Notre Dame Football,College Football,Other Sports,TRUE,44
+Old Chicago Stadium,Chicago Blackhawks,Chicago Sports,TRUE,45
+Other Famous Chicago Landmarks,Chicago Landmarks,Chicago Cityscape,TRUE,46
+San Francisco Landmarks,San Francisco,Top US Cities,TRUE,47
+San Francisco Skyline,San Francisco,Top US Cities,TRUE,48
+Shea Stadium,MLB,Other Sports,FALSE,49
+Soldier Field,Chicago Bears,Chicago Sports,TRUE,50
+Soldier Field Aerials,Chicago Bears,Chicago Sports,TRUE,51
+Soldier Field Panoramas,Chicago Bears,Chicago Sports,TRUE,52
+State Street,Chicago Landmarks,Chicago Cityscape,TRUE,53
+Sunset & Dusk Panoramas,Chicago Panoramas,Chicago Cityscape,TRUE,54
+Tall Ships Chicago 2010,Chicago Landmarks,Chicago Cityscape,TRUE,55
+Top 10 of 2014,Best Sellers,Most Popular,TRUE,56
+Top Christmas Gifts,Holiday Shopping,Most Popular,TRUE,57
+Trump Tower Chicago,Chicago Landmarks,Chicago Cityscape,TRUE,58
+Us Cellular Field,Chicago White Sox,Chicago Sports,TRUE,59
+Vintage Chicago Skyline,Chicago Vintage,Chicago Cityscape,TRUE,60
+Vintage Chicago Sports,Chicago Vintage,Chicago Cityscape,TRUE,61
+Wrigley Building,Chicago Landmarks,Chicago Cityscape,TRUE,62
+Wrigley Field,Chicago Cubs,Chicago Sports,TRUE,63
+Wrigley Field Aerials,Chicago Cubs,Chicago Sports,TRUE,64
+Wrigley Field Panoramas,Chicago Cubs,Chicago Sports,TRUE,65
+Yankee Stadium,MLB,Other Sports,TRUE,66

@@ -1,0 +1,45 @@
+@import 'base/base';
+@import 'base/library';
+
+@include static_pages_base;
+@include customer_quotes;
+.comparison_wrapper{
+  margin: 0px auto 40px auto;
+}
+
+.ind_frame_wrapper{
+
+  width: 48%;
+  margin-right: 35px;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0px;
+  position: relative;
+
+  .frame_title{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .frame_desc{
+    margin-bottom: 30px;
+  }
+
+  .frame_detail{
+    width: 100%;
+    border: 1px solid $dark_gray;
+    margin-bottom: 40px;
+  }
+
+
+
+
+
+}
+
+
+
+  .thick_frame{
+    margin-right: 0px;
+  }
+

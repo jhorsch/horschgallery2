@@ -1,0 +1,41 @@
+@import "base/base";
+@import "base/library";
+
+@include static_pages_base;
+
+  .artist_wrapper{
+  margin-top: 20px;
+
+  margin: 0 auto;
+  width: 100%;
+  // background: yellow;
+
+  li{
+    text-align: center;
+    display: inline-block;
+    margin-right: 40px;
+  }
+
+   img{
+    width: 150px;
+    border-radius: 200px;
+    display: inline-block;
+    vertical-align: center;
+   }
+
+  h3{
+    font-size: 20px;
+    vertical-align: center;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+

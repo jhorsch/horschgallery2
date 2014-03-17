@@ -1,8 +1,8 @@
 @import "base/base";
 
-.addcart{
+.call_to_action_btn{
 
-    background: $orange_color;
+    background: fade-out($orange_color,.2);
     width: 100%;
     height: 50px;
     font-size: 22px;
@@ -16,14 +16,14 @@
 
 
       &:hover{
-        background:  #DE890B;
+        background:  $orange_color;
       }
 
 }
 
 .fav_button {
 
-    background: #ccc;
+    background: #eee;
     width: 100px;
     text-align: center;
     color: $black_color;
@@ -42,7 +42,7 @@
 }
 
 .fav_button:hover, .fav_button:active {
-  background-color: #E8E8E7;
+  background-color: #ddd;
   text-decoration: none;
   color: black;
 }

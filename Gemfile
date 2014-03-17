@@ -18,12 +18,13 @@ group :production do
   gem 'rails_12factor', '0.0.2'
 end
 
-# gem 'font-awesome-sass'
+# GEMS I ADDED
 gem 'database_cleaner'
-
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '0.0.9'
+# gem 'bourbon'
 
+#DEFAULT GEMS
 
 
 # Use SCSS for stylesheets

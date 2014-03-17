@@ -1,27 +1,21 @@
 
 @import "base/base";
 
-.body_container {
 
+.body_container {
   margin: 0 auto;
   width: $main_body_width;
   background: white;
+  position: relative;
 }
 
-.maincontent{
 
-  // padding: 0 20px;
-
-  }
-
-  .header_space_holder{
-
-    height: 100px;
-    display: block;
-    position: relative;
-    margin-bottom: 40px;
-
-  }
+.header_space_holder{
+  height: $total_nav_height;
+  display: block;
+  position: relative;
+  margin-bottom: 40px;
+}
 
 header {
   position: fixed;
@@ -32,9 +26,27 @@ header {
   width: 100%;
 }
 
+//SALE NAV
+.sale_nav{
+  width: 100%;
+  background: #eee;
+}
+
+.sale_nav_content{
+  display: block;
+  width: $main_body_width;
+  height: $sale_nav_height;
+  margin: 0 auto;
+  color: $red_color;
+  background: #eee;
+  text-align: center;
+  padding: 2px 20px 0 20px;
+  font-family: $sans-serif;
+  font-size: 16px;
+
+}
 
 // TOP NAVIGATION
-
 .top_nav{
   width: 100%;
   background: $black_color;
@@ -44,7 +56,7 @@ header {
 
   display: block;
   width: $main_body_width;
-  height: 50px;
+  height: $top_nav_height;
   padding: 10px 10px;
   background: $black_color;
   color:  white;
@@ -60,14 +72,14 @@ header {
 
     a{
       color: #ccc;
+      &:hover{
+        color: $orange_color;
+      }
     }
 
   }
 
-
-
   .logoname{
-
 
     border-right: 1px solid #ccc;
     a{
@@ -75,21 +87,27 @@ header {
       font-family: $logo_font, sans-serif;
       font-size: 20px;
       padding-right: 15px;
-
+      &:hover{
+        color: #eee
+      }
     }
   }
 
   input[type="search"] {
     width: 400px;
     height: 32px;
-    border-radius: 5px;
+    border-radius: 100px;
     outline: none;
     padding: 0 10px 0 30px;
     font-size: 16px;
     margin-left: 15px;
-    border: 1x solid #bbb;
+    border: 1px solid #bbb;
     background: #e6e6e6;
     color: $black_color;
+    &:focus, &:hover{
+      border: 1px solid $orange_color;
+    }
+
   }
 
   .search_button{
@@ -131,7 +149,6 @@ header {
 }
 
 // BOTTOM NAVIGATION
-
 .bottom_nav {
   width: 100%;
   background: white;
@@ -140,18 +157,16 @@ header {
 }
 
 .bottom_nav_content {
-
   margin: 0 auto;
   display: block;
+  height: $bottom_nav_height;
   width: $main_body_width;
-  height: 50px;
   vertical-align: top;
   font-size: 0px;
   background: $white_color;
   padding-top: 10px;
 
   // MAIN MENU
-
   li.main_menu{
 
     display: inline-block;
@@ -161,57 +176,40 @@ header {
     }
 
     .main_menu_link{
-
-      // background: green;
-      // border: 1px solid black;
       padding: 0px 40px 0 0;
-      &:first-child{
-      margin-left: 10px;
-    }
       color: $black_color;
       font-weight: bold;
       font-size: 20px;
-
-
-
+      &:first-child{
+        margin-left: 10px;
+      }
     }
 
     .browse{
-
       color: $orange_color;
+      margin-left: -4px;
       &:visited{
         color: $orange_color;
       }
-      margin-left: -4px;
     }
 
 }
 
 //SHOW ACTIVE LINKS
-
-
 .current_link{
-
-    color: $orange_color;
-
-
+  color: $orange_color;
 }
 
 .disable_link{
-
-    color: $black_color;
-
+  color: $black_color;
 }
 
 
 .main_menu:hover > .sub_menu_container {
-
   opacity: .99;
   visibility: visible;
   overflow: visible;
  -webkit-transition: all 5s ease .15s;
-
-
 }
 
 .main_menu a:hover, .main_menu a:active{
@@ -221,9 +219,6 @@ header {
 .main_cat_grouping {
 
     margin: 0px 0px 25px 0;
-
-
-
     font-size: 18px;
 
     a {
@@ -251,9 +246,7 @@ header {
 
 
 /* SUB MENU CONTAINER */
-
 .sub_menu_container  {
-
   position: absolute;
   z-index: 800;
   top: 110%;
@@ -264,7 +257,6 @@ header {
   margin-top: -4px;
   margin-left: 10px;
   padding: 15px;
-
 
   background: white;
   border-radius: 3px;
@@ -289,37 +281,20 @@ header {
       border-width: 10px;
       width: 0;
       height: 0;
-
   }
 
 }
 
 .nav_column{
-
   float: left;
   margin: 0 40px 0px 0px;
-
 }
 
 .sub_menu_small {
-
     width: 300px;
-
 }
 
 
 
 
-// FOOTER
-footer{
-  text-align: center;
-  padding: 10px;
-  border-top: 2px dotted #ccc;
-  color: $black_color;
 
-  .signupnewsletter{
-    a{
-      color: white;
-    }
-  }
-}

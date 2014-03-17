@@ -4,11 +4,16 @@ Horschgallery2::Application.routes.draw do
   resources :photos
   resources :categories
 
+
   get "/photographers" => 'static_pages#photographers'
-  get "/mats" => 'static_pages#mat'
+  get "/mats" => 'static_pages#mats'
+  get "/frames" => 'static_pages#frames'
+  get "/compare_sizes" => 'static_pages#compare_sizes'
+  get "/shopping_cart" => 'static_pages#shopping_cart'
+  get "/confirmation" => 'static_pages#confirmation'
 
 
-  post '/search' => 'photos#search'
+  post '/search/:queryid' => 'photos#search', :as => 'mysearch'
 
   # resources :users, :only => [:index]
 

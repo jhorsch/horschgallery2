@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 
   def index
 
-    @photos = Photo.all
+    @photos = Photo.where(is_active: true)
 
     featured = ['4094','bw130','1424','2935','4122','2900','1423','3059','4113']
     top_gifts = ['a10','a5','a11','bw99','bw19', 'bw17']
@@ -24,8 +24,8 @@ class PhotosController < ApplicationController
 
   def show
 
-        @customer_viewed = Photo.where(main_category: @photo.main_category).shuffle.take(5)
-        @recently_viewed = Photo.all.sample(5)
+        @customer_viewed = Photo.where(main_category: @photo.main_category, is_active: true).shuffle.take(5)
+        @recently_viewed = Photo.where(is_active: true).sample(5)
         if @photo.nil?
           flash.now[:alert] = "Your photo was not found"
           @photos = Photo.all
@@ -73,7 +73,7 @@ class PhotosController < ApplicationController
  def search
 
 
-    @query  = params[:search]
+    @query  = params[:query]
     @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 12)
       render 'search'
 

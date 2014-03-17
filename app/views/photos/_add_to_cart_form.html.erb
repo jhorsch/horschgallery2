@@ -2,13 +2,13 @@
 
 
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>
-<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="#" rel="nofollow">Compare</a></fieldset>
+<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare_sizes" rel="nofollow">Compare</a></fieldset>
 
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
 <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %><a class='option_helpers' href="#" rel="nofollow">Views Mats</a></fieldset>
 
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option value='0'>Classic Black - Thin Rounded</option><option selected value='10'>Classic Black - Wide Flat</option>".html_safe %><a class='option_helpers' href="#" rel="nofollow">View Frames</a></fieldset>
+<%= select_tag 'choose_frame', "<option value='0'>Classic Black - Thin Rounded</option><option selected value='10'>Classic Black - Wide Flat</option>".html_safe %><a class='option_helpers' href="/frames" rel="nofollow">View Frames</a></fieldset>
 
 <% if @photo.show_bw_conversion %>
 <fieldset class="convert_to_bw_row">
@@ -23,6 +23,6 @@
 <fieldset class='row_qty'><%= label_tag 'qty', 'Quantity:' %>
 <%= select_tag 'qty', "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>".html_safe %></fieldset>
 
-<div><%= submit_tag 'Add To Cart', class:'addcart' %></div>
+<div><%= submit_tag 'Add To Cart', class:'call_to_action_btn' %></div>
 
 </div>

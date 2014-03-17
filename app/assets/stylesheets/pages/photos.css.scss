@@ -3,19 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "base/base";
+@import "base/library";
 
 // MAIN BODY
-
-
-.homepage{
-
-  padding-bottom: 50px;
-
+.homepage_main{
+  padding: $main_page_side_padding;
+  margin: 0px auto;
+  margin-bottom: 50px;
   h1{
     padding-top: 20px;
     text-align: center;
   }
-
   p{
       margin: 50px auto;
       padding: 40px 20px;
@@ -25,9 +23,7 @@
       border-top: 2px solid #aaa;
       border-bottom: 1px solid #ccc;
       width: 90%;
-
   }
-
   .p_tagline{
      margin: 20px auto 2px auto;
      padding: 0px 20px 40px 20px;
@@ -35,33 +31,7 @@
   }
 
 
-  .customer_testomonial{
-
-      margin: 60px auto;
-      // background: yellow;
-      padding: 0px 25px;
-      line-height: 1.3em;
-      font-size: 26px;
-      text-align: center;
-      border: none;
-      border-left: 5px solid $orange_color;
-      color: fade-out($orange_color, .2);
-      font-style: italic;
-      width: 80%;
-      font-size: 40px;
-      text-align: left;
-
-
-  }
-
-  span.customer_name{
-    color: $red_color;
-    font-family: serif;
-    font-size: 14px;
-    display: block;
-    font-style: normal;
-
-  }
+ @include customer_quotes;
 
 
   blockquote{
@@ -75,8 +45,6 @@
     border-bottom: 1px solid #ccc;
     width: 90%;
     color: fade-out($black_color, .2);
-
-
   }
 
   h3.shop_tagline{
@@ -86,9 +54,6 @@
     text-align: left;
     border-top: 1px solid #ccc;
     padding: 30px 0 10px 0;
-    // background: green;
-
-
   }
 
   h3.shop_gifts_cta{
@@ -96,9 +61,6 @@
     margin: 10px 130px;
     font-weight: 600;
     text-align: left;
-    // background: green;
-
-
   }
 
   .starting_at{
@@ -106,23 +68,27 @@
     font-style: italic;
     font-weight: normal;
     margin-left: 10px;
-    // background: yellow;
     font-size: 16px;
     color: $red_color;
   }
 
   .start_browsing{
-    a{
-    color: #4C7A8A;
-
-    }
+    border-bottom: 0px solid black;
+    margin-bottom: 0px;
     font-size: 30px;
     font-weight: 800px;
+    padding-bottom: 0px;
+    padding-top: 50px;
+    a{
+      color: #4C7A8A;
+    }
   }
-}
- .fa-arrow-right{
-    margin-left: 5px;
 
+}
+
+
+.fa-arrow-right{
+    margin-left: 5px;
  }
 
 .panorama_container {
@@ -138,32 +104,23 @@
 
 
 // PHOTO CONTAINERS
-
 .gallery_template{
-
   margin: 40px auto;
   font-size: 0;
   width: 100%;
   text-align: center;
-
-
   .ind_imge{
-
       position: relative;
       display: inline-block;
       margin: 0 5px 5px 0;
       position: relative;
       width: 22%;
-
-
       img{
         width: 100%;
       }
-
   }
 
   h3.home_cat_title a{
-
       font-size: 14px;
       font-weight: 400;
       position: absolute;
@@ -172,13 +129,11 @@
       bottom: 0px;
       left: 0px;
       text-transform: lowercase;
-
       font-family: $sans_serif;
       background: $black_color;
       opacity: .95;
       color: white;
     }
-
 
 }
 
@@ -188,17 +143,14 @@
 }
 
 .vertical_gallery{
-
   @extend .gallery_template;
   .ind_imge{
     margin: 0 10px 10px 0;
     width: 27%;
   }
-
 }
 
 .top_gifts_gallery{
-
   @extend .gallery_template;
   .ind_imge{
     margin: 0 5px 5px 0;
@@ -207,7 +159,6 @@
 }
 
 .color_to_bw_gallery{
-
   @extend .gallery_template;
   .ind_imge{
     margin: 0 5px 0px 0;
@@ -216,7 +167,6 @@
 }
 
 .single_gallery{
-
   @extend .gallery_template;
   .ind_imge{
     width: 900px;
