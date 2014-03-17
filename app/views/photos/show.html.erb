@@ -61,6 +61,19 @@
 </ul>
 </section>
 
+<section class="recommended_photoset_wrapper">
+<h3>Your Most Recently Viewed</h3>
+<ul>
+<% @recently_viewed.each do |photo| %>
+    <li>
+      <%= link_to( image_tag("matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
+      <h4><%= link_to photo.title, photo_url(photo) %></h4>
+      <h5><%= link_to photo.sub_category, photo_url(photo) %></h5>
+    </li>
+  <% end %>
+</ul>
+</section>
+
 </main>
 
 

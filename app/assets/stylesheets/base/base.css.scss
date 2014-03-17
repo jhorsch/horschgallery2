@@ -43,10 +43,7 @@ body {
   font-size: 16px;
   background: white;
   font-family: serif;
-  line-height: 1.5;
-
-
-
+  line-height: 1.4;
 }
 
 pre {
@@ -110,24 +107,27 @@ h3 {
 
 }
 
-h4 a{
-
-font-size: 16px;
-color: $dark_gray;
-font-family: serif;
-
+h4{
+  line-height: 1.2;
+  font-size: 16px;
+  font-family: serif;
+  margin-bottom: 5px;
+  a{
+    color: $dark_gray;
+  }
 }
 
-h5 a{
-
-font-size: 14px;
-color: $light_gray;
-font-family: serif;
-&:hover{
-  text-decoration: underline;
-  color: $light_gray;
-}
-
+h5 {
+  line-height: 1.2;
+  font-size: 14px;
+  font-family: serif;
+  a{
+    color: $light_gray;
+    &:hover{
+      text-decoration: underline;
+      color: $light_gray;
+    }
+  }
 }
 
 // PARAGRAPHS
@@ -136,8 +136,7 @@ font-family: serif;
 p, blockquote, span {
     font-family: $serif;
     color: $black_color;
-
-    // margin: 40px 0;
+    font-size: 18px;
 
 }
 

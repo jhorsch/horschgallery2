@@ -70,10 +70,9 @@
 
 .top_footer{
   // background: yellow;
-  width: 85%;
 
   margin: 20px auto 0 auto;
-  padding: 40px 0;
+  padding: 40px 40px;
 
   .footer_info{
     width: 150px;
@@ -112,9 +111,12 @@
 // bottom footer
 .bottom_footer{
 
-  background: #eee;
 
+  bottom: 0px;
+  left: 0px;
   width: 100%;
+  border-top: 10px solid #eee;
+
   margin: 0px auto;
   padding: 20px 80px;
 

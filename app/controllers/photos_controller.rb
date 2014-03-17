@@ -25,7 +25,7 @@ class PhotosController < ApplicationController
   def show
 
         @customer_viewed = Photo.where(main_category: @photo.main_category, is_active: true).shuffle.take(5)
-        @recently_viewed = Photo.all.sample(5)
+        @recently_viewed = Photo.where(is_active: true).sample(5)
         if @photo.nil?
           flash.now[:alert] = "Your photo was not found"
           @photos = Photo.all

@@ -9,6 +9,8 @@ belongs_to :format
 validates :format_id, presence: true
 
 
+
+
 def artist
   self.artist_name.titleize
 end
