@@ -95,20 +95,19 @@
 
 }
 
-// @media only screen and (max-width: 900px)  {
+@media only screen and (max-width: 900px)  {
 
-//       .category_main{
-//         h1{
-//           color: red;
-//         }
-//       }
-//       .photoset_wrapper{
+      .category_main h1{
+          color: red;
+        }
 
-//         &:nth-of-type(2n){
-//           margin-right: 0px;
-//         }
-//       }
-// }
+      .photoset_wrapper{
+
+         li{
+            margin-right: 0px;
+          }
+      }
+}
 
   // h4 a{
 

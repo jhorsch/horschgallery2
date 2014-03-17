@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def photographers
+
   end
 
   def mats
