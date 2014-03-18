@@ -1,0 +1,42 @@
+<section class='customer_info_form billing_form'>
+      <h2>Billing Informtion</h2>
+      <%= check_box_tag 'billing_same', 'yes' ,true %>
+      <%= label_tag 'billing_same', 'My billing and shipping info are the same', class: 'billing_same' %>
+      <section class='hide_billing'>
+
+      <fieldset>
+        <%= label_tag 'first_name' %>
+        <%= text_field_tag 'first_name' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'last_name' %>
+        <%= text_field_tag 'last_name' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'address' %>
+        <%= text_field_tag 'address' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'suite' , '' %>
+        <%= text_field_tag 'suite' %>
+      </fieldset>
+      <fieldset>
+<!--         //EMPTY FIELD SET FOR TYPE OF LOCATION
+ -->      </fieldset>
+      <fieldset>
+        <%= label_tag 'city' %>
+        <%= text_field_tag 'city' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'state' %>
+        <%= select_tag 'state' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'zip_code' %>
+        <%= text_field_tag 'zip_code' %>
+      </fieldset>
+      </section>
+
+
+
+    </section>

@@ -1,0 +1,63 @@
+@import 'base/base';
+
+
+
+.payment_main{
+  padding: $main_page_side_padding;
+  margin: 0px auto;
+
+}
+.credit_card_section{
+
+}
+
+.customer_info_form{
+
+  // background: green;
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  font-size: 18px;
+
+  fieldset{
+    margin-bottom: 15px;
+  }
+
+  label{
+    width: 100px;
+    float: left;
+    height: 28px;
+    color: $dark_gray;
+    text-transform: capitalize;
+    vertical-align: bottom;
+  }
+
+  .billing_same{
+    float: none;
+    text-transform: none;
+
+  }
+
+  input[type='text'], input[type='email']{
+    width: 200px;
+    // outline: none;
+    text-transform: capitlize;
+    border-radius: 3px;
+    height: 28px;
+    font-size: 16px;
+    vertical-align: bottom;
+
+  }
+
+
+
+    img{
+    width: 150px;
+  }
+}
+
+.hide_billing{
+  display: none;
+}

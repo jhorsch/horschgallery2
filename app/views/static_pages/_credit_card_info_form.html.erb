@@ -1,0 +1,20 @@
+<section class='customer_info_form credit_card_form'>
+
+
+      <fieldset>
+        <%= label_tag 'we_accept' %>
+        <%= image_tag 'credit_cards.jpg' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'credit_card_number' %>
+        <%= text_field_tag 'credit_card_number' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'credit_card_exp' %>
+        <%= select_tag 'credit_card_exp_month', '<option>01</option><option>02</option><option>03</option><option>04</option>' %>
+        <%= select_tag 'credit_card_exp_year' , '<option>2014</option><option>2015</option><option>2016</option><option>2017</option>' %>
+      </fieldset>
+
+
+
+    </section>

@@ -1,0 +1,25 @@
+<main class ='payment_main'>
+
+<section class="order_wrapper payment_info_wrapper">
+  <h1>Payment Information</h1>
+
+    <%= render 'shipping_info_form' %>
+    <%= render 'billing_info_form' %>
+
+
+  <h1>Credit Card Information</h1>
+    <%= render 'credit_card_info_form' %>
+
+  <h1>Contact Information</h1>
+    <%= render 'contact_info_form' %>
+
+
+
+  </section>
+
+  <aside class='checkout_aside_wrapper'>
+
+    <%= render 'checkout_order_totals' %>
+
+  </aside>
+</main>

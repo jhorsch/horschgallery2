@@ -1,0 +1,37 @@
+<section class='customer_info_form'>
+      <h2>Shipping Informtion</h2>
+      <fieldset>
+        <%= label_tag 'first_name' %>
+        <%= text_field_tag 'first_name' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'last_name' %>
+        <%= text_field_tag 'last_name' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'address' %>
+        <%= text_field_tag 'address' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'suite' , '' %>
+        <%= text_field_tag 'suite' %>
+      </fieldset>
+    <!--   <fieldset>
+        <%= radio_button_tag('type_of_location', 0) %>
+        <%= label_tag 'type_of_location_0', 'residential' %>
+        <%= radio_button_tag(:type_of_location, 1) %>
+        <%= label_tag 'type_of_location_1' , 'business' %>
+      </fieldset> -->
+      <fieldset>
+        <%= label_tag 'city' %>
+        <%= text_field_tag 'city' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'state' %>
+        <%= select_tag 'state' %>
+      </fieldset>
+      <fieldset>
+        <%= label_tag 'zip_code' %>
+        <%= text_field_tag 'zip_code' %>
+      </fieldset>
+    </section>

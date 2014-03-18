@@ -11,6 +11,7 @@ Horschgallery2::Application.routes.draw do
   get "/compare_sizes" => 'static_pages#compare_sizes'
   get "/shopping_cart" => 'static_pages#shopping_cart'
   get "/confirmation" => 'static_pages#confirmation'
+  get "/payment_info" => 'static_pages#payment_info'
 
 
   post '/search/:queryid' => 'photos#search', :as => 'mysearch'
