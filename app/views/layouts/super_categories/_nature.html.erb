@@ -5,7 +5,7 @@
 <div class="main_cat_grouping">
 <h3>Nature Photography</h3>
 <ul>
-<%  find_categories('Nature Photography').each do  |category| %>
+<%  find_categories('Nature').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
