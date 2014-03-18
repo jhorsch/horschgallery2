@@ -1,0 +1,12 @@
+
+
+
+<% @top_gifts.each do |photo| %>
+<div class="ind_imge">
+  <a href=<%= photo_url(photo.id) %>><%= image_tag "https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg" %></a>
+
+</div>
+<% end %>
+
+
+

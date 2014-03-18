@@ -1,0 +1,17 @@
+<div class="single_gallery">
+
+<% @single.each do |photo| %>
+<div class="ind_imge">
+  <a href=<%= photo_url(photo) %>><%= image_tag "https://s3-us-west-2.amazonaws.com/hg-englarged/#{photo.id_num.downcase}.jpg" %></a>
+
+
+</div>
+
+<% end %>
+
+
+
+
+
+
+</div>

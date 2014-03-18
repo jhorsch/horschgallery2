@@ -1,8 +1,0 @@
-<div class="color_to_bw_gallery">
-<% @color_to_bw.each do |photo| %>
-<div class="ind_imge">
-  <a href=<%= photo_url(photo) %>><%= image_tag "matted/#{photo.id_num.downcase}.jpg" %></a>
-</div>
-<% end %>
-
-</div>
