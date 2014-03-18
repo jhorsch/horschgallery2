@@ -1,10 +1,10 @@
 Horschgallery2::Application.routes.draw do
 
-  root 'photos#index'
+  root 'static_pages#home'
   resources :photos
   resources :categories
 
-
+  get "/home" => 'static_pages#home'
   get "/photographers" => 'static_pages#photographers'
   get "/mats" => 'static_pages#mats'
   get "/frames" => 'static_pages#frames'

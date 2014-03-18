@@ -1,0 +1,64 @@
+<% content_for :meta_title do %>
+  Chicago Skyline Photos & Framed Chicago Pictures For Sale
+<% end %>
+
+<% content_for :meta_desc do %>
+Shop the largest selection of framed Chicago skyline photos with over 1000+ quality and affordable framed Chicago pictures for sale.  Great Prices. Great Reputation.<% end %>
+
+
+<main class='homepage_main'>
+
+  <div class="panorama_container"><a href="#"><%= image_tag "pan78long.jpg" %></a></div>
+
+  <h1>Quality & Affordable Chicago Photography</h1>
+
+  <p class="p_tagline">Over the last 30 years Bob Horsch has documented the dynamic landscape of Chicago through the lens of a camera.  His photography portfolio contains a diverse selection of colorful framed Chicago skyline photos from all four seasons combined with memorable Chicago sports photos.</p>
+
+  <div class="featured_gallery">
+
+  <h3 class="shop_tagline">Shop Featured Chicago Photo Galleries</h3>
+  <%= render "/photos/index/featured" %>
+
+  </div>
+
+  <p class="customer_testomonial">Bob Horsch's photographs are a living archive of Chicago life and architecture.  I really enjoy his art!  <span class="customer_name">Stephanie - Chicago, IL </span></p>
+
+
+  <p>Select from the  largest collection of quality & affordable framed pictures of Chicago ranging from the early 1900's to the present day.  All of his one-of-a-kind Chicago pictures come in a variety of styles which span vintage, modern, black & white to color.</p>
+
+
+<div class="vertical_gallery">
+    <%= render "/photos/index/verticals" %>
+</div>
+
+     <p>Looking for a unique gift to give to that special person in your life?</p>
+
+<div class="top_gifts_gallery">
+
+    <h3 class="shop_gifts_cta">Shop Our Top Gifts of 2014<span class="starting_at">Prices start at $24</span></h3>
+
+
+    <%= render "/photos/index/top_gifts" %>
+
+  </div>
+
+    <p>Do you prefer black & white photogrphy instead of color?<br> No problem.  We can do the conversion for you.</p>
+
+    <%= render "/photos/index/color_to_bw" %>
+
+  <blockquote>Your memories of Chicago may soften over time, but a photograph of Chicago lasts forever.
+  </blockquote>
+
+
+    <%= render "/photos/index/single" %>
+
+<p class="start_browsing"><a href="/categories/7">Start browsing our most popular Chicago photographs<i class="fa fa-arrow-right"></i></a></p>
+
+
+
+</main>
+
+
+
+
+

@@ -35,9 +35,11 @@
     <%= yield %>
 
 
-    <% if params[:controller] == 'photos' %>
-      <%= render "layouts/footer" %>
+    <% if (params[:controller] == 'static_pages' && params[:action] == 'home') ||  (params[:controller] == 'categories' && params[:action] == 'show') %>
+        <%= render "layouts/newsletter" %>
     <% end %>
+
+    <%= render 'layouts/footer' %>
 
   </div>
 

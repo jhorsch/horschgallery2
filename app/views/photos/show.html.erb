@@ -19,13 +19,12 @@
   <a class = 'detail_page_category_name' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
 </div>
 
-sadfsafsafasfasdfs_bw130.jpg
 
 <section class='featured_product'>
 
 <div class="product_wrapper">
   <div class='product'>
-  <%= link_to image_tag("matted/#{@photo.id_num.downcase}.jpg"), "/assets/image/#{@photo.id_num}.jpg" , class: 'image_link' %>
+  <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{@photo.id_num.downcase}.jpg"), "https://s3-us-west-2.amazonaws.com/hg-englarged/#{@photo.id_num.downcase}.jpg" , class: 'image_link' %>
   <div class="share_wrapper">
     <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
     <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
