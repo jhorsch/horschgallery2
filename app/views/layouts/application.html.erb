@@ -34,7 +34,10 @@
 
     <%= yield %>
 
-    <%= render "layouts/footer" %>
+
+    <% if params[:controller] == 'photos' %>
+      <%= render "layouts/footer" %>
+    <% end %>
 
   </div>
 

@@ -14,7 +14,7 @@ Horschgallery2::Application.routes.draw do
   get "/payment_info" => 'static_pages#payment_info'
 
 
-  post '/search/:queryid' => 'photos#search', :as => 'mysearch'
+  get '/search' => 'photos#search', :as => 'search'
 
   # resources :users, :only => [:index]
 
