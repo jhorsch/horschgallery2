@@ -24,7 +24,13 @@ end
 
 def self.search(query)
 
-  where('id_num LIKE ? OR title LIKE ? OR desc LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
+  # where('id_num LIKE ? OR title LIKE ? OR desc LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
+
+  where("LOWER(title) LIKE ? OR LOWER(desc) LIKE ? OR LOWER(id_num) LIKE ? OR LOWER(id_num) LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%", "%#{query.downcase}" , "%#{query.downcase}wf")
+
+
+  # where("LOWER(id_num) LIKE ? OR LOWER(title) LIKE ? OR LOWER(desc) LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%, "%#{query.downcase}%")
+
 
 end
 

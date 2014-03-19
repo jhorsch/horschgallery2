@@ -1,20 +1,27 @@
-<% meta_title "Search Results For xxx" %>
-<% meta_desc "xxxxxx" %>
+<% content_for :meta_title do %>
+  <%= "HorschGallery Photo Search for #{@query.titleize}" %>
+<% end %>
 
+<% content_for :meta_desc do %>
+  We found some results
+<% end %>
 
-<div class="category_wrapper">
+<main class="search_main">
 
 <%  if @query.blank? %>
 
-<h2 class 'search_header'>Whoops.&nbsp&nbspYou didn't enter any keywords in the search bar.  Please try again.</h2>
+<h1>Search Results for ...</h1>
+<p class 'search_header'>Whoops.&nbsp&nbspYou didn't enter any keywords in the search bar.  Please try again.</p>
 
 <%  elsif @photos.count == 0 %>
 
-<h2 class 'search_header'>We looked everywhere, but couldn't find any photographs that matched your search.&nbsp&nbspPlease check the spelling or enter a new search term.</h2>
+<h1>Search Results for "<%= @query.downcase %>"</h1>
+<p class 'search_header'>We looked everywhere, but couldn't find any photographs that matched your search.&nbsp&nbspPlease check the spelling or enter a new search term.</p>
 
 <% else %>
 
-<h2 class 'search_header'>You're in luck!  We searched around the gallery and found these photographs for you.</h2>
+<h1>Search Results for "<%= @query.downcase %>"</h1>
+<p class 'search_header'>You're in luck!  We searched around the gallery and found <span class='search_count'><%= pluralize(@photos.count,'photograph') %></span> that matched your search.</p>
 
 
 
@@ -35,7 +42,6 @@
 
 <% end %>
 
-</div>
 
-
+</main>
 

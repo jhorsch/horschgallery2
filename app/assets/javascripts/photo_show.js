@@ -59,13 +59,12 @@ $(function(){
   });
 
 
-  //show enlarged image
-  $('.image_link').magnificPopup({
-    type:'image'
-  });
+  // //show enlarged image
+  // $('.image_link').magnificPopup({
+  //   type:'image'
+  // });
 
   //highlight correct categories
-
 
   // breadcrumb_sub_cat
 

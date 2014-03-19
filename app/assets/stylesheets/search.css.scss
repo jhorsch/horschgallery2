@@ -1,3 +1,22 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base/base";
+.search_main{
+
+ padding: $main_page_side_padding;
+  margin: 0px auto;
+  h1{
+  }
+  h2{
+    font-size: 26px;
+  }
+
+  .search_count{
+    font-size: 20px;
+    color: $orange_color;
+    font-weight: bold;
+  }
+}
+

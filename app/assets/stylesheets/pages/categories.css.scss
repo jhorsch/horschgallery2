@@ -109,6 +109,67 @@
       }
 }
 
+
+//signup
+.newsletter_wrapper{
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  border-top: 1px solid #ccc;
+  // border-bottom: 1px solid #ccc;
+  padding: 80px 0;
+  // background: yellow;
+
+  margin: 0 auto;
+  // background: green;
+
+  .subscribe_title{
+    font-size: 40px;
+  }
+  .subscribe_desc{
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  // MAIL CHIMP
+  .mail_chimp_wrapper{
+
+
+    .sign_up_details{
+      width: 300px;
+      height: 40px;
+      font-size: 18px;
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid fade-out($orange_color,.2);
+    }
+
+    input[type='email']{
+      @extend .sign_up_details;
+      color: $black_color;
+      text-align: center;
+      border: 2px solid fade-out($orange_color,.2);
+
+      &:hover{
+        border: 2px solid $orange_color;
+      }
+    }
+
+    input[type='submit']{
+      @extend .sign_up_details;
+      background: fade-out($orange_color,.2);
+      color: white;
+
+      &:hover{
+        background: $orange_color
+      }
+    }
+
+
+}
+}
+
   // h4 a{
 
   //   font-size: 16px;

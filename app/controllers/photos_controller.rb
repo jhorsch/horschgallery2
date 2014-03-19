@@ -11,6 +11,9 @@ class PhotosController < ApplicationController
 
         @customer_viewed = Photo.where(main_category: @photo.main_category, is_active: true).shuffle.take(5)
         @recently_viewed = Photo.where(is_active: true).sample(5)
+
+
+
         if @photo.nil?
           flash.now[:alert] = "Your photo was not found"
           @photos = Photo.all
@@ -58,7 +61,7 @@ class PhotosController < ApplicationController
  def search
 
     @query  = params[:query]
-    @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 12)
+    @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 24)
       render 'search'
 
  end
