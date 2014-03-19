@@ -44,6 +44,15 @@ header {
   font-family: $sans-serif;
   font-size: 16px;
 
+  a{
+    color: $black_color;
+    &:hover{
+      text-decoration: underline;
+      color: $black_color;
+
+    }
+  }
+
 
 }
 
