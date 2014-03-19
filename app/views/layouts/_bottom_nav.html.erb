@@ -23,7 +23,9 @@
     </li>
   </uL>
   </nav>
+  <% if params[:controller] == 'photos' && params[:action] == 'show' %>
    <div class="sale_nav">
-    <nav class="sale_nav_content">*March Sale starts now.  Save 15% off your order.  more details</nav>
+    <nav class="sale_nav_content">*** Our March Sale is going on this week.&nbsp;&nbsp;Get 15% off your entire order by provided your feedback.  Take our 2 mintue survey ***</nav>
   </div>
+  <% end %>
 </div>

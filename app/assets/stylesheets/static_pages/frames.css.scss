@@ -6,10 +6,10 @@
 
 .comparison_wrapper{
   margin: 0px auto 40px auto;
+  // background: green;
 
-
-
-  width: 48%;
+  .ind_frame_wrapper{
+  width: 45%;
   margin-right: 35px;
   display: inline-block;
   vertical-align: top;
@@ -32,12 +32,9 @@
   }
 
 
-
-
-
 }
 
-
+}
 
   .thick_frame{
     margin-right: 0px;

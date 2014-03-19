@@ -24,9 +24,10 @@ end
 
 def self.search(query)
 
-  where('id_num LIKE ? OR id_num LIKE ? OR title LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
+  where('id_num LIKE ? OR title LIKE ? OR desc LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
 
 end
+
 
 
 

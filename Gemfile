@@ -22,6 +22,7 @@ end
 gem 'database_cleaner'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '0.0.9'
+
 # gem 'bourbon'
 
 #DEFAULT GEMS
@@ -53,6 +54,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'jquery-turbolinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

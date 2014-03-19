@@ -12,10 +12,12 @@
 //
 
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
-//= photo_show
 //= require_tree .
+//= require turbolinks
+
+
 
 
 
