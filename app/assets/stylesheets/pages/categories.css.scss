@@ -13,7 +13,6 @@
 .top_pagination{
   padding: 20px 0px 0 0;
   margin: 2px 0 0px 0;
-  // background: yellow;
   border-top: 1px solid #ccc;
   @extend .pagination_styling;
   div{
@@ -32,7 +31,7 @@
 .pagination{
   font-size: 0;
   text-align: center;
-  margin: -20px 0 40px 0;
+  margin: 20px 0 100px 0;
   div{
     display: inline-block;
   }
@@ -42,13 +41,23 @@
     padding: 3px 10px;
     // background: yellow;
     margin: 0 5px;
-    border: 1px solid #aaa;
+    border: 2px solid #ccc;
     background: white;
+    a{
+      color: $light_gray;
+      font-weight: bold;
+    }
+  }
+
+  li.active{
+    border: 2px solid $orange_color;
     a{
       color: $orange_color;
       font-weight: bold;
     }
   }
+
+
   .previous_page, .next_page {
     // display: none;
   }
@@ -76,7 +85,7 @@
 .photoset_wrapper{
 
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 0px;
   li{
     display: inline-block;
     vertical-align: top;
@@ -169,7 +178,6 @@
 
 }
 }
-
   // h4 a{
 
   //   font-size: 16px;

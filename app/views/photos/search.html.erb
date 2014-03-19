@@ -22,6 +22,9 @@
 
 <h1>Search Results for "<%= @query.downcase %>"</h1>
 <p class 'search_header'>You're in luck!  We searched around the gallery and found <span class='search_count'><%= pluralize(@photos.count,'photograph') %></span> that matched your search.</p>
+<p class="showing_pages">Showing page <%= @photos.current_page  %>
+ of <%= @photos.total_pages  %>
+</p>
 
 
 <ul class="photoset_wrapper">

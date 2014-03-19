@@ -3,7 +3,7 @@
 @import "base/buttons";
 
 .photo_main{
-  padding: $main_page_side_padding;
+  padding: 0;
   margin: 0 auto;
 }
 
@@ -29,8 +29,8 @@
 
 .product_wrapper{
   float: left;
-  width: 500px;
-  margin-right: 50px;
+  width: 525px;
+  margin-right: 30px;
   text-align: center;
   img{
     width: 100%;
@@ -61,7 +61,7 @@
 
 .product_info_wrapper{
   float: left;
-  width: 450px;
+  width: 475px;
   text-align: left;
   padding-top: 0px;
   margin-bottom: 50px;
@@ -120,9 +120,10 @@
   .product_text{
     border-bottom: 1px solid #ccc;
     font-size: 18px;
+    line-height: 1.2;
 
-    padding: 0px 0 30px 0;
-    margin-bottom: 30px;
+    padding: 0px 0 20px 0;
+    margin-bottom: 20px;
   }
 
 }
