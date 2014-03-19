@@ -48,6 +48,14 @@
       font-weight: bold;
     }
   }
+  li:hover{
+    border: 2px solid $orange_color;
+  }
+
+  li:hover a{
+    color: $orange_color;
+
+  }
 
   li.active{
     border: 2px solid $orange_color;

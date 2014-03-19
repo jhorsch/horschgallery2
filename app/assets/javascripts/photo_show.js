@@ -4,36 +4,18 @@
 $(function(){
 
 
-  //ENLARGE IMAGE LINK
+//ENLARGE IMAGE LINK
 
+$(".image_link").fancybox({
+    helpers : {
+        overlay : {
+            css : {
+                'background' : 'rgba(25, 25, 25, 0.98)'
+            }
+        }
+    }
+});
 
-    // $(".image_link").fancybox({
-    //     beforeLoad: function() {
-    //         this.title = $(this.element).attr('caption');
-    //     }
-
-    // });
-
-    $(".image_link").fancybox({
-
-      helpers : {
-          overlay : {
-              css : {
-                  'background' : 'rgba(19, 19, 19, .95)'
-
-              }
-          }
-      }
-  });
-
-
-
-
-
-    // $('.image_link').magnificPopup({
-    //   type: 'image'
-    //   // other options
-    // });
 
 
   //change price
