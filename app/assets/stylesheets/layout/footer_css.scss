@@ -92,8 +92,38 @@
       display: inline-block;
       text-align: right;
       color: $light_gray;
+      position: relative;
 
     }
+  }
+
+  .top_of_page{
+    background: #eee;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    border: 1px solid $light_gray;
+    padding: 10px 0;
+    text-align: center;
+    position: absolute;
+    font-size: 18px;
+    bottom: 75px;
+    right: -120px;
+    font-weight: bold;
+    &:hover{
+      border: 1px solid $orange_color;
+    }
+
+    a{
+      color: $light_gray;
+      &:hover{
+        color: $orange_color;
+      }
+    }
+  }
+
+  .fa-arrow-up{
+    font-size: 34px;
   }
 
 

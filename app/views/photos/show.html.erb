@@ -40,6 +40,8 @@
 
 
 
+
+
 <div class="product_info_wrapper">
 
 <h1 class='photo_title'><%= @photo.title %></h1>
@@ -49,6 +51,24 @@
 
 </div>
 
+</section>
+
+
+<section class="three_things">
+  <ul>
+    <li>
+      <h4><i class="fa fa-star"></i>One-Of-A-Kind Photographs</h4>
+      <p>Unlike large e-commerce print and poster websites, our photographs are not mass produced. Every Chicago picture was photographed and crafted entirely by gallery owner, Bob Horsch.</p>
+    </li>
+    <li>
+      <h4><i class="fa fa-home"></i>Family Owned Business</h4>
+      <p>We are a long standing & reputable, local family business.  For 30 years, we have been selling high quality & affordable photos with two previous stores on Michigan Avenue.</p>
+    </li>
+    <li>
+      <h4><i class="fa fa-truck fa-flip-horizontal"></i>Free Return Shipping</h4>
+      <p>If you aren't happy with your new photo, we'll refund everything. This includes: photo price + tax + initial shipping + free return shipping.</p>
+    </li>
+  </ul>
 </section>
 
 
@@ -65,7 +85,18 @@
 </ul>
 </section>
 
-
+<section class="recommended_photoset_wrapper">
+<h3>Customers Also Viewed</h3>
+<ul>
+<% @customer_viewed.each do |photo| %>
+    <li>
+      <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
+      <h4><%= link_to photo.title, photo_url(photo) %></h4>
+      <h5><%= link_to photo.sub_category, photo_url(photo) %></h5>
+    </li>
+  <% end %>
+</ul>
+</section>
 
 </main>
 

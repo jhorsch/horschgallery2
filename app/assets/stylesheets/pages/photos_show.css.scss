@@ -129,12 +129,55 @@
 }
 
 
+.three_things{
+
+  width: 100%;
+  clear: both;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: 0;
+
+
+  li{
+    width: 330px;
+    height: 180px;
+    background: #eee;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 25px 0 0;
+    padding: 20px;
+    &:nth-child(3n){
+      margin-right: 0px;
+    }
+
+  }
+
+  h4{
+    color: $dark_gray;
+    font-size: 20px;
+    font-family: $sans_serif;
+
+  }
+
+  .fa-trophy, .fa-truck, .fa-star, .fa-home, {
+    margin-right: 10px;
+  }
+
+  p{
+      color: $light_gray;
+      font-size: 18px;
+      line-height: 1.2;
+  }
+
+}
 .recommended_photoset_wrapper {
 
   clear: both;
   padding-top: 20px;
-   border-top: 1px solid #ccc;
-   border-top: 1px solid #ccc;
+   &:nth-of-type(2){
+    border-bottom: 1px solid #ccc;
+   }
   // background: yellow;
   margin-bottom: 0px;
   h3{
