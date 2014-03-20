@@ -14,12 +14,14 @@
 
   .footer_info{
     width: 150px;
-    margin: 0 28px 0px 0;
+    margin: 0 40px 0px 0;
     display: inline-block;
     vertical-align: top;
     font-size: 0;
     &:last-child{
       margin-right: 0px;
+     width: 80px;
+
     }
 
 
@@ -47,12 +49,13 @@
       background: #eee;
       width: 80px;
       height: 80px;
-      border-radius: 100px;
+      border-radius: 80px;
       border: 1px solid $light_gray;
       padding: 10px 0;
       text-align: center;
       font-size: 18px;
       font-weight: bold;
+      margin-right: 0px;
       &:hover{
         border: 1px solid $orange_color;
       }
