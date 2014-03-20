@@ -1,0 +1,6 @@
+All photos
+
+<% @photos.each do |photo| %>
+  <div><%= photo.title %>-<%= photo.id_num %></div>
+<% end %>
+<%=  will_paginate %>

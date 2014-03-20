@@ -4,6 +4,8 @@ class PhotosController < ApplicationController
 
   def index
 
+      @photos = Photo.order("title ASC").paginate(:page => params[:page], :per_page => 24)
+
   end
 
 

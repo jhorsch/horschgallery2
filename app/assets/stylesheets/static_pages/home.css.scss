@@ -74,14 +74,28 @@
   }
 
   .start_browsing{
-    border-bottom: 0px solid black;
-    margin-bottom: 0px;
+    text-align: center;
+    width: 900px;
+    margin: 0 auto;
     font-size: 30px;
     font-weight: 800px;
     padding-bottom: 0px;
-    padding-top: 50px;
+    padding: 30px 0;
+    background: white;
+    border: 1px solid $black_color;
     a{
-      color: #4C7A8A;
+      // color: #4C7A8A;
+      color: $black_color;
+    }
+    &:hover{
+      background: $black_color;
+      a{
+        color: white;
+      }
+
+      .fa-arrow-right{
+        color: $orange_color
+      }
     }
   }
 
@@ -89,7 +103,7 @@
 
 
 .fa-arrow-right{
-    margin-left: 5px;
+    margin-left: 10px;
  }
 
 .fa-gift{
