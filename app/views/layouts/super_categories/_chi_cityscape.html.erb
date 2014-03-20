@@ -4,7 +4,7 @@
 <div class="nav_column">
 
 <div class="main_cat_grouping">
-<h3>Chicago Black & White</h3>
+<div class='menu_main_category'>Chicago Black & White</div>
 <ul>
 <%  find_categories('Chicago Black & White').each do  |category| %>
   <li ><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="main_cat_grouping">
-<h3>Chicago Vintage</h3>
+<div class='menu_main_category'>Chicago Vintage</div>
 <ul>
 <%  find_categories('Chicago Vintage').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -22,7 +22,7 @@
 </div>
 
 <div class="main_cat_grouping">
-<h3>Chicago Panoramas</h3>
+<div class='menu_main_category'>Chicago Panoramas</div>
 <ul>
 <%  find_categories('Chicago Panoramas').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -37,7 +37,7 @@
 
 
 <div class="main_cat_grouping">
-<h3>Chicago Cityscape</h3>
+<div class='menu_main_category'>Chicago Cityscape</div>
 <ul>
 <%  find_categories('Chicago Cityscape').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -47,7 +47,7 @@
 
 
 <div class="main_cat_grouping">
-<h3>Chicago Landmarks</h3>
+<div class='menu_main_category'>Chicago Landmarks</div>
 <ul>
 <%  find_categories('Chicago Landmarks').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>

@@ -179,6 +179,7 @@ header {
   // MAIN MENU
   li.main_menu{
 
+    font-family: $sans-serif;
     display: inline-block;
     position: relative;
     height: 40px;
@@ -239,7 +240,7 @@ header {
       }
     }
 
-    h3{
+    .menu_main_category{
       margin: 0px 0 5px 0;
       // color: $black_color;
       text-transform: uppercase;

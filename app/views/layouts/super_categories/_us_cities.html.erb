@@ -3,7 +3,7 @@
 <div class="nav_column">
 
 <div class="main_cat_grouping">
-<h3>San Francisco</h3>
+<div class='menu_main_category'>San Francisco</div>
 <ul>
 <%  find_categories('San Francisco').each do  |category| %>
 <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -14,7 +14,7 @@
 
 <div class="nav_column">
 <div class="main_cat_grouping">
-<h3>Boston</h3>
+<div class='menu_main_category'>Boston</div>
 <ul>
 <%  find_categories('Boston').each do  |category| %>
 <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>

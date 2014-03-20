@@ -3,7 +3,7 @@
 <div class="nav_column">
 
 <div class="main_cat_grouping">
-<h3>Nature Photography</h3>
+<div class='menu_main_category'>Nature Photography</div>
 <ul>
 <%  find_categories('Nature').each do  |category| %>
   <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>

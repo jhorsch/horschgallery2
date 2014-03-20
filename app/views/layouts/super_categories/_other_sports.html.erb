@@ -1,8 +1,8 @@
 <div class="sub_menu_container sub_menu_small">
-
 <div class="nav_column">
+
 <div class="main_cat_grouping">
-<h3>MLB Baseball</h3>
+<div class='menu_main_category'>MLB Baseball</div>
 <ul>
 <%  find_categories('MLB').each do  |category| %>
 <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
@@ -10,26 +10,16 @@
 </ul>
 </div>
 
-<!-- <div class="main_cat_grouping">
-<h3>NFL Football</h3>
-<ul>
-<%  find_categories('NFL').each do  |category| %>
-<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
-</div>
- -->
 
-<div class="nav_column">
 <div class="main_cat_grouping">
-<h3>College Football</h3>
+<div class='menu_main_category'>College Football</div>
 <ul>
 <%  find_categories('College Football').each do  |category| %>
-<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<li><a href=<%= category_url(category.id)%> > <%= category.title %></a></li>
 <% end %>
 </ul>
 </div>
+
 </div>
 
 </div>
