@@ -5,7 +5,7 @@
 <div class='menu_main_category'>MLB Baseball</div>
 <ul>
 <%  find_categories('MLB').each do  |category| %>
-<li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+<li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -15,7 +15,7 @@
 <div class='menu_main_category'>College Football</div>
 <ul>
 <%  find_categories('College Football').each do  |category| %>
-<li><a href=<%= category_url(category.id)%> > <%= category.title %></a></li>
+<li><a href=<%= category_url(category)%> > <%= category.title %></a></li>
 <% end %>
 </ul>
 </div>

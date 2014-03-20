@@ -79,7 +79,7 @@
     <li>
       <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
       <h4><%= link_to photo.title, photo_url(photo) %></h4>
-      <h5><%= link_to photo.sub_category, photo_url(photo) %></h5>
+      <h5><%= link_to photo.sub_category, category_url(photo.category) %></h5>
     </li>
   <% end %>
 </ul>
@@ -92,7 +92,7 @@
     <li>
       <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
       <h4><%= link_to photo.title, photo_url(photo) %></h4>
-      <h5><%= link_to photo.sub_category, photo_url(photo) %></h5>
+      <h5><%= link_to photo.sub_category, category_url(photo.category) %></h5>
     </li>
   <% end %>
 </ul>

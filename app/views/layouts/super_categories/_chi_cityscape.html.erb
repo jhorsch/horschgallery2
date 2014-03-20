@@ -7,7 +7,7 @@
 <div class='menu_main_category'>Chicago Black & White</div>
 <ul>
 <%  find_categories('Chicago Black & White').each do  |category| %>
-  <li ><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li ><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -16,7 +16,7 @@
 <div class='menu_main_category'>Chicago Vintage</div>
 <ul>
 <%  find_categories('Chicago Vintage').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -25,7 +25,7 @@
 <div class='menu_main_category'>Chicago Panoramas</div>
 <ul>
 <%  find_categories('Chicago Panoramas').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -40,7 +40,7 @@
 <div class='menu_main_category'>Chicago Cityscape</div>
 <ul>
 <%  find_categories('Chicago Cityscape').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -50,7 +50,7 @@
 <div class='menu_main_category'>Chicago Landmarks</div>
 <ul>
 <%  find_categories('Chicago Landmarks').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>

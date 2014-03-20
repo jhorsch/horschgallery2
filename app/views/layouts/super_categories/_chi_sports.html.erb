@@ -6,7 +6,7 @@
 <div class='menu_main_category'>Chicago Blackhawks</div>
 <ul>
 <%  find_categories('Chicago Blackhawks').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %></a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %></a></li>
 <% end %>
 </ul>
 </div>
@@ -15,7 +15,7 @@
 <div class='menu_main_category'>Chicago Bears</div>
 <ul>
 <%  find_categories('Chicago Bears').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %></a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %></a></li>
 <% end %>
 </ul>
 </div>
@@ -24,7 +24,7 @@
 <div class='menu_main_category'>Chicago Bulls</div>
 <ul>
 <%  find_categories('Chicago Bulls').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %></a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %></a></li>
 <% end %>
 </ul>
 </div>
@@ -38,7 +38,7 @@
 <div class='menu_main_category'>Chicago Cubs</div>
 <ul>
 <%  find_categories('Chicago Cubs').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -47,7 +47,7 @@
 <div class='menu_main_category'>Chicago White Sox</div>
 <ul>
 <%  find_categories('Chicago White Sox').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>

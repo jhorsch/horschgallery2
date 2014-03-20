@@ -20,7 +20,7 @@ $(function(){
         // $(this).closest('.main_cat_grouping').find('h3').css('color','#DA7C05');
 
 
-        $(this).closest('.main_menu').children('h2').children('a').css('color','#DA7C05');
+        $(this).closest('.main_menu').children('a').css('color','#DA7C05');
 
     }
 

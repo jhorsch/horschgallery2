@@ -6,7 +6,7 @@
 <div class='menu_main_category'>Best Sellers</div>
 <ul>
 <%  find_categories('Best Sellers').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -15,7 +15,7 @@
 <div class='menu_main_category'>What's New</div>
 <ul>
 <%  find_categories('Whats New').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
@@ -31,7 +31,7 @@
 <div class='menu_main_category'>Holiday Shopping</div>
 <ul>
 <%  find_categories('Holiday Shopping').each do  |category| %>
-  <li><a href=<%= category_url(category.id)%> > <%= category.title %> </a></li>
+  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>
