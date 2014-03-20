@@ -66,7 +66,7 @@ class PhotosController < ApplicationController
  def search
 
     @query  = params[:query]
-    @photos = Photo.search(@query).order(id_num: :desc).paginate(:page => params[:page], :per_page => 24)
+    @photos = Photo.search(@query).paginate(:page => params[:page], :per_page => 24)
       render 'search'
 
  end

@@ -28,8 +28,9 @@
     var scrolling_bottom = scrolling_top + aside_height - aside_starting_top;
 
     var aside_top_fixed_pos = header_height + 10;
-    var aside_left_fixed_pos = sticky_container.offset().left - 30;
+    var aside_left_fixed_pos = sticky_container.offset().left;
 
+    console.log(aside_left_fixed_pos);
 
     if ((scrolling_top > top_break_point) && (scrolling_bottom <  bottom_break_point))
     {

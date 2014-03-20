@@ -18,31 +18,30 @@ $background_container_color: #eee;
    margin-top: 50px;
 }
 
+
 .fix_aside_wrapper{
   position: fixed;
 }
 
 
 
-.stickem-container {
-  position: relative;
-}
+// .stickem-container {
+//   position: relative;
+// }
 
-.stickit {
-    margin-left: 660px;
-    position: fixed;
-    top: 100;
-}
+// .stickit {
+//     margin-left: 660px;
+//     position: fixed;
+//     top: 100;
+// }
 
-.stickit-end {
-    bottom: 40px;
-    position: absolute;
-    right: 0;
-}
+// .stickit-end {
+//     bottom: 40px;
+//     position: absolute;
+//     right: 0;
+// }
 
-.row{
-  position: relative;
-}
+
 
 .row:after{
   clear: both;
