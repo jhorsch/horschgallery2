@@ -133,10 +133,11 @@
 
   width: 100%;
   clear: both;
-  padding: 20px 0;
+  padding: 30px 0;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   font-size: 0;
+  margin-bottom: 0px;
 
 
   li{
@@ -174,8 +175,8 @@
 .recommended_photoset_wrapper {
 
   clear: both;
-  padding-top: 20px;
-   &:nth-of-type(2){
+  padding-top: 40px;
+   &:nth-of-type(odd){
     border-bottom: 1px solid #ccc;
    }
   // background: yellow;

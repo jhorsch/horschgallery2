@@ -86,9 +86,9 @@
 </section>
 
 <section class="recommended_photoset_wrapper">
-<h3>Customers Also Viewed</h3>
+<h3>Your Most Recently Viewed</h3>
 <ul>
-<% @customer_viewed.each do |photo| %>
+<% @recently_viewed.each do |photo| %>
     <li>
       <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg"), photo_url(photo)) %>
       <h4><%= link_to photo.title, photo_url(photo) %></h4>

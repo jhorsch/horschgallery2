@@ -75,12 +75,13 @@
 .category_main{
   padding: $main_page_side_padding;
   margin: 0px auto;
-  p{
+  .category_desc{
 
     border-bottom: 1px solid #ccc;
     padding: 0px 30px 30px 0px;
     text-align: center;
   }
+
   h1{
     display: block;
     margin: 0px 0 10px 0;
@@ -134,16 +135,13 @@
   text-align: center;
   margin-bottom: 50px;
   border-top: 1px solid #ccc;
-  // border-bottom: 1px solid #ccc;
   padding: 80px 0;
-  // background: yellow;
-
   margin: 0 auto;
-  // background: green;
 
   .subscribe_title{
     font-size: 40px;
   }
+
   .subscribe_desc{
     font-size: 24px;
     margin-bottom: 20px;
@@ -186,32 +184,6 @@
 
 }
 }
-  // h4 a{
-
-  //   font-size: 16px;
-  //   text-align: left;
-  //   color: $dark_gray;
-  //   font-family: serif;
-
-  //   &:hover{
-  //     color: $orange_color;
-  //   }
-
-  // }
-
-  // h3 a{
-
-  //   font-size: 14px;
-  //   text-align: left;
-  //   color: $light_gray;
-  //   font-family: serif;
-
-  //   &:hover{
-  //     color: $orange_color;
-  //   }
-
-  // }
-
 
 
 
