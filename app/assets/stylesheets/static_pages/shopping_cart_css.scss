@@ -9,6 +9,50 @@ $background_container_color: #eee;
   margin-bottom: 100px;
 }
 
+
+//STICKY CONTAINER
+//SIDE BAR FOR PRICE SUMMARY
+.payment_wrapper{
+   float: right;
+   margin-left: 30px;
+   margin-top: 50px;
+}
+
+.fix_aside_wrapper{
+  position: fixed;
+}
+
+
+
+.stickem-container {
+  position: relative;
+}
+
+.stickit {
+    margin-left: 660px;
+    position: fixed;
+    top: 100;
+}
+
+.stickit-end {
+    bottom: 40px;
+    position: absolute;
+    right: 0;
+}
+
+.row{
+  position: relative;
+}
+
+.row:after{
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+
 //CHECKOUT PROGRESS
 
 .checkout_progress{
@@ -42,8 +86,7 @@ $background_container_color: #eee;
 //ITEM LIST FOR SHOPPING CART
 .cart_wrapper{
   width:  $main_body_width - $summary_wraper_width - 120px;
-  display: inline-block;
-  vertical-align: top;
+  float: left;
 
   h1{
     margin-bottom: 20px;
@@ -131,16 +174,7 @@ $background_container_color: #eee;
 }
 
 
-//SIDE BAR FOR PRICE SUMMARY
-.payment_wrapper{
-   display: inline-block;
-   vertical-align: top;
-   margin-left: 30px;
-}
 
-.fix_aside_wrapper{
-  position: fixed;
-}
 
 .payment_summary_wrapper{
   width: $summary_wraper_width;

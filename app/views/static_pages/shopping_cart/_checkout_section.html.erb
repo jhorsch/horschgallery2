@@ -1,21 +1,28 @@
 
 
-<section class="checkout_wrapper">
-  <section class="cart_wrapper">
+
+<div class="row stickem-container">
+
+  <div class="cart_wrapper content">
 
     <h1>Your Photograph Collection</h1>
     <div class = 'number_items'>Items (2)<span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span></div>
 
     <%= render 'static_pages/shopping_cart/cart_item' %>
     <%= render 'static_pages/shopping_cart/cart_item' %>
+    <%= render 'static_pages/shopping_cart/cart_item' %>
+    <%= render 'static_pages/shopping_cart/cart_item' %>
+    <%= render 'static_pages/shopping_cart/cart_item' %>
 
-  </section>
+  </div>
 
-  <section class='payment_wrapper'>
+  <div class='payment_wrapper aside stickem'>
 
     <%= render 'static_pages/shopping_cart/payment_totals' %>
 
-  </section>
+  </div>
 
 
-</section>
+</div>
+
+

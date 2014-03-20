@@ -1,39 +1,49 @@
  $(function(){
 
-  var nav_fluid = $('.payment_wrapper');
-  var top_break_point = 144;
-  var bottom_break_point = $('.why_buy_wrapper').offset().top;
-  console.log('bottom_break',bottom_break_point);
-  var aside_starting_top = nav_fluid.offset().top;
-  var aside_height = nav_fluid.height();
+  // $('.stickem-container').stickem();
+
+  var sticky_container = $('.payment_wrapper');
+
+  var header_height = $('header').height() ;
+
+  var top_break_point = $('.stickem-container').offset().top - header_height + 50;
+
+  var bottom_break_point = $('.stickem-container').offset().top + $('.stickem-container').height();
+
+  var aside_starting_top = sticky_container.offset().top + 50;
+  var aside_height = sticky_container.height();
 
 
   $(window).resize(function(){
-      nav_fluid.removeClass('fix_aside_wrapper');
+      sticky_container.removeClass('fix_aside_wrapper');
   });
 
   $(window).scroll(function() {
 
 
-
     var scrolling_top  =  $(window).scrollTop();
     var window_height = $(window).height();
-    console.log(window_height);
-    var scrolling_bottom = scrolling_top + window_height - aside_starting_top;
 
-    var aside_top_fixed_pos = $('header').height() + 10;
-    var aside_left_fixed_pos = nav_fluid.offset().left - 30;
 
-    if ((scrolling_top > top_break_point) && (scrolling_bottom < bottom_break_point))
+    var scrolling_bottom = scrolling_top + aside_height - aside_starting_top;
+
+    var aside_top_fixed_pos = header_height + 10;
+    var aside_left_fixed_pos = sticky_container.offset().left - 30;
+
+
+    if ((scrolling_top > top_break_point) && (scrolling_bottom <  bottom_break_point))
     {
-        nav_fluid.addClass('fix_aside_wrapper');
+        sticky_container.addClass('fix_aside_wrapper');
         $('.fix_aside_wrapper').css('left',aside_left_fixed_pos);
         $('.fix_aside_wrapper').css('top',aside_top_fixed_pos);
+        $('.fix_aside_wrapper').css('margin-top','0');
     }
     else{
-       nav_fluid.removeClass('fix_aside_wrapper');
+       sticky_container.removeClass('fix_aside_wrapper');
+       $('.payment_wrapper').css('margin-top','50');
     }
 
   });
+
 
 });

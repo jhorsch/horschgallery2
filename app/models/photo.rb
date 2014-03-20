@@ -32,10 +32,10 @@ def self.search(query)
           LOWER(id_num) LIKE ? OR
           LOWER(id_num) LIKE ? ",
           true,
-          "%#{query.downcase}%",
-          "%#{query.downcase}%",
-          "%#{query.downcase}",
-          "%#{query.downcase}wf"
+          "%#{query}%",
+          "%#{query}%",
+          "%#{query}",
+          "%#{query}wf"
           )
 
 
