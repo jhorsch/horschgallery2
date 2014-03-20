@@ -113,10 +113,16 @@
 
 }
 
-@media only screen and (max-width: 900px)  {
+@media only screen and (max-width: 600px)  {
 
-      .category_main h1{
+      .category_main
+
+        h1{
           color: red;
+        }
+
+        .category_desc{
+          font-size: 14px;
         }
 
       .photoset_wrapper{
