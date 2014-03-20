@@ -1,6 +1,6 @@
  $(function(){
 
-  var nav_fluid = $('.checkout_aside_wrapper');
+  var nav_fluid = $('.payment_wrapper');
   var top_break_point = 144;
   var bottom_break_point = $('.why_buy_wrapper').offset().top;
   console.log('bottom_break',bottom_break_point);
