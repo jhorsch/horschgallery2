@@ -39,6 +39,13 @@
     cursor: -moz-zoom-in;
     opacity: 1;
   }
+
+  .image_link{
+    opacity: 1;
+    &:hover{
+      opacity: 1;
+    }
+  }
   .artist{
     font-size: 16px;
   }
