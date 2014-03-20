@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
 
+
   def index
 
       @photos = Photo.order("title ASC").paginate(:page => params[:page], :per_page => 24)
@@ -13,6 +14,8 @@ class PhotosController < ApplicationController
 
         @customer_viewed = Photo.where(main_category: @photo.main_category, is_active: true).shuffle.take(5)
         @recently_viewed = Photo.where(is_active: true).sample(5)
+
+         @recently_viewed = Photo.where(is_active: true).sample(5)
 
 
 
@@ -63,7 +66,7 @@ class PhotosController < ApplicationController
  def search
 
     @query  = params[:query]
-    @photos = Photo.search(@query).order("id_num DESC").paginate(:page => params[:page], :per_page => 24)
+    @photos = Photo.search(@query).order(id_num: :desc).paginate(:page => params[:page], :per_page => 24)
       render 'search'
 
  end
