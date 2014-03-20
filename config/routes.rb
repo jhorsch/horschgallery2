@@ -8,10 +8,10 @@ Horschgallery2::Application.routes.draw do
   get "/photographers" => 'static_pages#photographers'
   get "/mats" => 'static_pages#mats'
   get "/frames" => 'static_pages#frames'
-  get "/compare_sizes" => 'static_pages#compare_sizes'
+  get "/compare-sizes" => 'static_pages#compare_sizes'
   get "/shopping_cart" => 'static_pages#shopping_cart'
   get "/confirmation" => 'static_pages#confirmation'
-  get "/payment_info" => 'static_pages#payment_info'
+  get "/payment" => 'static_pages#payment'
 
 
   get '/search' => 'photos#search', :as => 'search'

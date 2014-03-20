@@ -15,8 +15,6 @@ class StaticPagesController < ApplicationController
     @color_to_bw = Photo.where(id_num: [color_to_bw])
     @single = Photo.where(id_num: '2910')
 
-
-
   end
 
   def photographers
@@ -26,6 +24,10 @@ class StaticPagesController < ApplicationController
   def mats
 
   end
+
+  def compare_sizes
+  end
+
 
   def frames
 
