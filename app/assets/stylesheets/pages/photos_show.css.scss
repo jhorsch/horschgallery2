@@ -158,13 +158,22 @@
     &:nth-child(3n){
       margin-right: 0px;
     }
+    &:hover{
+      background: fade-out($orange_color,.2);
+      color: white;
+    }
+
+    &:hover > h4,  &:hover > p{
+      color: white;
+    }
 
   }
 
   h4{
+    font-family: $sans_serif;
     color: $dark_gray;
     font-size: 20px;
-    font-family: $sans_serif;
+
 
   }
 
@@ -174,8 +183,10 @@
 
   p{
       color: $light_gray;
-      font-size: 18px;
-      line-height: 1.2;
+      font-size: 16px;
+      font-family: $sans_serif;
+      line-height: 1.3;
+
   }
 
 }
