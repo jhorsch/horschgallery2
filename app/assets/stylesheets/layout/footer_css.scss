@@ -30,11 +30,6 @@
     &:nth-child(3n){
       margin-right: 0px;
     }
-    &:hover{
-      background: $light_gray;
-      color: white;
-    }
-
 
 
     &:hover > h4,  &:hover > p {
@@ -42,6 +37,21 @@
     }
 
   }
+
+    .things_one:hover{
+      background: #2C4683;
+      color: white;
+    }
+
+    .things_two:hover{
+      background: #412990;
+      color: white;
+    }
+
+    .things_three:hover{
+      background: #297E90;
+      color: white;
+    }
 
   h4{
     font-family: $sans_serif;
