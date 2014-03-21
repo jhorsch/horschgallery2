@@ -26,11 +26,11 @@ def self.search(query)
 
   # where('id_num LIKE ? OR title LIKE ? OR desc LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
 
-  where(" (is_active) LIKE ? AND
+  where(" is_active = ? AND
           LOWER(title) LIKE ? OR
           LOWER(id_num) LIKE ? OR
           LOWER(id_num) LIKE ? ",
-          't',
+          true,
           "%#{query}%",
           "%#{query}",
           "%#{query}wf"
