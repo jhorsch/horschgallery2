@@ -43,6 +43,7 @@
   float: left;
   width: 100%;
   border: 0;
+  opacity: 1;
   }
 
 
@@ -54,10 +55,11 @@
   margin: 0px auto;
   margin-bottom: 50px;
   h1{
-    padding-top: 250px;
+    padding-top: 240px;
     text-align: center;
     font-size: 44px;
     color: $black_color;
+    line-height: 1;
   }
 
   .header_sub{
