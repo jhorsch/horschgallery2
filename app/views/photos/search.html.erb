@@ -11,12 +11,12 @@
 <%  if @query.blank? %>
 
 <h1>Search Results for ...</h1>
-<p class 'search_header'>Whoops.&nbsp&nbspYou didn't enter any keywords in the search bar.  Please try again.</p>
+<p class='no_results'>Whoops.&nbsp&nbspYou didn't enter any keywords in the search bar.  Please try again.</p>
 
 <%  elsif @photos.count == 0 %>
 
 <h1>Search Results for "<%= @query.downcase %>"</h1>
-<p class 'search_header'>We looked everywhere, but couldn't find any photographs that matched your search.&nbsp&nbspPlease check the spelling or enter a new search term.</p>
+<p class='no_results'>We looked everywhere, but couldn't find any photographs that matched your search.&nbsp&nbspPlease check the spelling or enter a new search term.</p>
 
 <% else %>
 

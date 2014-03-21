@@ -194,6 +194,7 @@ header {
       &:first-child{
         margin-left: 10px;
       }
+
     }
 
     .browse{
@@ -222,6 +223,8 @@ header {
   overflow: visible;
  -webkit-transition: all 5s ease .15s;
 }
+
+
 
 .main_menu a:hover, .main_menu a:active{
   color: $orange_color;
