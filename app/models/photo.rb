@@ -30,7 +30,7 @@ def self.search(query)
           LOWER(title) LIKE ? OR
           LOWER(id_num) LIKE ? OR
           LOWER(id_num) LIKE ? ",
-          true,
+          't',
           "%#{query}%",
           "%#{query}",
           "%#{query}wf"
