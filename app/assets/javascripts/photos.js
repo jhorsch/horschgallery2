@@ -4,3 +4,9 @@
 
 
 
+
+
+  $(function() {
+    $(".rslides").responsiveSlides();
+  });
+

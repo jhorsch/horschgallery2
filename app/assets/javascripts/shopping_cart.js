@@ -42,7 +42,7 @@
     }
     else{
        sticky_container.removeClass('fix_aside_wrapper');
-       // $('.payment_wrapper').css('margin-top','50');
+       $('.payment_wrapper').css('margin-top','50');
     }
 
   });

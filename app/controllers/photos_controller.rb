@@ -52,6 +52,7 @@ class PhotosController < ApplicationController
       else
         render 'edit'
       end
+
   end
 
 

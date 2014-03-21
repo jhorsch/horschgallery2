@@ -1,6 +1,17 @@
 All photos
 
+  <ul class="rslides">
+    <li><%= image_tag "pan78slider.jpg" %></li>
+    <li><%= image_tag "panbw2slider.jpg" %></li>
+    <li><%= image_tag "pan71slider.jpg" %></li>
+  </ul>
+</div>
+
+
 <% @photos.each do |photo| %>
   <div><%= photo.title %>-<%= photo.id_num %></div>
 <% end %>
 <%=  will_paginate %>
+
+
+
