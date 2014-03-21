@@ -29,6 +29,7 @@
 
     var aside_top_fixed_pos = header_height + 10;
     var aside_left_fixed_pos = sticky_container.offset().left;
+    // var aside_left_fixed_pos = 970;
 
     console.log(aside_left_fixed_pos);
 
@@ -41,7 +42,7 @@
     }
     else{
        sticky_container.removeClass('fix_aside_wrapper');
-       $('.payment_wrapper').css('margin-top','50');
+       // $('.payment_wrapper').css('margin-top','50');
     }
 
   });

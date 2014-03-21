@@ -23,20 +23,18 @@
 
   <div class="body_container" >
 
-    <header>
+  <header>
+  <%= render "layouts/top_nav" %>
+  <%= render "layouts/bottom_nav" %>
+  </header>
+  <div class="header_space_holder"></div>
 
-      <%= render "layouts/top_nav" %>
-      <%= render "layouts/bottom_nav" %>
-
-    </header>
-
-    <div class="header_space_holder"></div>
-
-    <%= yield %>
+  <%= yield %>
 
   </div>
-
+<%   unless (params[:controller] == 'static_pages'  && params[:action] == 'payment')  %>
   <%= render 'layouts/footer' %>
+<% end %>
 
 </body>
 </html>
