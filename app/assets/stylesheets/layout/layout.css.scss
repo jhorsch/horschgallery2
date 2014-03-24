@@ -57,6 +57,10 @@ header {
 }
 
 // TOP NAVIGATION
+
+form{
+  display: hidden;
+}
 .top_nav{
   width: 100%;
   background: $black_color;

@@ -9,11 +9,11 @@ $(function(){
 
 $(".image_link").fancybox({
 
-    type: 'image',
+    // type: 'image',
     padding: 20,
     closeBtn: true,
     closeClick: true,
-    openSpeed: 750,
+    openSpeed: 2000,
     closeSpeed: 250,
     helpers : {
         overlay : {
@@ -24,16 +24,16 @@ $(".image_link").fancybox({
     }
 });
 
-$(".option_helpers")
-    .fancybox({
-        type: 'inline',
-        padding: 30,
-        margin: 80,
-        openSpeed: 500,
-        autoSize: true,
-        maxWidth: 1000,
-        scrolling  : 'yes',
-    });
+// $(".option_helpers")
+//     .fancybox({
+//         type: 'inline',
+//         padding: 30,
+//         margin: 80,
+//         openSpeed: 500,
+//         autoSize: true,
+//         maxWidth: 1000,
+//         scrolling  : 'yes',
+// });
 
 
   //change price
