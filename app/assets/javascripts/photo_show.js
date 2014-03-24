@@ -28,6 +28,7 @@ $(".option_helpers")
     .fancybox({
         type: 'inline',
         padding: 30,
+        closeClick: true,
         margin: 80,
         openSpeed: 500,
         autoSize: true,
