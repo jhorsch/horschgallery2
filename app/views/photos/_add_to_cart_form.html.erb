@@ -2,8 +2,6 @@
 
 
 
-
-
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>
 <%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare-sizes" rel="nofollow">Compare</a></fieldset>
 
@@ -13,8 +11,12 @@
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
 <%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
 
-<a href="#" class='option_helpers' data-reveal-id="frame_modal">View Frames</a>
-<%= render 'photos/modals/frame_modal' %>
+
+<a href="#fb_frame_modal" class="option_helpers">View Frames</a>
+<div class="fancybox_hidden">
+  <%= render 'photos/modals/frame_modal' %>
+</div>
+
 
 
 </fieldset>

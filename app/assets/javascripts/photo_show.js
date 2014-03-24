@@ -8,6 +8,13 @@ $(function(){
 //ENLARGE IMAGE LINK
 
 $(".image_link").fancybox({
+
+    type: 'image',
+    padding: 20,
+    closeBtn: true,
+    closeClick: true,
+    openSpeed: 750,
+    closeSpeed: 250,
     helpers : {
         overlay : {
             css : {
@@ -17,6 +24,16 @@ $(".image_link").fancybox({
     }
 });
 
+$(".option_helpers")
+    .fancybox({
+        type: 'inline',
+        padding: 30,
+        margin: 80,
+        openSpeed: 500,
+        autoSize: true,
+        maxWidth: 1000,
+        scrolling  : 'yes',
+    });
 
 
   //change price
