@@ -15,7 +15,7 @@ $(".image_link").fancybox({
     closeClick: true,
     openSpeed: 2000,
     closeSpeed: 250,
-    helpers : {
+    helpers: {
         overlay : {
             css : {
                 'background' : 'rgba(25, 25, 25, 0.98)'
