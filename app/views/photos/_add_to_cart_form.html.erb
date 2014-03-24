@@ -6,13 +6,18 @@
 <%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare-sizes" rel="nofollow">Compare</a></fieldset>
 
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
-<%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %><a class='option_helpers' href="#" rel="nofollow">Views Mats</a></fieldset>
+<%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %>
+
+<a href="#fb_mat_modal" rel = 'nofollow' class="option_helpers">View Mats</a>
+<div class="fancybox_hidden">
+  <%= render 'photos/modals/mat_modal' %>
+</fieldset>
 
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
 <%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
 
 
-<a href="#fb_frame_modal" class="option_helpers">View Frames</a>
+<a href="#fb_frame_modal" rel='nofollow' class="option_helpers">View Frames</a>
 <div class="fancybox_hidden">
   <%= render 'photos/modals/frame_modal' %>
 </div>

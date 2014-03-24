@@ -10,7 +10,7 @@ $(function(){
 $(".image_link").fancybox({
 
     type: 'image',
-    padding: 20,
+    // padding: 15,
     closeBtn: true,
     closeClick: true,
     openSpeed: 750,
@@ -29,11 +29,11 @@ $(".option_helpers")
         type: 'inline',
         padding: 30,
         closeClick: true,
-        margin: 80,
+        margin: 50,
         openSpeed: 500,
         autoSize: true,
         maxWidth: 1000,
-        scrolling  : 'yes'
+        scrolling  : 'auto'
 
 
 
