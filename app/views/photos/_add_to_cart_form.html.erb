@@ -1,6 +1,9 @@
 <div class="fieldset_wrapper">
 
 
+
+
+
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>
 <%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare-sizes" rel="nofollow">Compare</a></fieldset>
 
@@ -8,7 +11,16 @@
 <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %><a class='option_helpers' href="#" rel="nofollow">Views Mats</a></fieldset>
 
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %><a class='option_helpers' href="/frames" rel="nofollow">View Frames</a></fieldset>
+<%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
+
+<a href="#" class='option_helpers' data-reveal-id="frame_modal">View Frames</a>
+<%= render 'photos/modals/frame_modal' %>
+
+
+</fieldset>
+
+
+
 
 <% if @photo.show_bw_conversion %>
 <fieldset class="convert_to_bw_row">

@@ -4,6 +4,7 @@
 $(function(){
 
 
+
 //ENLARGE IMAGE LINK
 
 $(".image_link").fancybox({
