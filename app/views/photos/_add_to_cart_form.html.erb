@@ -8,7 +8,7 @@
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
 <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'name', 'name')   %>
 
-<a href="#fb_mat_modal" rel = 'nofollow' class="option_helpers">View Mats</a>
+<a href="#fb_mat_modal" rel = "nofollow" class="option_helpers">View Mats</a>
 <div class="fancybox_hidden">
   <%= render 'photos/modals/mat_modal' %>
 </fieldset>
@@ -17,7 +17,7 @@
 <%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
 
 
-<a href="#fb_frame_modal" rel='nofollow' class="option_helpers">View Frames</a>
+<a href="#fb_frame_modal" rel="nofollow" class="option_helpers">View Frames</a>
 <div class="fancybox_hidden">
   <%= render 'photos/modals/frame_modal' %>
 </div>

@@ -1,0 +1,35 @@
+@import "base/base";
+
+.mat_wrapper{
+  text-align: center;
+  font-family: $sans_serif;
+
+
+   .mat_section{
+      font-size: 30px;
+      color: $black_color;
+      border-bottom: 3px solid $black_color;
+      margin: 40px 0;
+      text-transform: uppercase;
+    }
+
+  li{
+    display: inline-block;
+    width: 465px;
+    margin: 0 20px 30px 0;
+    &:nth-of-type(even){
+      margin-right: 0;
+    }
+    // background: green;
+
+    .mat_name{
+      text-align: center;
+      font-size: 18px;
+      font-family: $sans_serif;
+      color: $dark_gray;
+    }
+
+  }
+
+
+}
