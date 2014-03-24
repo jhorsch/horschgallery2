@@ -32,7 +32,10 @@ $(".option_helpers")
         openSpeed: 500,
         autoSize: true,
         maxWidth: 1000,
-        scrolling  : 'yes',
+        scrolling  : 'yes'
+
+
+
 });
 
 
