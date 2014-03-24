@@ -1,7 +1,7 @@
 <div class="color_to_bw_gallery">
 <% @color_to_bw.each do |photo| %>
 <div class="ind_imge">
-  <a href=<%= photo_url(photo) %>><%= image_tag "https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg" %></a>
+  <a href=<%= photo_url(photo) %>><%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg", alt: "#{photo.rotating_keyword.downcase}-of-#{photo.title.downcase.parameterize}") %></a>
 </div>
 <% end %>
 

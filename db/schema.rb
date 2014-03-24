@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140315163132) do
+ActiveRecord::Schema.define(version: 20140324230913) do
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20140315163132) do
     t.string   "slug"
     t.string   "super_category"
     t.boolean  "is_active"
+    t.string   "meta_title"
+    t.string   "meta_desc"
+    t.string   "alt_tag"
+    t.text     "description"
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug"
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140315163132) do
     t.boolean  "is_active"
     t.boolean  "show_bw_conversion"
     t.integer  "format_id"
+    t.string   "rotating_keyword"
   end
 
   create_table "sizes", force: true do |t|

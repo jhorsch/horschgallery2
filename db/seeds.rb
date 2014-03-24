@@ -25,9 +25,13 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
      Category.create(
         :title => row[0],
-        :main_category => row[1],
-        :super_category => row[2],
-        :is_active => row[3]
+        :description => row[1],
+        :main_category => row[2],
+        :super_category => row[3],
+        :is_active => row[4],
+        :meta_title => row[5],
+        :meta_desc => row[6],
+        :alt_tag => row[7]
       )
 
 end
@@ -44,7 +48,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :artist_name => row[7],
         :year_taken => row[8],
         :format_id => row[9],
-        :show_bw_conversion => row[10]
+        :show_bw_conversion => row[10],
+        :rotating_keyword => row[11]
       )
 end
 

@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
     @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
+    @rotating_keywords = ['photo','print','picture','photograph','artwork','photography','wall-art']
 
   end
 

@@ -14,7 +14,7 @@ class PhotosController < ApplicationController
 
         @customer_viewed = Photo.where(main_category: @photo.main_category, is_active: true).shuffle.take(5)
         @recently_viewed = Photo.where(is_active: true).sample(5)
-
+        @rotating_keywords = ['photo','print','picture','photograph','artwork','photography','wall-art']
 
         if @photo.nil?
           flash.now[:alert] = "Your photo was not found"
