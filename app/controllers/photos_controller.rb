@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
 
   def index
 
-      @photos = Photo.order("title ASC").paginate(:page => params[:page], :per_page => 24)
+      @photos = Photo.where(main_category: 'Chicago Cityscape').limit(50)
 
   end
 

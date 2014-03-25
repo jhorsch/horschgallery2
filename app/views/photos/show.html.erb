@@ -13,7 +13,7 @@
 
 
 <div class='breadcrumbs'>
-  <a href="#"><%= @photo.category.super_category %></a> >
+  <a href="/cateogries/index"><%= @photo.category.super_category %></a> >
   <a href="#"><%= @photo.category.main_category  %></a> >
   <a class = 'detail_page_category_name' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
 </div>

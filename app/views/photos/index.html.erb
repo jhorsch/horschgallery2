@@ -1,17 +1,28 @@
-All photos
 
-  <ul class="rslides">
-    <li><%= image_tag "pan78slider.jpg" %></li>
-    <li><%= image_tag "panbw2slider.jpg" %></li>
-    <li><%= image_tag "pan71slider.jpg" %></li>
-  </ul>
-</div>
 
+<div class="fotorama"
+
+data-allowfullscreen="native"
+data-loop="true"
+data-nav="thumbs"
+data-hash="true"
+data-fit="cover"
+data-ratio="16/9"
+data-transition="crossfade"
+data-width="100%"
+data-keyboard="true"
+data-arrows="true"
+data-click="true"
+data-swipe="true"
+
+>
 
 <% @photos.each do |photo| %>
-  <div><%= photo.title %>-<%= photo.id_num %></div>
-<% end %>
-<%=  will_paginate %>
 
+    <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-englarged/#{photo.id_num.downcase}.jpg", class: 'category_image') , photo_url(photo), :data => { :caption => "##{photo.id_num} - #{photo.title}"}) %>
+
+
+    <% end %>
+</div>
 
 
