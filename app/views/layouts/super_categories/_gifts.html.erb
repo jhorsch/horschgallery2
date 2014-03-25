@@ -6,7 +6,7 @@
 <div class='menu_main_category'>Best Sellers</div>
 <ul>
 <%  find_categories('Best Sellers').each do  |category| %>
-  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
+  <li><a href='/photos' > <%= category.title %> </a></li>
 <% end %>
 </ul>
 </div>

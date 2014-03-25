@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
 
-    @photos = Photo.where(is_active: true)
+    @photos = Photo.where(is_active: true).sample(20)
 
     featured = ['4094','bw130','1424','2935','4122','2900','1423','3059','4113']
     top_gifts = ['a10','a5','a11','bw99','bw19', 'bw17']
