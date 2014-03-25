@@ -32,7 +32,14 @@
 <% if @photo.show_bw_conversion %>
 <fieldset class="convert_to_bw_row">
   <%= label_tag 'choose_bw','Convert to B&W?' %>
-  <%= select_tag 'choose_bw', '<option selected>No</option><option>Yes</option>'.html_safe %><a class='option_helpers' href="#" rel="nofollow">Read more</a>
+  <%= select_tag 'choose_bw', '<option selected>No</option><option>Yes</option>'.html_safe %>
+
+  <a href="#fb_bw_modal" rel="nofollow" class="option_helpers">Read More</a>
+<div class="fancybox_hidden">
+  <%= render 'photos/modals/bw_modal' %>
+</div>
+
+
 </fieldset>
 <% end %>
 

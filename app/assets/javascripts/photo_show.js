@@ -96,16 +96,40 @@ $(".option_helpers")
   });
 
 
-  // //show enlarged image
-  // $('.image_link').magnificPopup({
-  //   type:'image'
-  // });
+  // MAT NAME CHANGES WITH BW CONVERSION
+
+  //FILL INITIAL MAT ARRAY
+  var initial_mat_array = [];
+  $("#choose_mat option").each(function(){
+      var mat_name = $(this).val();
+      initial_mat_array.push(mat_name);
+  });
+
+
+
+  //RUN CONDITION FOR BW CHOICE
+  $('#choose_bw').change(function() {
+
+    var bw_value = $('#choose_bw option:selected').text();
+
+    if  (bw_value == 'Yes'){
+      $('#choose_mat').empty();
+      $('#choose_mat').append("<option>Fog / Black</option>");
+      $('#choose_mat').append("<option>Bright White - Single Mat</option>");
+    }
+    else{
+      $('#choose_mat').empty();
+      for ( var i = 0, l = initial_mat_array.length; i < l; i++ ) {
+        $('#choose_mat').append('<option>'+initial_mat_array[i]+'</option>');
+      }
+    }
+
+  });
+
+
+
 
   //highlight correct categories
-
-  // breadcrumb_sub_cat
-
-
     var pathname = $('.detail_page_category_name').attr('href');
     // console.log(pathname);
 

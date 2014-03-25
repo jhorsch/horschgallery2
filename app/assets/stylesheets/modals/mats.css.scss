@@ -3,6 +3,7 @@
 .mat_wrapper{
   text-align: center;
   font-family: $sans_serif;
+  margin-top: 40px;
 
 
    .mat_section{
@@ -15,6 +16,7 @@
 
   li{
     display: inline-block;
+    vertical-align: top;
     width: 465px;
     margin: 0 20px 30px 0;
     &:nth-of-type(even){
