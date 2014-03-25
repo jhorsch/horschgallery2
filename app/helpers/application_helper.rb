@@ -4,8 +4,9 @@ def find_categories(main_category)
 
   Category.where(main_category: main_category, is_active: true)
 
-
 end
+
+
 
 def pull_image(id_num)
 

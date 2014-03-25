@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
 
   def index
 
-      @photos = Photo.where(main_category: 'Nature', is_active: true).sample(50)
+      @photos = Photo.where(main_category: 'Chicago Vintage', is_active: true).limit(20)
       @cat_name = 1
 
   end
