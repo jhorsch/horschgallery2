@@ -9,4 +9,6 @@ class Category < ActiveRecord::Base
   where(is_active: true)
   end
 
+
+
 end

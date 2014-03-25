@@ -2,7 +2,14 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    if params[:main_category].present?
+
+      @categories = Category.where(main_category:  params[:main_category], is_active: true)
+
+    else
+      @categories = Category.all.limit(20)
+    end
+
   end
 
 

@@ -22,15 +22,18 @@
 }
 
 .caption_link{
-  padding: 10px;
   text-transform: uppercase;
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
   a{
     color: $orange_color;
     text-decoration: none;
     border: 0px solid black;
-    padding:0;
+    padding: 20px 5px 20px 0;
+
+    // background: green;
     margin: 0;
     &:hover{
       color: $orange_color;
