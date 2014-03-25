@@ -101,7 +101,7 @@ $(".option_helpers")
   //FILL INITIAL MAT ARRAY
   var initial_mat_array = [];
   $("#choose_mat option").each(function(){
-      var mat_name = $(this).val();
+      var mat_name = $(this).text();
       initial_mat_array.push(mat_name);
   });
 
@@ -120,7 +120,8 @@ $(".option_helpers")
     else{
       $('#choose_mat').empty();
       for ( var i = 0, l = initial_mat_array.length; i < l; i++ ) {
-        $('#choose_mat').append('<option>'+initial_mat_array[i]+'</option>');
+        $('#choose_mat').append('<option value='+(i+1)+'>'+initial_mat_array[i]+'</option>');
+        console.log('<option value="'+(i+1)+'">'+initial_mat_array[i]+'</option>');
       }
     }
 
