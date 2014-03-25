@@ -1,7 +1,6 @@
 <div id="fb_frame_modal" class='modal'>
 
-<h1 class='modal_header'>Why frame your photograph with HorschGallery?
-</h1>
+<h1>Why frame your photograph with HorschGallery?</h1>
 
 <p>&#8226;&nbsp;&nbsp;Go with a frame that has been tried and tested over the years instead of choosing between hundreds of options.  For over 30 years our classic black frame has been the most popular choice among customers.
 </p>
@@ -13,27 +12,25 @@
 </p>
 
 
-<div class="comparison_wrapper">
+<ul class="feature_content_wrapper">
+<h2>Frame Comparison</h2>
 
-<ul>
-<li class="ind_frame_wrapper">
-<h2 class='frame_title'>Classic Black - Thin Rounded</h2>
+<li>
+<div class='image_title'>Classic Black - Thin Rounded</div>
 <%= image_tag 'frame_black_thin.jpg', class: 'frame_detail'  %>
-<%= link_to (image_tag 'https://s3-us-west-2.amazonaws.com/hg-matted/bw21.jpg', class: 'comparison_bw') , "#" %>
-<p class='frame_desc'>The depth measures 7/8" ( 1-1/2" for a 20x30 photo framed) and the width (profile) is thinner at 3/8".  It has a classic black metal moulding with a thin rounded face and is made by one of the leading producers of high quality frames, Nielsen Bainbridge.</p>
+<%= link_to image_tag('https://s3-us-west-2.amazonaws.com/hg-matted/bw21.jpg'), "#" %>
+<p class='image_text'>The depth measures 7/8" ( 1-1/2" for a 20x30 photo framed) and the width (profile) is thinner at 3/8".  It has a classic black metal moulding with a thin rounded face and is made by one of the leading producers of high quality frames, Nielsen Bainbridge.</p>
 </li>
 
-
-<li class="thick_frame_section">
-<h2 class='frame_title'>Classic Black - Wide Flat</h2>
+<li>
+<div class='image_title'>Classic Black - Wide Flat</div>
 <%= image_tag 'frame_black_thick.jpg', class: 'frame_detail' %>
-<%= link_to (image_tag 'https://s3-us-west-2.amazonaws.com/hg-matted/bw21wf.jpg', class: 'comparison_bw thick_frame') , "#" %>
-<p class='frame_desc'>The depth measures 3/4" and the width (profile) is a little thicker at 7/8".  This thicker frame has a black metal moulding with a wider flat face and is also made by one of the leading producers of high quality frames, Nielsen Bainbridge.</p>
-
-
+<%= link_to image_tag('https://s3-us-west-2.amazonaws.com/hg-matted/bw21wf.jpg') , "#" %>
+<p class='image_text'>The depth measures 3/4" and the width (profile) is a little thicker at 7/8".  This thicker frame has a black metal moulding with a wider flat face and is also made by one of the leading producers of high quality frames, Nielsen Bainbridge.</p>
 </li>
+
 </ul>
 </div>
 
 
-</div>
+

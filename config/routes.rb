@@ -6,9 +6,7 @@ Horschgallery2::Application.routes.draw do
 
   get "/home" => 'static_pages#home'
   get "/photographers" => 'static_pages#photographers'
-  get "/mats" => 'static_pages#mats'
-  get "/frames" => 'static_pages#frames'
-  get "/compare-sizes" => 'static_pages#compare_sizes'
+
   get "/shopping_cart" => 'static_pages#shopping_cart'
   get "/confirmation" => 'static_pages#confirmation'
   get "/payment" => 'static_pages#payment'

@@ -3,44 +3,40 @@
 
 
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>
-<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %><a class='option_helpers' href="/compare-sizes" rel="nofollow">Compare</a></fieldset>
+<%= select_tag 'choose_size', options_from_collection_for_select(@photo.all_sizes, 'price', 'name', @photo.max_price) %>
+
+  <a href="#fb_photo_sizes_modal" rel = "nofollow" class="option_helpers">Compare</a>
+  <div class="fancybox_hidden">
+    <%= render 'photos/modals/photo_sizes_modal' %>
+</fieldset>
 
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
-<%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'id', 'name')   %>
-
-<a href="#fb_mat_modal" rel = "nofollow" class="option_helpers">View Mats</a>
-<div class="fancybox_hidden">
-  <%= render 'photos/modals/mat_modal' %>
+  <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'id', 'name')   %>
+  <a href="#fb_mat_modal" rel = "nofollow" class="option_helpers">View Mats</a>
+  <div class="fancybox_hidden">
+    <%= render 'photos/modals/mat_modal' %>
 </fieldset>
 
 <fieldset class='row_frame'><%= label_tag 'choose_frame', 'Frame Style:' %>
-<%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
-
-
-<a href="#fb_frame_modal" rel="nofollow" class="option_helpers">View Frames</a>
-<div class="fancybox_hidden">
-  <%= render 'photos/modals/frame_modal' %>
-</div>
-
-
-
+  <%= select_tag 'choose_frame', "<option selected = 'selected' value='0'>Classic Black - Thin Rounded</option><option value='10'>Classic Black - Wide Flat</option>".html_safe %>
+  <a href="#fb_frame_modal" rel="nofollow" class="option_helpers">View Frames</a>
+  <div class="fancybox_hidden">
+    <%= render 'photos/modals/frame_modal' %>
+  </div>
 </fieldset>
-
 
 
 
 <% if @photo.show_bw_conversion %>
-<fieldset class="convert_to_bw_row">
-  <%= label_tag 'choose_bw','Convert to B&W?' %>
-  <%= select_tag 'choose_bw', '<option selected>No</option><option>Yes</option>'.html_safe %>
+  <fieldset class="convert_to_bw_row">
+    <%= label_tag 'choose_bw','Convert to B&W?' %>
+    <%= select_tag 'choose_bw', '<option selected>No</option><option>Yes</option>'.html_safe %>
 
-  <a href="#fb_bw_modal" rel="nofollow" class="option_helpers">Read More</a>
-<div class="fancybox_hidden">
-  <%= render 'photos/modals/bw_modal' %>
-</div>
-
-
-</fieldset>
+    <a href="#fb_bw_modal" rel="nofollow" class="option_helpers">Read More</a>
+    <div class="fancybox_hidden">
+    <%= render 'photos/modals/bw_modal' %>
+    </div>
+  </fieldset>
 <% end %>
 
 <fieldset class='row_price'><%= label_tag 'price', 'Price:' %>
