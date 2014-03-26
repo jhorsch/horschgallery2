@@ -6,9 +6,9 @@ class CategoriesController < ApplicationController
 
       @main_category = params[:main_category]
 
-      @categories = Category.where(main_category:  params[:main_category], is_active: true)
+      @categories = Category.where(main_category:  params[:main_category], )
 
-      @photos = Photo.where(category_id: @categories)
+      @photos = Photo.where(category_id: @categories,is_active: true)
 
 
     else

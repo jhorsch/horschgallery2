@@ -20,8 +20,7 @@
 <div class="top_pagination">
 <div class='breadcrumbs'>
   <a href="#"><%= @category.super_category %></a> >
-  <%= link_to @category.main_category, categories_url(main_category: @category.main_category) %>>
-  <a class ='category_page_category_name' href="<%= category_url(@category)  %>"><%= @category.title  %></a>
+  <%= link_to @category.main_category, categories_url(main_category: @category.main_category) %>
 </div>
 
 </div>

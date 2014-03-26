@@ -6,12 +6,15 @@
   text-align: center;
 }
 
-
+.cat_photo_count{
+  color: $orange_color;
+  font-weight: bold;
+}
 
 .fotorama{
   margin: 0 auto;
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 80px;
   background: $black_color;
 }
 

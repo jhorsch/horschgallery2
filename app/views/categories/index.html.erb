@@ -12,7 +12,8 @@
 <main class="category_index_main">
 
 <h1 class='main_cat_title'><%= @main_category.titleize %> Photography</h1>
-<p>Browse through our collection of <%= @photos.count %> photographs</p>
+<p>Sit back and enjoy our slide show of <span class='cat_photo_count'><%= @photos.count %> <%= @main_category.titleize %> </span> photographs  OR use the arrows to go at your own pace.</p>
+<!-- <p>To find more information about the photo, click VIEW DETAILS found at the bottom right of the image slide show.</p> -->
 <%= render 'photos/fotorama' %>
 
 
