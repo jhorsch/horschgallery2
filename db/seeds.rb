@@ -82,7 +82,7 @@ CSV.foreach("#{Rails.root}/lib/assets/Mat.csv", headers: true) do |row|
 
 end
 
-CSV.foreach("#{Rails.root}/lib/assets/CategoryMats.csv", headers: true) do |row|
+CSV.foreach("#{Rails.root}/lib/assets/CategoryMat.csv", headers: true) do |row|
      CategoryMat.create(
         :category_id => row[0],
         :mat_id => row[1]
