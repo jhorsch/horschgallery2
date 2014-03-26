@@ -1,0 +1,197 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base/base";
+
+
+.pagination_styling{
+
+    width: 100%;
+}
+
+.top_pagination{
+  padding: 20px 0px 0 0;
+  margin: 2px 0 0px 0;
+  border-top: 1px solid #ccc;
+  @extend .pagination_styling;
+  div{
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+
+.bottom_pagination{
+  padding: 0px 0px 0 0;
+  margin: 0px 0 0px 0;
+  // border-bottom: 1px solid #ccc;
+  @extend .pagination_styling;
+}
+
+.pagination{
+  font-size: 0;
+  text-align: center;
+  margin: 20px 0 100px 0;
+  div{
+    display: inline-block;
+  }
+  li{
+    font-size: 16px;
+    display: inline-block;
+    padding: 3px 10px;
+    // background: yellow;
+    margin: 0 5px;
+    border: 2px solid #ccc;
+    background: white;
+    a{
+      color: $light_gray;
+      font-weight: bold;
+    }
+  }
+  li:hover{
+    border: 2px solid $orange_color;
+  }
+
+  li:hover a{
+    color: $orange_color;
+
+  }
+
+  li.active{
+    border: 2px solid $orange_color;
+    a{
+      color: $orange_color;
+      font-weight: bold;
+    }
+  }
+
+
+  .previous_page, .next_page {
+    // display: none;
+  }
+}
+
+
+.category_main{
+  padding: $main_page_side_padding;
+  margin: 0px auto;
+  .category_desc{
+
+    border-bottom: 1px solid #ccc;
+    padding: 0px 30px 30px 0px;
+    text-align: center;
+  }
+
+  h1{
+    display: block;
+    margin: 0px 0 10px 0;
+    text-align: center;
+    font-weight: 600;
+  }
+
+}
+
+.photoset_wrapper{
+
+  margin: 0 auto;
+  padding-top: 0px;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    margin: 0 40px 80px 0px;
+    &:nth-of-type(3n){
+      margin-right: 0px;
+    }
+  }
+  img{
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 20px gray;
+  }
+
+}
+
+@media only screen and (max-width: 600px)  {
+
+      .category_main
+
+        h1{
+          color: red;
+        }
+
+        .category_desc{
+          font-size: 14px;
+        }
+
+      .photoset_wrapper{
+
+         li{
+            margin-right: 0px;
+          }
+      }
+}
+
+
+//signup
+.newsletter_wrapper{
+
+  width: 100%;
+  text-align: center;
+  margin-bottom: 50px;
+  border-top: 1px solid #ccc;
+  padding: 80px 0;
+  margin: 0 auto;
+
+  .subscribe_title{
+    font-size: 40px;
+  }
+
+  .subscribe_desc{
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  // MAIL CHIMP
+  .mail_chimp_wrapper{
+
+
+    .sign_up_details{
+      width: 300px;
+      height: 40px;
+      font-size: 18px;
+      outline: none;
+      border-radius: 3px;
+      border: 1px solid fade-out($orange_color,.2);
+    }
+
+    input[type='email']{
+      @extend .sign_up_details;
+      color: $black_color;
+      text-align: center;
+      border: 2px solid fade-out($orange_color,.2);
+
+      &:hover{
+        border: 2px solid $orange_color;
+      }
+    }
+
+    input[type='submit']{
+      @extend .sign_up_details;
+      background: fade-out($orange_color,.2);
+      color: white;
+
+      &:hover{
+        background: $orange_color
+      }
+    }
+
+
+}
+}
+
+
+
+
+

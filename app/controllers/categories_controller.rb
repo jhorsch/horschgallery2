@@ -4,9 +4,11 @@ class CategoriesController < ApplicationController
   def index
     if params[:main_category].present?
 
+      @main_category = params[:main_category]
+
       @categories = Category.where(main_category:  params[:main_category], is_active: true)
 
-      @photos = Photo.where(category_id: @categories )
+      @photos = Photo.where(category_id: @categories)
 
 
     else

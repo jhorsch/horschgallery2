@@ -1,6 +1,20 @@
+<% content_for :meta_title do %>
+  <%= "#{@main_category.titleize}" %>
+<% end %>
+
+<% content_for :meta_desc do %>
+  Beautiful
+<% end %>
 
 
+<p id="notice"><%= notice %></p>
+
+<main class="category_index_main">
+
+<h1 class='main_cat_title'><%= @main_category.titleize %> Photography</h1>
+<p>Browse through our collection of <%= @photos.count %> photographs</p>
 <%= render 'photos/fotorama' %>
 
 
+</main>
 
