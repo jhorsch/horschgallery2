@@ -1,26 +1,34 @@
 <div class="sub_menu_container sub_menu_small">
 
-<div class="nav_column">
+  <% main_categories = ['San Francico', 'Boston'] %>
 
-<div class="main_cat_grouping">
-<div class='menu_main_category'>San Francisco</div>
-<ul>
-<%  find_categories('San Francisco').each do  |category| %>
-<li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
-</div>
+  <% counter = 1 %>
 
-<div class="nav_column">
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Boston</div>
-<ul>
-<%  find_categories('Boston').each do  |category| %>
-<li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
-</div>
+  <% main_categories.each do |main| %>
+
+    <% if counter == 1 %>
+      <div class="nav_column">
+    <% elsif counter == 4 %>
+      <div class="nav_column2">
+    <% end %>
+
+    <div class="main_cat_grouping">
+    <%= link_to main, categories_url(main_category: main), class: 'menu_main_category' %>
+    <ul>
+
+    <%  find_sub_categories(main).each do  |category| %>
+      <li><%= link_to category.title, category_url(category) %></li>
+    <% end %>
+    </ul>
+    </div>
+
+
+    <% if counter == 3 || counter == main_categories.length  %>
+      </div>
+    <% end %>
+
+    <% counter = counter + 1 %>
+
+  <% end %>
 
 </div>

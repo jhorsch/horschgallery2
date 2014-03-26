@@ -1,59 +1,35 @@
 
 <div class="sub_menu_container">
 
-<div class="nav_column">
+  <% main_categories = ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks'] %>
 
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Chicago Black & White</div>
-<ul>
-<%  find_categories('Chicago Black & White').each do  |category| %>
-  <li ><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
+  <% counter = 1 %>
 
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Chicago Vintage</div>
-<ul>
-<%  find_categories('Chicago Vintage').each do  |category| %>
-  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
+  <% main_categories.each do |main| %>
 
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Chicago Panoramas</div>
-<ul>
-<%  find_categories('Chicago Panoramas').each do  |category| %>
-  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
+    <% if counter == 1 %>
+      <div class="nav_column">
+    <% elsif counter == 4 %>
+      <div class="nav_column2">
+    <% end %>
 
-</div>
+    <div class="main_cat_grouping">
+    <%= link_to main, categories_url(main_category: main), class: 'menu_main_category' %>
+    <ul>
+
+    <%  find_sub_categories(main).each do  |category| %>
+      <li><%= link_to category.title, category_url(category) %></li>
+    <% end %>
+    </ul>
+    </div>
 
 
-<div class="nav_column2">
+    <% if counter == 3 || counter == main_categories.length  %>
+      </div>
+    <% end %>
 
+    <% counter = counter + 1 %>
 
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Chicago Cityscape</div>
-<ul>
-<%  find_categories('Chicago Cityscape').each do  |category| %>
-  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
+  <% end %>
 
-
-<div class="main_cat_grouping">
-<div class='menu_main_category'>Chicago Landmarks</div>
-<ul>
-<%  find_categories('Chicago Landmarks').each do  |category| %>
-  <li><a href=<%= category_url(category)%> > <%= category.title %> </a></li>
-<% end %>
-</ul>
-</div>
-
-</div>
 </div>

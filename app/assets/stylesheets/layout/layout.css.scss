@@ -247,7 +247,9 @@ form{
       }
     }
 
-    .menu_main_category{
+    a.menu_main_category{
+      font-weight: bold;
+      font-family: $sans-serif;
       margin: 0px 0 5px 0;
       // color: $black_color;
       text-transform: uppercase;
