@@ -236,11 +236,14 @@ form{
 
 .main_cat_grouping {
 
-    margin: 0px 0px 15px 0;
+    margin: 0px 0px 20px 0;
     font-size: 16px;
+    font-family: $sans-serif;
+
 
     a {
       color: $black_color;
+      font-family: $sans-serif;
       &:hover {
         text-decoration: none;
         color: orange_color;
@@ -249,15 +252,16 @@ form{
 
     a.menu_main_category{
       font-weight: bold;
-      font-family: $sans-serif;
-      margin: 0px 0 5px 0;
-      // color: $black_color;
       text-transform: uppercase;
     }
 
     li{
+      font-size: 16px;
       padding-left: 10px;
       margin-bottom: 3px;
+      &:first-child{
+        margin-top: 3px;
+      }
       &:last-child{
         margin-bottom: 0px;
       }
@@ -286,10 +290,6 @@ form{
   opacity: .99;
   visibility: hidden;
   overflow: hidden;
-
-  a{
-    font-family: $serif;
-  }
 
   &:before {
       content: '';

@@ -3,12 +3,12 @@
 //# You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-
+//HIGHLIGHT ACTIVE NAV LINKS FOR ALL PAGES WITH PHOTOS
 $(function(){
 
 
     // var pathname =  window.location.protocol + '//' + window.location.host  + window.location.pathname;
-    var pathname = $('.category_page_category_name').attr('href');
+    var pathname = $('.acitve_page_link').attr('href');
 
     $('.sub_menu_container').find('a').each(function() {
 

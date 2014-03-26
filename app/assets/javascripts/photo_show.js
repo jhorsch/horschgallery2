@@ -130,26 +130,6 @@ $(".option_helpers")
 
 
 
-  //highlight correct categories
-    var pathname = $('.detail_page_category_name').attr('href');
-    // console.log(pathname);
-
-    $('.sub_menu_container').find('a').each(function() {
-
-    if ($(this).attr('href') == pathname)
-    {
-        $(this).css('color','#DA7C05');
-        $(this).css('font-weight','bold');
-
-        // $(this).closest('.main_cat_grouping').find('h3').css('color','#DA7C05');
-
-        $(this).closest('.main_menu').children('a').css('color','#DA7C05');
-
-    }
-
-    });
-
-
 });
 
 

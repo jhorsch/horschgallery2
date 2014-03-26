@@ -15,7 +15,7 @@
 <div class='breadcrumbs'>
   <a href="/cateogries/index"><%= @photo.category.super_category %></a> >
   <%= link_to @photo.category.main_category, categories_url(main_category: @photo.category.main_category) %> >
-  <a class = 'detail_page_category_name' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
+  <a class = 'acitve_page_link' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
 </div>
 
 

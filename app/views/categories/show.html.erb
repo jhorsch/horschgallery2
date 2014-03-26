@@ -5,7 +5,7 @@
 <% end %>
 
 <% content_for :meta_desc do %>
-  <%= "#{@category.meta_desc}" %>
+<%= "#{@category.meta_desc}" %>
 <% end %>
 
 
@@ -21,6 +21,8 @@
 <div class='breadcrumbs'>
   <a href="#"><%= @category.super_category %></a> >
   <%= link_to @category.main_category, categories_url(main_category: @category.main_category) %>
+    <a class ='acitve_page_link hide_field' href="<%= category_url(@category)  %>"></a>
+
 </div>
 
 </div>
