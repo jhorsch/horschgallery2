@@ -22,11 +22,12 @@ data-hash="true"
     <%= link_to(
 
       image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg",
-      class: 'fotorama_image') ,
+      class: 'fotorama_image' ,
+      alt: "#{photo.title.parameterize}"),
 
 
         "https://s3-us-west-2.amazonaws.com/hg-englarged/#{photo.id_num.downcase}.jpg",
-      :data => { :caption => "<div class='caption_link'><a href=#{photo_url(photo)}><i class='fa fa-star'></i> View Details</a></div>"},
+      data: { caption: "<div class='caption_link'><a href=#{photo_url(photo)}><i class='fa fa-star'></i> View Details</a></div>"},
         id: photo.title.parameterize)
   %>
 

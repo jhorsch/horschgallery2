@@ -28,7 +28,6 @@
 
 .fotorama__caption__wrap{
   background: $black_color;
-  border: 1px solid $black_color;
   padding: 0;
   margin: 0;
   // background: green;
@@ -47,7 +46,7 @@
       padding: 10px 4px;
 
     text-decoration: none;
-    // border: 0px solid black;
+    border: none;
 
 
     &:hover{
