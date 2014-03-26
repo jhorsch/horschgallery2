@@ -54,8 +54,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
         :is_active => row[4],
         :meta_title => row[5],
         :meta_desc => row[6],
-        :alt_tag => row[7],
-        :main_category_id => row[8]
+        :alt_tag => row[7]
+
       )
 
 end
