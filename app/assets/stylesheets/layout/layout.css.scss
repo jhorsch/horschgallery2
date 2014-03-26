@@ -265,6 +265,9 @@ form{
       &:last-child{
         margin-bottom: 0px;
       }
+      a{
+        color: fade-out($black_color,.2);
+      }
     }
 }
 
