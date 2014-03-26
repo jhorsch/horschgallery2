@@ -8,33 +8,25 @@
 
 require 'csv'
 
-Category.destroy_all
 Photo.destroy_all
+Category.destroy_all
+MainCategory.destroy_all
+
 Size.destroy_all
 Format.destroy_all
 Mat.destroy_all
 CategoryMat.destroy_all
 
-DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
+DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
+DatabaseCleaner.clean_with(:truncation, :only => %w[main_categories])
+
 DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
 DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
 DatabaseCleaner.clean_with(:truncation, :only => %w[mats])
 DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 
-CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
-     Category.create(
-        :title => row[0],
-        :description => row[1],
-        :main_category => row[2],
-        :super_category => row[3],
-        :is_active => row[4],
-        :meta_title => row[5],
-        :meta_desc => row[6],
-        :alt_tag => row[7]
-      )
 
-end
 
 CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
      Photo.create(
@@ -51,6 +43,36 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :show_bw_conversion => row[10],
         :rotating_keyword => row[11]
       )
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
+     Category.create(
+        :title => row[0],
+        :description => row[1],
+        :main_category => row[2],
+        :super_category => row[3],
+        :is_active => row[4],
+        :meta_title => row[5],
+        :meta_desc => row[6],
+        :alt_tag => row[7],
+        :main_category_id => row[8]
+      )
+
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/MainCategory.csv", headers: true) do |row|
+     MainCategory.create(
+        :title => row[0]
+        # :description => row[1],
+        # :main_category => row[2],
+        # :super_category => row[3],
+        # :is_active => row[4],
+        # :meta_title => row[5],
+        # :meta_desc => row[6],
+        # :alt_tag => row[7],
+        # :main_category_id => row[8]
+      )
+
 end
 
 CSV.foreach("#{Rails.root}/lib/assets/Size.csv", headers: true) do |row|
