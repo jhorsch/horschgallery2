@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
 
       @categories = Category.where(main_category:  params[:main_category], is_active: true)
 
+      @photos = Photo.where(category_id: @categories )
+
+
     else
       @categories = Category.all.limit(20)
     end
