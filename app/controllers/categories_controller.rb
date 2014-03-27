@@ -2,24 +2,27 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:main_category].present?
+    # if params[:main_category].present?
 
-      @main_category = params[:main_category]
+    #   @main_category = params[:main_category]
 
-      @categories = Category.where(main_category:  params[:main_category], )
+    #   @categories = Category.where(main_category:  params[:main_category] ).first
 
-      @photos = Photo.where(category_id: @categories,is_active: true)
+    #   @photos = @categories.take.photos
 
 
-    else
-      @categories = Category.all.limit(20)
-    end
+    # else
+    #   @categories = Category.all.limit(20)
+    # end
 
   end
 
 
   def show
+    # @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
+
     @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
+
     @rotating_keywords = ['photo','print','picture','photograph','artwork','photography','wall-art']
 
   end

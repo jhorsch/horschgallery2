@@ -1,6 +1,6 @@
 <% counter = 1 %>
 
-<% main_categories.each do |main| %>
+<% find_main_categories(main_categories).each do |main| %>
 
   <% if counter == 1 %>
     <div class="nav_column">
@@ -9,7 +9,7 @@
   <% end %>
 
   <div class="main_cat_grouping">
-    <%= link_to main, categories_url(main_category: main), class: 'menu_main_category' %>
+    <%= link_to main.title, main_category_url(main), class: 'menu_main_category' %>
     <ul>
       <%  find_sub_categories(main).each do  |category| %>
         <li><%= link_to category.title, category_url(category) %></li>

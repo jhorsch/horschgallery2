@@ -2,6 +2,8 @@ Horschgallery2::Application.routes.draw do
   root 'static_pages#home'
   resources :photos
   resources :categories
+  resources :main_categories
+
   get "/home" => 'static_pages#home'
   get "/photographers" => 'static_pages#photographers'
   get "/shopping_cart" => 'static_pages#shopping_cart'

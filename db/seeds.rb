@@ -11,6 +11,7 @@ require 'csv'
 Photo.destroy_all
 Category.destroy_all
 MainCategory.destroy_all
+PhotoCategory.destroy_all
 
 Size.destroy_all
 Format.destroy_all
@@ -20,6 +21,7 @@ CategoryMat.destroy_all
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
 DatabaseCleaner.clean_with(:truncation, :only => %w[main_categories])
+DatabaseCleaner.clean_with(:truncation, :only => %w[photo_categories])
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
 DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
@@ -34,7 +36,6 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :title => row[1],
         :main_category => row[2],
         :sub_category => row[3] ,
-        :category_id => row[4],
         :desc => row[5],
         :is_active => row[6],
         :artist_name => row[7],
@@ -54,11 +55,21 @@ CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
         :is_active => row[4],
         :meta_title => row[5],
         :meta_desc => row[6],
-        :alt_tag => row[7]
+        :alt_tag => row[7],
+        :main_category_id => row[8]
 
       )
 
 end
+
+CSV.foreach("#{Rails.root}/lib/assets/PhotoCategory.csv", headers: true) do |row|
+     PhotoCategory.create(
+        :photo_id => row[0],
+        :category_id => row[1]
+    )
+
+end
+
 
 CSV.foreach("#{Rails.root}/lib/assets/MainCategory.csv", headers: true) do |row|
      MainCategory.create(

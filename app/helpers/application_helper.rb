@@ -1,12 +1,16 @@
 module ApplicationHelper
 
-def find_sub_categories(main_category)
+def find_sub_categories(category)
 
-  Category.where(main_category: main_category, is_active: true)
+  Category.where(main_category: category, is_active: true)
 
 end
 
+def find_main_categories(main_category)
 
+  MainCategory.where(title: main_category)
+
+end
 
 
 

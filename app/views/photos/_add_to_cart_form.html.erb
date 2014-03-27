@@ -11,7 +11,7 @@
 </fieldset>
 
 <fieldset class='row_mat'><%= label_tag 'choose_mat', 'Mat Color:' %>
-  <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.category.mats, 'id', 'name')   %>
+  <%= select_tag 'choose_mat', options_from_collection_for_select(@photo.mats, 'id', 'name')   %>
   <a href="#fb_mat_modal" rel = "nofollow" class="option_helpers">View Mats</a>
   <div class="fancybox_hidden">
     <%= render 'photos/modals/mat_modal' %>

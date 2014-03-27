@@ -1,5 +1,5 @@
 <% content_for :meta_title do %>
-  <%= "#{@photo.rotating_keyword.titleize} Of #{@photo.title.titleize} | #{@photo.category.meta_desc.titleize}" %>
+  <%= "#{@photo.rotating_keyword.titleize} Of #{@photo.title.titleize}" %>
 <% end %>
 
 <% content_for :meta_desc do %>
@@ -13,9 +13,9 @@
 
 
 <div class='breadcrumbs'>
-  <a href="/cateogries/index"><%= @photo.category.super_category %></a> >
-  <%= link_to @photo.category.main_category, categories_url(main_category: @photo.category.main_category) %> >
-  <a class = 'acitve_page_link' href="<%= category_url(@photo.category)  %>"><%= @photo.category.title  %></a>
+  <a href="/cateogries/index"><%= @photo.super_category %></a> >
+  <%= link_to @photo.main_category, main_category_url(@photo.categories.take.main_category) %> >
+  <a class = 'acitve_page_link' href="<%= category_url(@photo.categories.take)  %>"><%= @photo.categories.take.title  %></a>
 </div>
 
 
@@ -34,9 +34,6 @@
   <div class="watermark">The purchased photo will not contain a watermark</div>
   </div>
 </div>
-
-
-
 
 
 <div class="product_info_wrapper">
@@ -59,7 +56,7 @@
     <li>
       <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg", alt: "#{photo.rotating_keyword.downcase}-of-#{photo.title.downcase.parameterize}"), photo_url(photo)) %>
       <h4><%= link_to photo.title, photo_url(photo) %></h4>
-      <h5><%= link_to photo.sub_category, category_url(photo.category) %></h5>
+      <h5><%= link_to photo.sub_category, category_url(photo.categories.take) %></h5>
     </li>
   <% end %>
 </ul>
@@ -72,7 +69,7 @@
     <li>
       <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{photo.id_num.downcase}.jpg", alt: "#{photo.rotating_keyword.downcase}-of-#{photo.title.downcase.parameterize}"), photo_url(photo)) %>
       <h4><%= link_to photo.title, photo_url(photo) %></h4>
-      <h5><%= link_to photo.sub_category, category_url(photo.category) %></h5>
+      <h5><%= link_to photo.sub_category, category_url(photo.categories.take) %></h5>
     </li>
   <% end %>
 </ul>
