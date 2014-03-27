@@ -1,47 +1,25 @@
 class Photo < ActiveRecord::Base
+  belongs_to :category
+  validates :category_id, presence: true
 
+  belongs_to :format
+  validates :format_id, presence: true
 
+  scope :active, -> { where(is_active: true) }
 
-belongs_to :category
-validates :category_id, presence: true
+  def artist
+    artist_name.titleize
+  end
 
-belongs_to :format
-validates :format_id, presence: true
+  def max_price
+    format.sizes.maximum('price')
+  end
 
-def artist
-  self.artist_name.titleize
-end
+  def all_sizes
+    format.sizes
+  end
 
-def max_price
-  self.format.sizes.maximum('price')
-end
-
-def all_sizes
-  self.format.sizes
-end
-
-def self.search(query)
-
-  # where('id_num LIKE ? OR title LIKE ? OR desc LIKE ?', "#{query}" ,  "#{query}%wf" , "%#{query}%")
-
-  where(" is_active = ? AND
-          LOWER(title) LIKE ? OR
-          LOWER(id_num) LIKE ? OR
-          LOWER(id_num) LIKE ? ",
-          true,
-          "%#{query}%",
-          "%#{query}",
-          "%#{query}wf"
-          )
-
-
-  # where("LOWER(id_num) LIKE ? OR LOWER(title) LIKE ? OR LOWER(desc) LIKE ?", "%#{query.downcase}%", "%#{query.downcase}%, "%#{query.downcase}%")
-
-
-end
-
-
-
-
-
+  def self.search(query)
+    active.where("title ILIKE ? OR id_num ILIKE ? OR id_num ILIKE ? ", "%#{query}%", "%#{query}", "%#{query}wf")
+  end
 end
