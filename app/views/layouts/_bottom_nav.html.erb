@@ -3,12 +3,18 @@
     <ul>
 
 
+
    <li class="main_menu"><a class='main_menu_link' href="#">Most Popular</a>
       <%= render "layouts/super_categories/gifts" %>
     </li>
-    <li class="main_menu"><a id='myid' class='main_menu_link' href="#">Chicago Cityscape</a>
-      <%= render "layouts/super_categories/chi_cityscape" %>
+
+    <li class="main_menu"><a class='main_menu_link' href="#">Chicago Cityscape</a>
+
+      <% @main_categories = ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks']  %>
+
+      <%= render "layouts/dropdown_layout", main_categories: @main_categories %>
     </li>
+
     <li class="main_menu"><a class='main_menu_link' href="#">Chicago Sports</a>
       <%= render "layouts/super_categories/chi_sports" %>
     </li>
@@ -25,7 +31,7 @@
   </nav>
   <% if params[:controller] == 'photos' && params[:action] == 'show' %>
    <div class="sale_nav">
-    <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 mintue survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
+    <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 minute survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
   </div>
   <% end %>
 </div>

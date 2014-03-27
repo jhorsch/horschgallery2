@@ -2,8 +2,7 @@
 
 data-allowfullscreen="true"
 data-fit="contain"
-data-autoplay="true"
-
+data-autoplay="false"
 data-transition="crossfade"
 data-arrows="true"
 data-swipe="true"
@@ -28,7 +27,7 @@ data-hash="true"
 
 
         "https://s3-us-west-2.amazonaws.com/hg-englarged/#{photo.id_num.downcase}.jpg",
-      data: { caption: "<div class='caption_link'><a href=#{photo_url(photo)}><i class='fa fa-star'></i> View Details</a></div>" },
+      data: { caption: "<div class='caption_title'>Photo Title</div><div class='caption_link'><a href=#{photo_url(photo)}><i class='fa fa-star'></i>  #{photo.title}  <i class='fa fa-star'></i></a></div>" },
         id: photo.title.parameterize)
   %>
 
