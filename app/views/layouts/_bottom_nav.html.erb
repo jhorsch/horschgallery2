@@ -1,31 +1,29 @@
 <div class="bottom_nav">
   <nav class="bottom_nav_content">
     <ul>
-
-
-   <li class="main_menu"><a class='main_menu_link' href="#">Most Popular</a>
-      <%= render "layouts/super_categories/gifts" %>
-    </li>
-    <li class="main_menu"><a id='myid' class='main_menu_link' href="#">Chicago Cityscape</a>
-      <%= render "layouts/super_categories/chi_cityscape" %>
-    </li>
-    <li class="main_menu"><a class='main_menu_link' href="#">Chicago Sports</a>
-      <%= render "layouts/super_categories/chi_sports" %>
-    </li>
-      <li class="main_menu"><a class='main_menu_link' href="#">Top US Cities</a>
-    <%= render "layouts/super_categories/us_cities" %>
-    </li>
-    <li class="main_menu"><a class='main_menu_link' href="#">Other Sports</a>
-      <%= render "layouts/super_categories/other_sports" %>
-    </li>
-    <li class="main_menu"><a class='main_menu_link' href="#">Nature</a>
-      <%= render "layouts/super_categories/nature" %>
-    </li>
-  </uL>
+      <li class="main_menu"><a class='main_menu_link' href="#">Most Popular</a>
+        <%= render "layouts/super_categories/gifts" %>
+      </li>
+      <li class="main_menu"><a id='myid' class='main_menu_link' href="#">Chicago Cityscape</a>
+        <%= render "layouts/super_categories/chi_cityscape" %>
+      </li>
+      <li class="main_menu"><a class='main_menu_link' href="#">Chicago Sports</a>
+        <%= render "layouts/super_categories/chi_sports" %>
+      </li>
+        <li class="main_menu"><a class='main_menu_link' href="#">Top US Cities</a>
+      <%= render "layouts/super_categories/us_cities" %>
+      </li>
+      <li class="main_menu"><a class='main_menu_link' href="#">Other Sports</a>
+        <%= render "layouts/super_categories/other_sports" %>
+      </li>
+      <li class="main_menu"><a class='main_menu_link' href="#">Nature</a>
+        <%= render "layouts/super_categories/nature" %>
+      </li>
+    </ul>
   </nav>
   <% if params[:controller] == 'photos' && params[:action] == 'show' %>
-   <div class="sale_nav">
-    <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 mintue survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
-  </div>
+    <div class="sale_nav">
+      <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 minute survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
+    </div>
   <% end %>
 </div>
