@@ -1,37 +1,32 @@
 <div class="bottom_nav">
   <nav class="bottom_nav_content">
     <ul>
+      <% category_pairs = [
+      { "main_cat" => "Most Popular", "sub_cats" => ['Best Sellers', 'Whats New', 'Holiday Shopping'] },
+      { "main_cat" => "Chicago Cityscape", "sub_cats" => ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks'] },
+      { "main_cat" => "Chicago Sports", "sub_cats" => ['Chicago Blackhawks','Chicago Cubs','Chicago White Sox','Chicago Bears','Chicago Bulls'] },
+      { "main_cat" => "Top US Cities", "sub_cats" => ['San Francisco', 'Boston'] },
+      { "main_cat" => "Other Sports", "sub_cats" => ['College Football', 'MLB'] },
+      { "main_cat" => "Nature", "sub_cats" => ['Nature'] }
+      ] %>
 
-
-
-   <li class="main_menu"><a class='main_menu_link' href="#">Most Popular</a>
-      <%= render "layouts/super_categories/gifts" %>
-    </li>
-
-    <li class="main_menu"><a class='main_menu_link' href="#">Chicago Cityscape</a>
-
-      <% @main_categories = ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks']  %>
-
-      <%= render "layouts/dropdown_layout", main_categories: @main_categories %>
-    </li>
-
-    <li class="main_menu"><a class='main_menu_link' href="#">Chicago Sports</a>
-      <%= render "layouts/super_categories/chi_sports" %>
-    </li>
-      <li class="main_menu"><a class='main_menu_link' href="#">Top US Cities</a>
-    <%= render "layouts/super_categories/us_cities" %>
-    </li>
-    <li class="main_menu"><a class='main_menu_link' href="#">Other Sports</a>
-      <%= render "layouts/super_categories/other_sports" %>
-    </li>
-    <li class="main_menu"><a class='main_menu_link' href="#">Nature</a>
-      <%= render "layouts/super_categories/nature" %>
-    </li>
-  </uL>
+      <% category_pairs.each do |pair| %>
+        <li class="main_menu"><a class='main_menu_link' href="#"><%= pair["main_cat"] %></a>
+          <% if pair["sub_cats"].length <= 3  %>
+            <div class="sub_menu_container sub_menu_small">
+          <% else %>
+            <div class="sub_menu_container">
+          <% end %>
+          <%= render "layouts/dropdown_layout", main_categories: pair["sub_cats"] %>
+          </div>
+        </li>
+      <% end %>
+    </uL>
   </nav>
+
   <% if params[:controller] == 'photos' && params[:action] == 'show' %>
-   <div class="sale_nav">
-    <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 minute survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
-  </div>
+    <div class="sale_nav">
+
+    </div>
   <% end %>
 </div>
