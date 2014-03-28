@@ -50,7 +50,7 @@ CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
      Category.create(
         :title => row[0],
         :description => row[1],
-        :main_category => row[2],
+        # :main_category => row[2],
         :super_category => row[3],
         :is_active => row[4],
         :meta_title => row[5],

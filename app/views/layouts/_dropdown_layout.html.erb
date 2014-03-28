@@ -1,13 +1,10 @@
 <% counter = 1 %>
-
 <% find_main_categories(main_categories).each do |main| %>
-
   <% if counter == 1 %>
     <div class="nav_column">
   <% elsif counter == 4 %>
     <div class="nav_column2">
   <% end %>
-
   <div class="main_cat_grouping">
     <%= link_to main.title, main_category_url(main), class: 'menu_main_category' %>
     <ul>
@@ -16,13 +13,10 @@
       <% end %>
     </ul>
   </div>
-
   <% if counter == 3 || counter == main_categories.length  %>
     </div>
   <% end %>
-
   <% counter = counter + 1 %>
-
 <% end %>
 
 

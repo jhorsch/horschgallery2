@@ -188,6 +188,7 @@ form{
     position: relative;
     height: 40px;
 
+
     }
 
     .main_menu_link{
@@ -197,6 +198,9 @@ form{
       font-size: 20px;
       &:first-child{
         margin-left: 10px;
+      }
+      &:visited{
+        color: $black_color;
       }
 
     }

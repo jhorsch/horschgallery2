@@ -1,31 +1,35 @@
 class MainCategoriesController < ApplicationController
-
   before_action :set_main_category, only: [:show, :edit, :update, :destroy]
 
+  # GET /main_categories
+  # GET /main_categories.json
   def index
-
+    @main_categories = MainCategory.all
   end
 
-
+  # GET /main_categories/1
+  # GET /main_categories/1.json
   def show
-
     @photos = @main_category.photos.where(is_active: true)
   end
 
+  # GET /main_categories/new
   def new
     @main_category = MainCategory.new
   end
 
+  # GET /main_categories/1/edit
   def edit
   end
 
-
+  # POST /main_categories
+  # POST /main_categories.json
   def create
-    @main_category = MainCategory.new(category_params)
+    @main_category = MainCategory.new(main_category_params)
 
     respond_to do |format|
       if @main_category.save
-        format.html { redirect_to @main_category, notice: 'MainCategory was successfully created.' }
+        format.html { redirect_to @main_category, notice: 'Main category was successfully created.' }
         format.json { render action: 'show', status: :created, location: @main_category }
       else
         format.html { render action: 'new' }
@@ -34,11 +38,12 @@ class MainCategoriesController < ApplicationController
     end
   end
 
-
+  # PATCH/PUT /main_categories/1
+  # PATCH/PUT /main_categories/1.json
   def update
     respond_to do |format|
-      if @main_category.update(category_params)
-        format.html { redirect_to @main_category, notice: 'MainCategory was successfully updated.' }
+      if @main_category.update(main_category_params)
+        format.html { redirect_to @main_category, notice: 'Main category was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -47,11 +52,12 @@ class MainCategoriesController < ApplicationController
     end
   end
 
-
+  # DELETE /main_categories/1
+  # DELETE /main_categories/1.json
   def destroy
     @main_category.destroy
     respond_to do |format|
-      format.html { redirect_to categories_url }
+      format.html { redirect_to main_categories_url }
       format.json { head :no_content }
     end
   end
@@ -63,10 +69,7 @@ class MainCategoriesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def category_params
-      params.require(:category).permit(:title)
+    def main_category_params
+      params.require(:main_category).permit(:title)
     end
-
-
-
 end

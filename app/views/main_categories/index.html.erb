@@ -1,1 +1,27 @@
-Hello
+<h1>Listing main_categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @main_categories.each do |main_category| %>
+      <tr>
+        <td><%= main_category.title %></td>
+        <td><%= link_to 'Show', main_category %></td>
+        <td><%= link_to 'Edit', edit_main_category_path(main_category) %></td>
+        <td><%= link_to 'Destroy', main_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Main category', new_main_category_path %>

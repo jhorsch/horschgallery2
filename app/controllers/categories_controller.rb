@@ -2,18 +2,6 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    # if params[:main_category].present?
-
-    #   @main_category = params[:main_category]
-
-    #   @categories = Category.where(main_category:  params[:main_category] ).first
-
-    #   @photos = @categories.take.photos
-
-
-    # else
-    #   @categories = Category.all.limit(20)
-    # end
 
   end
 
