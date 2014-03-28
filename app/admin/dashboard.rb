@@ -17,7 +17,7 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Posts" do
           ul do
             Photo.all.take(30).each do |photo|
-              li link_to(photo.title, admin_photo_path(photo))
+              li link_to(photo.title, photo_path(photo))
             end
           end
         end
