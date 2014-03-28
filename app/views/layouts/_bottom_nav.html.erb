@@ -1,18 +1,19 @@
 <div class="bottom_nav">
   <nav class="bottom_nav_content">
     <ul>
-      <% category_pairs = [
-      { main_cat: "Most Popular", sub_cats: ['Best Sellers', 'Whats New', 'Holiday Shopping'] },
-      { main_cat: "Chicago Cityscape", sub_cats: ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks'] },
-      { main_cat: "Chicago Sports", sub_cats: ['Chicago Blackhawks','Chicago Cubs','Chicago White Sox','Chicago Bears','Chicago Bulls'] },
-      { main_cat: "Top US Cities", sub_cats: ['San Francisco', 'Boston'] },
-      { main_cat: "Other Sports", sub_cats: ['College Football', 'MLB'] },
-      { main_cat: "Nature", sub_cats: ['Nature'] }
-      ] %>
+      <% category_pairs =
+        [
+          { main_cat: "Most Popular", sub_cats: ['Best Sellers', 'Whats New', 'Holiday Shopping'] },
+          { main_cat: "Chicago Cityscape", sub_cats: ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks'] },
+          { main_cat: "Chicago Sports", sub_cats: ['Chicago Blackhawks','Chicago Cubs','Chicago White Sox','Chicago Bears','Chicago Bulls'] },
+          { main_cat: "Top US Cities", sub_cats: ['San Francisco', 'Boston'] },
+          { main_cat: "Other Sports", sub_cats: ['College Football', 'MLB'] },
+          { main_cat: "Nature", sub_cats: ['Nature'] }
+        ] %>
 
       <% category_pairs.each do |pair| %>
         <li class="main_menu"><a class='main_menu_link' href="#"><%= pair[:main_cat] %></a>
-          <% if pair[:sub_cats].length <= 3  %>
+          <% if pair[:sub_cats].size <= 3  %>
             <div class="sub_menu_container sub_menu_small">
           <% else %>
             <div class="sub_menu_container">

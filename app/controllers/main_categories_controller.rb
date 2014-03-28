@@ -1,29 +1,25 @@
 class MainCategoriesController < ApplicationController
   before_action :set_main_category, only: [:show, :edit, :update, :destroy]
 
-  # GET /main_categories
-  # GET /main_categories.json
+
   def index
     @main_categories = MainCategory.all
   end
 
-  # GET /main_categories/1
-  # GET /main_categories/1.json
   def show
     @photos = @main_category.photos.where(is_active: true)
   end
 
-  # GET /main_categories/new
+
   def new
     @main_category = MainCategory.new
   end
 
-  # GET /main_categories/1/edit
+
   def edit
   end
 
-  # POST /main_categories
-  # POST /main_categories.json
+
   def create
     @main_category = MainCategory.new(main_category_params)
 
@@ -38,8 +34,7 @@ class MainCategoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /main_categories/1
-  # PATCH/PUT /main_categories/1.json
+
   def update
     respond_to do |format|
       if @main_category.update(main_category_params)
@@ -52,8 +47,7 @@ class MainCategoriesController < ApplicationController
     end
   end
 
-  # DELETE /main_categories/1
-  # DELETE /main_categories/1.json
+
   def destroy
     @main_category.destroy
     respond_to do |format|
@@ -63,12 +57,10 @@ class MainCategoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_main_category
       @main_category = MainCategory.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def main_category_params
       params.require(:main_category).permit(:title)
     end

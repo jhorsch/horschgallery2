@@ -5,14 +5,9 @@ class CategoriesController < ApplicationController
 
   end
 
-
   def show
-    # @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
-
     @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
-
     @rotating_keywords = ['photo','print','picture','photograph','artwork','photography','wall-art']
-
   end
 
   def new
@@ -21,7 +16,6 @@ class CategoriesController < ApplicationController
 
   def edit
   end
-
 
   def create
     @category = Category.new(category_params)
