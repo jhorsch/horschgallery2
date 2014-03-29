@@ -14,29 +14,30 @@ ActiveAdmin.register Photo do
   permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :format
 
   #INDEX LAYOUTS
-  # index :as => :grid, :columns => 3 do |photo|
-  #   div link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg"), admin_photo_path(photo))
-  # end
-
   index do
     column  "Prod#", :id_num
     column  :title
-    column  :main_category
+    column  :categories
     column  :created_at
-    actions :defaults => false do |photo|
-      link_to "View", admin_photo_path(photo)
-    end
+
+
   end
+
+
+  index :as => :grid, :columns => 2 do |photo|
+  div link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg"), admin_photo_path(photo))
+  end
+
 
   # SHOW PAGE
    show do |photo|
       attributes_table do
         row :is_active
         row :id_num
-        row :title
         row :image do
           image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg")
         end
+        row :title
         row :artist_name
         row :year_taken
         row :rotating_keyword
@@ -55,6 +56,8 @@ ActiveAdmin.register Photo do
       f.inputs "Details" do
         f.input :id_num
         f.input :title
+        f.input :categories
+        f.input :photo_categories
         f.input :artist_name
         f.input :year_taken
         f.input :rotating_keyword

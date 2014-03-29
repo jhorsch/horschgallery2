@@ -13,8 +13,9 @@ ActiveAdmin.setup do |config|
     # This block will edit the default menu
     admin.build_menu do |menu|
       menu.add :label => "Edit Content", :priority => 0
-    end
+      menu.add :label => "Website", :url => "/", :priority => 22220
 
+    end
   end
 
 

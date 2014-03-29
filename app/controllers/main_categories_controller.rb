@@ -62,6 +62,6 @@ class MainCategoriesController < ApplicationController
     end
 
     def main_category_params
-      params.require(:main_category).permit(:title)
+      params.require(:main_category).permit!
     end
 end

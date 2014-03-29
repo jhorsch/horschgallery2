@@ -10,7 +10,7 @@ $(function(){
 $(".image_link").fancybox({
 
     type: 'image',
-    // padding: 15,
+    padding: [25, 25, 85, 25],
     closeBtn: true,
     closeClick: true,
     openSpeed: 750,
