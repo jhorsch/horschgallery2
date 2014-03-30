@@ -23,7 +23,7 @@ gem 'database_cleaner'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'activeadmin',  github: 'gregbell/active_admin'
-
+# gem 'formtastic'
 
 # gem 'bourbon'
 

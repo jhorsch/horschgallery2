@@ -6,7 +6,7 @@ ActiveAdmin.register Photo do
   scope :active
 
   # FILTERS
-  filter :categories, :as => :select, :collection => proc { Category.all }
+  filter :categories, :as => :select, :collection => proc { Category.all }, :prompt => "Select & Run Filter"
   filter :id_num
   filter :artist_name
 
@@ -19,7 +19,7 @@ ActiveAdmin.register Photo do
     column  :title
     column  :categories
     column  :created_at
-
+    actions
 
   end
 
@@ -38,6 +38,7 @@ ActiveAdmin.register Photo do
           image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg")
         end
         row :title
+        row :categories
         row :artist_name
         row :year_taken
         row :rotating_keyword
@@ -51,13 +52,13 @@ ActiveAdmin.register Photo do
     # EDIT/NEW PAGE
     form do |f|
       f.inputs "Status" do
-        f.input :is_active, :label => "Photo is live?"
+        f.input :is_active, :label => "Photo is live?",  :input_html => { :checked => 'checked' }
       end
       f.inputs "Details" do
         f.input :id_num
         f.input :title
-        f.input :categories
-        f.input :photo_categories
+        f.input :categories,  :include_blank => false,  :input_html => { :size => 10, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
+        # f.input :photo_categories
         f.input :artist_name
         f.input :year_taken
         f.input :rotating_keyword

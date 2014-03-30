@@ -8,6 +8,8 @@ class Photo < ActiveRecord::Base
   belongs_to :format
   validates :format_id, presence: true
 
+  validates :title, presence: { presence: true, :message => "Please provide a title" }
+
   scope :active, -> { where(is_active: true) }
 
 

@@ -58,7 +58,7 @@ class PhotosController < ApplicationController
 
     def photo_params
       # if current_user&& currrent_user_admin?
-        params.require(:photo).permit(:title, :year_taken)
+        params.require(:photo).permit!
       # else
         # params.require(:photo).permit(xxxx)
     end
