@@ -1,24 +1,28 @@
+<!-- Hardcoded Super Categories.  Didnt make a table yet -->
+<% super_category_array = ['Most Popular','Chicago Cityscape','Chicago Sports','Top US Cities','Other Sports','Nature'] %>
+
 <div class="bottom_nav">
   <nav class="bottom_nav_content">
     <ul>
-      <% category_pairs =
-        [
-          { main_cat: "Most Popular", sub_cats: ['Best Sellers', 'Whats New', 'Holiday Shopping'] },
-          { main_cat: "Chicago Cityscape", sub_cats: ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks'] },
-          { main_cat: "Chicago Sports", sub_cats: ['Chicago Blackhawks','Chicago Cubs','Chicago White Sox','Chicago Bears','Chicago Bulls'] },
-          { main_cat: "Top US Cities", sub_cats: ['San Francisco', 'Boston'] },
-          { main_cat: "Other Sports", sub_cats: ['College Football', 'MLB'] },
-          { main_cat: "Nature", sub_cats: ['Nature'] }
-        ] %>
+      <!-- Loop thru super categories to identify main categories and put both in an array of hashes -->
+      <% category_pairs = [] %>
+      <% super_category_array.each do |super_cat| %>
+        <% main_category_array = [] %>
+        <% MainCategory.where(super_category: super_cat).each do |category| %>
+          <% main_category_array << category.title %>
+        <% end %>
+        <% category_pairs << { super_cat: super_cat, main_cats: main_category_array } %>
+      <% end %>
 
+      <!-- Loop through the hash to fill the super menu and drop down menu with (main and sub categories) -->
       <% category_pairs.each do |pair| %>
-        <li class="main_menu"><a class='main_menu_link' href="#"><%= pair[:main_cat] %></a>
-          <% if pair[:sub_cats].size <= 3  %>
+        <li class="main_menu"><a class='main_menu_link' href="#"><%= pair[:super_cat] %></a>
+          <% if pair[:main_cats].size <= 3  %>
             <div class="sub_menu_container sub_menu_small">
           <% else %>
             <div class="sub_menu_container">
           <% end %>
-          <%= render "layouts/dropdown_layout", main_categories: pair[:sub_cats] %>
+          <%= render "layouts/dropdown_layout", main_categories: pair[:main_cats] %>
           </div>
         </li>
       <% end %>

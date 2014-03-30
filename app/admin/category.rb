@@ -2,6 +2,8 @@ ActiveAdmin.register Category do
 
   menu :parent => "Edit Content"
   scope :active
+  config.sort_order = "title_asc"
+
 
   filter :main_category, :as => :select, :collection => proc { MainCategory.all }
   filter :title
@@ -40,7 +42,7 @@ ActiveAdmin.register Category do
       f.inputs "Details" do
         f.input :title
         f.input :description
-        f.input :main_category, :include_blank => false
+        f.input :main_category, :include_blank => false,  :collection => MainCategory.all.order(title: :asc)
 
       end
       f.inputs "Meta Information" do
