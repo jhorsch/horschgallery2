@@ -1,13 +1,11 @@
 ActiveAdmin.register Category do
 
-  menu :parent => "Edit Content"
+  menu :parent => "Content Management", :priority => 2
   scope :active
   config.sort_order = "title_asc"
 
-
-  filter :main_category, :as => :select, :collection => proc { MainCategory.all }
+  filter :main_category, :include_blank => false, :as => :select, :collection =>  MainCategory.all.order("title asc")
   filter :title
-
 
   permit_params :title, :super_category, :is_active, :meta_title, :meta_desc, :alt_tag, :description
 
@@ -19,14 +17,13 @@ ActiveAdmin.register Category do
 
   end
 
-
   # SHOW PAGE
    show do |category|
       attributes_table do
         row :is_active
         row :title
         row :description
-        row :main_category
+        row :main_category, :include_blank => false, :as => :select, :collection =>  MainCategory.all.order("title asc")
         row :meta_title
         row :meta_desc
         row :alt_tag
@@ -37,12 +34,12 @@ ActiveAdmin.register Category do
     # EDIT/NEW PAGE
     form do |f|
       f.inputs "Status" do
-        f.input :is_active, :label => "Category is live?", :input_html => { :checked => 'checked' }
+        f.input :is_active, :label => "Category is live?"
       end
       f.inputs "Details" do
         f.input :title
         f.input :description
-        f.input :main_category, :include_blank => false,  :collection => MainCategory.all.order(title: :asc)
+        f.input :main_category, :include_blank => false, :as => :select, :collection =>  MainCategory.all.order("title asc")
 
       end
       f.inputs "Meta Information" do

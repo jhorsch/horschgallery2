@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140330004221) do
+ActiveRecord::Schema.define(version: 20140331224524) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -62,6 +62,13 @@ ActiveRecord::Schema.define(version: 20140330004221) do
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug"
+
+  create_table "categories_photos", force: true do |t|
+    t.integer  "category_id"
+    t.integer  "photo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "category_mats", force: true do |t|
     t.integer  "mat_id"

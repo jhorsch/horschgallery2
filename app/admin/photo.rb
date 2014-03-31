@@ -1,33 +1,31 @@
 ActiveAdmin.register Photo do
 
-  menu :parent => "Edit Content", :priority => 0
+  menu :parent => "Content Management", :priority => 0
 
   config.sort_order = "created_at_desc"
   scope :active
 
   # FILTERS
-  filter :categories, :as => :select, :collection => proc { Category.all }, :prompt => "Select & Run Filter"
+  filter :categories, :as => :select, :include_blank => false, :collection =>  Category.all.order("title asc")
   filter :id_num
   filter :artist_name
 
+
   # PERMISSIONS
-  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :format
+  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :category_ids
 
   #INDEX LAYOUTS
   index do
     column  "Prod#", :id_num
     column  :title
-    column  :categories
+    column  ""
     column  :created_at
     actions
-
   end
-
 
   index :as => :grid, :columns => 2 do |photo|
   div link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg"), admin_photo_path(photo))
   end
-
 
   # SHOW PAGE
    show do |photo|
@@ -52,7 +50,7 @@ ActiveAdmin.register Photo do
     # EDIT/NEW PAGE
     form do |f|
       f.inputs "Status" do
-        f.input :is_active, :label => "Photo is live?",  :input_html => { :checked => 'checked' }
+        f.input :is_active, :label => "Photo is live?"
       end
       f.inputs "Details" do
         f.input :id_num
@@ -67,8 +65,11 @@ ActiveAdmin.register Photo do
         f.input :desc
       end
       f.inputs "Photo Options" do
-        f.input :format
+        f.input :format, :include_blank => false
         f.input :show_bw_conversion
+        # f.has_many :photo_categories do |g|
+        #   g.input :category
+        # end
       end
       f.actions
     end

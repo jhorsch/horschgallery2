@@ -1,7 +1,7 @@
 ActiveAdmin.register MainCategory do
 
 
-   menu :parent => "Edit Content"
+  menu :parent => "Content Management", :priority => 3
   scope :active
   config.sort_order = "title_asc"
 
@@ -36,7 +36,7 @@ ActiveAdmin.register MainCategory do
     # EDIT/NEW PAGE
     form do |f|
       f.inputs "Status" do
-        f.input :is_active, :label => "Main Category is live?", :input_html => { :checked => 'checked' }
+        f.input :is_active, :label => "Main Category is live?"
       end
       f.inputs "Details" do
         f.input :title

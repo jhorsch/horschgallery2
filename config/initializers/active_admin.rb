@@ -6,15 +6,19 @@ ActiveAdmin.setup do |config|
   # for each of the active admin pages.
   #
   config.site_title = "HorschGallery"
+  config.site_title_link = "/"
+  config.show_comments_in_menu = false
+  config.allow_comments = false
+
 
 
   config.namespace :admin do |admin|
 
     # This block will edit the default menu
     admin.build_menu do |menu|
-      menu.add :label => "Edit Content", :priority => 0
-      menu.add :label => "Website", :url => "/", :priority => 22220
-
+      menu.add :label => "Content Management", :priority => 1
+      menu.add :label => "Photo Options", :priority => 2
+      # menu.add :label => "Website", :url => "/", :priority => 1000
     end
   end
 

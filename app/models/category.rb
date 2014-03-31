@@ -1,8 +1,9 @@
 class Category < ActiveRecord::Base
 
-  has_many :photos, through: :photo_categories
-  has_many :photo_categories
+  # has_many :photo_categories, :dependent => :destroy
+  # has_many :photos, :through => :photo_categories
 
+  has_and_belongs_to_many :photos
   belongs_to :main_category
 
 

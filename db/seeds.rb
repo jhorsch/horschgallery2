@@ -11,7 +11,8 @@ require 'csv'
 Photo.destroy_all
 Category.destroy_all
 MainCategory.destroy_all
-PhotoCategory.destroy_all
+# PhotoCategory.destroy_all
+CategoriesPhotos.destroy_all
 
 Size.destroy_all
 Format.destroy_all
@@ -21,7 +22,7 @@ CategoryMat.destroy_all
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
 DatabaseCleaner.clean_with(:truncation, :only => %w[main_categories])
-DatabaseCleaner.clean_with(:truncation, :only => %w[photo_categories])
+DatabaseCleaner.clean_with(:truncation, :only => %w[categories_photos])
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
 DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
@@ -63,7 +64,7 @@ CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
 end
 
 CSV.foreach("#{Rails.root}/lib/assets/PhotoCategory.csv", headers: true) do |row|
-     PhotoCategory.create(
+     CategoriesPhotos.create(
         :photo_id => row[0],
         :category_id => row[1]
     )
@@ -93,8 +94,6 @@ CSV.foreach("#{Rails.root}/lib/assets/Size.csv", headers: true) do |row|
         :price => row[4],
         :product_ads_extension => row[5],
         :format_id => row[6]
-
-
       )
 
 end
