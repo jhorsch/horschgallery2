@@ -11,7 +11,6 @@ require 'csv'
 Photo.destroy_all
 Category.destroy_all
 MainCategory.destroy_all
-# PhotoCategory.destroy_all
 CategoriesPhotos.destroy_all
 
 Size.destroy_all
@@ -68,7 +67,6 @@ CSV.foreach("#{Rails.root}/lib/assets/PhotoCategory.csv", headers: true) do |row
         :photo_id => row[0],
         :category_id => row[1]
     )
-
 end
 
 

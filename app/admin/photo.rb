@@ -56,7 +56,6 @@ ActiveAdmin.register Photo do
         f.input :id_num
         f.input :title
         f.input :categories,  :include_blank => false,  :input_html => { :size => 10, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
-        # f.input :photo_categories
         f.input :artist_name
         f.input :year_taken
         f.input :rotating_keyword
@@ -67,9 +66,6 @@ ActiveAdmin.register Photo do
       f.inputs "Photo Options" do
         f.input :format, :include_blank => false
         f.input :show_bw_conversion
-        # f.has_many :photo_categories do |g|
-        #   g.input :category
-        # end
       end
       f.actions
     end

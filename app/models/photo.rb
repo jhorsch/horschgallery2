@@ -2,8 +2,9 @@ class Photo < ActiveRecord::Base
   # belongs_to :category
   # validates :category_id, presence: true
 
-  # has_many :photo_categories, :dependent => :destroy
-  has_and_belongs_to_many :categories
+  has_many :categories_photos, :class_name => "CategoriesPhotos"
+  has_many :categories, :through => :categories_photos
+
 
   belongs_to :format
   validates :format_id, presence: true
