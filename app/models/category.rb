@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
 
-  has_many :categories_photos, :class_name => "CategoriesPhotos"
-  has_many :photos, :through => :categories_photos
+  has_many :category_photos
+  has_many :photos, :through => :category_photos
 
   belongs_to :main_category
 
