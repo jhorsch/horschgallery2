@@ -13,7 +13,7 @@ ActiveAdmin.register Photo do
 
 
   # PERMISSIONS
-  permit_params :authenticity_token, :id, :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids:[:category_id, :id]
+  permit_params :authenticity_token, :id, :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids: []
 
   #INDEX LAYOUTS
   index do
@@ -22,7 +22,7 @@ ActiveAdmin.register Photo do
     column  ""
     column 'Categories' do |xx|
            photo.categories.map(&:title).join("<br />").html_safe
-        end
+    end
     column  :created_at
     actions
   end
