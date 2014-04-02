@@ -20,9 +20,6 @@ ActiveAdmin.register Photo do
     column  "Prod#", :id_num
     column  :title
     column  ""
-    column 'Categories' do |xx|
-           photo.categories.map(&:title).join("<br />").html_safe
-    end
     column  :created_at
     actions
   end
@@ -64,7 +61,7 @@ ActiveAdmin.register Photo do
       f.inputs "Details" do
         f.input :id_num
         f.input :title
-        f.input :categories, as: :check_boxes, :include_blank => false,  :input_html => { :size => 10, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
+        f.input :categories, :include_blank => false,  :input_html => { :size => 20, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
 
 
         f.input :artist_name
