@@ -4,7 +4,7 @@ ActiveAdmin.register Category do
   scope :active
   config.sort_order = "title_asc"
 
-  filter :main_category, :include_blank => false, :as => :select, :collection =>  MainCategory.all.order("title asc")
+  filter :main_category, :as => :select, :collection =>  MainCategory.all.order("title asc")
   filter :title
 
   permit_params :title, :super_category, :is_active, :meta_title, :meta_desc, :alt_tag, :description

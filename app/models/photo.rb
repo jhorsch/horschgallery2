@@ -3,13 +3,14 @@ class Photo < ActiveRecord::Base
   # validates :category_id, presence: true
 
   has_many :category_photos
-  has_many :categories, :through => :category_photos
+  has_many :categories, -> { where is_active: true }, :through => :category_photos
 
 
   belongs_to :format
   validates :format_id, presence: true
 
-  validates :title, presence: { presence: true, :message => "Please provide a title" }
+  validates :title, uniqueness: true
+
 
   scope :active, -> { where(is_active: true) }
 

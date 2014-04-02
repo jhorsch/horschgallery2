@@ -6,19 +6,23 @@ ActiveAdmin.register Photo do
   scope :active
 
   # FILTERS
-  filter :categories, :as => :select, :include_blank => false, :collection =>  Category.all.order("title asc")
+  filter :categories, :as => :select, :collection =>  Category.all.order("title asc")
   filter :id_num
+  filter :title
   filter :artist_name
 
 
   # PERMISSIONS
-  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :category_ids
+  permit_params :authenticity_token, :id, :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids:[:category_id, :id]
 
   #INDEX LAYOUTS
   index do
     column  "Prod#", :id_num
     column  :title
     column  ""
+    column 'Categories' do |xx|
+           photo.categories.map(&:title).join("<br />").html_safe
+        end
     column  :created_at
     actions
   end
@@ -36,7 +40,12 @@ ActiveAdmin.register Photo do
           image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg")
         end
         row :title
-        row :categories
+        # row :category_ids, :collection => Hash[Category.all.map{|b| [b.title,b.id]}]
+        row 'Categories' do |xx|
+           photo.categories.map(&:title).join("<br />").html_safe
+        end
+
+
         row :artist_name
         row :year_taken
         row :rotating_keyword
@@ -55,7 +64,9 @@ ActiveAdmin.register Photo do
       f.inputs "Details" do
         f.input :id_num
         f.input :title
-        f.input :categories,  :include_blank => false,  :input_html => { :size => 10, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
+        f.input :categories, as: :check_boxes, :include_blank => false,  :input_html => { :size => 10, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
+
+
         f.input :artist_name
         f.input :year_taken
         f.input :rotating_keyword
