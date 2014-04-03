@@ -13,13 +13,12 @@ ActiveAdmin.register Photo do
 
 
   # PERMISSIONS
-  permit_params :authenticity_token, :id, :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids: []
+  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids: []
 
   #INDEX LAYOUTS
   index do
     column  "Prod#", :id_num
     column  :title
-    column  ""
     column  :created_at
     actions
   end
