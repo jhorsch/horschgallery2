@@ -26,6 +26,24 @@ header {
   width: 100%;
 }
 
+@media only screen and (max-width: $mobile_width)  {
+
+  header {
+    position: relative;
+    z-index: 500;
+    display: block;
+    width: 100%;
+  }
+
+  .header_space_holder{
+    height: 10px;
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+
+}
 //SALE NAV
 .sale_nav{
   width: 100%;
