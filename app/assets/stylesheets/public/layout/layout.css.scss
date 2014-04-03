@@ -112,7 +112,7 @@ form{
     height: 32px;
     border-radius: 100px;
     outline: none;
-    padding: 0 10px 0 30px;
+    padding: 0 10px 0 35px;
     font-size: 16px;
     margin-left: 15px;
     border: 1px solid #bbb;
@@ -124,9 +124,8 @@ form{
 
   }
 
-  .search_button{
-    cursor: pointer;
-  }
+
+
 
   .hide_search_button{
     display: none;
@@ -135,8 +134,12 @@ form{
   .fa-search{
     color: $orange_color;
     margin-left: -395px;
-    padding-bottom: 5px;
+    padding-bottom: 7px;
     font-size: 20px;
+  }
+
+  .search_button{
+    cursor: pointer;
   }
 
   .account {

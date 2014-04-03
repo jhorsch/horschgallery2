@@ -115,7 +115,7 @@
 
 @media only screen and (max-width: 600px)  {
 
-      .category_main
+      // .category_main{
 
         h1{
           color: red;
@@ -128,7 +128,9 @@
       .photoset_wrapper{
 
          li{
-            margin-right: 0px;
+            // margin-right: 0px;
+            display: block;
+            // text-align: center;
           }
       }
 }
