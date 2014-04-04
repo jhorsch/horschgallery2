@@ -70,11 +70,10 @@
 .category_main{
   padding: $main_page_side_padding;
   margin: 0px auto;
-  // text-align: center;
   .category_desc{
 
     border-bottom: 1px solid #ccc;
-    padding: 0px 30px 30px 0px;
+    padding: 0px 0px 30px 0px;
     text-align: center;
   }
 
@@ -96,7 +95,7 @@
 
   margin: 0 auto;
   padding-top: 0px;
-  // background: yellow;
+  text-align: left;
   font-size: 0;
   li{
     display: inline-block;
