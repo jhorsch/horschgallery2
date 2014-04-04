@@ -17,7 +17,7 @@
 <h1> <%= @category.title %> Photography</h1>
 <p class='category_desc'><%= @category.description %></p>
 
-<div class="cat_product_wrapper">
+
 <div class="top_pagination">
 <div class='breadcrumbs'>
   <a href="/"><%= @category.super_category %></a> >
@@ -56,8 +56,6 @@
   <%= will_paginate @photos %>
 </div>
 
-</div>
-
 
 <%= render "layouts/newsletter" %>
 
@@ -65,23 +63,5 @@
 </main>
 
 
-// <script>
-// var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-
-// if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
-
-// function mischandler(){
-// return false;
-// }
-
-// function mousehandler(e){
-// var myevent = (isNS) ? e : event;
-// var eventbutton = (isNS) ? myevent.which : myevent.button;
-// if((eventbutton==2)||(eventbutton==3)) return false;
-// }
-// document.oncontextmenu = mischandler;
-// document.onmousedown = mousehandler;
-// document.onmouseup = mousehandler;
-// </script>
 
 
