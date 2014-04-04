@@ -160,7 +160,7 @@
     font-weight: normal;
     font-family: $sans_serif;
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 15px;
     color: $red_color;
   }
 
@@ -234,7 +234,7 @@
       padding: 5px 10px;
       bottom: 0px;
       left: 0px;
-      text-transform: lowercase;
+      text-transform: capitalize;
       font-family: $sans_serif;
       background: $black_color;
       opacity: .95;

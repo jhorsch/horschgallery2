@@ -19,7 +19,7 @@
 
 <div class="top_pagination">
 <div class='breadcrumbs'>
-  <a href="#"><%= @category.super_category %></a> >
+  <a href="/"><%= @category.super_category %></a> >
   <%= link_to @category.main_category.title, main_category_url(@category.main_category) %>
     <a class ='acitve_page_link hide_field' href="<%= category_url(@category)  %>"></a>
 
@@ -27,13 +27,18 @@
 
 </div>
 
+
 <section class="photoset_wrapper">
 <% counter = 0  %>
 <ul>
   <% @photos.each do |photo| %>
  <% keyword = @rotating_keywords[counter]  %>
 
+    <% if @category.title.include? "Panoramas"  %>
+    <li class='pan'>
+    <% else %>
     <li>
+    <% end %>
         <%= link_to( image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg", class: 'category_image', alt: "#{keyword}-of-#{photo.title.parameterize}"), photo_url(photo)) %>
         <h4><%= link_to photo.title, photo_url(photo) %></h4>
     </li>

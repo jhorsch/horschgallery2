@@ -15,8 +15,16 @@ class Photo < ActiveRecord::Base
   scope :active, -> { where(is_active: true) }
 
 
-  def super_category
+  def super_category_title
     self.categories.take.super_category
+  end
+
+  def main_category
+    self.categories.take.main_category
+  end
+
+  def main_category_title
+    self.categories.take.main_category.title
   end
 
   def category_title
