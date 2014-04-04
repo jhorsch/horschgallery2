@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140401154248) do
+ActiveRecord::Schema.define(version: 20140403233619) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -115,6 +115,7 @@ ActiveRecord::Schema.define(version: 20140401154248) do
     t.boolean  "show_bw_conversion"
     t.integer  "format_id"
     t.string   "rotating_keyword"
+    t.integer  "featured_gallery"
   end
 
   create_table "sizes", force: true do |t|

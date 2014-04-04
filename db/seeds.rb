@@ -42,7 +42,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :year_taken => row[8],
         :format_id => row[9],
         :show_bw_conversion => row[10],
-        :rotating_keyword => row[11]
+        :rotating_keyword => row[11],
+        :featured_gallery => row[12]
       )
 end
 

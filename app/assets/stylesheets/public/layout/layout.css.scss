@@ -120,7 +120,7 @@ form{
       font-size: 20px;
       padding-right: 15px;
       &:hover{
-        color: #eee
+        color: #eee;
       }
     }
   }
@@ -142,6 +142,17 @@ form{
 
   }
 
+::-webkit-input-placeholder {
+   color: $dark_gray;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: $dark_gray;
+}
+
+:-ms-input-placeholder {
+   color: $dark_gray;
+}
 
 
 

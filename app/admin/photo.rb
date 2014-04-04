@@ -66,6 +66,7 @@ ActiveAdmin.register Photo do
         f.input :artist_name
         f.input :year_taken
         f.input :rotating_keyword
+        f.featured_gallery
       end
       f.inputs "Description" do
         f.input :desc
@@ -73,6 +74,8 @@ ActiveAdmin.register Photo do
       f.inputs "Photo Options" do
         f.input :format, :include_blank => false
         f.input :show_bw_conversion
+        f.input :featured_gallery
+
       end
       f.actions
     end
