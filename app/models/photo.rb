@@ -46,8 +46,8 @@ class Photo < ActiveRecord::Base
 
   def self.search(query)
     query = query.downcase
-    active.where("LOWER(title) LIKE ? OR LOWER(id_num) LIKE ? OR LOWER(id_num) LIKE ? ",
-                "%#{query}%", "%#{query}", "%#{query}wf"
+    active.where("LOWER(title) LIKE ? OR LOWER(id_num) LIKE ? OR LOWER(desc) LIKE ?",
+                "%#{query}%", "%#{query}", "%#{query}%"
             )
   end
 end
