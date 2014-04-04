@@ -14,7 +14,7 @@
 
 <div class='breadcrumbs'>
   <a href="/"><%= @photo.super_category_title %></a> >
-  <%= link_to @photo.main_category.title, main_category_url(@photo.main_category) %> >
+  <%= link_to @photo.categories.take.main_category.title, main_category_url(@photo.categories.take.main_category) %> >
   <a class = 'acitve_page_link' href="<%= category_url(@photo.categories.take)  %>"><%= @photo.categories.take.title  %></a>
 </div>
 
@@ -26,8 +26,8 @@
   <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{@photo.id_num.downcase}.jpg"), "https://s3-us-west-2.amazonaws.com/hg-englarged/#{@photo.id_num.downcase}.jpg" , class: 'image_link', alt: "#{@photo.rotating_keyword.downcase}-of-#{@photo.title.downcase.parameterize}" %>
 
 
-  <%= link_to "View Slide Show", main_category_path(@photo.main_category, :anchor => @photo.title.parameterize), class: 'view_slideshow' %>
   <div class="share_wrapper">
+  <div><%= link_to "View Slide Show", main_category_path(@photo.categories.take.main_category, :anchor => @photo.title.parameterize), class: 'view_slideshow' %></div>
     <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
     <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
   </div>

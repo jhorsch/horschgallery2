@@ -19,9 +19,6 @@ class Photo < ActiveRecord::Base
     self.categories.take.super_category
   end
 
-  def main_category
-    self.categories.take.main_category
-  end
 
   def main_category_title
     self.categories.take.main_category.title
