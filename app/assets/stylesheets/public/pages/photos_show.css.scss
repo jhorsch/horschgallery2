@@ -58,19 +58,22 @@
       display: inline-block;
       vertical-align: bottom;
     }
+
+    .view_slideshow{
+      color: $orange_color;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 10px;
+      margin-right: 70px;
+      text-align: left;
+    }
   }
 
   .social_buttons{
     width: 200px;
   }
 
-.view_slideshow{
-  color: $orange_color;
-  display: block;
-  margin-bottom: 10px;
-  margin-right: 80px;
-  text-align: left;
-}
+
 
 }
 

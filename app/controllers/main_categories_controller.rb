@@ -13,6 +13,11 @@ class MainCategoriesController < ApplicationController
 
   def new
     @main_category = MainCategory.new
+    # if url.includes '#'
+    #     redirect_to
+    # else
+    #     render new
+    # end
   end
 
 
