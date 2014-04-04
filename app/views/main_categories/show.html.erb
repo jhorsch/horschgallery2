@@ -11,11 +11,13 @@
 
 <main class="category_index_main">
 
+
 <h1 class='main_cat_title'><%= @main_category.title.titleize %> Photography</h1>
 <p>Sit back and enjoy our slide show of <%= @photos.count %> </span><%= @main_category.title.capitalize %>  photographs <span class='cat_photo_count'> OR </span> use the arrows to go at your own pace.</p>
 <!-- <p>To find more information about the photo, click VIEW DETAILS found at the bottom right of the image slide show.</p> -->
 
-<%= link_to 'x', main_categories_url(@main_category), class: 'acitve_page_link hide_field' %>
+<%= link_to '', main_category_url(@main_category), class: 'acitve_page_link' %>
+
 
 
 <%= render 'photos/fotorama' %>

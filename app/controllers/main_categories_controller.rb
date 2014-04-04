@@ -18,6 +18,7 @@ class MainCategoriesController < ApplicationController
     # else
     #     render new
     # end
+    redirect_to new
   end
 
 
