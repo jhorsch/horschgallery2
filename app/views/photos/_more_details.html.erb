@@ -1,0 +1,54 @@
+  <div class="more_details_wrapper">
+    <h2>More Details</h2>
+    <p>The watermark on the image above will not appear on the photograph you purchase.</p>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Artist</div>
+      <div class='more_detail_value'><%= @photo.artist %></div>
+    </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Customer Love</div>
+      <div class='more_detail_value'>
+        <a class='ratings' href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></a></div>
+        <a class='reviews' href="#">55 reviews</a></div>
+
+
+    <% current_year = Time.now.year %>
+     <div class="detail_row">
+      <div class='more_detail_label'>Year Taken</div>
+      <div class='more_detail_value'><%= @photo.year_taken %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( <%= current_year -  @photo.year_taken.to_i %> years ago )</div>
+    </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Shipping</div>
+      <div class='more_detail_value'>UPS Ground.&nbsp;&nbsp;&nbsp;3-5 business days.&nbsp;&nbsp;&nbsp;Ships from Chicago, IL</div>
+    </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Return Policy</div>
+      <div class='more_detail_value'>Free returns within 14 days.&nbsp;&nbsp;&nbsp;No charge for return shipping</div>
+    </div>
+
+
+     <div class="detail_row">
+      <div class='more_detail_label'>Photo Finish</div>
+      <div class='more_detail_value'>Matte</div>
+    </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Photo Medium</div>
+      <div class='more_detail_value'>Digital</div>
+    </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>In Stock</div>
+      <div class='more_detail_value'>Yes</div>
+    </div>
+
+    <div class="detail_row last_more_details">
+      <div class='more_detail_label'>Photo ID#</div>
+      <div class='more_detail_value '><%= @photo.id_num %></div>
+    </div>
+
+  </div>

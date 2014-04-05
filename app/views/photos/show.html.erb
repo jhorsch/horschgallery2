@@ -24,6 +24,7 @@
 <div class="product_wrapper">
   <div class='product'>
   <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{@photo.id_num.downcase}.jpg"), "https://s3-us-west-2.amazonaws.com/hg-englarged/#{@photo.id_num.downcase}.jpg" , class: 'image_link', alt: "#{@photo.rotating_keyword.downcase}-of-#{@photo.title.downcase.parameterize}" %>
+</div>
 
 
   <div class="share_wrapper">
@@ -31,9 +32,11 @@
     <div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div>
     <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
   </div>
-  <div class='artist'><%= @photo.id_num %> - Photographed by <%= @photo.artist %> in <%= @photo.year_taken %></div>
-  <div class="watermark">The purchased photo will not contain a watermark</div>
-  </div>
+
+  <%= render 'more_details' %>
+
+
+
 </div>
 
 

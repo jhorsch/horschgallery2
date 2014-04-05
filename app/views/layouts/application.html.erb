@@ -1,38 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <%= render "layouts/meta_data" %>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+     <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed|Quattrocento' rel='stylesheet' type='text/css'>
+  </head>
 
-  <%= render "layouts/meta_data" %>
+  <body>
+      <div class="body_container" >
+      <header>
+        <%= render "layouts/top_nav" %>
+        <%= render "layouts/bottom_nav" %>
+      </header>
+      <div class="header_space_holder"></div>
+      <%= yield %>
+    </div>
 
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+    <%   unless (params[:controller] == 'static_pages'  && params[:action] == 'payment')  %>
+      <%= render 'layouts/footer' %>
+    <% end %>
 
-<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
-
-   <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed|Quattrocento' rel='stylesheet' type='text/css'>
-
-
-
-
-</head>
-
-<body>
-
-  <div class="body_container" >
-
-  <header>
-  <%= render "layouts/top_nav" %>
-  <%= render "layouts/bottom_nav" %>
-  </header>
-  <div class="header_space_holder"></div>
-
-  <%= yield %>
-
-  </div>
-<%   unless (params[:controller] == 'static_pages'  && params[:action] == 'payment')  %>
-  <%= render 'layouts/footer' %>
-<% end %>
-
-</body>
+  </body>
 </html>

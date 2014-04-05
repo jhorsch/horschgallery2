@@ -1,22 +1,20 @@
 <div class="fotorama"
+  data-allowfullscreen="true"
+  data-fit="contain"
+  data-autoplay="false"
+  data-transition="crossfade"
+  data-arrows="true"
+  data-swipe="true"
+  data-loop="true"
 
-data-allowfullscreen="true"
-data-fit="contain"
-data-autoplay="false"
-data-transition="crossfade"
-data-arrows="true"
-data-swipe="true"
-data-loop="true"
+  data-width="100%"
+  data-height="85%"
 
-data-width="100%"
-data-height="85%"
-
-data-keyboard="false"
-data-nav="thumbs"
-data-thumbwidth="50"
-data-thumbheight="50"
-data-hash="true"
->
+  data-keyboard="false"
+  data-nav="thumbs"
+  data-thumbwidth="50"
+  data-thumbheight="50"
+  data-hash="true" >
 
 <% @photos.each do |photo| %>
     <%= link_to(

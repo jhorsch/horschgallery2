@@ -12,4 +12,6 @@
  *= require_tree ../../../vendor/assets/stylesheets/.
  *= require_tree ./base
  *= require_tree ./public
+ *= require font-awesome
+
  */

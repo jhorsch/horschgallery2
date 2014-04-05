@@ -54,6 +54,7 @@
     margin-bottom: 20px;
   }
   .share_wrapper{
+    margin-bottom: 40px;
     div{
       display: inline-block;
       vertical-align: bottom;
@@ -71,6 +72,63 @@
 
   .social_buttons{
     width: 200px;
+  }
+
+  .more_details_wrapper{
+    border-top: 2px solid #ccc;
+    // border-right: 1px solid #ccc;
+    margin-bottom: 40px;
+    text-align: left;
+    font-family: $sans_serif;
+
+
+    h2{
+      font-size: 22px;
+      padding-top: 20px;
+      margin-bottom: 0px;
+      color: $black_color;
+    }
+
+    p{
+      color: $light_gray;
+      font-family: $sans_serif;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .detail_row{
+
+      font-size: 15px;
+      border-top: 1px solid #ccc;
+      &:last-child{
+      border-bottom: 1px solid #ccc;
+      }
+
+      .more_detail_label{
+        display: inline-block;
+        color: $light_gray;
+        width: 150px;
+        padding: 5px 0;
+      }
+
+      .more_detail_value{
+        padding: 5px 0;
+        display: inline-block;
+        color: $dark_gray;
+      }
+
+      .reviews{
+        color: $dark_gray;
+        margin-left: 5px;
+      }
+
+      .fa-star, .fa-star-half-o{
+        color: $orange_color;
+      }
+
+
+
+    }
   }
 
 
@@ -151,7 +209,7 @@
 
   clear: both;
   padding-top: 40px;
-  border-top: 1px solid #ccc;
+  border-top: 2px solid #ccc;
   // background: yellow;
   margin-bottom: 0px;
   h3{
