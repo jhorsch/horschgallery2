@@ -10,5 +10,5 @@ Horschgallery2::Application.routes.draw do
   get "/shopping_cart" => 'static_pages#shopping_cart'
   get "/confirmation" => 'static_pages#confirmation'
   get "/payment" => 'static_pages#payment'
-  get '/search' => 'photos#search', :as => 'search'
+  get '/search' => 'photos#search'
 end

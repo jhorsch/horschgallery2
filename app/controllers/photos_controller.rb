@@ -46,7 +46,7 @@ class PhotosController < ApplicationController
   end
 
  def search
-    @query  = params[:query]
+    @query  = params[:q]
     @photos = Photo.search(@query).paginate(:page => params[:page], :per_page => 24)
       render 'search'
  end
