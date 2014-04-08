@@ -1,18 +1,31 @@
 @import "base/base";
 
+
+.modal{
+
+  h2{
+    color: $orange_color;
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+   h3{
+      font-size: 30px;
+      color: $black_color;
+      border-bottom: 3px solid $black_color;
+      margin: 40px 0;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+}
+
 .feature_content_wrapper{
   text-align: center;
   font-family: $sans_serif;
   margin-top: 40px;
 
 
-   h2{
-      font-size: 30px;
-      color: $black_color;
-      border-bottom: 3px solid $black_color;
-      margin: 40px 0;
-      text-transform: uppercase;
-    }
 
   li{
     display: inline-block;

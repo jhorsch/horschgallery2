@@ -15,6 +15,7 @@ $y_pos: ($outer_width * .5) - ($inner_width*.5);
   width: $outer_width;
   background: #ddd;
   position: relative;
+  margin: 0 auto;
 
   img{
     opacity: .9;
