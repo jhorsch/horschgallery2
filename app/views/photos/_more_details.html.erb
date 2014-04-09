@@ -15,9 +15,15 @@
 
 
     <% current_year = Time.now.year %>
+    <% year_taken = @photo.year_taken.to_i %>
+    <% duration = current_year - year_taken %>
+    <% if duration > 0 %>
+      <% years_ago_string =  "( #{pluralize(duration,'year')} ago )" %>
+    <% end %>
+
      <div class="detail_row">
       <div class='more_detail_label'>Year Taken</div>
-      <div class='more_detail_value'><%= @photo.year_taken %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( <%= current_year -  @photo.year_taken.to_i %> years ago )</div>
+      <div class='more_detail_value'><%= @photo.year_taken %>&nbsp;&nbsp;&nbsp;&nbsp;<%= years_ago_string %></div>
     </div>
 
     <div class="detail_row">
