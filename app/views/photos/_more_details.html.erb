@@ -27,24 +27,19 @@
     </div>
 
     <div class="detail_row">
-      <div class='more_detail_label'>Shipping</div>
-      <div class='more_detail_value'>UPS Ground.&nbsp;&nbsp;&nbsp;&nbsp;3-5 business days.&nbsp;&nbsp;&nbsp;Ships from Chicago, IL</div>
+      <div class='more_detail_label'>Camera & Format</div>
+      <div class='more_detail_value'><%= @photo.camera %>.&nbsp;&nbsp;&nbsp;<%= @photo.film_type.capitalize %>.</div>
     </div>
-
-    <div class="detail_row">
-      <div class='more_detail_label'>Return Policy</div>
-      <div class='more_detail_value'>Free returns within 14 days.&nbsp;&nbsp;&nbsp;No charge for return shipping</div>
-    </div>
-
 
      <div class="detail_row">
       <div class='more_detail_label'>Photo Finish Type</div>
-      <div class='more_detail_value'>Matte Finish.&nbsp;&nbsp;&nbsp;So you know it won't be glossy</div>
+      <div class='more_detail_value'>Matte Finish.&nbsp;&nbsp;&nbsp;You won't be able to see your reflection.</div>
     </div>
 
-    <div class="detail_row">
-      <div class='more_detail_label'>Camera & Format</div>
-      <div class='more_detail_value'><%= @photo.camera %>.&nbsp;&nbsp;&nbsp;<%= @photo.film_type.capitalize %></div>
+
+    <div class="detail_row last_more_details">
+      <div class='more_detail_label'>Photo ID#</div>
+      <div class='more_detail_value '><%= @photo.id_num %></div>
     </div>
 
     <div class="detail_row">
@@ -52,9 +47,16 @@
       <div class='more_detail_value'>Yes</div>
     </div>
 
-    <div class="detail_row last_more_details">
-      <div class='more_detail_label'>Photo ID#</div>
-      <div class='more_detail_value '><%= @photo.id_num %></div>
+    <div class="detail_row">
+      <div class='more_detail_label'>Shipping</div>
+      <div class='more_detail_value'>UPS Ground.&nbsp;&nbsp;&nbsp;&nbsp;3-5 business days.&nbsp;&nbsp;&nbsp;Ships from Chicago, IL.</div>
     </div>
+
+    <div class="detail_row">
+      <div class='more_detail_label'>Return Policy</div>
+      <div class='more_detail_value'>Free returns within 14 days.&nbsp;&nbsp;&nbsp;No charge for return shipping.</div>
+    </div>
+
+
 
   </div>
