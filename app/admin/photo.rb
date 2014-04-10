@@ -13,7 +13,7 @@ ActiveAdmin.register Photo do
 
 
   # PERMISSIONS
-  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, category_ids: []
+  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :featured_gallery, :camera, :film_type, category_ids: []
 
   #INDEX LAYOUTS
   index do
@@ -41,13 +41,15 @@ ActiveAdmin.register Photo do
            photo.categories.map(&:title).join("<br />").html_safe
         end
 
-
         row :artist_name
         row :year_taken
         row :rotating_keyword
         row :desc
         row :format
         row :show_bw_conversion
+        row :featured_gallery
+        row :camera
+        row :film_type
       end
       # active_admin_comments
     end
@@ -57,16 +59,10 @@ ActiveAdmin.register Photo do
       f.inputs "Status" do
         f.input :is_active, :label => "Photo is live?"
       end
-      f.inputs "Details" do
+      f.inputs "Main Details" do
         f.input :id_num
         f.input :title
         f.input :categories, :include_blank => false,  :input_html => { :size => 20, :multiple => true, :class => "xxxx" }, :collection => Category.all.order(title: :asc)
-
-
-        f.input :artist_name
-        f.input :year_taken
-        f.input :rotating_keyword
-        f.featured_gallery
       end
       f.inputs "Description" do
         f.input :desc
@@ -74,8 +70,16 @@ ActiveAdmin.register Photo do
       f.inputs "Photo Options" do
         f.input :format, :include_blank => false
         f.input :show_bw_conversion
+      end
+      f.inputs "More Details" do
+        f.input :artist_name
+        f.input :year_taken
+        f.input :camera
+        f.input :film_type
+      end
+      f.inputs "Misc" do
+        f.input :rotating_keyword
         f.input :featured_gallery
-
       end
       f.actions
     end

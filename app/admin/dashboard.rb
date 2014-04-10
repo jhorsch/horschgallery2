@@ -16,8 +16,8 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Posts" do
           ul do
-            Photo.all.take(30).each do |photo|
-              li link_to(photo.title, photo_path(photo))
+            Order.all.take(30).each do |order|
+              li link_to(order.id, order_path(order))
             end
           end
         end
