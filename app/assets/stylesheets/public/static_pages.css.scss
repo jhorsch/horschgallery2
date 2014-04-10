@@ -1,3 +1,77 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "base/base";
+@import "base/library";
+
+@include static_pages_base;
+@include customer_quotes;
+
+
+//FAQ
+
+.fa-plus{
+  display: none;
+}
+
+
+
+.question {
+    cursor: pointer;
+}
+
+.ups_label{
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+.bodyemail{
+  // font-weight: bold;
+}
+
+.email_link{
+  font-weight: bold;
+  a{
+    color: $orange_color;
+  }
+}
+
+.fixit{
+  margin-top: 20px;
+}
+
+.return_divider{
+  border-top: 2px solid #ccc;
+  padding-top: 20px;
+}
+
+//PHOTOGRAPHERS
+.artist_wrapper{
+  margin-top: 20px;
+  li{
+    text-align: center;
+    display: inline-block;
+    margin-right: 40px;
+    a{
+      color: $black_color;
+      font-family: $sans_serif;
+      font-size: 24px;
+    }
+  }
+
+  p{
+    font-family: $sans_serif;
+    font-size: 16px;
+  }
+
+   img{
+    width: 150px;
+    border-radius: 200px;
+    display: inline-block;
+    vertical-align: center;
+   }
+
+}
+
+

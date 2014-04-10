@@ -34,9 +34,6 @@ $(".option_helpers")
         autoSize: true,
         maxWidth: 1000,
         scrolling  : 'auto'
-
-
-
 });
 
 

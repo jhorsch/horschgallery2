@@ -3,15 +3,15 @@
     <p>The watermark on the image above will not appear on the photograph you purchase.</p>
 
     <div class="detail_row">
-      <div class='more_detail_label'>Photographer</div>
+      <a href='/photographers' rel='nofollow' class='more_detail_label detail_hover'>Photographer</a>
       <div class='more_detail_value'><%= @photo.artist %></div>
     </div>
 
     <div class="detail_row">
-      <div class='more_detail_label'>Customer Love</div>
+      <a href='/reviews' rel='nofollow'  class='more_detail_label detail_hover'>Customer Love</a>
       <div class='more_detail_value'>
-        <a class='ratings' href="#"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></a></div>
-        <a class='reviews' href="#">55 reviews</a></div>
+        <a class='ratings' href="/reviews"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o"></i></a></div>
+        <a class='reviews' href="/reviews">55 reviews</a></div>
 
 
     <% current_year = Time.now.year %>
@@ -53,7 +53,7 @@
     </div>
 
     <div class="detail_row">
-      <div class='more_detail_label'>Return Policy</div>
+      <a href='/returns' rel='nofollow'  class='more_detail_label detail_hover'>Return Policy</a>
       <div class='more_detail_value'>Free returns within 14 days.&nbsp;&nbsp;&nbsp;No charge for return shipping.</div>
     </div>
 

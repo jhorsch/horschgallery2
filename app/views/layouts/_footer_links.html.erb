@@ -9,10 +9,26 @@
   <div class="footer_info">
     <ul>
       <li class = 'footer_section_title'>Photo Options</li>
-      <li><a href='#'>Compare Sizes</a></li>
-      <li><a href='#'>Compare Mat Colors</a></li>
-      <li><a href='#'>View Frame Options</a></li>
-      <li><a href='#'>B&amp;W Conversions</a></li>
+      <li><a href="#fb_photo_sizes_modal" rel = "nofollow" class="option_helpers">Compare Sizes</a></li>
+      <div class="fancybox_hidden">
+        <%= render 'photos/modals/photo_sizes_modal' %>
+      </div>
+
+      <li><a href="#fb_mat_modal" rel = "nofollow" class="option_helpers">Compare Mat Colors</a></li>
+      <div class="fancybox_hidden">
+        <%= render 'photos/modals/mat_modal' %>
+      </div>
+
+      <li><a href="#fb_frame_modal" rel = "nofollow" class="option_helpers">View Frame Options</a></li>
+      <div class="fancybox_hidden">
+        <%= render 'photos/modals/frame_modal' %>
+      </div>
+
+      <li><a href="#fb_bw_modal" rel = "nofollow" class="option_helpers">B&amp;W Conversions</a></li>
+      <div class="fancybox_hidden">
+        <%= render 'photos/modals/bw_modal' %>
+      </div>
+
     </ul>
   </div>
   <div class="footer_info">
@@ -20,22 +36,20 @@
       <li class = 'footer_section_title'>Shipping</li>
       <li><a href='#'>UPS Ground</a></li>
       <li><a href='#'>3-5 Business Days</a></li>
-      <li><a href='#'>Free Return Shipping</a></li>
     </ul>
   </div>
   <div class="footer_info">
     <ul>
       <li class = 'footer_section_title'>Free Returns</li>
-      <li><a href='#'>Free Return Shipping</a></li>
-      <li><a href='#'>14 Day Return Policy </a></li>
-      <li><a href='#'>FAQ</a></li>
+      <li><a href='/returns'>Free Return Shipping</a></li>
+      <li><a href='/returns'>14 Day Return Policy </a></li>
     </ul>
   </div>
    <div class="footer_info">
     <ul>
       <li class = 'footer_section_title'>Extra Info</li>
-      <li><a href='#'>Upcoming Art Fairs</a></li>
-      <li><a href='#'>Read Customer Reviews</a></li>
+      <li><a href='/art_fairs'>Upcoming Art Fairs</a></li>
+      <li><a href='/reviews'>Read Customer Reviews</a></li>
      <!--  <li><script src="https://widget.resellerratings.com/widget/javascript/rating/Bob_Horsch_Gallery.js"></script></li> -->
 
     </ul>

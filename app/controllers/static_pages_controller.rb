@@ -27,5 +27,24 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def reviews
+
+  end
+
+  def art_fairs
+
+  end
+
+  def faq
+
+  end
+
+  def returns
+
+  end
+
+
+
+
 
 end
