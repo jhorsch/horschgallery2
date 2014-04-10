@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403233619) do
+ActiveRecord::Schema.define(version: 20140410011648) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -83,6 +83,31 @@ ActiveRecord::Schema.define(version: 20140403233619) do
     t.datetime "updated_at"
   end
 
+  create_table "frames", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "line_items", force: true do |t|
+    t.integer  "order_id"
+    t.integer  "photo_id"
+    t.integer  "size_id"
+    t.integer  "mat_id"
+    t.boolean  "convert_to_bw", default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "frame_id"
+    t.integer  "qty",           default: 1,     null: false
+  end
+
+  add_index "line_items", ["frame_id"], name: "index_line_items_on_frame_id"
+  add_index "line_items", ["mat_id"], name: "index_line_items_on_mat_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["photo_id"], name: "index_line_items_on_photo_id"
+  add_index "line_items", ["size_id"], name: "index_line_items_on_size_id"
+
   create_table "main_categories", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
@@ -97,6 +122,12 @@ ActiveRecord::Schema.define(version: 20140403233619) do
 
   create_table "mats", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.boolean  "is_confirmed", default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -116,6 +147,8 @@ ActiveRecord::Schema.define(version: 20140403233619) do
     t.integer  "format_id"
     t.string   "rotating_keyword"
     t.integer  "featured_gallery"
+    t.string   "camera"
+    t.string   "film_type"
   end
 
   create_table "sizes", force: true do |t|
@@ -128,6 +161,14 @@ ActiveRecord::Schema.define(version: 20140403233619) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "product_ads_extension"
+  end
+
+  create_table "tiered_shippings", force: true do |t|
+    t.decimal  "lower"
+    t.decimal  "upper"
+    t.decimal  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

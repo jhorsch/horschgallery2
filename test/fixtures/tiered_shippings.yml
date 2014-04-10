@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lower: 9.99
+  upper: 9.99
+  price: 9.99
+
+two:
+  lower: 9.99
+  upper: 9.99
+  price: 9.99

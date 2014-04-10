@@ -1,11 +1,25 @@
 <section class="payment_summary_wrapper">
 
+  <% subtotal_price = 0 %>
+  <% @line_items.each do |line_item| %>
+  <% subtotal_price +=  (line_item.size.price + line_item.frame.price) %>
+  <% end %>
+
+
+<% shipping_total = 15 %>
+
+
+  <% grand_total = subtotal_price + shipping_total %>
+
+
+
+
   <h2>Order Summary</h2>
 
   <fieldset class='bold_price_field'>
     <label class = 'payment_label_left'>Subtotal</label>
     <div class="text_align-right">
-      <label class = 'payment_label_right'>$338.00</label>
+      <label class = 'payment_label_right'><%= number_to_currency(subtotal_price, precision: 2) %></label>
   </div>
   </fieldset>
 
@@ -16,21 +30,22 @@
 
   <fieldset>
     <label class = 'payment_label_left'>Shipping</label>
-    <div class="text_align-right"><label class = 'payment_label_right'>$30.00</label></div>
+    <div class="text_align-right"><label class = 'payment_label_right'><%= number_to_currency(shipping_total, precision: 2) %></label></div>
   </fieldset>
 
   <fieldset>
     <label class = 'payment_label_left'>Tax</label>
-    <div class="text_align-right"><label class = 'payment_label_right'>$32.45</label></div>
+    <div class="text_align-right"><label class = 'payment_label_right'>tbd</label></div>
   </fieldset>
 
   <fieldset class='bold_price_field grand_total'>
     <label class = 'payment_label_left'>Total</label>
-    <div class="text_align-right"><label class = 'payment_label_right'>$400.45</label></div>
+    <div class="text_align-right"><label class = 'payment_label_right'><%= number_to_currency(grand_total, precision: 2) %></label></div>
   </fieldset>
 
   <input class="call_to_action_btn checkout_btn"type="submit" value='Proceed To Payment'>
 
+  <p>**Tax applied for orders shipped to IL only</p>
   <%= link_to "payment", '/payment' %>
   <%= link_to "confirmation", '/confirmation' %>
 

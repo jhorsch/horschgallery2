@@ -20,6 +20,9 @@ class StaticPagesController < ApplicationController
 
   def shopping_cart
 
+    @line_items = Order.first.line_items
+    @tiered_shippings = TieredShipping.all.order('price asc')
+
   end
 
   def confirmation

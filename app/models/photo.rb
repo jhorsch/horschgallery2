@@ -11,7 +11,6 @@ class Photo < ActiveRecord::Base
 
   validates :title, uniqueness: true
 
-
   scope :active, -> { where(is_active: true) }
 
 
@@ -38,6 +37,10 @@ class Photo < ActiveRecord::Base
 
   def max_price
     self.format.sizes.maximum('price')
+  end
+
+  def max_price_size_id
+    self.format.sizes.order('price DESC').first.try(:id)
   end
 
   def all_sizes

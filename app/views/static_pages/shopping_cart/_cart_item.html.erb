@@ -1,31 +1,42 @@
+
+
+
+<% @line_items.each do |line_item| %>
 <div class="cart_item_wrapper">
   <ul>
 
     <li>
-      <%= link_to image_tag('https://s3-us-west-2.amazonaws.com/hg-matted/bw21.jpg'), '/photos/1'  %>
+      <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
     <a class='remove_product' href = '#'><i class="fa fa-times"></i> Remove</a>
     <li>
 
     <li class="item_details_wrapper">
 
-        <label  class="product_title">John Hancock &amp; Skyline</label>
-        <label>16x20 Photo w/ 20x20 Mat &amp; Frame</label>
-        <label>Fog/Black</label>
-        <label>Classic Black - Thin Rounded</label>
-        <label>Convert to B&amp;W</label>
+        <label  class="product_title"><%= line_item.photo.title %></label>
+        <label><%= line_item.size.name %></label>
+        <label><%= line_item.mat.name %></label>
+        <label><%= line_item.frame.name %></label>
+      <% if line_item.convert_to_bw %>
+        <label>*Convert to B&amp;W*</label>
+      <% end %>
         <label>IN STOCK</label>
 
     </li>
 
+    <% total_price =  line_item.size.price + line_item.frame.price %>
+
     <li class="item_price_details_wrapper">
       <ul>
-        <li class="product_price">$169</li>
+        <li class="product_price"><%= number_to_currency(total_price, precision: 0) %></li>
         <li class="product_price">x</li>
-        <li class="product_qty">1</li>
+        <li class="product_qty"><%= line_item.qty %></li>
         <li class="product_price"></li>
-        <li class="product_total_price">$169</li>
+        <li class="product_total_price"><%= number_to_currency((total_price * line_item.qty), precision: 0) %></li>
     </ul>
     </li>
   </ul>
 </div>
+<% end %>
+
+
 

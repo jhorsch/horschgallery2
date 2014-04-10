@@ -5,13 +5,16 @@
   <div class="cart_wrapper content">
 
     <h1>Your Photograph Collection</h1>
-    <div class = 'number_items'>Items (2)<span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span></div>
 
-    <%= render 'static_pages/shopping_cart/cart_item' %>
-    <%= render 'static_pages/shopping_cart/cart_item' %>
-    <%= render 'static_pages/shopping_cart/cart_item' %>
-    <%= render 'static_pages/shopping_cart/cart_item' %>
-    <%= render 'static_pages/shopping_cart/cart_item' %>
+    <% if @line_items.empty? %>
+      <div class = 'number_items'>Items (0)<span class='buymore'>Keep Shopping.  There's nothing in your cart yet.</span></div>
+      <div class="cart_item_wrapper">
+        Try out our most popular photos
+      </div>
+    <% else %>
+      <div class = 'number_items'>Items (<%= @line_items.sum(:qty) %>)<span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span></div>
+      <%= render 'static_pages/shopping_cart/cart_item' %>
+    <% end %>
 
   </div>
 

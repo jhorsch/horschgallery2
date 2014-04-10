@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 
+  mat_id: 
+  frame_style: MyString
+  convert_to_bw: false
+  photo_id: 
+  size_id: 
+  quanitity: 1
+
+two:
+  order_id: 
+  mat_id: 
+  frame_style: MyString
+  convert_to_bw: false
+  photo_id: 
+  size_id: 
+  quanitity: 1

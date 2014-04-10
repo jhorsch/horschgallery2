@@ -10,7 +10,7 @@ $(function(){
 $(".image_link").fancybox({
 
     type: 'image',
-    padding: [25, 25, 85, 25],
+    padding: [10, 10, 10, 10],
     closeBtn: true,
     closeClick: true,
     openSpeed: 750,
@@ -41,8 +41,8 @@ $(".option_helpers")
 
 
   //change price
-  var option_size_price = Number($('#choose_size option:selected').val());
-  var frame_price = Number($('#choose_frame option:selected').val());
+  var option_size_price = Number($('#choose_size option:selected').attr('data-price'));
+  var frame_price = Number($('#choose_frame option:selected').attr('data-price'));
   var plate_price = Number('0');
   var total_price =  option_size_price + frame_price + plate_price
   $('.price').text(total_price);
@@ -52,8 +52,8 @@ $(".option_helpers")
   $('#choose_size').change(function() {
 
     //change price
-    var option_size_price = Number($('#choose_size option:selected').val());
-    var frame_price = Number($('#choose_frame option:selected').val());
+    var option_size_price = Number($('#choose_size option:selected').attr('data-price'));
+    var frame_price = Number($('#choose_frame option:selected').attr('data-price'));
     var plate_price = Number('0');
     var total_price =  option_size_price + frame_price + plate_price
     $('.price').text(total_price);
@@ -87,8 +87,8 @@ $(".option_helpers")
   $('#choose_frame').change(function() {
 
     // change price if frame option changes
-    var option_size_price = Number($('#choose_size option:selected').val());
-    var frame_price = Number($('#choose_frame option:selected').val());
+    var option_size_price = Number($('#choose_size option:selected').attr('data-price'));
+    var frame_price = Number($('#choose_frame option:selected').attr('data-price'));
     var plate_price = Number('0');
     var total_price =  option_size_price + frame_price + plate_price
     $('.price').text(total_price);
@@ -114,8 +114,8 @@ $(".option_helpers")
 
     if  (bw_value == 'Yes'){
       $('#choose_mat').empty();
-      $('#choose_mat').append("<option>Fog / Black</option>");
-      $('#choose_mat').append("<option>Bright White - Single Mat</option>");
+      $('#choose_mat').append("<option value='2'>Fog / Black</option>");
+      $('#choose_mat').append("<option value='1'>Bright White - Single Mat</option>");
     }
     else{
       $('#choose_mat').empty();

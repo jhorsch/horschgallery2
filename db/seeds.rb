@@ -16,7 +16,10 @@ CategoryPhoto.destroy_all
 Size.destroy_all
 Format.destroy_all
 Mat.destroy_all
+Frame.destroy_all
 CategoryMat.destroy_all
+
+TieredShipping.destroy_all
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
@@ -26,7 +29,10 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[category_photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[sizes])
 DatabaseCleaner.clean_with(:truncation, :only => %w[formats])
 DatabaseCleaner.clean_with(:truncation, :only => %w[mats])
+DatabaseCleaner.clean_with(:truncation, :only => %w[frames])
 DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
+
+DatabaseCleaner.clean_with(:truncation, :only => %w[tiered_shippings])
 
 
 
@@ -43,7 +49,9 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :format_id => row[9],
         :show_bw_conversion => row[10],
         :rotating_keyword => row[11],
-        :featured_gallery => row[12]
+        :featured_gallery => row[12],
+        :camera => row[13],
+        :film_type => row[14]
       )
 end
 
@@ -110,10 +118,27 @@ CSV.foreach("#{Rails.root}/lib/assets/Mat.csv", headers: true) do |row|
 
 end
 
+CSV.foreach("#{Rails.root}/lib/assets/Frame.csv", headers: true) do |row|
+     Frame.create(
+        :name => row[0],
+        :price => row[1]
+      )
+
+end
+
 CSV.foreach("#{Rails.root}/lib/assets/CategoryMat.csv", headers: true) do |row|
      CategoryMat.create(
         :category_id => row[0],
         :mat_id => row[1]
+      )
+
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/TieredShipping.csv", headers: true) do |row|
+     TieredShipping.create(
+        :lower => row[0],
+        :upper => row[1],
+        :price => row[2]
       )
 
 end
