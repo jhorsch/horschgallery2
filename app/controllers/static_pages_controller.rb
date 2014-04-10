@@ -20,7 +20,7 @@ class StaticPagesController < ApplicationController
 
   def shopping_cart
 
-    @line_items = Order.first.line_items
+    @line_items = Order.find_by(id: cookies[:order_id]).line_items
     @tiered_shippings = TieredShipping.all.order('price asc')
 
   end
