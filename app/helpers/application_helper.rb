@@ -1,9 +1,5 @@
 module ApplicationHelper
 
-
-  @myarray = ['Chicago Black & White','Chicago Vintage','Chicago Panoramas','Chicago Cityscape','Chicago Landmarks']
-
-
   def find_sub_categories(category)
     Category.where(main_category: category, is_active: true)
   end

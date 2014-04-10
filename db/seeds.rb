@@ -34,6 +34,12 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[tiered_shippings])
 
+# *****DONT FORGET TO DELETE IN PRODUCTION************
+Order.destroy_all
+LineItem.destroy_all
+DatabaseCleaner.clean_with(:truncation, :only => %w[orders])
+DatabaseCleaner.clean_with(:truncation, :only => %w[line_items])
+
 
 
 CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|

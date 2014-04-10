@@ -3,7 +3,7 @@
     <p>The watermark on the image above will not appear on the photograph you purchase.</p>
 
     <div class="detail_row">
-      <div class='more_detail_label'>Artist</div>
+      <div class='more_detail_label'>Photographer</div>
       <div class='more_detail_value'><%= @photo.artist %></div>
     </div>
 
@@ -23,12 +23,12 @@
 
      <div class="detail_row">
       <div class='more_detail_label'>Year Taken</div>
-      <div class='more_detail_value'><%= @photo.year_taken %>&nbsp;&nbsp;&nbsp;&nbsp;<%= years_ago_string %></div>
+      <div class='more_detail_value'><%= @photo.year_taken %>&nbsp;&nbsp;&nbsp;<%= years_ago_string %></div>
     </div>
 
     <div class="detail_row">
       <div class='more_detail_label'>Shipping</div>
-      <div class='more_detail_value'>UPS Ground.&nbsp;&nbsp;&nbsp;3-5 business days.&nbsp;&nbsp;&nbsp;Ships from Chicago, IL</div>
+      <div class='more_detail_value'>UPS Ground.&nbsp;&nbsp;&nbsp;&nbsp;3-5 business days.&nbsp;&nbsp;&nbsp;Ships from Chicago, IL</div>
     </div>
 
     <div class="detail_row">
@@ -39,12 +39,12 @@
 
      <div class="detail_row">
       <div class='more_detail_label'>Photo Finish Type</div>
-      <div class='more_detail_value'>Matte Finish&nbsp;&nbsp; ( It won't be glossy )</div>
+      <div class='more_detail_value'>Matte Finish.&nbsp;&nbsp;&nbsp;So you know it won't be glossy</div>
     </div>
 
     <div class="detail_row">
       <div class='more_detail_label'>Camera & Format</div>
-      <div class='more_detail_value'><%= @photo.camera %> - <%= @photo.film_type.capitalize %></div>
+      <div class='more_detail_value'><%= @photo.camera %>.&nbsp;&nbsp;&nbsp;<%= @photo.film_type.capitalize %></div>
     </div>
 
     <div class="detail_row">

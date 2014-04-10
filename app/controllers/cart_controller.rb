@@ -3,8 +3,7 @@ class CartController < ApplicationController
   def add
     line_item = shopping_cart.line_items.build(line_item_params)
     if line_item.save
-      redirect_to "/shopping_cart", notice: "You've successfully added this item to your shopping cart"
-    end
+      redirect_to "/shopping_cart"    end
   end
 
   def line_item_params
@@ -16,7 +15,7 @@ class CartController < ApplicationController
   def destroy
     @line_item = LineItem.find_by(id: params[:id])
     @line_item.destroy
-    redirect_to "/shopping_cart", notice: "You've successfully deleted that line item"
+    redirect_to "/shopping_cart"
 
   end
 
