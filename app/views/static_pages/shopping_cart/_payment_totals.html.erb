@@ -2,7 +2,7 @@
 
   <% subtotal_price = 0 %>
   <% @line_items.each do |line_item| %>
-  <% subtotal_price +=  (line_item.size.price + line_item.frame.price) %>
+  <% subtotal_price +=  ((line_item.size.price + line_item.frame.price) * line_item.qty) %>
   <% end %>
 
 
