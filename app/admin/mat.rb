@@ -3,6 +3,7 @@ ActiveAdmin.register Mat do
   menu :parent => "Photo Options", :priority => 3
   config.sort_order = "name_asc"
   filter :name
+
   permit_params :name
 
   #INDEX LAYOUTS

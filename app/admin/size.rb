@@ -5,9 +5,6 @@ config.sort_order = "format_asc"
 filter :format, :as => :select, :include_blank => false, :collection => Format.all
 filter :name
 
-  permit_params :title, :body, :meta_keywords, :meta_description, :excerpt, :image, category_ids: [:id]
-
-
 
 permit_params :name, :product_weight, :box_weight, :declared_value, :price, :format_id, :product_ads_extension
 

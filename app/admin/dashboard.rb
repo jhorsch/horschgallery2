@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
           ul do
             Order.all.take(30).each do |order|
               # li link_to(order.id, order_path(order))
-              order.id
+              li order.id
             end
           end
         end
