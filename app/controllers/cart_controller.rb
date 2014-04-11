@@ -16,7 +16,6 @@ class CartController < ApplicationController
     @line_item = LineItem.find_by(id: params[:id])
     @line_item.destroy
     redirect_to "/shopping_cart"
-
   end
 
 end

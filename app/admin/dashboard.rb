@@ -17,7 +17,8 @@ ActiveAdmin.register_page "Dashboard" do
         panel "Recent Posts" do
           ul do
             Order.all.take(30).each do |order|
-              li link_to(order.id, order_path(order))
+              # li link_to(order.id, order_path(order))
+              order.id
             end
           end
         end
