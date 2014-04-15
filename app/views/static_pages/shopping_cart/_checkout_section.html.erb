@@ -3,14 +3,32 @@
 <div class="row stickem-container">
 
   <div class="cart_wrapper content">
-    <h1>Your Photograph Collection</h1>
+
+    <h1>
+    Your Photograph Collection
+  </h1>
+
+
     <% if @line_items.empty? %>
-      <div class = 'number_items'>Items (0)<span class='buymore'>Keep Shopping.  There's nothing in your cart yet.</span></div>
+      <div class = 'number_items'>
+        Items (0)
+        <span class='buymore'>You don't have any photos added to your collection.</span>
+        <a class="continue_shopping" href="/"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back To Home Page</a>
+      </div>
       <div class="cart_item_wrapper">
-        Try out our most popular photos
+        <p class='browsing_headline'>The best way to browse our diverse photograph collection is by one of the following ...</p>
+        <p>&#8226;&nbsp;&nbsp;Use the navigation menu up top to browse through all of our categories</p>
+        <p>&#8226;&nbsp;&nbsp;Enter keywords into the search bar to find a particular photograph.</p>
+        <p>&#8226;&nbsp;&nbsp;Start from the beginning by visiting our <a class='visit_home' href='/'>home page</a>.</p>
       </div>
     <% else %>
-      <div class = 'number_items'>Items (<%= @line_items.sum(:qty) %>)<span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span></div>
+      <div class = 'number_items'>
+        Items (<%= @line_items.sum(:qty) %>)
+        <span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span>
+        <a class="continue_shopping" href="#" onclick="history.back(); return false;"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back To Shopping</a>
+
+
+      </div>
       <%= render 'static_pages/shopping_cart/cart_item' %>
     <% end %>
   </div>
@@ -29,4 +47,5 @@
 
 
 </div>
+
 

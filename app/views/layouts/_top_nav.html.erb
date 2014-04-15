@@ -5,14 +5,23 @@
 
       <li class="logoname"><a href="/" >HorschGallery</a></li>
       <li><%= form_tag( search_url, :method => "get") do %>
+         <%= search_field_tag :q, params[:q] , class: "search_field", placeholder: "Search over 1000+ photographs" %>
+       </li>
+        <li><label for="mySubmit" class="search_button"><i class="fa fa-search"></i></label>
+        </li>
+        <li><input id="mySubmit" type="submit" value="Search" class="hide_search_button"/>
+        </li>
+        <% end %>
+      <li class = "photographers"><a href="/photographers">
+        <i class="fa fa-camera-retro"></i>The Photographers</a>
+      </li>
+      <li class = "account">
+        <a href="/shopping_cart">
+          <i class="fa fa-shopping-cart"></i>Shopping Cart
+          <%= "(#{total_cart_items.sum(:qty)})" unless total_cart_items.empty? %>
+        </a>
+     </li>
 
-         <%= search_field_tag :q, params[:q] , class: "search_field", placeholder: "Search over 1000+ photographs" %></li>
-            <li><label for="mySubmit" class="search_button"><i class="fa fa-search"></i></label></li>
-            <li><input id="mySubmit" type="submit" value="Search" class="hide_search_button"/></li>
-            <% end %>
-
-      <li class = "photographers"><a href="/photographers"><i class="fa fa-camera-retro"></i>The Photographers</a></li>
-      <li class = "account"><a href="/shopping_cart"><i class="fa fa-shopping-cart"></i>Shopping Cart</a></li>
 
     </ul>
   </nav>

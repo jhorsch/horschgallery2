@@ -92,11 +92,34 @@ $background_container_color: #eee;
     border-bottom: 2px solid $black_color;
   }
 
+  .browsing_headline{
+    // font-size: 20px;
+    font-weight: bold;
+  }
+
+  .continue_shopping{
+    font-size: 18px;
+    // font-family: $sans_serif;
+    text-align: right;
+    position: absolute;
+    bottom: 12px;
+    right: 0px;
+    color: $light_gray;
+  }
+
+  .visit_home{
+    color: $black_color;
+    &:hover{
+      color: $orange_color;
+    }
+  }
+
   .number_items{
     border-bottom: 1px solid #ccc;
     padding: 0px 0 10px 0;
     font-size: 20px;
     margin-bottom: 0px;
+    position: relative;
   }
 
   .buymore{
@@ -139,6 +162,8 @@ $background_container_color: #eee;
     .item_price_details_wrapper{
       margin-left: 95px;
       // background: yellow;
+      text-align: right;
+      width: 135px;
     }
 
     .remove_product{

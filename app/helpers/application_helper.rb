@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def total_cart_items
+      Order.find_by(id: session[:order_id]).line_items
+  end
+
   def find_sub_categories(category)
     Category.where(main_category: category, is_active: true)
   end
