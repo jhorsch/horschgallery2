@@ -24,7 +24,7 @@
 
     h1{
       color: $orange_color;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 32px;
     }
 
@@ -41,10 +41,13 @@
       line-height: 1.2em;
     }
 
-    // p.customer_testomonial{
-    //   font-size: 34px;
-    //   margin-bottom: 80px;
-    // }
+    p.customer_testomonial{
+      font-size: 30px;
+      margin-bottom: 80px;
+      color: fade-out($black_color,.1);
+      font-style: normal;
+
+    }
   }
 }
 
@@ -59,18 +62,36 @@
       font-size: 34px;
       text-align: center;
       border: none;
+
       border-left: 5px solid $orange_color;
+
       color: fade-out($orange_color, .2);
       font-style: italic;
       width: 80%;
       font-size: 40px;
       text-align: left;
-
-
   }
 
+  .quote1{
+      border-left: 5px solid $orange_color;
+  }
+ .quote2{
+      border-left: 5px solid #533771;
+  }
+   .quote3{
+      border-left: 5px solid #3B8BD2;
+  }
+   .quote4{
+      border-left: 5px solid #34828F;
+  }
+   .quote5{
+      border-left: 5px solid #BC5571;
+  }
+   .quote6{
+      border-left: 5px solid #769063;
+  }
   span.customer_name{
-    color: $red_color;
+    color: $light_gray;
     font-family: serif;
     font-size: 14px;
     display: block;

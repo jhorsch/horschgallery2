@@ -8,6 +8,36 @@
 @include static_pages_base;
 @include customer_quotes;
 
+// REVIEWS
+
+
+.reseller_widget{
+  float: left;
+  width: 15%;
+}
+
+reseller_text{
+  float: left;
+  width: 85%;
+}
+
+.resller{
+  padding-bottom: 50px;
+
+}
+.testomonial_wrapper{
+  border-top: 2px solid #ccc;
+  padding-top: 0px;
+  clear: both;
+  width: 100%;
+  font-size: 0px;
+
+  section{
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+  }
+}
 
 //RETRUNS
 
