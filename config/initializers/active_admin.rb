@@ -18,6 +18,7 @@ ActiveAdmin.setup do |config|
     admin.build_menu do |menu|
       menu.add :label => "Content Management", :priority => 1
       menu.add :label => "Photo Options", :priority => 2
+      menu.add :label => "Shipping Options", :priority => 3
       # menu.add :label => "Website", :url => "/", :priority => 1000
     end
   end

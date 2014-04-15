@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  before_action :set_items, only: [:shopping_cart, :payment]
+  before_action :set_items, only: [:cart, :payment]
 
   def home
     top_gifts = ['a10','a5','a11','bw99','bw19', 'bw17']
@@ -14,17 +14,10 @@ class StaticPagesController < ApplicationController
     @single = Photo.where(id_num: '3059')
   end
 
-  def shopping_cart
-
-    # @line_items = Order.find_by(id: session[:order_id]).line_items
-    @tiered_shippings = TieredShipping.all.order('price asc')
-
+  def cart
   end
 
   def payment
-
-       # @line_items = Order.find_by(id: session[:order_id]).line_items
-        @tiered_shippings = TieredShipping.all.order('price asc')
   end
 
 

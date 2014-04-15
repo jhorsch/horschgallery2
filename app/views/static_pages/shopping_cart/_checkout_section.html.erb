@@ -3,9 +3,7 @@
 <div class="row stickem-container">
 
   <div class="cart_wrapper content">
-
     <h1>Your Photograph Collection</h1>
-
     <% if @line_items.empty? %>
       <div class = 'number_items'>Items (0)<span class='buymore'>Keep Shopping.  There's nothing in your cart yet.</span></div>
       <div class="cart_item_wrapper">
@@ -15,16 +13,19 @@
       <div class = 'number_items'>Items (<%= @line_items.sum(:qty) %>)<span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span></div>
       <%= render 'static_pages/shopping_cart/cart_item' %>
     <% end %>
-
-  </div>
-
-  <div class='payment_wrapper'>
-
-    <%= render 'static_pages/shopping_cart/payment_totals' %>
-
   </div>
 
 
+  <% if @line_items.empty? %>
+    <div class='payment_wrapper'>
+      <%= render 'static_pages/shopping_cart/payment_helper' %>
+    </div>
+  <% else %>
+    <div class='payment_wrapper'>
+      <%= render 'static_pages/shopping_cart/payment_totals' %>
+      <%= render 'static_pages/shopping_cart/payment_helper' %>
+    </div>
+  <% end %>
 
 
 </div>

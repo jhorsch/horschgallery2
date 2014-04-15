@@ -5,4 +5,8 @@ class LineItem < ActiveRecord::Base
   belongs_to :mat
   belongs_to :frame
 
+
+  def price
+    (size.price + frame.price) * qty
+  end
 end

@@ -20,9 +20,15 @@
 
 <div class="top_pagination">
 <div class='breadcrumbs'>
-  <a href="/"><%= @category.super_category %></a> >
+  <a href="/"><%= @category.super_category %></a>
   <%= link_to @category.main_category.title, main_category_url(@category.main_category) %>
+
+
+
     <a class ='acitve_page_link hide_field' href="<%= category_url(@category)  %>"></a>
+
+
+
 
 </div>
 

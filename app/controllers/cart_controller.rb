@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+
   # PUT /cart/add
   def add
     line_item = shopping_cart.line_items.build(line_item_params)
@@ -13,7 +14,7 @@ class CartController < ApplicationController
   end
 
   def destroy
-    @line_item = LineItem.find_by(id: params[:id])
+    @line_item = shopping_cart.line_items.find(params[:id])
     @line_item.destroy
     redirect_to "/shopping_cart"
   end
