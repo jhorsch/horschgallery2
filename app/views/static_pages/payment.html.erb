@@ -1,31 +1,14 @@
+<% content_for :meta_title do %>
+Payment Details | HorschGallery.com
+<% end %>
+
+<% content_for :meta_desc do %>
+  Payment Details page for HorschGallery.com
+<% end %>
+
 <main class ='payment_main'>
-
-<div class="row stickem-container">
-
-
-<section class="cart_wrapper">
-  <h1>Payment Information</h1>
-
-    <%= render 'static_pages/payment/shipping_info_form' %>
-    <%= render 'static_pages/payment/billing_info_form' %>
-
-
-  <h1>Credit Card Information</h1>
-    <%= render 'static_pages/payment/credit_card_info_form' %>
-
-  <h1>Contact Information</h1>
-    <%= render 'static_pages/payment/contact_info_form' %>
-
-
-
-  </section>
-
-  <aside class='payment_wrapper'>
-
-    <%= render 'static_pages/shopping_cart/payment_totals' %>
-
-  </aside>
-
-</div>
-
+  <div class="row stickem-container">
+    <%= render 'static_pages/shopping_cart/customer_details_wrapper' %>
+    <%= render 'static_pages/shopping_cart/payment_wrapper' %>
+  </div>
 </main>

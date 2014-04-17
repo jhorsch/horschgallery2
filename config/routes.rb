@@ -6,6 +6,8 @@ Horschgallery2::Application.routes.draw do
   resources :photos
   resources :categories
   resources :main_categories
+  resources :charges
+
   get "/home" => 'static_pages#home'
   get '/search' => 'photos#search'
 
@@ -19,7 +21,12 @@ Horschgallery2::Application.routes.draw do
   get "/faq" => 'static_pages#faq'
   get "/returns" => 'static_pages#returns'
 
+  get "/error" => 'static_pages#errors', as: :error
+
   # add/delete to shopping cart
   put '/cart/add' => 'cart#add', as: :cart_add
-  delete '/cart/line_items/:id' => 'cart#destroy', as: :cart_line_item
+  delete '/cart/xxxx/:id' => 'cart#destroy', as: :cart_line_item
+
+  #404 page
+
 end

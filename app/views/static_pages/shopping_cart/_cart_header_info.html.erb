@@ -1,14 +1,6 @@
+<div class="cart_wrapper content">
 
-
-<div class="row stickem-container">
-
-  <div class="cart_wrapper content">
-
-    <h1>
-    Your Photograph Collection
-  </h1>
-
-
+    <h1>Your Photograph Collection</h1>
     <% if @line_items.empty? %>
       <div class = 'number_items'>
         Items (0)
@@ -26,26 +18,8 @@
         Items (<%= @line_items.sum(:qty) %>)
         <span class='buymore'>Buy 2 more and get 20% off!&nbsp;&nbsp;-&nbsp;&nbsp;Use code: &nbsp;<b class='savemore'>SAVEMORE</b></span>
         <a class="continue_shopping" href="#" onclick="history.back(); return false;"><i class="fa fa-arrow-left"></i>&nbsp;&nbsp;Back To Shopping</a>
-
-
       </div>
+
       <%= render 'static_pages/shopping_cart/cart_item' %>
     <% end %>
   </div>
-
-
-  <% if @line_items.empty? %>
-    <div class='payment_wrapper'>
-      <%= render 'static_pages/shopping_cart/payment_helper' %>
-    </div>
-  <% else %>
-    <div class='payment_wrapper'>
-      <%= render 'static_pages/shopping_cart/payment_totals' %>
-      <%= render 'static_pages/shopping_cart/payment_helper' %>
-    </div>
-  <% end %>
-
-
-</div>
-
-

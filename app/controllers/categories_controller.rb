@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_page
 
   def index
 
@@ -63,4 +64,14 @@ class CategoriesController < ApplicationController
     def category_params
       params.require(:category).permit!
     end
+
+    def invalid_page
+      logger.error "Attempted to access invalid photo page
+        Controller: #{params[:controller]}
+        Action: #{params[:action]}
+        ID: #{params[:id]}"
+      redirect_to error_url, notice: 'Invalid page'
+    end
+
+
 end

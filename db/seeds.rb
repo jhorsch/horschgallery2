@@ -41,7 +41,7 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[orders])
 DatabaseCleaner.clean_with(:truncation, :only => %w[line_items])
 
 
-
+#try using create! so that errors pop up if attributes arent validated
 CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
      Photo.create(
         :id_num => row[0],

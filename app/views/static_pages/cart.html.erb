@@ -6,12 +6,11 @@ Shopping Cart | HorschGallery.com
   Shopping Cart checkout out page for HorschGallery.com
 <% end %>
 
-
 <main class="cart_main">
-
-<%= render 'static_pages/shopping_cart/checkout_section' %>
-
-
+  <div class="row stickem-container">
+    <%= render 'static_pages/shopping_cart/cart_wrapper' %>
+    <%= render 'static_pages/shopping_cart/payment_wrapper' %>
+  </div>
 </main>
 
 

@@ -1,6 +1,5 @@
 <section class="payment_summary_wrapper">
 
-
   <h2>Order Summary</h2>
 
   <fieldset class='bold_price_field'>
@@ -28,13 +27,14 @@
   <fieldset class='bold_price_field grand_total'>
     <label class = 'payment_label_left'>Total</label>
     <div class="text_align-right"><label class = 'payment_label_right'><%= number_to_currency(shopping_cart.grand_total_price, precision: 2) %></label></div>
+
   </fieldset>
 
-  <input class="call_to_action_btn checkout_btn"type="submit" value='Proceed To Payment'>
 
-  <p>**Tax applied for orders shipped to IL only</p>
-  <%= link_to "payment", '/payment' %>
-  <%= link_to "confirmation", '/confirmation' %>
+  <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
+    <%= link_to 'Proceed To Payment', '/payment', class: 'call_to_action_btn checkout_btn' %>
+  <% elsif  params[:controller] == 'static_pages' and params[:action] == 'payment' %>
+    <%= link_to 'Place Order', '/confirmation', class: 'call_to_action_btn checkout_btn' %>  <% end %>
 
 </section>
 

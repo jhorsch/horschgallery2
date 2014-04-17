@@ -6,13 +6,14 @@
         <%= image_tag 'credit_cards.jpg' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'credit_card_number' %>
-        <%= text_field_tag 'credit_card_number' %>
+        <%= label_tag 'credit_card', 'Card Number' %>
+        <%= text_field_tag 'credit_card' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'credit_card_exp' %>
-        <%= select_tag 'credit_card_exp_month', '<option>01</option><option>02</option><option>03</option><option>04</option>' %>
-        <%= select_tag 'credit_card_exp_year' , '<option>2014</option><option>2015</option><option>2016</option><option>2017</option>' %>
+        <%= label_tag 'credit_card_exp', 'Expires' %>
+        <%= select_month Date.today, {use_short_month: true, use_two_digit_numbers: true}, {name: nil, id: "card_month"} %>
+        <%= select_year Date.today, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year"} %>
+
       </fieldset>
 
 

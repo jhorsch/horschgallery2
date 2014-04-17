@@ -1,0 +1,8 @@
+<div class='payment_wrapper'>
+  <% if @line_items.empty? %>
+      <%= render 'static_pages/shopping_cart/payment_helper' %>
+  <% else %>
+      <%= render 'static_pages/shopping_cart/payment_totals' %>
+      <%= render 'static_pages/shopping_cart/payment_helper' %>
+  <% end %>
+</div>

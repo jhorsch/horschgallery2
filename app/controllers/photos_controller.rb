@@ -1,5 +1,8 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_page
+  rescue_from ActiveRecord::RecordNotFound, with: :invalid_page
+
 
   def index
   end
@@ -61,5 +64,17 @@ class PhotosController < ApplicationController
         params.require(:photo).permit!
       # else
         # params.require(:photo).permit(xxxx)
+    end
+
+
+  private
+
+     #404 error for invalid page
+    def invalid_page
+      logger.error "Attempted to access invalid photo page
+        Controller: #{params[:controller]}
+        Action: #{params[:action]}
+        ID: #{params[:id]}"
+      redirect_to error_url, notice: 'Invalid page'
     end
 end

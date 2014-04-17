@@ -6,7 +6,11 @@ class LineItem < ActiveRecord::Base
   belongs_to :frame
 
 
-  def price
-    (size.price + frame.price) * qty
+  def unit_price
+    size.price + frame.price
+  end
+
+  def total_price
+    unit_price * qty
   end
 end
