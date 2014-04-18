@@ -37,8 +37,10 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[tiered_shippings])
 # *****DONT FORGET TO DELETE IN PRODUCTION************
 Cart.destroy_all
 LineItem.destroy_all
+Order.destroy_all
 DatabaseCleaner.clean_with(:truncation, :only => %w[carts])
 DatabaseCleaner.clean_with(:truncation, :only => %w[line_items])
+DatabaseCleaner.clean_with(:truncation, :only => %w[orders])
 
 
 #try using create! so that errors pop up if attributes arent validated

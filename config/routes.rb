@@ -12,6 +12,9 @@
   post '/line_items' => 'line_items#create', as: :line_items
   delete '/line_items/:id' => 'line_items#destroy', as: :line_item
 
+  resources :orders
+
+
   get "/home" => 'static_pages#home'
   get '/search' => 'photos#search'
 

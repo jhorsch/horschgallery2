@@ -1,17 +1,27 @@
 class OrdersController < ApplicationController
+  before_action :set_line_items, only: :new
 
   def new
-     @line_items = Cart.find_by(id: cookies[:cart_id]).line_items
-     @order = Order.new
+
+     if @line_items.empty?
+        redirect_to root_url, notice: 'There are no photos in your cart'
+     else
+        @order = Order.new
+     end
+
   end
 
   def create
 
      @order = Order.new(order_params)
+     @order.add_line_items_from_cart(@shopping_cart)
+
     if @order.save
+      Cart.destroy(cookies[:cart_id])
+      cookies[:cart_id] = nil
       redirect_to '/confirmation'
     else
-      render 'payment'
+      render 'new'
     end
 
     # STRIPE STUFF
@@ -37,8 +47,11 @@ class OrdersController < ApplicationController
   end
 
     private
+    def set_line_items
+      @line_items = Cart.find_by(id: cookies[:cart_id]).line_items
+    end
     def order_params
-      params.require(:orders).permit!
+      params.require(:order).permit!
     end
 
 

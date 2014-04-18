@@ -5,11 +5,8 @@
 .payment_main{
   padding: $main_page_side_padding;
   margin: 0px auto;
-
 }
-.credit_card_section{
 
-}
 
 .customer_info_form{
 
@@ -26,7 +23,7 @@
   }
 
   label{
-    width: 100px;
+    width: 120px;
     float: left;
     height: 28px;
     color: $dark_gray;
@@ -37,7 +34,6 @@
   .billing_same{
     float: none;
     text-transform: none;
-
   }
 
   input[type='text'], input[type='email'], input[type='select']{
@@ -51,11 +47,9 @@
 
   }
 
-
-
     img{
-    width: 150px;
-  }
+      width: 150px;
+    }
 }
 
 .hide_billing{

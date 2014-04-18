@@ -1,6 +1,6 @@
 <section class="cart_wrapper customer_details_wrapper">
   <h1>Payment Information</h1>
-  <%= render 'static_pages/payment/shipping_info_form', object: f %>
+  <%= render 'static_pages/payment/shipping_info_form', object: @order %>
   <%= render 'static_pages/payment/billing_info_form' %>
 
   <h1>Credit Card Information</h1>
@@ -13,7 +13,6 @@
   <% if params[:controller] == 'order' and params[:action] == 'new' %>
 <span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
  <% end %>
-
 </h1>
 
   <%= render 'static_pages/shopping_cart/cart_line_items' %>

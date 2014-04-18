@@ -8,10 +8,73 @@ Payment Details | HorschGallery.com
 
 <main class ='payment_main'>
   <div class="row stickem-container">
-    <%= form_for @order, method: :post do |f| %>
-      <%= f.label 'test' %>
-      <%= render 'static_pages/shopping_cart/customer_details_wrapper', object: f %>
-      <%= render 'static_pages/shopping_cart/payment_wrapper' %>
+    <%= semantic_form_for @order, method: :post do |f| %>
+    <%= f.semantic_errors :state %>
+
+<section class="cart_wrapper customer_details_wrapper">
+
+  <h1>Payment Information</h1>
+
+  <section class='customer_info_form'>
+    <h2>Shipping Information</h2>
+
+     <%= f.action :submit, as: :button, label: 'Place Order', class: 'call_to_action_btn checkout_btn' %>
+
+
+    <%= f.input :first_name_ship, label: 'First Name' %>
+    <%= f.input :last_name_ship, label: 'Last Name'  %>
+    <%= f.input :address1_ship, label: 'Address'  %>
+    <%= f.input :address2_ship, label: "."  %>
+    <%= f.label 'Location Type' %>
+    <%= f.input :is_residential, :as => :radio, :label => "Location Type", :collection => [["Residential", true], ["Business", false]], class: 'radio_buttons_location' %>
+
+    <%= f.input :city_ship, label: 'City'  %>
+    <%= f.input :state_ship, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
+    <%= f.input :zipcode_ship, label: 'Zip Code'  %>
+  </section>
+
+  <section class='customer_info_form billing_form'>
+    <h2>Billing Information</h2>
+    <%= check_box_tag 'billing_same', 'yes' ,true %>
+    <%= label_tag 'billing_same', 'My billing and shipping info are the same', class: 'billing_same' %>
+    <section class='hide_billing'>
+      <%= f.input :first_name_bill, label: 'First Name' %>
+      <%= f.input :last_name_bill, label: 'Last Name'  %>
+      <%= f.input :address1_bill, label: 'Address'  %>
+      <%= f.input :address2_bill, label: :none  %>
+      <%= f.input :city_bill, label: 'City'  %>
+      <%= f.input :state_bill, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
+      <%= f.input :zipcode_bill, label: 'Zip Code'  %>
+    </section>
+  </section>
+
+  <h1>Credit Card Information</h1>
+  <%= render 'static_pages/payment/credit_card_info_form' %>
+
+  <h1>Contact Information</h1>
+  <section class='customer_info_form billing_form'>
+    <%= f.input :email %>
+    <%= f.input :confirm_email %>
+    <%= f.input :phone_number %>
+  </section>
+
+
+
+<h1>Review Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>
+      <span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
     <% end %>
-  </div>
+  </h1>
+
+  <%= render 'static_pages/shopping_cart/cart_line_items' %>
+
+</section>
+
+<%= render 'static_pages/shopping_cart/payment_wrapper' %>
+
+<% end %>
+</div>
 </main>
+
+
+   <!-- # render 'static_pages/shopping_cart/customer_details_wrapper', object: @order  -->
+
