@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  # include CurrentCart
+  # before_action :set_shopping_cart
   before_action :set_items, only: [:cart, :payment]
 
   def home
@@ -30,7 +32,7 @@ class StaticPagesController < ApplicationController
   private
 
     def set_items
-      @line_items = Order.find_by(id: cookies[:order_id]).line_items
+      @line_items = Cart.find_by(id: cookies[:cart_id]).line_items
     end
 
 end

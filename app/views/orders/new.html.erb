@@ -6,11 +6,12 @@ Payment Details | HorschGallery.com
   Payment Details page for HorschGallery.com
 <% end %>
 
-
-
 <main class ='payment_main'>
   <div class="row stickem-container">
-      <%= render 'static_pages/shopping_cart/customer_details_wrapper' %>
+    <%= form_for @order, method: :post do |f| %>
+      <%= f.label 'test' %>
+      <%= render 'static_pages/shopping_cart/customer_details_wrapper', object: f %>
       <%= render 'static_pages/shopping_cart/payment_wrapper' %>
+    <% end %>
   </div>
 </main>

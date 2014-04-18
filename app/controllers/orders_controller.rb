@@ -1,7 +1,8 @@
-class OrderController < ApplicationController
+class OrdersController < ApplicationController
 
   def new
-     @line_items = Order.find_by(id: cookies[:order_id]).line_items
+     @line_items = Cart.find_by(id: cookies[:cart_id]).line_items
+     @order = Order.new
   end
 
   def create
@@ -37,8 +38,9 @@ class OrderController < ApplicationController
 
     private
     def order_params
-      params.require(:order).permit!
+      params.require(:orders).permit!
     end
+
 
 
 end

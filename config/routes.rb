@@ -1,6 +1,5 @@
   Horschgallery2::Application.routes.draw do
-  get "order/new"
-  get "order/create"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'static_pages#home'
@@ -9,6 +8,9 @@
   resources :categories
   resources :main_categories
   resources :charges
+  # resources :line_items, only: [:create,:destroy]
+  post '/line_items' => 'line_items#create', as: :line_items
+  delete '/line_items/:id' => 'line_items#destroy', as: :line_item
 
   get "/home" => 'static_pages#home'
   get '/search' => 'photos#search'
@@ -26,11 +28,12 @@
   get "/error" => 'static_pages#errors', as: :error
 
   # add/delete to shopping cart
-  put '/cart' => 'cart#create', as: :cart_add_item
-  delete '/cart/:id' => 'cart#destroy', as: :cart_remove_item
+  # put '/cart' => 'cart#create', as: :cart_add_item
+  # delete '/cart/:id' => 'cart#destroy', as: :cart_remove_item
 
   #Place order
-  get "/payment" => 'order#new'
+  get "/payment" => 'orders#new'
+  put "/payment/:id" => 'orders#create'
   get "/confirmation" => 'static_pages#confirmation'
 
 

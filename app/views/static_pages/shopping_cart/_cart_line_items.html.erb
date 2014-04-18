@@ -4,7 +4,7 @@
     <li>
       <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
         <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
-          <%= link_to cart_remove_item_path(line_item), method: :delete, class: 'remove_product' do %>
+          <%= link_to line_item_path(line_item), method: :delete, class: 'remove_product' do %>
             <i class="fa fa-times"></i> Remove
           <% end %>
       <% else %>

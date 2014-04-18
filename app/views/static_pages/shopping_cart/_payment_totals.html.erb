@@ -34,7 +34,7 @@
 
   <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
     <%= link_to 'Proceed To Payment', '/payment', class: 'call_to_action_btn checkout_btn' %>
-  <% elsif  params[:controller] == 'static_pages' and params[:action] == 'payment' %>
+  <% elsif  params[:controller] == 'order' and params[:action] == 'new' %>
     <%= link_to 'Place Order', '/confirmation', class: 'call_to_action_btn checkout_btn' %>  <% end %>
 
 </section>

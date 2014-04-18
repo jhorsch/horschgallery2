@@ -66,9 +66,6 @@ class PhotosController < ApplicationController
         # params.require(:photo).permit(xxxx)
     end
 
-
-  private
-
      #404 error for invalid page
     def invalid_page
       logger.error "Attempted to access invalid photo page

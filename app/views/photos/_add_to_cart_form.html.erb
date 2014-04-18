@@ -1,5 +1,5 @@
-<%= form_tag cart_add_item_path, method: :put do |f| %>
-  <input type="hidden" name="line_item[photo_id]" value="<%= @photo.id %>">
+<%= form_tag line_items_path , method: :post do |f| %>
+  <input type="hidden" name='line_item[photo_id]' value="<%= @photo.id %>">
 <div class="fieldset_wrapper">
 
 <fieldset class='row_size'><%= label_tag 'choose_size', 'Choose Your Size:'  %>

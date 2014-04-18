@@ -16,9 +16,9 @@ ActiveAdmin.register_page "Dashboard" do
       column do
         panel "Recent Posts" do
           ul do
-            Order.all.take(30).each do |order|
-              # li link_to(order.id, order_path(order))
-              li order.id
+            Cart.all.take(30).each do |cart|
+              # li link_to(cart.id, order_path(order))
+              li cart.id
             end
           end
         end
