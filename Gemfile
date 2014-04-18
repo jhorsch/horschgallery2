@@ -26,7 +26,7 @@ gem 'activeadmin',  github: 'gregbell/active_admin'
 gem "font-awesome-rails"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
-# gem 'formtastic'
+gem 'formtastic'
 
 # gem 'bourbon'
 

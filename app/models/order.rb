@@ -1,6 +1,8 @@
 class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
+
+
   def subtotal_price
     # line_items.empty? ? 0 : line_items.map(&:price).reduce(&:+)
     line_items.to_a.sum { |item| item.total_price }
@@ -13,5 +15,7 @@ class Order < ActiveRecord::Base
   def grand_total_price
     subtotal_price + shipping_price
   end
+
+
 
 end

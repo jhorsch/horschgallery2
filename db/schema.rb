@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410011648) do
+ActiveRecord::Schema.define(version: 20140417213810) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -127,9 +127,30 @@ ActiveRecord::Schema.define(version: 20140410011648) do
   end
 
   create_table "orders", force: true do |t|
-    t.boolean  "is_confirmed", default: false, null: false
+    t.boolean  "is_confirmed",    default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name_ship"
+    t.string   "last_name_ship"
+    t.string   "address1_ship"
+    t.string   "address2_ship"
+    t.string   "city_ship"
+    t.string   "state_ship"
+    t.string   "zipcode_ship"
+    t.string   "first_name_bill"
+    t.string   "last_name_bill"
+    t.string   "address1_bill"
+    t.string   "address2_bill"
+    t.string   "city_bill"
+    t.string   "state_bill"
+    t.string   "zipcode_bill"
+    t.string   "email"
+    t.string   "confirm_email"
+    t.string   "phone"
+    t.string   "subtotal"
+    t.string   "shipping"
+    t.string   "tax"
+    t.string   "grand_total"
   end
 
   create_table "photos", force: true do |t|

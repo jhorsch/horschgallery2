@@ -1,4 +1,6 @@
-Horschgallery2::Application.routes.draw do
+  Horschgallery2::Application.routes.draw do
+  get "order/new"
+  get "order/create"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'static_pages#home'
@@ -14,19 +16,22 @@ Horschgallery2::Application.routes.draw do
   #static pages
   get "/photographers" => 'static_pages#photographers'
   get "/shopping_cart" => 'static_pages#cart'
-  get "/confirmation" => 'static_pages#confirmation'
-  get "/payment" => 'static_pages#payment'
+
   get "/reviews" => 'static_pages#reviews'
   get "/art_fairs" => 'static_pages#art_fairs'
   get "/faq" => 'static_pages#faq'
   get "/returns" => 'static_pages#returns'
 
+  #404 page
   get "/error" => 'static_pages#errors', as: :error
 
   # add/delete to shopping cart
-  put '/cart/add' => 'cart#add', as: :cart_add
-  delete '/cart/xxxx/:id' => 'cart#destroy', as: :cart_line_item
+  put '/cart' => 'cart#create', as: :cart_add_item
+  delete '/cart/:id' => 'cart#destroy', as: :cart_remove_item
 
-  #404 page
+  #Place order
+  get "/payment" => 'order#new'
+  get "/confirmation" => 'static_pages#confirmation'
+
 
 end

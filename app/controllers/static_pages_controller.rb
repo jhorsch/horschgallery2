@@ -30,7 +30,7 @@ class StaticPagesController < ApplicationController
   private
 
     def set_items
-      @line_items = Order.find_by(id: session[:order_id]).line_items
+      @line_items = Order.find_by(id: cookies[:order_id]).line_items
     end
 
 end

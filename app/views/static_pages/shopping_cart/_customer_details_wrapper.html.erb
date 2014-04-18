@@ -9,6 +9,12 @@
   <h1>Contact Information</h1>
   <%= render 'static_pages/payment/contact_info_form' %>
 
-  <h1>Review Order</h1>
+  <h1>Review Order
+  <% if params[:controller] == 'order' and params[:action] == 'new' %>
+<span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
+ <% end %>
+
+</h1>
+
   <%= render 'static_pages/shopping_cart/cart_line_items' %>
 </section>

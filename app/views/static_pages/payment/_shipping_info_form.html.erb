@@ -1,20 +1,20 @@
 <section class='customer_info_form'>
       <h2>Shipping Informtion</h2>
       <fieldset>
-        <%= label_tag 'first_name' %>
+        <%= label_tag 'first_name_ship', 'first name' %>
         <%= text_field_tag 'first_name' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'last_name' %>
-        <%= text_field_tag 'last_name' %>
+        <%= label_tag 'last_name_ship', 'last name' %>
+        <%= text_field_tag 'last_name_ship' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'address' %>
-        <%= text_field_tag 'address' %>
+        <%= label_tag 'address1_ship', 'address' %>
+        <%= text_field_tag 'address1_ship' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'suite' , '' %>
-        <%= text_field_tag 'suite' %>
+        <%= label_tag 'address2_ship' , '' %>
+        <%= text_field_tag 'address2_ship' %>
       </fieldset>
     <!--   <fieldset>
         <%= radio_button_tag('type_of_location', 0) %>
@@ -23,15 +23,15 @@
         <%= label_tag 'type_of_location_1' , 'business' %>
       </fieldset> -->
       <fieldset>
-        <%= label_tag 'city' %>
-        <%= text_field_tag 'city' %>
+        <%= label_tag 'city_ship', 'city' %>
+        <%= text_field_tag 'city_ship' %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'state' %>
-        <%= select_tag 'state' %>
+        <%= label_tag 'state_ship', 'state' %>
+        <%= select_tag 'state_ship', options_for_select(us_states), :style => "min-width: 200px;" %>
       </fieldset>
       <fieldset>
-        <%= label_tag 'zip_code' %>
-        <%= text_field_tag 'zip_code' %>
+        <%= label_tag 'zipcode_ship', 'zip code' %>
+        <%= text_field_tag 'zipcode_ship' %>
       </fieldset>
     </section>

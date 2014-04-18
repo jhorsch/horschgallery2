@@ -5,14 +5,12 @@ Payment Details | HorschGallery.com
 <% content_for :meta_desc do %>
   Payment Details page for HorschGallery.com
 <% end %>
-sdfsadf
+
+
+
 <main class ='payment_main'>
   <div class="row stickem-container">
-    <%= semantic_form_for @order, method: :put do |f| %>
-      #errors
       <%= render 'static_pages/shopping_cart/customer_details_wrapper' %>
       <%= render 'static_pages/shopping_cart/payment_wrapper' %>
-      <%= render 'static_pages/stripe_test' %>
-    <% end %>
   </div>
 </main>

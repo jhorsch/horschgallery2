@@ -204,6 +204,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   font-awesome-rails
+  formtastic
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks

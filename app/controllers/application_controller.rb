@@ -4,9 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_shopping_cart_order
 
-  def shopping_cart
+
+   def shopping_cart
     @shopping_cart_order
-  end
+   end
 
   helper_method :shopping_cart
 
@@ -14,13 +15,14 @@ class ApplicationController < ActionController::Base
   protected
 
   def set_shopping_cart_order
-    @shopping_cart_order = Order.find_by(id: session[:order_id])
+
+    @shopping_cart_order = Order.find_by(id: cookies[:order_id])
 
     unless @shopping_cart_order
-      @shopping_cart_order = Order.create
-      session[:order_id] = @shopping_cart_order.id
+       @shopping_cart_order = Order.create
+       cookies[:order_id] = @shopping_cart_order.id
     end
-  end
 
+  end
 
 end

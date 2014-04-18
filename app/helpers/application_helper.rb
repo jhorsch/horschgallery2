@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def total_cart_items
-      Order.find_by(id: session[:order_id]).line_items
+      Order.find_by(id: cookies[:order_id]).line_items
   end
 
   def find_sub_categories(category)
@@ -35,5 +35,6 @@ module ApplicationHelper
 
     end.join("\n").html_safe
   end
+
 
 end

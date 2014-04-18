@@ -18,7 +18,8 @@
       <li class = "account">
         <a href="/shopping_cart">
           <i class="fa fa-shopping-cart"></i>Shopping Cart
-          <%= "(#{total_cart_items.sum(:qty)})" unless total_cart_items.empty? %>
+         <%= "(#{total_cart_items.sum(:qty)})" unless total_cart_items.empty? %>
+
         </a>
      </li>
 
