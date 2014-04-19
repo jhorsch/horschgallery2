@@ -17,7 +17,12 @@
         <%= render "layouts/top_nav" %>
         <%= render "layouts/bottom_nav" %>
       </header>
+      <% if params[:action] == 'show'  %>
+        <div class="header_space_holder_extra"></div>
+      <% else %>
       <div class="header_space_holder"></div>
+
+      <% end %>
       <%= yield %>
     </div>
 

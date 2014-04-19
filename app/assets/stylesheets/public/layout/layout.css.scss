@@ -14,7 +14,12 @@
   height: $total_nav_height;
   display: block;
   position: relative;
-  margin-bottom: 20px;
+}
+
+.header_space_holder_extra{
+  height: $total_nav_height + 40px;
+  display: block;
+  position: relative;
 }
 
 header {
