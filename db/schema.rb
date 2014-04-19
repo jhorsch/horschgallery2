@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 20140418224041) do
   end
 
   create_table "orders", force: true do |t|
-    t.boolean  "is_confirmed",    default: false, null: false
+    t.boolean  "is_confirmed",        default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name_ship"
@@ -158,7 +158,7 @@ ActiveRecord::Schema.define(version: 20140418224041) do
     t.string   "tax"
     t.string   "grand_total"
     t.string   "phone_number"
-    t.boolean  "is_residential"
+    t.boolean  "is_residential_ship"
   end
 
   create_table "photos", force: true do |t|

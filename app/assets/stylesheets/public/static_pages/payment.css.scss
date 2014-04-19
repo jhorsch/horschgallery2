@@ -13,22 +13,29 @@
   // background: green;
   display: inline-block;
   vertical-align: top;
-  width: 45%;
-  margin-right: 30px;
+  width: 48%;
+  margin-right: 20px;
+
   margin-bottom: 30px;
   font-size: 18px;
+  &:nth-child(even){
+    margin-right: 0;
+    margin-left: 0px;
+  }
 
   fieldset{
     margin-bottom: 15px;
   }
 
   label{
-    width: 120px;
+    width: 100px;
     float: left;
     height: 28px;
     color: $dark_gray;
     text-transform: capitalize;
     vertical-align: bottom;
+    font-size: 16px;
+    margin-top: 10px;
   }
 
   .billing_same{
@@ -37,14 +44,19 @@
   }
 
   input[type='text'], input[type='email'], input[type='select']{
-    width: 200px;
+    width: 220px;
+    padding: 10px;
     // outline: none;
     text-transform: capitlize;
     border-radius: 3px;
-    height: 28px;
-    font-size: 16px;
+    height: 30px;
+    font-size: 15px;
     vertical-align: bottom;
 
+  }
+
+  input[type='select']{
+    margin-top: 10px;
   }
 
     img{
@@ -52,6 +64,14 @@
     }
 }
 
-.hide_billing{
+.shipping_info{
+  border-right: 1px solid #ccc;
+}
+
+.billing_same{
+  font-size: 16px;
+}
+
+.billing_toggle{
   display: none;
 }
