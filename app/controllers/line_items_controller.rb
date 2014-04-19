@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
   def create
     @line_item = shopping_cart.line_items.build(line_item_params)
     if @line_item.save
-      redirect_to "/shopping_cart", :flash => { :success => 'You have great taste in photography.  That is one of our favorites as well. Ok, who are we kidding, we like all of them!' }
+      redirect_to "/shopping_cart", :flash => { :success => "We like that photograph as well. It's one of our favorites. Ok, we admit. We like all of them!" }
     else
       redirect_to photo_url(@line_item.photo), notice: 'Photo was not added'
     end

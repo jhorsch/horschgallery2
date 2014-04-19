@@ -20,8 +20,10 @@
       <% if params[:action] == 'show'  %>
         <div class="header_space_holder_extra"></div>
       <% else %>
-      <div class="header_space_holder"></div>
-
+        <div class="header_space_holder"></div>
+      <% end %>
+      <% flash.each do |key, msg| %>
+        <%= content_tag :div, msg, class: "#{key}_flash" %>
       <% end %>
       <%= yield %>
     </div>

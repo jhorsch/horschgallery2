@@ -204,15 +204,35 @@ $gutter_width: ($max_width - ($col_count * $col_width)) / ($col_count - 1);
 
 /*FLASH MESSAGES*/
 
-.success_flash{
-  background: fade-out($green_color,.4);
-  color: $white_color;
+.flash_messages{
+  color: $green_color;
   text-align: center;
   font-family: $sans_serif;
   font-size: 18px;
   padding: 7px;
   border-radius: 5px;
-  margin-bottom: 20px;
+  margin: 0px 40px 20px 40px;
+
+}
+
+.success_flash{
+  @extend .flash_messages;
+  background: fade-out($green_color,.8);
+}
+
+.error_flash{
+  @extend .flash_messages;
+  background: fade-out($red_color,.4);
+}
+
+.notice_flash{
+  @extend .flash_messages;
+  background: fade-out($blue_color,.4);
+}
+
+.alert_flash{
+  @extend .flash_messages;
+  background: fade-out($red_color,.4);
 }
 
 div {

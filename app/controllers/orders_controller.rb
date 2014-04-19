@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
         redirect_to root_url, notice: 'There are no photos in your cart'
      else
         @order = Order.new
+        flash.now[:succes] = 'You about to enter information'
      end
 
   end

@@ -8,9 +8,7 @@ Shopping Cart | HorschGallery.com
 
 <main class="cart_main">
   <div class="row stickem-container">
-    <% flash.each do |key, msg| %>
-      <%= content_tag :div, msg, class: 'success_flash' %>
-    <% end %>
+
     <%= render 'static_pages/shopping_cart/cart_wrapper' %>
     <%= render 'static_pages/shopping_cart/payment_wrapper' %>
   </div>
