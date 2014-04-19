@@ -8,7 +8,17 @@ class LineItemsController < ApplicationController
   def create
     @line_item = shopping_cart.line_items.build(line_item_params)
     if @line_item.save
-      redirect_to "/shopping_cart", :flash => { :success => "We like that photograph as well. It's one of our favorites. Ok, we admit. We like all of them!" }
+      if shopping_cart.line_items.count == 1
+        redirect_to "/shopping_cart", :flash => { :success => "We like that photograph as well.&nbsp;&nbsp;It's one of our favorites.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ok, we admit.&nbsp;&nbsp;They are all our favorites!" }
+      elsif shopping_cart.line_items.count == 2
+        redirect_to "/shopping_cart", :flash => { :success => "Another great choice.  You have quite the taste in photography." }
+      elsif shopping_cart.line_items.count == 3
+        redirect_to "/shopping_cart", :flash => { :success => "Wow, you are really starting to build quite a collection of beautiful photographs" }
+      elsif shopping_cart.line_items.count == 4
+        redirect_to "/shopping_cart", :flash => { :success => "xxx" }
+      else
+        redirect_to "/shopping_cart", :flash => { :success => "yyy" }
+      end
     else
       redirect_to photo_url(@line_item.photo), notice: 'Photo was not added'
     end

@@ -1,0 +1,23 @@
+<p>Hi <%= @order.first_name_bill.capitalize %>,
+</p>
+
+<p>Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.
+</p>
+
+<h2>Shipping Details</h2>
+<p>Your order will take 1-2 days to process and will then be shipped via UPS.  Please refer to the UPS shipping map to determine how many days it will take to ship to your specific location.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.
+</p>
+
+<p>If it turns out that a print you purchased is currently not in stock (which is rare), we will notify you by email. It will then take an additional 5 business days to process.
+</p>
+
+<h2>Customer Service</h2>
+<p>If you have any further questions, refer to our FAQ page. If you can not find the answer there, please email us.
+</p>
+
+<h2>Order Summary</h2>
+<%= @order.line_items.count %> Item
+
+<%= render 'order_confirmation/confirmation_line_items' %>
+
+<p><%= link_to "Return Policy", root_url %></p>

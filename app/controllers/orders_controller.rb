@@ -20,6 +20,7 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.destroy(cookies[:cart_id])
       cookies[:cart_id] = nil
+      OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
     else
       render 'new'

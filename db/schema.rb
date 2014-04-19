@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418224041) do
+ActiveRecord::Schema.define(version: 20140419144843) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -159,6 +159,7 @@ ActiveRecord::Schema.define(version: 20140418224041) do
     t.string   "grand_total"
     t.string   "phone_number"
     t.boolean  "is_residential_ship"
+    t.string   "status",              default: "new"
   end
 
   create_table "photos", force: true do |t|

@@ -23,7 +23,7 @@
         <div class="header_space_holder"></div>
       <% end %>
       <% flash.each do |key, msg| %>
-        <%= content_tag :div, msg, class: "#{key}_flash" %>
+        <%= content_tag :div, msg.html_safe, class: "#{key}_flash" %>
       <% end %>
       <%= yield %>
     </div>
