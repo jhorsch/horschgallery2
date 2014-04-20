@@ -35,8 +35,8 @@ Horschgallery2::Application.configure do
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'domain.of.sender.net',
-      user_name:            'horschgallery@gmail.com',
-      password:             'website1010',
+      user_name:            ENV["OUTGOING_EMAIL"],
+      password:             ENV["PASSWORD"],
       authentication:       'plain',
       enable_starttls_auto: true
     }
