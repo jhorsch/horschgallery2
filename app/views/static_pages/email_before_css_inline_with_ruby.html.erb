@@ -8,7 +8,13 @@
 
 
 <p class='sub_header'>Order Summary</p>
-
+<% if @order.is_gift %>
+<table>
+  <tr>
+    <td class = 'gift'>*Since you mentioned this purchase is a gift for someone, we will not include a receipt with the package.&nbsp;&nbsp;We hope it's one of the best gifts they have ever received!</td>
+  </tr>
+</table>
+<% end %>
 <table class="table_customer_info">
   <tr>
     <th class='bold_label'>Shipping Information</th>
@@ -22,13 +28,15 @@
     <td><%= @order.address1_ship %></td>
     <td><%= @order.address1_bill %></td>
   </tr>
+  <% unless @order.address2_ship.empty? && @order.address2_bill.empty? %>
   <tr>
     <td><%= @order.address2_ship %></td>
     <td><%= @order.address2_bill %></td>
   </tr>
+  <% end %>
   <tr>
-    <td><%= @order.city_ship %>,<%= @order.state_ship %> <%= @order.zipcode_ship %></td>
-    <td><%= @order.city_bill %>,<%= @order.state_bill %> <%= @order.zipcode_bill %></td>
+    <td><%= @order.city_ship %>, <%= @order.state_ship %> <%= @order.zipcode_ship %></td>
+    <td><%= @order.city_bill %>, <%= @order.state_bill %> <%= @order.zipcode_bill %></td>
   </tr>
   <tr>
     <td></td>
@@ -41,31 +49,39 @@
 </table>
 
 
-<p class='sub_header'>Photograph Collection ( <%= pluralize(@line_items.count,'item') %> )</p>
+<p class='sub_header'>Photograph Collection ( <%= pluralize(@line_items.sum(:qty),'image') %> )</p>
 
 <% @line_items.each do |item| %>
 <table class='table_full_product'>
   <tr>
     <td>
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150') %>
+      <%  if item.size.name.last(4) == "Only" %>
+        <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
+      <% else %>
+        <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
+      <% end %>
     </td>
     <td class='table_product_details'>
       <table>
         <tr>
-          <td>#<%= item.photo.id_num %></td>
+          <td class='fix_cell_width'>ID# <%= item.photo.id_num %></td>
         </tr>
         <tr>
-          <td><%= item.size.name %></td>
+          <td class='fix_cell_width'>Size:&nbsp;&nbsp;<%= item.size.name %></td>
         </tr>
+        <% unless item.size.name.last(4) == "Only" %>
         <tr>
-          <td><%= item.mat.name %></td>
+          <td class='fix_cell_width'>Mat:&nbsp;&nbsp;<%= item.mat.name %></td>
         </tr>
+        <% end %>
+        <% unless item.size.name.last(4) == "Only" %>
         <tr>
-          <td><%= item.frame.name %></td>
+          <td class='fix_cell_width'>Frame:&nbsp;&nbsp;<%= item.frame.name %></td>
         </tr>
+        <% end %>
         <% if item.convert_to_bw %>
         <tr>
-          <td>Convert To B&amp;W</td>
+          <td class='fix_cell_width'>Convert To B&amp;W</td>
         </tr>
         <% end %>
         <tr>
@@ -82,20 +98,20 @@
 <p class='sub_header'>Totals</p>
 <table class='table_totals'>
   <tr>
-    <th class='bold_label'>Subtotal:</th>
-    <th>$339.00</th>
+    <td class='bold_label'>Subtotal:</td>
+    <td><%= number_to_currency(@order.subtotal, precision: 2) %></td>
   </tr>
   <tr>
     <td class='bold_label'>Tax:</td>
-    <td>$15.36</td>
+    <td><%= number_to_currency(@order.tax, precision: 2) %></td></td>
   </tr>
   <tr>
     <td class='bold_label'>Shipping:</td>
-    <td>$34.95</td>
+    <td><%= number_to_currency(@order.shipping, precision: 2) %></td></td>
   </tr>
   <tr>
     <td class='bold_label'>Total:</td>
-    <td>$415.95</td>
+    <td class='bold_label'><%= number_to_currency(@order.grand_total, precision: 2) %></td></td>
   </tr>
 </table>
 

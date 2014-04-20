@@ -6,14 +6,14 @@
   padding: $main_page_side_padding;
   margin: 0px auto;
 
-  p{
-    margin-bottom: 30px;
+  h1{
+    margin-bottom: 20px;
   }
 }
 
 section{
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   h2{
     margin-bottom: 10px;
     font-size: 20px;
@@ -24,4 +24,15 @@ section{
   }
 }
 
+.social_sharing{
+  li{
+    display: inline-block;
+    margin-right: 60px;
+    vertical-align: bottom;
+  }
+}
 
+
+.pinterest_share{
+  width: 300px;
+}

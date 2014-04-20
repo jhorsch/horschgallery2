@@ -3,24 +3,28 @@
   <ul>
     <li>
       <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
-        <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
+        <%  if line_item.size.name.last(4) == "Only" %>
+          <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
+          <% else %>
+            <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
+          <% end  %>
           <%= link_to line_item_path(line_item), method: :delete, class: 'remove_product' do %>
             <i class="fa fa-times"></i> Remove
           <% end %>
       <% else %>
-          <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg")  %>
+          <%  if line_item.size.name.last(4) == "Only" %>
+            <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{line_item.photo.id_num.downcase}.jpg")  %>
+          <% else %>
+            <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg")  %>
+          <% end %>
       <% end %>
     <li>
 
     <li class="item_details_wrapper">
       <label  class="product_title"><%= line_item.photo.title %></label>
-      <label><%= line_item.size.name %></label>
-      <% unless line_item.mat.name == 'none' %>
-        <label><%= line_item.mat.name %></label>
-      <% end %>
-      <% unless line_item.frame.name == 'none' %>
-        <label><%= line_item.frame.name %></label>
-      <% end %>
+      <label>Size:&nbsp;&nbsp;<%= line_item.size.name %></label>
+      <label>Mat:&nbsp;&nbsp;<%= line_item.mat.name %></label>
+      <label>Frame:&nbsp;&nbsp;<%= line_item.frame.name %></label>
       <% if line_item.convert_to_bw %>
         <label>*Convert to B&amp;W*</label>
       <% end %>

@@ -11,8 +11,10 @@ class Cart < ActiveRecord::Base
     TieredShipping.where("lower < ? AND upper >= ?", subtotal_price, subtotal_price).first.try(:price) || 0
   end
 
+
+
   def grand_total_price
-    subtotal_price + shipping_price
+    subtotal_price  + shipping_price
   end
 
 

@@ -20,6 +20,7 @@ Frame.destroy_all
 CategoryMat.destroy_all
 
 TieredShipping.destroy_all
+Feedback.destroy_all
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[photos])
 DatabaseCleaner.clean_with(:truncation, :only => %w[categories])
@@ -33,6 +34,7 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[frames])
 DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[tiered_shippings])
+DatabaseCleaner.clean_with(:truncation, :only => %w[feedbacks])
 
 # *****DONT FORGET TO DELETE IN PRODUCTION************
 Cart.destroy_all
@@ -147,6 +149,13 @@ CSV.foreach("#{Rails.root}/lib/assets/TieredShipping.csv", headers: true) do |ro
         :lower => row[0],
         :upper => row[1],
         :price => row[2]
+      )
+
+end
+
+CSV.foreach("#{Rails.root}/lib/assets/Feedback.csv", headers: true) do |row|
+     Feedback.create(
+        :name => row[0]
       )
 
 end

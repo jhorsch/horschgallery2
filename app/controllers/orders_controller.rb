@@ -4,10 +4,10 @@ class OrdersController < ApplicationController
   def new
 
      if @line_items.empty?
-        redirect_to root_url, notice: 'There are no photos in your cart'
+        redirect_to root_url
      else
         @order = Order.new
-        flash.now[:succes] = 'You about to enter information'
+        # flash[:succes] = 'Our https site is secure so your money is good here'
      end
 
   end

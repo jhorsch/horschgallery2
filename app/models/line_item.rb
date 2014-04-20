@@ -18,10 +18,10 @@ class LineItem < ActiveRecord::Base
 
   def determine_final_product
     if size.name.last(4) == "Only"
-      mat.name = 'none'
-      frame.name = 'none'
+      mat.name = 'No Mat'
+      frame.name = 'No Frame'
     elsif size.name.last(3) == 'Mat'
-      frame.name = 'none'
+      frame.name = 'No Frame'
     end
   end
 end

@@ -15,13 +15,12 @@ Payment Details | HorschGallery.com
 
   <h1>Payment Information</h1>
 
-  <%= f.action :submit, label: 'Place Order' %>
   <section class='customer_info_form shipping_info'>
     <h2>Shipping Information</h2>
-    <%= f.input :first_name_ship, label: 'First Name' %>
-    <%= f.input :last_name_ship, label: 'Last Name'  %>
+    <%= f.input :first_name_ship, label: 'First name' %>
+    <%= f.input :last_name_ship, label: 'Last name'  %>
     <%= f.input :address1_ship, label: 'Address'  %>
-    <%= f.input :address2_ship, label: "."  %>
+    <%= f.input :address2_ship, label: 'Apt#/Suite#'  %>
     <%= f.input :city_ship, label: 'City'  %>
     <%= f.input :state_ship, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
     <%= f.input :zipcode_ship, label: 'Zip Code'  %>
@@ -29,16 +28,16 @@ Payment Details | HorschGallery.com
     <%= f.input :is_residential_ship, :as => :radio, :label => "Location Type", :collection => [["Residential", true], ["Business", false]], class: 'radio_buttons_location' %>
   </section>
 
-  <section class='customer_info_form billing_form'>
+  <section class='customer_info_form billing_form' >
     <h2>Billing Information&nbsp;&nbsp;
     <%= check_box_tag 'billing_same', 'yes' ,true %>
     <%= label_tag 'billing_same', 'Same as shipping', class: 'billing_same' %>
     </h2>
     <section class='billing_toggle'>
-      <%= f.input :first_name_bill, label: 'First Name' %>
-      <%= f.input :last_name_bill, label: 'Last Name'  %>
+      <%= f.input :first_name_bill, label: 'First name' %>
+      <%= f.input :last_name_bill, label: 'Last name'  %>
       <%= f.input :address1_bill, label: 'Address'  %>
-      <%= f.input :address2_bill, label: '.'  %>
+      <%= f.input :address2_bill, label: 'Apt#/Suite#'   %>
       <%= f.input :city_bill, label: 'City'  %>
       <%= f.input :state_bill, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
       <%= f.input :zipcode_bill, label: 'Zip Code'  %>
@@ -52,10 +51,16 @@ Payment Details | HorschGallery.com
   <section class='customer_info_form'>
     <%= f.input :email %>
     <%= f.input :confirm_email %>
-    <%= f.input :phone_number %>
+    <%= f.input :phone_number, label: 'Phone', :as => :string %>
   </section>
 
+  <h1>Gift Options &amp; Feedback</h1>
+  <section class='customer_info_form few_more_things'>
+    <%= f.input :is_gift, label: '&nbsp;This purchase is a gift for someone.&nbsp;&nbsp;Please do not include a receipt with the shipped package.'.html_safe, :as => :boolean %>
 
+    <label for="order_feedback_type"><i class="fa fa-user"></i>&nbsp;&nbsp;How did you first hear about our business?</label>
+    <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(Feedback.all, 'name', 'name', selected = '1') %></select>
+  </section>
 
 <h1>Review Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>
       <span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
@@ -78,6 +83,7 @@ Payment Details | HorschGallery.com
 $(function(){
 
 
+  // SHOW BILLING INFO IF NOT SAME FOR SHIPPING
   $('#billing_same').click(function() {
     if( $(this).is(':checked'))
     {
@@ -91,12 +97,13 @@ $(function(){
         $('#order_address1_bill').val('')
         $('#order_address2_bill').val('')
         $('#order_city_bill').val('')
-        $('#order_state_bill').val('Alabama').prop('selected', true)
+        $('#order_state_bill').val('AL')
         $('#order_zipcode_bill').val('')
 
     }
   });
 
+  // AUTOMATICALLY FILL IN BILLING INFO IF CHECKED
   $('#credit_card').focus(function(){
     if( $('#billing_same').is(':checked') )
     {

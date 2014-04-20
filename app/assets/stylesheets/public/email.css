@@ -28,6 +28,10 @@
   padding-bottom: 20px;
 }
 
+.fix_cell_width{
+  width: 275px;
+}
+
 /*PRICING TOTALS*/
 .table_totals td, .table_totals th{
   text-align: right;
@@ -48,6 +52,7 @@
   margin-bottom: 20px;
   font-size: 24px;
   max-width: 600px;
+  font-family: arial;
 }
 
 
@@ -57,12 +62,17 @@ td, tr{
   font-family: garamond;
 }
 
+.gift{
+  padding-bottom: 20px;
+  width: 600px;
+}
+
 .greeting{
   font-size: 20px;
   color: #222;
   font-weight: bold;
   margin-bottom: 10px;
-  font-family: garamond;
+  font-family: arial;
 
 }
 

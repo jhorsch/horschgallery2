@@ -1,6 +1,6 @@
 
 
-<p class="greeting" style="font-size: 20px;color: #222;font-weight: bold;margin-bottom: 10px;font-family: garamond;">Hi <%= @order.first_name_bill %>,</p>
+<p class="greeting" style="font-size: 20px;color: #222;font-weight: bold;margin-bottom: 10px;font-family: arial;">Hi <%= @order.first_name_bill %>,</p>
 
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.</p>
 
@@ -8,8 +8,14 @@
 
 
 
-<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Order Summary</p>
-
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Order Summary</p>
+<% if @order.is_gift %>
+<table>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td class="gift" style="font-size: 16px;color: #696969;font-family: garamond;padding-bottom: 20px;width: 600px;">*Since you mentioned this purchase is a gift for someone, we will not include a receipt with the package.&nbsp;&nbsp;We hope it's one of the best gifts they have ever received!</td>
+  </tr>
+</table>
+<% end %>
 <table class="table_customer_info">
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <th class="bold_label" style="font-weight: bold;padding-right: 120px;">Shipping Information</th>
@@ -23,13 +29,15 @@
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address1_ship %></td>
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address1_bill %></td>
   </tr>
+  <% unless @order.address2_ship.empty? && @order.address2_bill.empty? %>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address2_ship %></td>
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address2_bill %></td>
   </tr>
+  <% end %>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_ship %>,<%= @order.state_ship %> <%= @order.zipcode_ship %></td>
-    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_bill %>,<%= @order.state_bill %> <%= @order.zipcode_bill %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_ship %>, <%= @order.state_ship %> <%= @order.zipcode_ship %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_bill %>, <%= @order.state_bill %> <%= @order.zipcode_bill %></td>
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"></td>
@@ -42,35 +50,43 @@
 </table>
 
 
-<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Photograph Collection ( <%= pluralize(@line_items.count,'item') %> )</p>
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Photograph Collection ( <%= pluralize(@line_items.sum(:qty),'image') %> )</p>
 
 <% @line_items.each do |item| %>
 <table class="table_full_product" style="border-bottom: 1px solid #ccc;margin-bottom: 15px;">
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;">
-      <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150') %>
+      <%  if item.size.name.last(4) == "Only" %>
+        <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
+      <% else %>
+        <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
+      <% end %>
     </td>
     <td class="table_product_details" style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;">
       <table>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;">#<%= item.photo.id_num %></td>
+          <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">ID# <%= item.photo.id_num %></td>
         </tr>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.size.name %></td>
+          <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Size:&nbsp;&nbsp;<%= item.size.name %></td>
         </tr>
+        <% unless item.size.name.last(4) == "Only" %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.mat.name %></td>
+          <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Mat:&nbsp;&nbsp;<%= item.mat.name %></td>
         </tr>
+        <% end %>
+        <% unless item.size.name.last(4) == "Only" %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.frame.name %></td>
+          <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Frame:&nbsp;&nbsp;<%= item.frame.name %></td>
         </tr>
+        <% end %>
         <% if item.convert_to_bw %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;">Convert To B&amp;W</td>
+          <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Convert To B&amp;W</td>
         </tr>
         <% end %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-          <td class="qty_row" style="font-size: 16px;color: #696969;font-family: garamond;padding-bottom: 20px;vertical-align: top;padding-right: 40px;">Qty: <%= item.qty %></td>
+          <td class="qty_row" style="font-size: 16px;color: #696969;font-family: garamond;padding-bottom: 20px;vertical-align: top;padding-right: 40px;">Quantity: <%= item.qty %></td>
         </tr>
       </table>
     </td>
@@ -78,29 +94,29 @@
   </tr>
 </table>
 <% end %>
-xxxx
 
-<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Totals</p>
+
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Totals</p>
 <table class="table_totals">
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-    <th class="bold_label" style="font-weight: bold;text-align: right;padding-right: 90px;font-size: 18px;">Subtotal:</th>
-    <th style="text-align: right;padding-right: 90px;font-size: 18px;">$339.00</th>
+    <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Subtotal:</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;"><%= number_to_currency(@order.subtotal, precision: 2) %></td>
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Tax:</td>
-    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$15.36</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;"><%= number_to_currency(@order.tax, precision: 2) %></td>
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Shipping:</td>
-    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$34.95</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;"><%= number_to_currency(@order.shipping, precision: 2) %></td>
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Total:</td>
-    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$415.95</td>
+    <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;"><%= number_to_currency(@order.grand_total, precision: 2) %></td>
   </tr>
 </table>
 
-<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Customer Service</p>
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Customer Service</p>
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">If you have any further questions, please reply to this email or check out website for more information.</p>
 
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;"><%= link_to 'www.horschgallery.com',  root_url %></p>

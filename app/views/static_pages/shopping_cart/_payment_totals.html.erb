@@ -6,7 +6,8 @@
   <fieldset class='bold_price_field'>
     <label class = 'payment_label_left'>Subtotal</label>
     <div class="text_align-right">
-      <label class = 'payment_label_right'><%= number_to_currency(shopping_cart.subtotal_price, precision: 2) %></label>
+      <label id='subtotal' class = 'payment_label_right' data-price=<%= "#{shopping_cart.subtotal_price}" %>><%= number_to_currency(shopping_cart.subtotal_price, precision: 2) %></label>
+      <%= hidden_field_tag 'order[subtotal]', shopping_cart.subtotal_price %>
   </div>
   </fieldset>
 
@@ -17,28 +18,76 @@
 
   <fieldset>
     <label class = 'payment_label_left'>Shipping</label>
-    <div class="text_align-right"><label class = 'payment_label_right'><%= number_to_currency(shopping_cart.shipping_price, precision: 2) %></label></div>
+    <div id='shipping' class="text_align-right" data-price=<%= "#{shopping_cart.shipping_price}" %>><label class = 'payment_label_right'><%= number_to_currency(shopping_cart.shipping_price, precision: 2) %></label></div>
+    <%= hidden_field_tag 'order[shipping]', shopping_cart.shipping_price %>
   </fieldset>
 
   <fieldset>
     <label class = 'payment_label_left'>Tax</label>
-    <div class="text_align-right"><label class = 'payment_label_right'>tbd</label></div>
+    <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
+      <div class="text_align-right"><label class = 'payment_label_right'>tbd</label></div>
+    <% elsif  params[:controller] == 'orders' and params[:action] == 'new' %>
+      <div class="text_align-right"><label id='tax' class = 'payment_label_right' data-price="0"><%= number_to_currency(0, precision: 2) %></label></div>
+      <%= hidden_field_tag 'order[tax]', 0 %>
+
+    <% end %>
   </fieldset>
 
   <fieldset class='bold_price_field grand_total'>
     <label class = 'payment_label_left'>Total</label>
-    <div class="text_align-right"><label class = 'payment_label_right'><%= number_to_currency(shopping_cart.grand_total_price, precision: 2) %></label></div>
+    <div class="text_align-right">
+      <label id='grand_total' class = 'payment_label_right' data-price='<%= shopping_cart.grand_total_price %>'><%= number_to_currency(shopping_cart.grand_total_price, precision: 2) %></label></div>
+      <%= hidden_field_tag 'order[grand_total]', shopping_cart.grand_total_price %>
+
+
 
   </fieldset>
 
 
   <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
-    <%= link_to 'Proceed To Payment', '/payment', class: 'call_to_action_btn checkout_btn' %>
+    <%= button_to 'Proceed To Payment', '/payment', method: :get, class: 'call_to_action_btn checkout_btn' %>
   <% elsif  params[:controller] == 'orders' and params[:action] == 'new' %>
-    <%= link_to 'Place Order', '/confirmation', class: 'call_to_action_btn checkout_btn' %>  <% end %>
+    <%= submit_tag 'Place Order', class: 'call_to_action_btn checkout_btn' %>  <% end %>
 
 </section>
 
+
+<script>
+
+$(function(){
+
+  $('#order_state_ship').change(function() {
+  var state_chosen = $('#order_state_ship option:selected').val();
+  var subtotal = Number($('#subtotal').attr('data-price'))
+  var shipping = Number($('#shipping').attr('data-price'))
+
+  if (state_chosen == "IL")
+  {
+    var calculated_tax = Number(subtotal * .09)
+    $('#tax').text('$' + calculated_tax.toFixed(2))
+    $('#order_tax').val(calculated_tax)
+
+    var calculated_grand_total = subtotal + calculated_tax + shipping
+     $('#grand_total').text('$'+calculated_grand_total.toFixed(2))
+     $('#order_grand_total').val(calculated_grand_total)
+
+  }
+  else
+  {
+     var calculated_tax = Number(0.00)
+     $('#tax').text('$' + calculated_tax.toFixed(2))
+     $('#order_tax').val(calculated_tax)
+
+     var calculated_grand_total = subtotal + calculated_tax + shipping
+     $('#grand_total').text('$'+ calculated_grand_total.toFixed(2))
+     $('#order_grand_total').val(calculated_grand_total)
+
+  }
+
+  });
+});
+
+</script>
 
 
 
