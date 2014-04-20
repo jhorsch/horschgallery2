@@ -21,6 +21,7 @@
   #static pages
   get "/photographers" => 'static_pages#photographers'
   get "/shopping_cart" => 'static_pages#cart'
+  get "/email" => 'static_pages#email'
 
   get "/reviews" => 'static_pages#reviews'
   get "/art_fairs" => 'static_pages#art_fairs'

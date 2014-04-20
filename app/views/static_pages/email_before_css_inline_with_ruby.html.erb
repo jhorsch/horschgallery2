@@ -1,0 +1,111 @@
+
+<p class='greeting'>Hi <%= @order.first_name_bill %>,</p>
+
+<p class='regular_paragraph'>Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.</p>
+
+<p class='regular_paragraph'>Your order will take 1-2 days to process and will then be shipped via UPS.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.</p>
+
+
+
+<p class='sub_header'>Order Summary</p>
+
+<table class="table_customer_info">
+  <tr>
+    <th class='bold_label'>Shipping Information</th>
+    <th class='bold_label'>Billing&nbsp;Information</th>
+  </tr>
+  <tr>
+    <td><%= @order.first_name_ship %> <%= @order.last_name_ship %></td>
+    <td><%= @order.first_name_bill %> <%= @order.last_name_bill %></td>
+  </tr>
+  <tr>
+    <td><%= @order.address1_ship %></td>
+    <td><%= @order.address1_bill %></td>
+  </tr>
+  <tr>
+    <td><%= @order.address2_ship %></td>
+    <td><%= @order.address2_bill %></td>
+  </tr>
+  <tr>
+    <td><%= @order.city_ship %>,<%= @order.state_ship %> <%= @order.zipcode_ship %></td>
+    <td><%= @order.city_bill %>,<%= @order.state_bill %> <%= @order.zipcode_bill %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= @order.phone_number %></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><%= @order.email %></td>
+  </tr>
+</table>
+
+
+<p class='sub_header'>Photograph Collection ( <%= pluralize(@line_items.count,'item') %> )</p>
+
+<% @line_items.each do |item| %>
+<table class='table_full_product'>
+  <tr>
+    <td>
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150') %>
+    </td>
+    <td class='table_product_details'>
+      <table>
+        <tr>
+          <td>#<%= item.photo.id_num %></td>
+        </tr>
+        <tr>
+          <td><%= item.size.name %></td>
+        </tr>
+        <tr>
+          <td><%= item.mat.name %></td>
+        </tr>
+        <tr>
+          <td><%= item.frame.name %></td>
+        </tr>
+        <% if item.convert_to_bw %>
+        <tr>
+          <td>Convert To B&amp;W</td>
+        </tr>
+        <% end %>
+        <tr>
+          <td class='qty_row'>Quantity: <%= item.qty %></td>
+        </tr>
+      </table>
+    </td>
+    <td class='product_total_price'><%= number_to_currency(item.total_price, precision: 0) %></td>
+  </tr>
+</table>
+<% end %>
+
+
+<p class='sub_header'>Totals</p>
+<table class='table_totals'>
+  <tr>
+    <th class='bold_label'>Subtotal:</th>
+    <th>$339.00</th>
+  </tr>
+  <tr>
+    <td class='bold_label'>Tax:</td>
+    <td>$15.36</td>
+  </tr>
+  <tr>
+    <td class='bold_label'>Shipping:</td>
+    <td>$34.95</td>
+  </tr>
+  <tr>
+    <td class='bold_label'>Total:</td>
+    <td>$415.95</td>
+  </tr>
+</table>
+
+<p class='sub_header'>Customer Service</p>
+<p class='regular_paragraph'>If you have any further questions, please reply to this email or check out website for more information.</p>
+
+<p class='regular_paragraph'><%= link_to 'www.horschgallery.com',  root_url %></p>
+
+<p class='regular_paragraph'>Thanks</p>
+<p class='regular_paragraph'>Bob Horsch, Owner</p>
+
+
+

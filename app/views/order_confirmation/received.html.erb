@@ -1,21 +1,111 @@
-<p>Hi <%= @order.first_name_bill.capitalize %>,
-</p>
 
-<p>Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.
-</p>
 
-<h2>Shipping Details</h2>
-<p>Your order will take 1-2 days to process and will then be shipped via UPS.  Please refer to the UPS shipping map to determine how many days it will take to ship to your specific location.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.
-</p>
+<p class="greeting" style="font-size: 20px;color: #222;font-weight: bold;margin-bottom: 10px;font-family: garamond;">Hi <%= @order.first_name_bill %>,</p>
 
-<p>If it turns out that a print you purchased is currently not in stock (which is rare), we will notify you by email. It will then take an additional 5 business days to process.
-</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.</p>
 
-<h2>Customer Service</h2>
-<p>If you have any further questions, refer to our FAQ page. If you can not find the answer there, please email us.
-</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Your order will take 1-2 days to process and will then be shipped via UPS.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.</p>
 
-<h2>Order Summary</h2>
-<%= @order.line_items.count %> Item
 
-<p><%= link_to "Return Policy", root_url %></p>
+
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Order Summary</p>
+
+<table class="table_customer_info">
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <th class="bold_label" style="font-weight: bold;padding-right: 120px;">Shipping Information</th>
+    <th class="bold_label" style="font-weight: bold;padding-right: 120px;">Billing&nbsp;Information</th>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.first_name_ship %> <%= @order.last_name_ship %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.first_name_bill %> <%= @order.last_name_bill %></td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address1_ship %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address1_bill %></td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address2_ship %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.address2_bill %></td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_ship %>,<%= @order.state_ship %> <%= @order.zipcode_ship %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.city_bill %>,<%= @order.state_bill %> <%= @order.zipcode_bill %></td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.phone_number %></td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.email %></td>
+  </tr>
+</table>
+
+
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Photograph Collection ( <%= pluralize(@line_items.count,'item') %> )</p>
+
+<% @line_items.each do |item| %>
+<table class="table_full_product" style="border-bottom: 1px solid #ccc;margin-bottom: 15px;">
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;">
+      <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150') %>
+    </td>
+    <td class="table_product_details" style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;">
+      <table>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;">#<%= item.photo.id_num %></td>
+        </tr>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.size.name %></td>
+        </tr>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.mat.name %></td>
+        </tr>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;"><%= item.frame.name %></td>
+        </tr>
+        <% if item.convert_to_bw %>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 40px;">Convert To B&amp;W</td>
+        </tr>
+        <% end %>
+        <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+          <td class="qty_row" style="font-size: 16px;color: #696969;font-family: garamond;padding-bottom: 20px;vertical-align: top;padding-right: 40px;">Qty: <%= item.qty %></td>
+        </tr>
+      </table>
+    </td>
+    <td class="product_total_price" style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;"><%= number_to_currency(item.total_price, precision: 0) %></td>
+  </tr>
+</table>
+<% end %>
+xxxx
+
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Totals</p>
+<table class="table_totals">
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <th class="bold_label" style="font-weight: bold;text-align: right;padding-right: 90px;font-size: 18px;">Subtotal:</th>
+    <th style="text-align: right;padding-right: 90px;font-size: 18px;">$339.00</th>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Tax:</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$15.36</td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Shipping:</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$34.95</td>
+  </tr>
+  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
+    <td class="bold_label" style="font-size: 18px;color: #696969;font-family: garamond;font-weight: bold;text-align: right;padding-right: 90px;">Total:</td>
+    <td style="font-size: 18px;color: #696969;font-family: garamond;text-align: right;padding-right: 90px;">$415.95</td>
+  </tr>
+</table>
+
+<p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;">Customer Service</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">If you have any further questions, please reply to this email or check out website for more information.</p>
+
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;"><%= link_to 'www.horschgallery.com',  root_url %></p>
+
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Bob Horsch, Owner</p>
+
+

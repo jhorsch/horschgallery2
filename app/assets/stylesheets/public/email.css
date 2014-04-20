@@ -1,0 +1,76 @@
+
+/*CUSTOMER INFO*/
+.table_customer_info th, .table_customer_info td{
+  padding-right: 120px;
+}
+
+
+/*PRODUCT TABLE*/
+.email_image{
+  width: 150px;
+}
+
+.table_full_product{
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.table_full_product td{
+  vertical-align: top;
+  padding-right: 20px;
+}
+
+.table_product_details td{
+  padding-right: 40px;
+}
+
+.qty_row{
+  padding-bottom: 20px;
+}
+
+/*PRICING TOTALS*/
+.table_totals td, .table_totals th{
+  text-align: right;
+  padding-right: 90px;
+  font-size: 18px;
+}
+
+.bold_label{
+  font-weight: bold;
+}
+
+/*PAGE LEVEL STYLING*/
+.sub_header{
+  color: #DA7C05;
+  margin-top: 40px;
+  border-top: 2px dotted #ccc;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  max-width: 600px;
+}
+
+
+td, tr{
+  font-size: 16px;
+  color: #696969;
+  font-family: garamond;
+}
+
+.greeting{
+  font-size: 20px;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: garamond;
+
+}
+
+.regular_paragraph{
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 10px;
+  max-width: 600px;
+  font-family: garamond;
+
+}
