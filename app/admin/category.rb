@@ -11,10 +11,10 @@ ActiveAdmin.register Category do
 
   #INDEX LAYOUTS
   index do
-    column  :title
-    column  :created_at
-    actions
-
+    column  :title do |category|
+      link_to category.title, admin_category_path(category)
+    end
+    column :main_category
   end
 
   # SHOW PAGE

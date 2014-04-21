@@ -6,10 +6,11 @@ ActiveAdmin.register Photo do
   scope :active
 
   # FILTERS
-  filter :categories, :as => :select, :collection =>  Category.all.order("title asc")
   filter :id_num
+  filter :categories
   filter :title
   filter :artist_name
+  filter :format
 
 
   # PERMISSIONS
@@ -21,6 +22,11 @@ ActiveAdmin.register Photo do
       link_to photo.id_num, admin_photo_path(photo)
     end
     column  :title
+    # column  :category_ids do |category|
+    #   category.title
+    # end
+    column  :artist
+    column  :format
     column  :created_at
 
   end

@@ -33,7 +33,8 @@ class Order < ActiveRecord::Base
   before_save :strip_phone_number
 
   # scopes
-  scope :new, -> { where(status: 'new') }
+  scope :fresh, -> { where(status: 'new') }
+  # couldnt name the scope new
   scope :processing, -> { where(status: 'processing') }
   scope :shipped, -> { where(status: 'shipped') }
   scope :declined, -> { where(status: 'declined') }

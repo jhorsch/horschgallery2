@@ -11,8 +11,9 @@ class Category < ActiveRecord::Base
   has_many :category_mats
   has_many :mats, :through => :category_mats
 
-  # validates  :title, :is_active, :meta_title, :meta_desc, :alt_tag, :description, :main_category_id, presence: true
-  # validates :title, uniqueness: true
+  validates :is_active, inclusion: [true, false]
+  validates  :title, :meta_title, :meta_desc, :alt_tag, :description, :main_category_id, presence: true
+  validates :title, uniqueness: {:case_sensitive => false}
 
 
   scope :active, -> { where(is_active: true) }

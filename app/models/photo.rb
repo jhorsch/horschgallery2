@@ -8,8 +8,10 @@ class Photo < ActiveRecord::Base
 
   belongs_to :format
 
-  # validates :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :camera, :film_type, presence: true
-  # validates :id_num, :title, uniqueness: true
+  validates :is_active, :show_bw_conversion, inclusion: [true, false]
+
+  validates :id_num, :title, :artist_name, :year_taken, :format_id, :desc, :rotating_keyword, :camera, :film_type, presence: true
+  validates :id_num, :title, uniqueness: {:case_sensitive => false}
 
   scope :active, -> { where(is_active: true) }
 

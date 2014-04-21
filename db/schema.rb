@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421023933) do
+ActiveRecord::Schema.define(version: 20140421180728) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20140421023933) do
     t.boolean  "is_main"
     t.string   "slug"
     t.string   "super_category"
-    t.boolean  "is_active"
+    t.boolean  "is_active",        default: true
     t.string   "meta_title"
     t.string   "meta_desc"
     t.string   "alt_tag"
@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(version: 20140421023933) do
     t.datetime "updated_at"
     t.string   "super_category"
     t.text     "description"
-    t.boolean  "is_active"
+    t.boolean  "is_active",      default: true
     t.string   "meta_title"
     t.string   "meta_desc"
     t.string   "alt_tag"
@@ -179,7 +179,7 @@ ActiveRecord::Schema.define(version: 20140421023933) do
     t.string   "sub_category"
     t.string   "artist_name"
     t.string   "year_taken"
-    t.boolean  "is_active"
+    t.boolean  "is_active",          default: true
     t.boolean  "show_bw_conversion"
     t.integer  "format_id"
     t.string   "rotating_keyword"

@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
         redirect_to root_url
      else
         @order = Order.new
-        @feedback_options = Feedback.sort_down
+        @feedback_options = Feedback.all
         # flash[:succes] = 'Our https site is secure so your money is good here'
      end
 
@@ -24,7 +24,8 @@ class OrdersController < ApplicationController
       # OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
     else
-      redirect_to new_order_path
+      # redirect_to new_order_path
+      render new
     end
 
     # STRIPE STUFF
