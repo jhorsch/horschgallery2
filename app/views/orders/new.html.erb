@@ -62,7 +62,7 @@ Payment Details | HorschGallery.com
     <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(Feedback.all, 'name', 'name', selected = '1') %></select>
   </section>
 
-<h1>Review Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>
+<h1>Review Your Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>
       <span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
     <% end %>
   </h1>

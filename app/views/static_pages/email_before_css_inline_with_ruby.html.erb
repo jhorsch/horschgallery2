@@ -1,11 +1,9 @@
 
 <p class='greeting'>Hi <%= @order.first_name_bill %>,</p>
 
-<p class='regular_paragraph'>Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.</p>
+<p class='regular_paragraph'>Thanks for purchasing a photograph from HorschGallery.com.</p>
 
-<p class='regular_paragraph'>Your order will take 1-2 days to process and will then be shipped via UPS.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.</p>
-
-
+<p class='regular_paragraph'>Your order will take 1-3 days to process and will then be shipped via UPS Ground.  Once your package has been shipped, you will receive an email from UPS containing the tracking number.</p>
 
 <p class='sub_header'>Order Summary</p>
 <% if @order.is_gift %>
