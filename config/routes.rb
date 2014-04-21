@@ -37,6 +37,7 @@
 
   #Place order
   get "/payment" => 'orders#new'
+   # as: :payment, constraints: {protocol: "https", subdomain: "secure"}
   put "/payment/:id" => 'orders#create'
   get "/confirmation" => 'static_pages#confirmation'
 

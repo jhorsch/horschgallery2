@@ -6,6 +6,19 @@ Payment Details | HorschGallery.com
   Payment Details page for HorschGallery.com
 <% end %>
 
+
+<% if @order.errors.any? %>
+<div id="errorExplanation">
+  <h2><%= pluralize(@order.errors.count, "error") %> prohibited this record from being saved:</h2>
+  <ul>
+  <% @order.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+</div>
+<% end %>
+
+
 <main class ='payment_main'>
   <div class="row stickem-container">
     <%= semantic_form_for @order, method: :post do |f| %>
@@ -50,7 +63,6 @@ Payment Details | HorschGallery.com
   <h1>Contact Information</h1>
   <section class='customer_info_form'>
     <%= f.input :email %>
-    <%= f.input :confirm_email %>
     <%= f.input :phone_number, label: 'Phone', :as => :string %>
   </section>
 
@@ -59,7 +71,7 @@ Payment Details | HorschGallery.com
     <%= f.input :is_gift, label: '&nbsp;This purchase is a gift for someone.&nbsp;&nbsp;Please do not include a receipt with the shipped package.'.html_safe, :as => :boolean %>
 
     <label for="order_feedback_type"><i class="fa fa-user"></i>&nbsp;&nbsp;How did you first hear about our business?</label>
-    <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(Feedback.all, 'name', 'name', selected = '1') %></select>
+    <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(@feedback_options, 'name', 'name', selected = '1') %></select>
   </section>
 
 <h1>Review Your Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>

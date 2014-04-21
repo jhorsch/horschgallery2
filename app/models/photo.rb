@@ -7,9 +7,9 @@ class Photo < ActiveRecord::Base
   has_many :categories, :through => :category_photos
 
   belongs_to :format
-  validates :format_id, presence: true
 
-  validates :title, uniqueness: true
+  # validates :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :camera, :film_type, presence: true
+  # validates :id_num, :title, uniqueness: true
 
   scope :active, -> { where(is_active: true) }
 

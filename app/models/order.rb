@@ -2,12 +2,35 @@ class Order < ActiveRecord::Base
   # associations
   has_many :line_items, dependent: :destroy
 
-  # validations
-  validates_presence_of :first_name_ship
+  validates :feedback_type, presence: true
+   # exclusion: { in: "Select From Below",
+   #  message: "Please choose one of the options from the drop down." }
+
+  # validations shipping
+  validates :first_name_ship, :last_name_ship, :address1_ship, :city_ship, :state_ship, :zipcode_ship, presence: true
+  validates :zipcode_ship, length: { in: 5..12 }
+
+#   # validations billing
+  validates :first_name_bill, :last_name_bill, :address1_bill, :city_bill, :state_bill, :zipcode_bill, presence: true
+  validates :zipcode_bill, length: { in: 5..12 }
+
+#   #validations customer contact
+  validates :email, :phone_number, presence: true
+# #   validates :email, confirmation: true
+
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "You entered an invalid email"}
+
+
+#   #validations totals
+  validates :subtotal, :tax, :shipping, :grand_total, presence: true
+
+  # validations booleans
+  validates :is_residential_ship, inclusion: [true, false]
+
 
   # before actions
   before_save :titleize_params
-
+  before_save :strip_phone_number
 
   # methods
   def add_line_items_from_cart(shopping_cart)
@@ -32,6 +55,10 @@ class Order < ActiveRecord::Base
 
      self.email = email.downcase
 
+  end
+
+  def strip_phone_number
+    self.phone_number = phone_number.gsub(/[^0-9]/, "")
   end
 
 end
