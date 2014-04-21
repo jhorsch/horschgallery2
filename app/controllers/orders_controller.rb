@@ -25,7 +25,9 @@ class OrdersController < ApplicationController
       redirect_to '/confirmation'
     else
       # redirect_to new_order_path
-      render new
+      # render new
+      redirect_to root_url
+
     end
 
     # STRIPE STUFF
