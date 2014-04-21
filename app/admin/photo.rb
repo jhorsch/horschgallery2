@@ -17,10 +17,12 @@ ActiveAdmin.register Photo do
 
   #INDEX LAYOUTS
   index do
-    column  "Prod#", :id_num
+    column  "Prod#", sortable: :id_num do |photo|
+      link_to photo.id_num, admin_photo_path(photo)
+    end
     column  :title
     column  :created_at
-    actions
+
   end
 
   index :as => :grid, :columns => 2 do |photo|

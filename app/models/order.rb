@@ -32,6 +32,13 @@ class Order < ActiveRecord::Base
   before_save :titleize_params
   before_save :strip_phone_number
 
+  # scopes
+  scope :new, -> { where(status: 'new') }
+  scope :processing, -> { where(status: 'processing') }
+  scope :shipped, -> { where(status: 'shipped') }
+  scope :declined, -> { where(status: 'declined') }
+  scope :returned, -> { where(status: 'returned') }
+
   # methods
   def add_line_items_from_cart(shopping_cart)
     shopping_cart.line_items.each do |line_item|
