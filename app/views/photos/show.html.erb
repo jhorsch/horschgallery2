@@ -31,7 +31,7 @@
     <!-- div class ="fav_button"><i class="fa fa-heart"></i> Favorite</div> -->
     <div><%= image_tag 'SocialButtons.jpg', class: 'social_buttons' %></div>
 
-  <div><a href = <%= main_category_path(@photo.categories.take.main_category) %> class='view_slideshow'><i class="fa fa-desktop"></i> View Slide Show</a></div>
+  <div><a href = <%= main_category_path(@photo.categories.take.main_category) %> class='view_slideshow'><i class="fa fa-desktop"></i>&nbsp;&nbsp;View Slideshow</a></div>
   </div>
 
   <%= render 'more_details' %>

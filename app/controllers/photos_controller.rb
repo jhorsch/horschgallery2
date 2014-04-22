@@ -13,7 +13,8 @@ class PhotosController < ApplicationController
       session[:most_recent_viewed] = []
     end
     unless session[:most_recent_viewed].include? params[:id]
-      session[:most_recent_viewed] << params[:id]
+      photo_id = Photo.friendly.find(params[:id]).id
+      session[:most_recent_viewed] << photo_id
     end
     most_recent_viewed = setup_most_recent(session[:most_recent_viewed])
     @recently_viewed = Photo.pull_five_most_recent(most_recent_viewed)

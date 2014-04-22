@@ -41,6 +41,7 @@ class Photo < ActiveRecord::Base
 
   def self.pull_five_most_recent(session_array)
     where(is_active: true, id: session_array).order('title asc')
+    # friendly.find_by_slug(session_array)
   end
 
 
