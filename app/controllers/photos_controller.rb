@@ -9,26 +9,14 @@ class PhotosController < ApplicationController
   def show
     @customer_viewed = Photo.customer_also_viewed(@photo.main_category)
     @rotating_keywords = Photo.rotating_keywords
-
-
-    # initalize the session hash
     if session[:most_recent_viewed].nil?
       session[:most_recent_viewed] = []
     end
-    # only add unique photo ids to the hash...might want to remove though
     unless session[:most_recent_viewed].include? params[:id]
       session[:most_recent_viewed] << params[:id]
     end
-    # set local variable
-    most_recent_viewed = session[:most_recent_viewed]
-    # test whether array has more than 5 photos..if so remove the first element and reset the array
-    if most_recent_viewed.count > 5
-      most_recent_viewed.shift
-      session[:most_recent_viewed] = most_recent_viewed
-    end
-    @recently_viewed = Photo.five_most_recent(most_recent_viewed)
-
-
+    most_recent_viewed = setup_most_recent(session[:most_recent_viewed])
+    @recently_viewed = Photo.pull_five_most_recent(most_recent_viewed)
   end
 
   def new
@@ -57,7 +45,6 @@ class PhotosController < ApplicationController
       end
   end
 
-
   def destroy
     @photo.destroy
     respond_to do |format|
@@ -71,6 +58,22 @@ class PhotosController < ApplicationController
     @photos = Photo.search(@query).paginate(:page => params[:page], :per_page => 24)
       render 'search'
  end
+
+
+
+# helper methods for the contoller
+def setup_most_recent(array)
+  num_items = array.count
+  array = session[:most_recent_viewed]
+  if num_items >= 6
+    return array[num_items-6..num_items-2]
+  elsif num_items == 1
+    return  nil
+  else
+    return array[0..num_items-2]
+  end
+end
+
 
   private
     def set_photo

@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     @shopping_cart
   end
 
+
+
+
+
   protected
 
   def set_shopping_cart

@@ -16,6 +16,8 @@ class Photo < ActiveRecord::Base
   scope :active, -> { where(is_active: true) }
 
 
+
+
   # database queries
   def self.rotating_keywords
     ['photo','print','picture','photograph','artwork','photography']
@@ -31,7 +33,7 @@ class Photo < ActiveRecord::Base
                 "%#{query}%", "%#{query}")
   end
 
-  def self.five_most_recent(session_array)
+  def self.pull_five_most_recent(session_array)
     where(is_active: true, id: session_array).order('title asc')
   end
 
