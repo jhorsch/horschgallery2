@@ -1,5 +1,9 @@
 class Category < ActiveRecord::Base
 
+   # friendly_id gem
+  include FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :category_photos
   has_many :photos, :through => :category_photos
 
@@ -22,6 +26,8 @@ class Category < ActiveRecord::Base
   def self.active_category
     where(is_active: true)
   end
+
+
 
 
 

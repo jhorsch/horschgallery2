@@ -9,6 +9,7 @@ ActiveAdmin.setup do |config|
   config.site_title_link = "/"
   config.show_comments_in_menu = false
   config.allow_comments = false
+  config.root_to = 'orders#index'
 
 
 
@@ -16,12 +17,18 @@ ActiveAdmin.setup do |config|
 
     # This block will edit the default menu
     admin.build_menu do |menu|
-      menu.add :label => "Content Management", :priority => 1
+      menu.add :label => "Photo Inventory", :priority => 1
       menu.add :label => "Photo Options", :priority => 2
       menu.add :label => "Shipping Options", :priority => 3
       # menu.add :label => "Website", :url => "/", :priority => 1000
     end
   end
+
+
+
+
+
+
 
 
 
@@ -257,5 +264,7 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+
+
 
 end

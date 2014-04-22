@@ -61,7 +61,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :rotating_keyword => row[11],
         :featured_gallery => row[12],
         :camera => row[13],
-        :film_type => row[14]
+        :film_type => row[14],
+        :slug => row[15]
       )
 end
 
@@ -75,7 +76,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Category.csv", headers: true) do |row|
         :meta_title => row[5],
         :meta_desc => row[6],
         :alt_tag => row[7],
-        :main_category_id => row[8]
+        :main_category_id => row[8],
+        :slug => row[9]
 
       )
 
@@ -97,7 +99,8 @@ CSV.foreach("#{Rails.root}/lib/assets/MainCategory.csv", headers: true) do |row|
         :is_active => row[3],
         :meta_title => row[4],
         :meta_desc => row[5],
-        :alt_tag => row[6]
+        :alt_tag => row[6],
+        :slug => row[7]
       )
 
 end

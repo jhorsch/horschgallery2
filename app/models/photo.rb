@@ -1,10 +1,17 @@
 class Photo < ActiveRecord::Base
+
+  # friendly_id gem
+  include FriendlyId
+  friendly_id :name, use: :slugged
+
+
   # associations
   has_many :line_items
   has_many :category_photos
   has_many :categories, :through => :category_photos
   belongs_to :format
 
+  # friendly url
 
   # validations
   validates :is_active, :show_bw_conversion, inclusion: [true, false]
@@ -23,9 +30,7 @@ class Photo < ActiveRecord::Base
     ['photo','print','picture','photograph','artwork','photography']
   end
 
-  def self.customer_also_viewed(string)
-    Photo.where(main_category: string).active.shuffle.take(5)
-  end
+
 
   def self.search(query)
     query = query.downcase

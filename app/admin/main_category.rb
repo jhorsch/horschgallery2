@@ -1,7 +1,7 @@
 ActiveAdmin.register MainCategory do
 
 
-  menu :parent => "Content Management", :priority => 3
+  menu :parent => "Photo Inventory", :priority => 3
   scope :active
   config.sort_order = "title_asc"
 

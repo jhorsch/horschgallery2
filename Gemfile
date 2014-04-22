@@ -25,9 +25,8 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'activeadmin',  github: 'gregbell/active_admin'
 gem "font-awesome-rails"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-
 gem 'formtastic'
-
+gem 'friendly_id', '~> 5.0.0', :require => "friendly_id"
 # gem 'bourbon'
 
 #DEFAULT GEMS

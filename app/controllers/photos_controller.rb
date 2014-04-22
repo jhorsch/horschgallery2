@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
   end
 
   def show
-    @customer_viewed = Photo.customer_also_viewed(@photo.main_category)
+    @customer_viewed = MainCategory.customer_also_viewed(@photo)
     @rotating_keywords = Photo.rotating_keywords
     if session[:most_recent_viewed].nil?
       session[:most_recent_viewed] = []
@@ -77,7 +77,7 @@ end
 
   private
     def set_photo
-      @photo = Photo.find_by(id: params[:id])
+      @photo = Photo.friendly.find(params[:id])
     end
 
     def photo_params

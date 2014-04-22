@@ -1,6 +1,12 @@
 ActiveAdmin.register Photo do
 
-  menu :parent => "Content Management", :priority => 0
+# controller do
+#   def find_resource
+#     scoped_collection.friendly.find(params[:id])
+#   end
+# end
+
+  menu :parent => "Photo Inventory", :priority => 0
 
   config.sort_order = "created_at_desc"
   scope :active

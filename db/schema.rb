@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421180728) do
+ActiveRecord::Schema.define(version: 20140422183840) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20140421180728) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_main"
-    t.string   "slug"
     t.string   "super_category"
     t.boolean  "is_active",        default: true
     t.string   "meta_title"
@@ -64,9 +63,10 @@ ActiveRecord::Schema.define(version: 20140421180728) do
     t.string   "alt_tag"
     t.text     "description"
     t.integer  "main_category_id"
+    t.string   "slug"
   end
 
-  add_index "categories", ["slug"], name: "index_categories_on_slug"
+  add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
 
   create_table "category_mats", force: true do |t|
     t.integer  "mat_id"
@@ -101,6 +101,19 @@ ActiveRecord::Schema.define(version: 20140421180728) do
     t.datetime "updated_at"
   end
 
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
   create_table "line_items", force: true do |t|
     t.integer  "order_id"
     t.integer  "photo_id"
@@ -131,7 +144,10 @@ ActiveRecord::Schema.define(version: 20140421180728) do
     t.string   "meta_title"
     t.string   "meta_desc"
     t.string   "alt_tag"
+    t.string   "slug"
   end
+
+  add_index "main_categories", ["slug"], name: "index_main_categories_on_slug", unique: true
 
   create_table "mats", force: true do |t|
     t.string   "name"
@@ -186,7 +202,10 @@ ActiveRecord::Schema.define(version: 20140421180728) do
     t.integer  "featured_gallery"
     t.string   "camera"
     t.string   "film_type"
+    t.string   "slug"
   end
+
+  add_index "photos", ["slug"], name: "index_photos_on_slug", unique: true
 
   create_table "sizes", force: true do |t|
     t.string   "name"

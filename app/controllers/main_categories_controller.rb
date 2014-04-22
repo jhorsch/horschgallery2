@@ -64,7 +64,7 @@ class MainCategoriesController < ApplicationController
 
   private
     def set_main_category
-      @main_category = MainCategory.find(params[:id])
+      @main_category = MainCategory.friendly.find(params[:id])
     end
 
     def main_category_params

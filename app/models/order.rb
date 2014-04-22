@@ -10,22 +10,26 @@ class Order < ActiveRecord::Base
   validates :first_name_ship, :last_name_ship, :address1_ship, :city_ship, :state_ship, :zipcode_ship, presence: true
   validates :zipcode_ship, length: { in: 5..12 }
 
-#   # validations billing
+  # validations billing
   validates :first_name_bill, :last_name_bill, :address1_bill, :city_bill, :state_bill, :zipcode_bill, presence: true
   validates :zipcode_bill, length: { in: 5..12 }
 
-#   #validations customer contact
+  #validations customer contact
   validates :email, :phone_number, presence: true
-# #   validates :email, confirmation: true
 
+  #validates email
+  validates :email, :confirmation => true
+  validates :email_confirmation, :presence => true
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: "You entered an invalid email"}
 
 
-#   #validations totals
+  #validations totals
   validates :subtotal, :tax, :shipping, :grand_total, presence: true
 
   # validations booleans
   validates :is_residential_ship, inclusion: [true, false]
+
+
 
 
   # before actions
