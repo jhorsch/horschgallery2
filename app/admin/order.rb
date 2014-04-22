@@ -60,16 +60,25 @@ columns do
   column do
    panel 'Customer Information' do
     attributes_table_for order do
-      row :id
+      row 'Order #' do
+        order.id
+      end
       row :status
+      row 'First name' do
+        order.first_name_bill
+      end
       row :email do
         mail_to order.email, nil, target: '_blank'
       end
       row :phone_number do
         number_to_phone order.phone_number
       end
-      row :is_gift
-      row :feedback_type
+      row 'Is This A Gift?' do
+        order.is_gift? ? 'Yes' : 'No'
+      end
+      row 'They found us from' do
+        order.feedback_type
+      end
     end
   end
   end
@@ -113,7 +122,7 @@ panel("Shipping Details") do
           order.address1_ship
         end
         row 'Apt#' do
-          order.address2_ship
+          order.address2_ship.blank? ? '.' :  order.address2_ship
         end
       end
     end
@@ -128,8 +137,8 @@ panel("Shipping Details") do
         row 'Zip Code' do
           order.zipcode_ship
         end
-        row 'Is Residential' do
-          order.is_residential_ship
+        row 'Shipping Location' do
+          order.is_residential_ship? ? 'Residential' : 'Business'
         end
       end
     end
@@ -154,7 +163,7 @@ columns do
         order.address1_bill
       end
       row 'Apt#' do
-        order.address2_bill
+        order.address2_bill.blank? ? '.' :  order.address2_bill
       end
     end
   end
@@ -177,8 +186,54 @@ end
 end
 end
 end
+
+div do
+  panel("Photographs Purchased") do
+    table_for(order.line_items) do
+      column "ID" do |item|
+        item.photo.id_num
+      end
+      if true
+        column "Image" do |item|
+          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", width: '150'), admin_photo_path(item.photo))
+        end
+      else
+        column "Image" do |item|
+          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", width: '150'), admin_photo_path(item.photo))
+        end
+      end
+      column "Size" do |item|
+        item.size.name
+      end
+      column "Mat" do |item|
+        item.mat.name
+      end
+      column "Frame" do |item|
+        item.frame.name
+      end
+      column "Convert To B&W?" do |item|
+        item.convert_to_bw? ? 'Yes' : 'No'
+      end
+      column 'Unit Price' do |item|
+        number_to_currency(item.unit_price, precision: 0)
+      end
+      column :qty
+      column 'Total Price' do |item|
+        number_to_currency(item.total_price, precision: 0)
+      end
+
+    end
+  end
+end
+
+
+
 # end show
 end
+
+
+
+
 
 
 

@@ -21,7 +21,9 @@ ActiveAdmin.register Photo do
     column  "Prod#", sortable: :id_num do |photo|
       link_to photo.id_num, admin_photo_path(photo)
     end
-    column  :title
+    column  "Title", sortable: :title do |photo|
+      link_to photo.title, admin_photo_path(photo)
+    end
     # column  :category_ids do |category|
     #   category.title
     # end
