@@ -121,7 +121,7 @@ panel("Shipping Details") do
         row 'Address' do
           order.address1_ship
         end
-        row 'Apt#' do
+        row 'Apt#/Suite#' do
           order.address2_ship.blank? ? '.' :  order.address2_ship
         end
       end
@@ -162,7 +162,7 @@ columns do
       row 'Address' do
         order.address1_bill
       end
-      row 'Apt#' do
+      row 'Apt#/Suite#' do
         order.address2_bill.blank? ? '.' :  order.address2_bill
       end
     end
@@ -190,17 +190,17 @@ end
 div do
   panel("Photographs Purchased") do
     table_for(order.line_items) do
-      column "ID" do |item|
-        item.photo.id_num
-      end
       if true
-        column "Image" do |item|
-          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", width: '150'), admin_photo_path(item.photo))
+        column "Photograph" do |item|
+          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", width: '125'), admin_photo_path(item.photo))
         end
       else
-        column "Image" do |item|
-          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", width: '150'), admin_photo_path(item.photo))
+        column "Photograph" do |item|
+          link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", width: '125'), admin_photo_path(item.photo))
         end
+      end
+      column "ID" do |item|
+        item.photo.id_num
       end
       column "Size" do |item|
         item.size.name
