@@ -1,6 +1,6 @@
 ActiveAdmin.register AdminUser do
 
-  menu :priority => 1000
+  menu :parent => "Misc", :priority => 10
   permit_params :email, :password, :password_confirmation
 
   index do

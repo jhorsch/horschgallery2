@@ -4,9 +4,9 @@
     <li>
       <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
         <%  if line_item.size.name.last(4) == "Only" %>
-          <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
+          <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{line_item.photo.id_num.downcase}.jpg", class: 'photo_only'), photo_url(line_item.photo)  %>
           <% else %>
-            <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg"), photo_url(line_item.photo)  %>
+            <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg", class: 'matted_framed'), photo_url(line_item.photo)  %>
           <% end  %>
           <%= link_to line_item_path(line_item), method: :delete, class: 'remove_product' do %>
             <i class="fa fa-times"></i> Remove

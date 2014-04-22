@@ -8,19 +8,16 @@ class Photo < ActiveRecord::Base
     slug.blank? || title_changed?
   end
 
-
   # associations
   has_many :line_items
   has_many :category_photos
   has_many :categories, :through => :category_photos
   belongs_to :format
 
-  # friendly url
-
   # validations
-  # validates :is_active, :show_bw_conversion, inclusion: [true, false]
-  # validates :id_num, :title, :artist_name, :year_taken, :format_id, :desc, :rotating_keyword, :camera, :film_type, presence: true
-  # validates :id_num, :title, uniqueness: {:case_sensitive => false}
+  validates :is_active, :show_bw_conversion, inclusion: [true, false]
+  validates :id_num, :title, :artist_name, :year_taken, :format_id, :desc, :rotating_keyword, :camera, :film_type, presence: true
+  validates :id_num, :title, uniqueness: {:case_sensitive => false}
 
 
   # scopes

@@ -29,9 +29,12 @@
     </ul>
   </nav>
 
+
+
   <% if params[:action] == 'show'  %>
     <div class="sale_nav">
-      <nav class="sale_nav_content">Our March Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 minute survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
+      <% @date = Date.today %>
+      <nav class="sale_nav_content">Our <%= @date.strftime("%B") %> Sale is going on this week.&nbsp;&nbsp;&nbsp;&nbsp;Take our 2 minute survey and GET 15% OFF your entire order. &nbsp;&nbsp;<a href="https://www.surveymonkey.com/s/GF6XT5F">more details</a></nav>
     </div>
   <% end %>
 </div>

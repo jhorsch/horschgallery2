@@ -20,6 +20,7 @@ ActiveAdmin.setup do |config|
       menu.add :label => "Photo Inventory", :priority => 1
       menu.add :label => "Photo Options", :priority => 2
       menu.add :label => "Shipping Options", :priority => 3
+      menu.add :label => "Misc", :priority => 4
       # menu.add :label => "Website", :url => "/", :priority => 1000
     end
   end

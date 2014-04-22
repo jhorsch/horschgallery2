@@ -57,7 +57,7 @@
     margin-bottom: 40px;
     div{
       display: inline-block;
-      vertical-align: bottom;
+      vertical-align: top;
     }
 
     .view_slideshow{
@@ -65,13 +65,14 @@
       display: block;
       font-size: 20px;
       margin-bottom: 10px;
-      margin-right: 60px;
       text-align: left;
     }
   }
 
   .social_buttons{
     width: 200px;
+    margin-right: 120px;
+    text-align: left;
   }
 
   .more_details_wrapper{

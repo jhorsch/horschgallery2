@@ -147,6 +147,14 @@ $background_container_color: #eee;
       width: 175px;
     }
 
+    .photo_only{
+      margin-bottom: 9px;
+    }
+
+    .matted_framed{
+      margin-bottom: 5px;
+    }
+
     li{
       display: inline-block;
       vertical-align: top;
@@ -165,6 +173,8 @@ $background_container_color: #eee;
       text-align: right;
       width: 135px;
     }
+
+
 
     .remove_product{
       display: block;
