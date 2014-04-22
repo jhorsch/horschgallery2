@@ -1,10 +1,10 @@
 ActiveAdmin.register Photo do
 
-# controller do
-#   def find_resource
-#     scoped_collection.friendly.find(params[:id])
-#   end
-# end
+controller do
+  def find_resource
+    scoped_collection.friendly.find(params[:id])
+  end
+end
 
   menu :parent => "Photo Inventory", :priority => 0
 
@@ -36,7 +36,6 @@ ActiveAdmin.register Photo do
     column  :artist
     column  :format
     column  :created_at
-
   end
 
   index :as => :grid, :columns => 2 do |photo|
@@ -47,7 +46,9 @@ ActiveAdmin.register Photo do
    show do |photo|
       attributes_table do
         row :is_active
-        row :id_num
+        row :id_num do
+          link_to photo.id_num, photo_path(photo)
+        end
         row :image do
           image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg")
         end

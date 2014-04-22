@@ -1,5 +1,11 @@
 ActiveAdmin.register MainCategory do
 
+  controller do
+  def find_resource
+    scoped_collection.friendly.find(params[:id])
+  end
+end
+
 
   menu :parent => "Photo Inventory", :priority => 3
   scope :active
@@ -23,7 +29,9 @@ ActiveAdmin.register MainCategory do
    show do |main_category|
       attributes_table do
         row :is_active
-        row :title
+        row :title do
+          link_to main_category.title, main_category_path(main_category)
+        end
         row :super_category, :collection => ['Most Popular','Chicago Cityscape','Chicago Sports','Top US Cities','Other Sports','Nature']
        row :description
         row :meta_title

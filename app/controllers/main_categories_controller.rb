@@ -8,6 +8,9 @@ class MainCategoriesController < ApplicationController
 
   def show
     @photos = @main_category.photos.where(is_active: true)
+    if request.path != main_category_path(@main_category)
+      redirect_to @main_category, status: :moved_permanently
+    end
   end
 
 

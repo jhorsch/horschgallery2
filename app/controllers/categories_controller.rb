@@ -9,6 +9,9 @@ class CategoriesController < ApplicationController
   def show
     @photos = @category.photos.where(is_active: true).paginate(:page => params[:page], :per_page => 24)
     @rotating_keywords = ['photo','print','picture','photograph','artwork','photography','wall-art']
+    if request.path != category_path(@category)
+      redirect_to @category, status: :moved_permanently
+    end
   end
 
   def new

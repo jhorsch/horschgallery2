@@ -1,8 +1,12 @@
 class Photo < ActiveRecord::Base
 
   # friendly_id gem
-  include FriendlyId
-  friendly_id :name, use: :slugged
+  extend FriendlyId
+  friendly_id :title, use: :history
+
+  def should_generate_new_friendly_id?
+    slug.blank? || title_changed?
+  end
 
 
   # associations
@@ -14,9 +18,9 @@ class Photo < ActiveRecord::Base
   # friendly url
 
   # validations
-  validates :is_active, :show_bw_conversion, inclusion: [true, false]
-  validates :id_num, :title, :artist_name, :year_taken, :format_id, :desc, :rotating_keyword, :camera, :film_type, presence: true
-  validates :id_num, :title, uniqueness: {:case_sensitive => false}
+  # validates :is_active, :show_bw_conversion, inclusion: [true, false]
+  # validates :id_num, :title, :artist_name, :year_taken, :format_id, :desc, :rotating_keyword, :camera, :film_type, presence: true
+  # validates :id_num, :title, uniqueness: {:case_sensitive => false}
 
 
   # scopes

@@ -17,6 +17,10 @@ class PhotosController < ApplicationController
     end
     most_recent_viewed = setup_most_recent(session[:most_recent_viewed])
     @recently_viewed = Photo.pull_five_most_recent(most_recent_viewed)
+
+    if request.path != photo_path(@photo)
+      redirect_to @photo, status: :moved_permanently
+    end
   end
 
   def new

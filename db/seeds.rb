@@ -35,6 +35,7 @@ DatabaseCleaner.clean_with(:truncation, :only => %w[category_mats])
 
 DatabaseCleaner.clean_with(:truncation, :only => %w[tiered_shippings])
 DatabaseCleaner.clean_with(:truncation, :only => %w[feedbacks])
+DatabaseCleaner.clean_with(:truncation, :only => %w[friendly_id_slugs])
 
 # *****DONT FORGET TO DELETE IN PRODUCTION************
 Cart.destroy_all

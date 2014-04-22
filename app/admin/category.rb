@@ -1,5 +1,12 @@
 ActiveAdmin.register Category do
 
+
+  controller do
+  def find_resource
+    scoped_collection.friendly.find(params[:id])
+  end
+end
+
   menu :parent => "Photo Inventory", :priority => 2
   scope :active
   config.sort_order = "title_asc"
@@ -14,14 +21,18 @@ ActiveAdmin.register Category do
     column  :title do |category|
       link_to category.title, admin_category_path(category)
     end
-    column :main_category
+    column :main_category do |category|
+      category.main_category.title
+    end
   end
 
   # SHOW PAGE
    show do |category|
       attributes_table do
         row :is_active
-        row :title
+        row :title do
+          link_to category.title, category_path(category)
+        end
         row :description
         row :main_category, :include_blank => false, :as => :select, :collection =>  MainCategory.all.order("title asc")
         row :meta_title
