@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
 
       cookies[:cart_id] = nil
-      # OrderConfirmation.received(@order).deliver
+      OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
     else
       # redirect_to new_order_path

@@ -12,7 +12,7 @@
             <i class="fa fa-times"></i> Remove
           <% end %>
       <% else %>
-          <%  if line_item.size.name.last(4) == "Only" %>
+          <%  if line_item.size.name == 'No Mat' && line_item.frame.name == 'No Frame' %>
             <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{line_item.photo.id_num.downcase}.jpg")  %>
           <% else %>
             <%= image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{line_item.photo.id_num.downcase}.jpg")  %>
@@ -23,8 +23,12 @@
     <li class="item_details_wrapper">
       <label  class="product_title"><%= line_item.photo.title %></label>
       <label>Size:&nbsp;&nbsp;<%= line_item.size.name %></label>
-      <label>Mat:&nbsp;&nbsp;<%= line_item.mat.name %></label>
-      <label>Frame:&nbsp;&nbsp;<%= line_item.frame.name %></label>
+      <% if (line_item.mat.name == 'No Mat' && line_item.frame.name == 'No Frame')  %>
+        <!-- do nothing -->
+      <% else %>
+        <label>Mat:&nbsp;&nbsp;<%= line_item.mat.name %></label>
+        <label>Frame:&nbsp;&nbsp;<%= line_item.frame.name %></label>
+      <% end %>
       <% if line_item.convert_to_bw %>
         <label>*Convert to B&amp;W*</label>
       <% end %>

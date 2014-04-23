@@ -1,12 +1,11 @@
 
 
+
 <p class="greeting" style="font-size: 20px;color: #222;font-weight: bold;margin-bottom: 10px;font-family: arial;">Hi <%= @order.first_name_bill %>,</p>
 
-<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks for purchasing a photograph from HorschGallery.com.  Your order is now being processed.</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks for purchasing a photograph from HorschGallery.com.</p>
 
-<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Your order will take 1-2 days to process and will then be shipped via UPS.  Once your package has shipped, you will receive an email from UPS containing the tracking number of your package.</p>
-
-
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Your order will take 1-3 days to process and will then be shipped via UPS Ground.  Once your package has been shipped, you will receive an email from UPS containing the tracking number.</p>
 
 <p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Order Summary</p>
 <% if @order.is_gift %>
@@ -41,7 +40,7 @@
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"></td>
-    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= @order.phone_number %></td>
+    <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"><%= number_to_phone(@order.phone_number, delimiter: ".")  %></td>
   </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;padding-right: 120px;"></td>
@@ -56,7 +55,7 @@
 <table class="table_full_product" style="border-bottom: 1px solid #ccc;margin-bottom: 15px;">
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td style="font-size: 16px;color: #696969;font-family: garamond;vertical-align: top;padding-right: 20px;">
-      <%  if item.size.name.last(4) == "Only" %>
+      <%  if item.mat.name == "No Mat" && item.frame.name == "No Frame" %>
         <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
       <% else %>
         <%= link_to image_tag("https://s3-us-west-2.amazonaws.com/hg-matted/#{item.photo.id_num.downcase}.jpg", alt: "#{item.photo.title.downcase.parameterize}", width: '150'), photo_url(item.photo) %>
@@ -70,12 +69,12 @@
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
           <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Size:&nbsp;&nbsp;<%= item.size.name %></td>
         </tr>
-        <% unless item.size.name.last(4) == "Only" %>
+        <%  if item.mat.name == "No Mat" && item.frame.name == "No Frame" %>
+            <!-- do nothing -->
+        <% else %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
           <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Mat:&nbsp;&nbsp;<%= item.mat.name %></td>
         </tr>
-        <% end %>
-        <% unless item.size.name.last(4) == "Only" %>
         <tr style="font-size: 16px;color: #696969;font-family: garamond;">
           <td class="fix_cell_width" style="font-size: 16px;color: #696969;font-family: garamond;width: 275px;vertical-align: top;padding-right: 40px;">Frame:&nbsp;&nbsp;<%= item.frame.name %></td>
         </tr>
@@ -123,5 +122,6 @@
 
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks</p>
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Bob Horsch, Owner</p>
+
 
 
