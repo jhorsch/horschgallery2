@@ -45,6 +45,8 @@ class Photo < ActiveRecord::Base
   end
 
 
+
+
   # attribute formatting
   def super_category_title
     categories.take.super_category

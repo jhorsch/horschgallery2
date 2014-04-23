@@ -6,7 +6,7 @@
 <div class="ind_imge">
 
   <a href=<%= category_url(photo.categories.take) %>><%= image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg", alt: "#{photo.rotating_keyword.downcase}-of-#{photo.title.downcase.parameterize}") %></a>
-<h3 class='home_cat_title'><%= link_to photo.categories.take.title, category_url(photo.categories.take) %></h3>
+<h3 class='home_cat_title'><%= link_to photo.categories.exclude_best_sellers.first.title, category_url(photo.categories.first) %></h3>
 
 </div>
 <% end %>

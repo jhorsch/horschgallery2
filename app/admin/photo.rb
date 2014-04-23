@@ -17,10 +17,11 @@ end
   filter :title
   filter :artist_name
   filter :format
+  filter :slug
 
 
   # PERMISSIONS
-  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :featured_gallery, :camera, :film_type, category_ids: []
+  permit_params :id_num, :title, :artist_name, :year_taken, :is_active, :show_bw_conversion, :format_id, :rotating_keyword, :desc, :featured_gallery, :camera, :film_type, :qty_sold, category_ids: []
 
   #INDEX LAYOUTS
   index do
@@ -67,6 +68,9 @@ end
         row :featured_gallery
         row :camera
         row :film_type
+        row :id
+        row :slug
+        row :qty_sold
       end
       # active_admin_comments
     end
@@ -97,6 +101,9 @@ end
       f.inputs "Misc" do
         f.input :rotating_keyword
         f.input :featured_gallery
+        f.input :qty_sold
+
+
       end
       f.actions
     end

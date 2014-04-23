@@ -52,6 +52,7 @@ class Order < ActiveRecord::Base
     end
   end
 
+
   def titleize_params
      self.first_name_ship = first_name_ship.titleize
      self.last_name_ship = last_name_ship.titleize

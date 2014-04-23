@@ -63,7 +63,8 @@ CSV.foreach("#{Rails.root}/lib/assets/Photo.csv", headers: true) do |row|
         :featured_gallery => row[12],
         :camera => row[13],
         :film_type => row[14],
-        :slug => row[15]
+        :slug => row[15],
+        :qty_sold => row[16]
       )
 end
 

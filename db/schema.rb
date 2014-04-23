@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422183840) do
+ActiveRecord::Schema.define(version: 20140423022543) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -203,6 +203,8 @@ ActiveRecord::Schema.define(version: 20140422183840) do
     t.string   "camera"
     t.string   "film_type"
     t.string   "slug"
+    t.integer  "qty_sold",           default: 0
+    t.integer  "position"
   end
 
   add_index "photos", ["slug"], name: "index_photos_on_slug", unique: true

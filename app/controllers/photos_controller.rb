@@ -22,6 +22,9 @@ class PhotosController < ApplicationController
     if request.path != photo_path(@photo)
       redirect_to @photo, status: :moved_permanently
     end
+
+
+
   end
 
   def new
@@ -63,6 +66,8 @@ class PhotosController < ApplicationController
     @photos = Photo.search(@query).paginate(:page => params[:page], :per_page => 24)
       render 'search'
  end
+
+
 
 
 

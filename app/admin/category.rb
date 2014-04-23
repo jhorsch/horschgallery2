@@ -39,8 +39,26 @@ end
         row :meta_desc
         row :alt_tag
       end
-      # active_admin_comments
-    end
+
+      div :class => 'myclass' do
+        panel "Photos", :id => 'myid' do
+          table_for category.photos do
+            column "Image" do |photo|
+               link_to(image_tag("https://s3-us-west-2.amazonaws.com/hg-image/#{photo.id_num.downcase}.jpg", width: '100'), edit_admin_photo_path(photo))
+            end
+            column "Position", :max_width => "200px" do |photo|
+              photo.qty_sold
+            end
+          end
+        end
+      end
+
+
+
+
+      # end show page
+      end
+
 
     # EDIT/NEW PAGE
     form do |f|

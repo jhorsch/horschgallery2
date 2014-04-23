@@ -13,7 +13,9 @@
 
 //= require jquery
 //= require jquery.turbolinks
+//= require jquery.ui.position
 //= require jquery_ujs
+
 //= require_tree ../../../vendor/assets/javascripts/.
 
 //= require_tree .

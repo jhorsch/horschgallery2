@@ -27,6 +27,7 @@ gem "font-awesome-rails"
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'formtastic'
 gem 'friendly_id', '~> 5.0.0', :require => "friendly_id"
+gem 'jquery-ui-rails'
 # gem 'bourbon'
 
 #DEFAULT GEMS

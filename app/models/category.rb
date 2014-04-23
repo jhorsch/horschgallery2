@@ -28,6 +28,10 @@ class Category < ActiveRecord::Base
     where(is_active: true)
   end
 
+  def self.exclude_best_sellers
+    where.not(main_category_id: [1,15,20])
+  end
+
 
 
 
