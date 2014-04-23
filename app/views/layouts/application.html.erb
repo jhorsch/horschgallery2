@@ -9,6 +9,10 @@
 
      <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
+     <% if (params[:controller] == 'orders'  && params[:action] == 'new')  %>
+      <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+     <% end %>
+
   </head>
 
   <body>

@@ -62,6 +62,11 @@ td, tr{
   font-family: garamond;
 }
 
+.order_number{
+  color: #DA7C05;
+  font-weight: bold;
+}
+
 .gift{
   padding-bottom: 20px;
   width: 600px;
@@ -82,5 +87,21 @@ td, tr{
   margin-bottom: 10px;
   max-width: 600px;
   font-family: garamond;
+}
 
+.return_paragraph{
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 20px;
+  max-width: 600px;
+  font-family: garamond;
+  text-decoration: none
+}
+
+.footer_paragraph{
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 3px;
+  max-width: 600px;
+  font-family: garamond;
 }

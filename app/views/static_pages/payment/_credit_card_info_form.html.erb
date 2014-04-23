@@ -1,15 +1,19 @@
 <section class='customer_info_form credit_card_form'>
   <fieldset>
-    <%= label_tag 'We_accept' %>
+    <label>We accept</label>
     <%= image_tag 'credit_cards.jpg' %>
   </fieldset>
+
+
   <fieldset>
     <%= label_tag 'credit_card', 'Card number' %>
-    <%= text_field_tag 'credit_card' %>
+    <%= text_field_tag 'credit_card', '5105105105105100 ', name: nil,  :data => {:stripe => 'number'} %>
   </fieldset>
   <fieldset>
-    <%= label_tag 'credit_card_exp', 'Expires' %>
-    <%= select_month Date.today, {use_short_month: true, use_two_digit_numbers: true}, {name: nil, id: "card_month", :style => "min-width: 60px;"} %>
-    <%= select_year Date.today, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :style => "min-width: 60px;"} %>
+    <label>Expires</label>
+    <%= select_month Date.today.month, {use_short_month: true, use_two_digit_numbers: true}, {name: nil, id: "card_month", :style => "min-width: 60px;", :data => {:stripe => 'exp-month'}} %>
+    <%= select_year Date.today.year, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :style => "min-width: 60px;",  :data => {:stripe => 'exp-year'}} %>
   </fieldset>
+
+
 </section>

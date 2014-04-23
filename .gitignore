@@ -17,3 +17,4 @@
 
 # Ignore password for email
 /config/initializers/app_env_vars.rb
+/config/initializers/stripe.rb

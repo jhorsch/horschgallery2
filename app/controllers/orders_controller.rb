@@ -13,44 +13,35 @@ class OrdersController < ApplicationController
 
   end
 
+
   def create
 
-     @order = Order.new(order_params)
-     @order.add_line_items_from_cart(@shopping_cart)
+    @order = Order.new(order_params)
+    @order.add_line_items_from_cart(@shopping_cart)
+    token = params[:stripeToken]
+    grand_total_cents = @order.grand_total_cents
 
-    if @order.save
+
+    # charge = Stripe::Charge.create(
+    #     :amount => @order.grand_total_cents , # amount in cents, again
+    #     :currency => "usd",
+    #     :card => token,
+    #     :description => @order.id
+    # )
+    # rescue Stripe::CardError => e
+    # flash[:error] = e.message
+
+
+    # if order saves and there are no credit card errors
+    if @order.save_with_payment(token,grand_total_cents,@order.id)
       Cart.destroy(cookies[:cart_id])
-
-
       cookies[:cart_id] = nil
       OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
     else
-      # redirect_to new_order_path
-      # render new
+      # render new    **this isnt working
       redirect_to root_url
-
     end
-
-    # STRIPE STUFF
-     # Amount in cents
-    #   @amount = 500
-
-    #   customer = Stripe::Customer.create(
-    #     :email => 'example@stripe.com',
-    #     :card  => params[:stripeToken]
-    #   )
-
-    #   charge = Stripe::Charge.create(
-    #     :customer    => customer.id,
-    #     :amount      => @amount,
-    #     :description => 'Rails Stripe customer',
-    #     :currency    => 'usd'
-    #   )
-
-    # rescue Stripe::CardError => e
-    #   flash[:error] = e.message
-    #   redirect_to charges_path
 
   end
 

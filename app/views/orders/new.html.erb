@@ -6,7 +6,7 @@ Payment Details | HorschGallery.com
   Payment Details page for HorschGallery.com
 <% end %>
 
-
+<!-- errors from rails validations -->
 <% if @order.errors.any? %>
 <div id="errorExplanation">
   <h2><%= pluralize(@order.errors.count, "error") %> prohibited this record from being saved:</h2>
@@ -18,122 +18,119 @@ Payment Details | HorschGallery.com
 </div>
 <% end %>
 
-
 <main class ='payment_main'>
+
   <div class="row stickem-container">
-    <%= semantic_form_for @order, method: :post do |f| %>
-    <%= f.semantic_errors :state %>
+  <%= semantic_form_for @order, method: :post, :html => {id: "payment-form"} do |f| %>
+  <%= f.semantic_errors :state %>
+  <!-- errors from stripe, invalid card -->
+  <div class="payment-errors"></div>
 
-<section class="cart_wrapper customer_details_wrapper">
-
-  <h1>Payment Information</h1>
-
-  <section class='customer_info_form shipping_info'>
-    <h2>Shipping Information</h2>
-    <%= f.input :first_name_ship, label: 'First name' %>
-    <%= f.input :last_name_ship, label: 'Last name'  %>
-    <%= f.input :address1_ship, label: 'Address'  %>
-    <%= f.input :address2_ship, label: 'Apt#/Suite#'  %>
-    <%= f.input :city_ship, label: 'City'  %>
-    <%= f.input :state_ship, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
-    <%= f.input :zipcode_ship, label: 'Zip Code'  %>
-      <%= f.label 'Location Type' %>
-    <%= f.input :is_residential_ship, :as => :radio, :label => "Location Type", :collection => [["Residential", true], ["Business", false]], class: 'radio_buttons_location' %>
+  <section class="cart_wrapper customer_details_wrapper">
+    <h1>Payment Information</h1>
+    <section class='customer_info_form shipping_info'>
+      <h2>Shipping Information</h2>
+      <ul>
+        <%= f.input :first_name_ship, label: 'First name' %>
+        <%= f.input :last_name_ship, label: 'Last name'  %>
+        <%= f.input :address1_ship, label: 'Address'  %>
+        <%= f.input :address2_ship, label: 'Apt#/Suite#'  %>
+        <%= f.input :city_ship, label: 'City'  %>
+        <%= f.input :state_ship, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
+        <%= f.input :zipcode_ship, label: 'Zip Code'  %>
+        <label>Location Type</label>
+        <%= f.input :is_residential_ship, :as => :radio, :label => "Location Type", :collection => [["Residential", true, {:checked => true}], ["Business", false]], class: 'radio_buttons_location' %>
+      </ul>
   </section>
 
   <section class='customer_info_form billing_form' >
     <h2>Billing Information&nbsp;&nbsp;
-    <%= check_box_tag 'billing_same', 'yes' ,true %>
-    <%= label_tag 'billing_same', 'Same as shipping', class: 'billing_same' %>
+      <%= check_box_tag 'billing_same', 'yes' ,true %>
+      <%= label_tag 'billing_same', 'Same as shipping', class: 'billing_same' %>
     </h2>
     <section class='billing_toggle'>
-      <%= f.input :first_name_bill, label: 'First name' %>
-      <%= f.input :last_name_bill, label: 'Last name'  %>
-      <%= f.input :address1_bill, label: 'Address'  %>
-      <%= f.input :address2_bill, label: 'Apt#/Suite#'   %>
-      <%= f.input :city_bill, label: 'City'  %>
-      <%= f.input :state_bill, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
-      <%= f.input :zipcode_bill, label: 'Zip Code'  %>
+      <ul>
+        <%= f.input :first_name_bill, label: 'First name' %>
+        <%= f.input :last_name_bill, label: 'Last name'  %>
+        <%= f.input :address1_bill, label: 'Address'  %>
+        <%= f.input :address2_bill, label: 'Apt#/Suite#'   %>
+        <%= f.input :city_bill, label: 'City'  %>
+        <%= f.input :state_bill, label: 'State', as: :select, collection: us_states, :include_blank => false   %>
+        <%= f.input :zipcode_bill, label: 'Zip Code'  %>
+    </ul>
     </section>
   </section>
 
+  <!-- credit card info section -->
   <h1>Credit Card Information</h1>
   <%= render 'static_pages/payment/credit_card_info_form' %>
 
+  <!-- contact info section -->
   <h1>Contact Information</h1>
   <section class='customer_info_form'>
-    <%= f.input :email %>
-    <%= f.input :email_confirmation, label: 'Confirm email', placeholder: 'Enter email one more time' %>
-    <%= f.input :phone_number, label: 'Phone', :as => :string %>
+    <ul>
+      <%= f.input :email, placeholder: 'Enter your email', :input_html => { :value => 'jhorsch@gmail.com' } %>
+      <%= f.input :email_confirmation, label: 'Confirm email', placeholder: 'Enter email one more time', :input_html => { :value => 'jhorsch@gmail.com' } %>
+      <%= f.input :phone_number, label: 'Phone', :as => :string, :input_html => { :value => '3124513660' }%>
+  </ul>
   </section>
 
+  <!-- gifts options section -->
   <h1>Gift Options &amp; Feedback</h1>
   <section class='customer_info_form few_more_things'>
-    <%= f.input :is_gift, label: '&nbsp;This purchase is a gift for someone.&nbsp;&nbsp;Please do not include a receipt with the shipped package.'.html_safe, :as => :boolean %>
-
-    <label for="order_feedback_type"><i class="fa fa-user"></i>&nbsp;&nbsp;How did you first hear about our business?</label>
-    <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(@feedback_options, 'name', 'name', selected = '1') %></select>
+    <ul>
+      <%= f.input :is_gift, label: '&nbsp;This purchase is a gift for someone.&nbsp;&nbsp;Please do not include a receipt with the shipped package.'.html_safe, :as => :boolean %>
+      <label for="order_feedback_type"><i class="fa fa-user"></i>&nbsp;&nbsp;How did you first hear about our business?</label>
+      <select  id='order_feedback_type' name='order[feedback_type]'><%= options_from_collection_for_select(@feedback_options, 'name', 'name', selected='1') %></select>
+  </ul>
   </section>
 
-<h1>Review Your Order <% if params[:controller] == 'orders' and params[:action] == 'new' %>
+  <!-- review order items -->
+  <h1>Review Your Order
+    <% if params[:controller] == 'orders' and params[:action] == 'new' %>
       <span class="edit_cart"><%= link_to "Edit Cart", '/shopping_cart' %></span>
     <% end %>
   </h1>
-
   <%= render 'static_pages/shopping_cart/cart_line_items' %>
+  </section>
+  <%= render 'static_pages/shopping_cart/payment_wrapper' %>
+  <!-- end form -->
+  <% end %>
 
-</section>
-
-<%= render 'static_pages/shopping_cart/payment_wrapper' %>
-
-<% end %>
-</div>
+  </div>
 </main>
 
 
 <script>
+// Stripe Payment
+  Stripe.setPublishableKey('pk_test_Ph1E05YKx7NWhwtIEYTkbQ7z');
 
-$(function(){
+  var stripeResponseHandler = function(status, response) {
+    var $form = $('#payment-form');
+    if (response.error) {
+      $form.find('.payment-errors').text(response.error.message).show();
+      $('body').scrollTop(0);
+      $form.find('button').prop('disabled', false);
 
+    } else {
 
-  // SHOW BILLING INFO IF NOT SAME FOR SHIPPING
-  $('#billing_same').click(function() {
-    if( $(this).is(':checked'))
-    {
-        $(".billing_toggle").hide();
+      var token = response.id;
+      $form.append($('<input type="hidden" name="stripeToken" />').val(token));
+      $form.get(0).submit();
     }
-    else
-    {
-        $(".billing_toggle").show();
-        $('#order_first_name_bill').val('')
-        $('#order_last_name_bill').val('')
-        $('#order_address1_bill').val('')
-        $('#order_address2_bill').val('')
-        $('#order_city_bill').val('')
-        $('#order_state_bill').val('AL')
-        $('#order_zipcode_bill').val('')
+  };
 
-    }
+  $(function(){
+
+  $('#payment-form').submit(function(event) {
+    var $form = $(this);
+    $form.find('button').prop('disabled', true);
+    Stripe.card.createToken($form, stripeResponseHandler);
+    // Prevent the form from submitting with the default action
+    return false;
+  });
   });
 
-  // AUTOMATICALLY FILL IN BILLING INFO IF CHECKED
-  $('#credit_card').focus(function(){
-    if( $('#billing_same').is(':checked') )
-    {
-      $('#order_first_name_bill').val($('#order_first_name_ship').val())
-      $('#order_last_name_bill').val($('#order_last_name_ship').val())
-      $('#order_address1_bill').val($('#order_address1_ship').val())
-      $('#order_address2_bill').val($('#order_address2_ship').val())
-      $('#order_city_bill').val($('#order_city_ship').val())
-      $('#order_state_bill').val($('#order_state_ship').val())
-      $('#order_zipcode_bill').val($('#order_zipcode_ship').val())
-    }
-  })
+  </script>
 
-
-});
-
-</script>
-
-   <!-- # render 'static_pages/shopping_cart/customer_details_wrapper', object: @order  -->
 

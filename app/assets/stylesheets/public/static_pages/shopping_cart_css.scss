@@ -10,6 +10,19 @@ $background_container_color: #eee;
 }
 
 
+//errors;
+.payment-errors{
+  text-align: center;
+  font-family: $sans_serif;
+  font-size: 18px;
+  padding: 7px;
+  border-radius: 5px;
+  margin: 0px 0px 20px 0px;
+  color: $red_color;
+  background: fade-out($red_color,.8);
+  display: none;
+}
+
 //STICKY CONTAINER
 //SIDE BAR FOR PRICE SUMMARY
 .payment_wrapper{
@@ -307,6 +320,8 @@ $background_container_color: #eee;
   }
 
 }
+
+
 
 
 

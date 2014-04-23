@@ -38,10 +38,10 @@
     <div class="text_align-right">
       <label id='grand_total' class = 'payment_label_right' data-price='<%= shopping_cart.grand_total_price %>'><%= number_to_currency(shopping_cart.grand_total_price, precision: 2) %></label></div>
       <%= hidden_field_tag 'order[grand_total]', shopping_cart.grand_total_price %>
-
-
-
+      <%= hidden_field_tag 'order[grand_total_cents]', shopping_cart.grand_total_price * 100 %>
   </fieldset>
+
+
 
 
   <% if params[:controller] == 'static_pages' and params[:action] == 'cart' %>
@@ -70,6 +70,7 @@ $(function(){
     var calculated_grand_total = subtotal + calculated_tax + shipping
      $('#grand_total').text('$'+calculated_grand_total.toFixed(2))
      $('#order_grand_total').val(calculated_grand_total)
+     $('#order_grand_total_cents').val(calculated_grand_total*100)
 
   }
   else
@@ -81,6 +82,7 @@ $(function(){
      var calculated_grand_total = subtotal + calculated_tax + shipping
      $('#grand_total').text('$'+ calculated_grand_total.toFixed(2))
      $('#order_grand_total').val(calculated_grand_total)
+     $('#order_grand_total_cents').val(calculated_grand_total*100)
 
   }
 

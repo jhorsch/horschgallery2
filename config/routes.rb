@@ -27,7 +27,7 @@
   get "/reviews" => 'static_pages#reviews'
   get "/art_fairs" => 'static_pages#art_fairs'
   get "/faq" => 'static_pages#faq'
-  get "/returns" => 'static_pages#returns'
+  get "/returns" => 'static_pages#returns', as: :returns
 
   #404 page
   get "/error" => 'static_pages#errors', as: :error

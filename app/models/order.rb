@@ -74,4 +74,24 @@ class Order < ActiveRecord::Base
     self.phone_number = phone_number.gsub(/[^0-9]/, "")
   end
 
+  def save_with_payment(token,amount,order_number)
+    # check if object is valid
+    if valid?
+        # use gem to make payment
+        Stripe.api_key = "sk_test_epYHN93uqwj2aFBWXWoXK9bY"
+        charge = Stripe::Charge.create(
+            :amount => amount , # amount in cents, again
+            :currency => "usd",
+            :card => token,
+            :description => order_number
+        )
+        save!
+    end
+
+    rescue Stripe::CardError => e
+    logger.error "Stripe error while creating customer: #{e.message}"
+    errors.add :base, "There was a problem with your credit card."
+    false
+  end
+
 end

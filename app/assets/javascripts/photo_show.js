@@ -60,6 +60,8 @@ $(".option_helpers")
       var option_size_name_mat = $('#choose_size option:selected').text().slice(-3);
       var option_size_name_framed = $('#choose_size option:selected').text().slice(-6);
 
+
+      // KNOWN ISSUE WHERE MAT FIELD IS BLANK WHEN HITTING BACK BUTTOM FROM CART
       if (option_size_name_only == "Only")
       {
           $('.row_mat').hide();
@@ -74,8 +76,6 @@ $(".option_helpers")
           $("#choose_mat option[value=20]").remove();
           $('.row_frame').hide();
           $('#choose_frame').append("<option value='3' selected='selected'  data-price='0'>No Frame</option>");
-
-
       }
       else
       {
@@ -83,9 +83,6 @@ $(".option_helpers")
           $('.row_frame').show();
           $("#choose_mat option[value=20]").remove();
           $("#choose_frame option[value=3]").remove();
-
-
-
       }
 
 
