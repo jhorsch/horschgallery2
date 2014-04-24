@@ -4,12 +4,13 @@ class OrdersController < ApplicationController
   def new
       # SET LINE ITEMS HERE FOR RENDER NEW
       @line_items = Cart.find_by(id: cookies[:cart_id]).line_items
+      @feedback_options = Feedback.all
+
         # figure out difference between render and new
      if @line_items.empty?
         redirect_to root_url
      else
         @order = Order.new
-        @feedback_options = Feedback.all
         # flash[:succes] = 'Our https site is secure so your money is good here'
      end
 
@@ -27,9 +28,10 @@ class OrdersController < ApplicationController
       cookies[:cart_id] = nil
       OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
+      # render 'new'
     else
-      # render new    **this isnt working
-      redirect_to new_order_path
+      render 'new'
+      # redirect_to new_order_path
     end
 
     # charge = Stripe::Charge.create(
