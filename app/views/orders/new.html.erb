@@ -103,7 +103,7 @@ Payment Details | HorschGallery.com
 
 <script>
 // Stripe Payment
-  Stripe.setPublishableKey('pk_test_Ph1E05YKx7NWhwtIEYTkbQ7z');
+  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
 
   var stripeResponseHandler = function(status, response) {
     var $form = $('#payment-form');

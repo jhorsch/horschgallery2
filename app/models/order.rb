@@ -78,7 +78,7 @@ class Order < ActiveRecord::Base
     # check if object is valid
     if valid?
         # use gem to make payment
-        Stripe.api_key = "sk_test_epYHN93uqwj2aFBWXWoXK9bY"
+        Stripe.api_key = ENV['STRIPE_SECRET_KEY']
         charge = Stripe::Charge.create(
             :amount => grand_total_cents, # amount in cents, again
             :currency => "usd",
