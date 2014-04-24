@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
     if @order.save_with_payment(params[:stripeToken],@order.grand_total_cents,@order.email)
       Cart.destroy(cookies[:cart_id])
       cookies[:cart_id] = nil
-      # OrderConfirmation.received(@order).deliver
+      OrderConfirmation.received(@order).deliver
       redirect_to '/confirmation'
     else
       # render new    **this isnt working
