@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423193118) do
+ActiveRecord::Schema.define(version: 20140424162243) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -174,15 +174,15 @@ ActiveRecord::Schema.define(version: 20140423193118) do
     t.string   "state_bill"
     t.string   "zipcode_bill"
     t.string   "email"
-    t.decimal  "subtotal"
-    t.decimal  "shipping"
-    t.decimal  "tax"
-    t.decimal  "grand_total"
     t.string   "phone_number"
     t.boolean  "is_residential_ship"
     t.string   "status",              default: "new"
     t.boolean  "is_gift",             default: false
     t.string   "feedback_type"
+    t.decimal  "subtotal"
+    t.decimal  "tax"
+    t.decimal  "shipping"
+    t.decimal  "grand_total"
     t.integer  "grand_total_cents"
   end
 

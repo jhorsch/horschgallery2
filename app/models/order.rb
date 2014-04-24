@@ -74,16 +74,16 @@ class Order < ActiveRecord::Base
     self.phone_number = phone_number.gsub(/[^0-9]/, "")
   end
 
-  def save_with_payment(token,amount,order_number)
+  def save_with_payment(stripe_token, grand_total_cents, email)
     # check if object is valid
     if valid?
         # use gem to make payment
         Stripe.api_key = "sk_test_epYHN93uqwj2aFBWXWoXK9bY"
         charge = Stripe::Charge.create(
-            :amount => amount , # amount in cents, again
+            :amount => grand_total_cents, # amount in cents, again
             :currency => "usd",
-            :card => token,
-            :description => order_number
+            :card => stripe_token,
+            :description => email
         )
         save!
     end

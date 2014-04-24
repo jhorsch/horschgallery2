@@ -4,16 +4,13 @@
 
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Thanks for purchasing a photograph from HorschGallery.com.</p>
 
-<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Your order number is <span class="order_number" style="color: #DA7C05;font-weight: bold;">2345</span>.</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">Your order number is <span class="order_number" style="color: #DA7C05;font-weight: bold;"><%= @order.id %></span>.</p>
 
-<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">It will take 1-3 days to process the order and will then be shipped via UPS Ground.  Once your package has been shipped, you will receive an email from UPS containing the tracking number.</p>
+<p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;">It will take 1-3 days to process the order and it will then be shipped via UPS Ground.  Once your package has been sent out for delivery, you will receive an email from UPS containing the tracking number.</p>
 
 <p class="sub_header" style="color: #DA7C05;margin-top: 40px;border-top: 2px dotted #ccc;padding-top: 20px;margin-bottom: 20px;font-size: 24px;max-width: 600px;font-family: arial;">Order Summary</p>
 <% if @order.is_gift %>
 <table>
-  <tr style="font-size: 16px;color: #696969;font-family: garamond;">
-    <td style="font-size: 16px;color: #696969;font-family: garamond;">Order #<%= order.id %></td>
-  </tr>
   <tr style="font-size: 16px;color: #696969;font-family: garamond;">
     <td class="gift" style="font-size: 16px;color: #696969;font-family: garamond;padding-bottom: 20px;width: 600px;">*Since you mentioned this purchase is a gift for someone, we will not include a receipt with the package.&nbsp;&nbsp;We hope it's one of the best gifts they have ever received!</td>
   </tr>
@@ -124,8 +121,8 @@
 
 <p class="regular_paragraph" style="font-size: 16px;color: #222;margin-bottom: 10px;max-width: 600px;font-family: garamond;"><%= link_to '14 Day Return Policy',  returns_url %></p>
 
-<p class="footer_paragraph" style="font-size: 16px;color: #222;max-width: 600px;font-family: garamond;">Thanks</p>
-<p class="footer_paragraph" style="font-size: 16px;color: #222;max-width: 600px;font-family: garamond;">Bob Horsch, Owner</p>
-<p class="footer_paragraph" style="font-size: 16px;color: #222;max-width: 600px;font-family: garamond;"><%= link_to 'www.horschgallery.com',  root_url %></p>
+<p class="footer_paragraph" style="font-size: 16px;color: #222;margin-bottom: 3px;max-width: 600px;font-family: garamond;">Thanks</p>
+<p class="footer_paragraph" style="font-size: 16px;color: #222;margin-bottom: 3px;max-width: 600px;font-family: garamond;">Bob Horsch, Owner</p>
+<p class="footer_paragraph" style="font-size: 16px;color: #222;margin-bottom: 3px;max-width: 600px;font-family: garamond;"><%= link_to 'www.horschgallery.com',  root_url %></p>
 
 
